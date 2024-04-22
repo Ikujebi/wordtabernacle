@@ -1,0 +1,14 @@
+
+
+const profilePage = () => {
+  return (
+        <div className="flex bg-black text-white flex-col items-center justify-center min-h-screen py-2">
+            <h1>Profile</h1>
+            <hr />
+        <p>Profile page</p>
+            
+            </div>
+  )
+}
+
+export default profilePage
