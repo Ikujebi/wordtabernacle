@@ -4,10 +4,20 @@ import React,{useState,useEffect} from "react"
 import { useRouter } from "next/navigation"
 import  axios  from "axios"
 import toast from "react-hot-toast"
+import { FaEye } from "react-icons/fa";
+import { FaEyeSlash  } from "react-icons/fa";
 
 
+ 
 
 export default function SignupPage() {
+    const OpenEye = <FaEye />
+    const CloseEye = <FaEyeSlash  />
+    const [showPassword, setShowPassword] = useState(false); // Step 1
+
+    const togglePasswordVisibility = () => {
+        setShowPassword((prev) => !prev); 
+    };
     const [loading, setLoading] = useState(false)
     const router = useRouter();
     const [user, setUser] = useState({
@@ -61,10 +71,25 @@ username: "",
             id="email" type="email" value={user.email} placeholder="email" onChange={(e) => setUser
              ({...user, email:e.target.value})}/>
             <label htmlFor="password">password</label>
-            <input
-            className="p-2 border border-gray-300 rounded-xl mb-2 focus:outline-none  focus:border-gray-600"
-            id="password" type="password" value={user.password} placeholder="password" onChange={(e) => setUser
-             ({...user, password:e.target.value})}/>
+            <div className="relative">
+                        <input
+                            className="p-2 border border-gray-300 rounded-xl mb-2 focus:outline-none  focus:border-gray-600"
+                            id="password"
+                            type={showPassword ? "text" : "password"} 
+                            value={user.password}
+                            placeholder="password"
+                            onChange={(e) =>
+                                setUser({ ...user, password: e.target.value })
+                            }
+                        />
+                        <button
+                            type="button"
+                            className="absolute top-1/2 right-2 transform -translate-y-1/2  "
+                            onClick={togglePasswordVisibility}
+                        >
+                            {showPassword ? OpenEye : CloseEye}
+                        </button>
+                    </div>
              
              <button 
              onClick={onSignup}
