@@ -52,6 +52,20 @@ username: "",
             setLoading(false);
         }
     }
+
+    const handleKeyPress = (event:any) => {
+        if (event.key === "Enter") {
+            onSignup   ();
+        }
+    };
+
+    // Attach event listener when component mounts
+    useEffect(() => {
+        document.addEventListener("keydown", handleKeyPress);
+        return () => {
+            document.removeEventListener("keydown", handleKeyPress);
+        };
+    }, []);
     return(
         <div className="flex bg-black text-white flex-col items-center justify-center min-h-screen py-2">
            <div className="flex gap-4"> <h1 className="">
@@ -94,7 +108,8 @@ username: "",
              <button 
              onClick={onSignup}
              disabled={buttonDisabled}
-             className="text-white p-2 border border-gray-300 rounded-2xl mb-4 focus:outline-none  focus:border-gray-600">{buttonDisabled ? "No signup": "Signup"} </button>
+             className="text-white p-2 border border-gray-300 rounded-2xl mb-4 focus:outline-none  focus:border-gray-600">
+                {buttonDisabled ? "No signup": "Signup"} </button>
              </div></div>
             <p>
                 <Link href={"/login"}>Visit login</Link>
