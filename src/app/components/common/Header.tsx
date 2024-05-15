@@ -15,23 +15,23 @@ const Header = () => {
     return (
         <div className="w-full bg-white fixed z-20 pb-10 animate__animated animate__fadeInDown">
     <div className="w-full hidden md:block">
-        <div className="h-45 bg-white border-b border-gray-200 flex px-14 justify-between">
+        <div className="h-10 bg-white border-b border-gray-200 flex px-14 justify-between">
             <div>
                 <span className="text-red-600 font-semibold text-sm">
                     <Link href={"/login"}>Login</Link>
                 </span>
             </div>
             <div className="flex items-center text-gray-600 text-sm">
-                <div className="w-8 h-8 bg-red-600 rounded-full flex items-center justify-center">
+                <div className="w-8 h-3 bg-red-600 rounded-full flex items-center justify-center">
                     <FaTwitter className="text-white text-lg" />
                 </div>
-                <div className="w-8 h-8 bg-red-600 rounded-full flex items-center justify-center">
+                <div className="w-8 h-3 bg-red-600 rounded-full flex items-center justify-center">
                     <FaInstagram className="text-white text-lg" />
                 </div>
-                <div className="w-8 h-8 bg-red-600 rounded-full flex items-center justify-center">
+                <div className="w-8 h-3 bg-red-600 rounded-full flex items-center justify-center">
                     <FaFacebookF className="text-white text-lg" />
                 </div>
-                <div className="w-8 h-8 bg-red-600 rounded-full flex items-center justify-center">
+                <div className="w-8 h-3 bg-red-600 rounded-full flex items-center justify-center">
                     <FaYoutube className="text-white text-lg" />
                 </div>
             </div>
@@ -41,7 +41,7 @@ const Header = () => {
             </div>
         </div>
         <div className="px-12">
-            <div className="h-45 bg-white flex mt-20 justify-between">
+            <div className="h-10 bg-white flex mt-20 justify-between">
                 <div>
                     <Link href={"#"}>
                         <div className="flex items-center">

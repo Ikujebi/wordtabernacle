@@ -62,7 +62,7 @@ const pic3 =pastor2
 
   console.log(pic2.src);
   return (
-    <div className=' flex flex-col items-center justify-center h-[100svh]'>
+    <div className=' flex flex-col items-center justify-center h-[10svh]'>
       <div className='text-black'>
         <p>dgcgcftgfdudvagvucdvbhbvhbhbvhcbhbshbv</p>
         <div>
@@ -70,10 +70,7 @@ const pic3 =pastor2
 
           <div className="relative mb-[1.5rem] sm:mb-[1.75rem] md:mb-[2.25rem] lg:mb-[2.5rem] pt-[1.5rem] sm:pt-[1.75rem] md:pt-[3rem] lg:pt-[3rem]">
             <div className="px-0 sm:px-0 md:px-3 lg:px-3 mt-3">
-            <div className="relative mb-[1.5rem] sm:mb-[1.75rem] md:mb-[2.25rem] lg:mb-[2.5rem] pt-[1.5rem] sm:pt-[1.75rem] md:pt-[3rem] lg:pt-[3rem]">
- 
-</div>
-
+       
 
 <Slider {...sliderSettings}>
       {slides.map((item, itemIndex) => (
@@ -99,7 +96,7 @@ const pic3 =pastor2
 
 {/* Quick links section */}
 <div className="flex justify-center w-[100%]">
-  <div className="w-full md:w-80 absolute mx-auto mt-[-100px] pt-[1.25rem] sm:pt-[1.25rem] md:pt-[2rem] lg:pt-[2.125rem] pl-[1.25rem] sm:pl-[1.25rem] md:pl-[2.5rem] lg:pl-[2.5rem] pr-[1.25rem] pb-[2.375rem] bg-white zind relative z-100 mb-[2.5rem]">
+  <div className="w-full md:w-80 absolute mx-auto  pt-[1.25rem] sm:pt-[1.25rem] md:pt-[2rem] lg:pt-[2.125rem] pl-[1.25rem] sm:pl-[1.25rem] md:pl-[2.5rem] lg:pl-[2.5rem] pr-[1.25rem] pb-[2.375rem] bg-white zind relative z-100 mb-[2.5rem]">
     {/* Quick links content */}
   </div>
 </div>
@@ -107,7 +104,7 @@ const pic3 =pastor2
             <div className="flex justify-center w-[100%]"
 
             >
-              <div className="w-full md:w-80 absolute mx-auto mt-[-100px] pt-[1.25rem] sm:pt-[1.25rem] md:pt-[2rem] lg:pt-[2.125rem] pl-[1.25rem] sm:pl-[1.25rem] md:pl-[2.5rem] lg:pl-[2.5rem] pr-[1.25rem] pb-[2.375rem] bg-white zind relative z-100 mb-[2.5rem]">
+              <div className="w-full md:w-80 absolute mx-auto  pt-[1.25rem] sm:pt-[1.25rem] md:pt-[2rem] lg:pt-[2.125rem] pl-[1.25rem] sm:pl-[1.25rem] md:pl-[2.5rem] lg:pl-[2.5rem] pr-[1.25rem] pb-[2.375rem] bg-white zind relative z-100 mb-[2.5rem]">
                 <div className="ml-[1.25rem] sm:ml-[1.25rem] md:ml-0 lg:ml-0">
                   QUICK LINKS
                 </div>
