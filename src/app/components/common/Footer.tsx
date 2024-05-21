@@ -1,3 +1,4 @@
+"use client"
 import { Input, Button } from 'antd';
 import { FaTwitter, FaInstagram, FaFacebookF, FaYoutube } from 'react-icons/fa';
 import wordlogo from '../../img/wordlogo.png';

@@ -18,7 +18,7 @@ export default function LoginPage() {
     const [showPassword, setShowPassword] = useState(false); // Step 1
 
     const togglePasswordVisibility = () => {
-        setShowPassword((prev) => !prev); 
+        setShowPassword((prev:any) => !prev); 
     };
     const [user, setUser] = useState({
 email: "",

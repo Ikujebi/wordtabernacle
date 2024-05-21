@@ -62,8 +62,8 @@ const pic3 =pastor2
 
   console.log(pic2.src);
   return (
-    <div className=' flex flex-col items-center justify-center '>
-      <div>
+    <div className='w-full flex flex-col items-center justify-center '>
+      <div className='w-full'>
         <Header/>
       </div>
       <div>
