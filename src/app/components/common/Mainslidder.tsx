@@ -4,24 +4,27 @@ import { motion } from "framer-motion";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import cert1 from '../img/pst1.jpg'
-import cert2 from '../img/pst2.jpg'
-import cert3 from '../img/choir.jpeg'
-import cert4 from '../img/aerial.jpeg'
-import certa1 from '../img/serious.jpg'
+import pastor1 from '../../img/pastor.jpg'
+import pastor2 from '../../img/pastor2.jpg'
+import choir from '../../img/choir.jpg'
+import drama from '../../img/drama1.jpg'
+import certa1 from '../../img/serious.jpg'
+import ayanfe from '../../img/ayanfe.jpg'
+import kenny from '../../img/kenny.jpg'
+import yportal from '../../img/yoth1.jpg'
 import Image from 'next/image';
 
 const FreeStyle = () => {
-  const pic1 = certa1;
-  const pic2 = cert1;
-  const pic3 = cert3;
-  const pic4 = cert2;
-  const pic5 = cert3;
-  const pic6 = cert3;
-  const pic7 = cert2;
-  const pic8 = cert4;
-  const pic9 = cert1;
-  const pic10 = certa1;
+  const pic1 = pastor1;
+  const pic2 = certa1;
+  const pic3 = choir;
+  const pic4 = pastor2;
+  const pic5 = choir;
+  const pic6 = choir;
+  const pic7 = ayanfe;
+  const pic8 = drama;
+  const pic9 = yportal;
+  const pic10 = kenny;
 
   const [_index, setIndex] = useState(0);
   const slides = [
@@ -34,6 +37,7 @@ const FreeStyle = () => {
     { image: pic7 },
     { image: pic8 },
     { image: pic9 },
+    { image: pic10 },
   ];
 
   useEffect(() => {
