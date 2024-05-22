@@ -15,6 +15,7 @@ import Header from "./components/common/Header";
 import Footer from "./components/common/Footer";
 import {useState,useEffect} from 'react'
 import Image from 'next/image';
+import Mainpic from './components/common/Mainslidder'
 
 export default function home() {
   
@@ -65,6 +66,9 @@ const pic3 =pastor2
     <div className='w-full flex flex-col items-center justify-center '>
       <div className='w-full'>
         <Header/>
+      </div>
+      <div>
+      <Mainpic/>
       </div>
       <div>
       <div className="w-full bg-black py-12 md:py-16">
