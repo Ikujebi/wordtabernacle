@@ -82,10 +82,10 @@ const pic3 =pastor2
     <div className="text-2xl sm:text-5xl md:text-3xl text-white">at Word Tabernacle</div>
   </div>
   <div className="mx-auto w-90 w-90 md:w-90 lg:w-90 xl:w-65 2xl:w-65 p-4 ">
-    <div className="text-white font-medium text-base sm:text-sm xl:text-md 2xl:text-xl  px-[10%] md:text-md md:mx-[2rem]">
+    <div className="text-white font-medium text-base sm:text-sm xl:text-md 2xl:text-xl  px-[10%] md:text-[1.05rem] md:mx-[2rem]">
       If you are searching for people who are committed to growing spiritually, worshipping as family, and enjoying fellowship, then we are the place for you. There is powerful worship, an inspiring message, and your kids will learn so much as they worship with other vibrant kids each week! (We worship family style!). We'd love to get to know you. We want to see lives changed here by the power of Jesus Christ, and we see that happen every week when someone steps through our doors. We look forward to meeting you this Sunday! God bless.
     </div>
-    <div className="text-white mt-4 text-right font-medium text-base sm:text-lg md:text-xl 2xl:pl-[10%]">
+    <div className="text-white mt-4 text-right font-medium text-base sm:text-sm xl:text-md 2xl:text-xl  px-[10%] md:text-[1.05rem]">
       - Pastor Ayorinde Ayodeji
     </div>
   </div>
