@@ -18,6 +18,8 @@ import Image from 'next/image';
 import Mainpic from './components/common/Mainslidder'
 import Head from 'next/head';
 import logo from '../app/img/wordlogo.png'
+import Community from './components/common/Community';
+import BlogMain from './components/common/BlogMain'
 
 export default function home() {
   
@@ -77,7 +79,7 @@ const pic3 =pastor2
       </div>
       <div>
       <div className="w-full bg-black py-12 md:py-16">
-  <div className="mx-auto text-red-600 font-bold uppercase text-center">
+  <div className="mx-auto text-red-600 font-bold text-center">
     <div className="text-2xl sm:text-5xl md:text-3xl">Your worship experience</div>
     <div className="text-2xl sm:text-5xl md:text-3xl text-white">at Word Tabernacle</div>
   </div>
@@ -90,6 +92,12 @@ const pic3 =pastor2
     </div>
   </div>
 </div>
+<div>
+  <Community/>
+</div>
+<div>
+  <BlogMain/>
+</div>
 <div className="flex flex-wrap">
   {/* Your other code goes here */}
 </div>
@@ -101,6 +109,9 @@ const pic3 =pastor2
     <div className="text-white text-center font-bold text-3xl md:text-5xl md:leading-tight">"A church you can <span className="brand">believe</span>  in."</div>
     <div className="text-white text-center font-bold text-3xl md:text-5xl md:leading-tight">"A place you can <span className="brand">belong</span> ."</div>
   </div>
+</div>
+<div>
+  <Community/>
 </div>
 <Footer />
 

@@ -1,10 +1,10 @@
-import choir from '../img/choir.webp';
-import cardimg from '../img/youthpreacher.webp';
-import cardimg2 from '../img/testimony.webp';
+import choir from '../common/../../img/choir.webp';
+import cardimg from '../common/../../img/youthpreacher.webp';
+import cardimg2 from '../common/../../img/testimony.webp';
 
 const Community = () => {
   return (
-    <div className="flex w-full h-screen items-center">
+    <div className="flex w-full h- items-center">
       <section className="w-[33.3%]">
         <div className="content h-[30rem] relative" style={{ backgroundImage: `url(${choir.src})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
           <div className="p-4 absolute bottom-0 left-0 right-0 text-center pb-[5rem]">
