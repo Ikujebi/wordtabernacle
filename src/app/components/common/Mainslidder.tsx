@@ -72,7 +72,7 @@ const FreeStyle = () => {
   return (
     <div className="flex flex-col items-center justify-center min-h-screen ">
   <div className="container my-[9rem] w-full relative">
-    <div className="absolute inset-0 bg-black opacity-50 pointer-events-none z-10 h-[97%]"></div> {/* New div for shadow */}
+    <div className="absolute inset-0 bg-black opacity-50 pointer-events-none z-10 h-[97%] 2xl:h-[98.3%]"></div> {/* New div for shadow */}
     <Slider {...sliderSettings}>
       {slides.map((item, itemIndex) => (
         <motion.div
