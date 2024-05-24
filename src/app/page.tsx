@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { Button } from 'antd'
 import { FaChalkboardTeacher, FaChurch, FaUserAlt } from 'react-icons/fa';
 import { MdCardGiftcard } from 'react-icons/md';
-import pastor2 from './img/pst2.jpg'
+import pastor2 from './img/pastor.webp'
 import pastor1 from './img/pst1.jpg'
 import choir from './img/choirblur.png'
 import femi from './img/femiblur.jpeg'
@@ -20,6 +20,7 @@ import Head from 'next/head';
 import logo from '../app/img/wordlogo.png'
 import Community from './components/common/Community';
 import BlogMain from './components/common/BlogMain'
+import YouTubePlayer from './components/common/YouTubePlayer';
 
 export default function home() {
   
@@ -110,8 +111,11 @@ const pic3 =pastor2
     <div className="text-white text-center font-bold text-3xl md:text-5xl md:leading-tight">"A place you can <span className="brand">belong</span> ."</div>
   </div>
 </div>
-<div>
-  <Community/>
+<div className="relative">
+<YouTubePlayer 
+  videoId="VIDEO_ID_HERE" 
+  posterImageSrc={pastor2.src}
+/>
 </div>
 <Footer />
 
