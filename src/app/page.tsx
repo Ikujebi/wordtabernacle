@@ -111,13 +111,16 @@ const pic3 =pastor2
     <div className="text-white text-center font-bold text-3xl md:text-5xl md:leading-tight">"A place you can <span className="brand">belong</span> ."</div>
   </div>
 </div>
-<div className="relative">
+<div className="">
 <YouTubePlayer 
-  videoId="VIDEO_ID_HERE" 
+  videoId="WzGJFZ_Ta7g" 
   posterImageSrc={pastor2.src}
 />
 </div>
+<div >
 <Footer />
+</div>
+
 
       </div>
     
