@@ -65,8 +65,27 @@ export default function home() {
     autoplay: true,
     autoplaySpeed: 5000,
   };
+  const [currentVideoIndex, setCurrentVideoIndex] = useState(0);
+  const videoIds = [
+{videoId :"JcnaXJftxaU"},
+{videoId :"WzGJFZ_Ta7g"},
+{videoId :"m3G4gNBxWhs"},
+{videoId :"qQwOOPC2wbQ"},
+{videoId :"riA-6duFCGQ"},
+{videoId :"G8-Mg4Agz4w"},
+{videoId :"JRreFjk6nZs"},
 
-  console.log(pic2.src);
+  ]
+
+  
+  const handleNextVideo = () => {
+    setCurrentVideoIndex((prevIndex) => (prevIndex + 1) % videoIds.length);
+  };
+
+  const handlePrevVideo = () => {
+    setCurrentVideoIndex((prevIndex) => (prevIndex - 1 + videoIds.length) % videoIds.length);
+  };
+
   return (
     <div className='w-full flex flex-col items-center justify-center '>
       <Head>
@@ -116,6 +135,10 @@ export default function home() {
             videoId="WzGJFZ_Ta7g"
             posterImageSrc={pastor2.src}
           />
+             <div className="flex justify-center my-4">
+          <Button onClick={handlePrevVideo} className="mr-2 bg-red-400 w-[6rem]">Previous</Button>
+          <Button onClick={handleNextVideo} className='bg-green-400 w-[6rem]'>Next</Button>
+        </div>
         </div>
         <div >
           <Footer />
