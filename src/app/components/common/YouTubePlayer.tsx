@@ -3,10 +3,10 @@ import { useState } from "react";
 import {FC} from 'react'
 interface YouTubePlayerProps {
     videoId: string;
-    posterImageSrc: string;
+    
   }
 
-const YouTubePlayer: FC<YouTubePlayerProps> = ({ videoId, posterImageSrc }) => {
+const YouTubePlayer: FC<YouTubePlayerProps> = ({ videoId }) => {
     const [isPlaying, setIsPlaying] = useState(false);
 
   const handlePlay = () => {
@@ -21,7 +21,7 @@ const YouTubePlayer: FC<YouTubePlayerProps> = ({ videoId, posterImageSrc }) => {
   };
 
     return (
-    <div className="relative">
+    <div className="relative w-[100svw]">
       <iframe 
         width="1000" 
         height="500" 
@@ -29,7 +29,7 @@ const YouTubePlayer: FC<YouTubePlayerProps> = ({ videoId, posterImageSrc }) => {
         title="YouTube video player" 
         allow="accelerometer;  clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
         allowFullScreen
-        className="w-full"
+        className="w-[100%]"
         onPause={handlePause}
       ></iframe>
       

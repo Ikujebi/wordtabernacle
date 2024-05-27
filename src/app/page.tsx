@@ -79,7 +79,10 @@ export default function home() {
 
   
   const handleNextVideo = () => {
+
     setCurrentVideoIndex((prevIndex) => (prevIndex + 1) % videoIds.length);
+ console.log("handleNextVideo clicked!!!");
+ 
   };
 
   const handlePrevVideo = () => {
@@ -132,8 +135,8 @@ export default function home() {
         </div>
         <div className="">
           <YouTubePlayer
-            videoId="WzGJFZ_Ta7g"
-            posterImageSrc={pastor2.src}
+            videoId= {videoIds[currentVideoIndex].videoId}
+            
           />
              <div className="flex justify-center my-4">
           <Button onClick={handlePrevVideo} className="mr-2 bg-red-400 w-[6rem]">Previous</Button>
