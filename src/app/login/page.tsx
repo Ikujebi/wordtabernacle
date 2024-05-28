@@ -6,6 +6,7 @@ import axios from "axios"
 import { FaEye } from "react-icons/fa";
 import { FaEyeSlash  } from "react-icons/fa";
 import toast from "react-hot-toast"
+import wordlogo from '../img/wordlogo.png'
 
 
 
@@ -65,9 +66,12 @@ if(user.email.length > 0 && user.password.length > 0){
             };
         }, []);
     return(
-        <div className="flex bg-black text-white flex-col items-center justify-center min-h-screen py-2">
-           <div className=" gap-4"> <h1 className="">
-           {loading ? "Processing" : "Login"} nibi
+        <div className="flex bg-[#80847c]  text-white flex-col items-center justify-center min-h-screen py-2">
+             <img src={wordlogo.src} alt="" className="w-[10rem] mt-[-5rem]  mb-5"/>
+            <div className="bg-white rounded-md text-[#80847c] px-[5rem] py-[6rem]">
+               
+           <div className=" gap-4"> <h1 className="text-center">
+           {loading ? "Processing" : "Login"} 
                 -&gt;
             </h1>
             <hr />
@@ -98,12 +102,13 @@ if(user.email.length > 0 && user.password.length > 0){
              className="p-2 border border-gray-300 rounded-2xl mb-4 focus:outline-none  focus:border-gray-600 text">
                 {buttonDisabled ? "No Login" : "Login here"}</button>
              </div></div>
-            <p>
+            {/* <p>
                 <Link href={"/signup"}>Visit Signup Page</Link>
             </p>
             <p>
                 <Link href={"/"}>HOME</Link>
-            </p>
+            </p> */}
+        </div>
         </div>
     )
 }

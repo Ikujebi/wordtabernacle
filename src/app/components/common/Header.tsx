@@ -13,7 +13,7 @@ const Header = () => {
     let routes = useRouter();
     let [display, changeDisplay] = useState('none')
     return (
-        <div className="w-[100svw] bg-white fixed z-20 pb-3 mb-13 animate__animated animate__fadeInDown">
+        <div className="w-[100svw] bg-white shadow-sm fixed z-20 pb-3 mb-13 animate__animated animate__fadeInDown">
             <div className="w-full ">
                 <div className="h-10 gap-5 bg-white border-b border-gray-200 flex lg:px-14 xl:px-14 2xl:px-14  md:px-14 justify-between">
                     <div className="mt-2">
@@ -61,7 +61,8 @@ const Header = () => {
                             </Link>
                             <Link href={"#"}>About</Link>
                             <Link href={"#"}>Contact</Link>
-                            <Link href={"#"}>Community</Link>
+                            <Link href={"/community"}>Community</Link>
+                            <Link href={"/giving"}>Giving</Link>
                             <Link href={"#"}>Announcement</Link>
                             <Button className="text-white bg-red-600 hover:bg-red-700 m-auto rounded-lg" onClick={() => { routes.push("/login") }}>LOGIN</Button>
                         </div>
