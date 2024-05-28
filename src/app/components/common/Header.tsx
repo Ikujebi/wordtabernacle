@@ -13,7 +13,7 @@ const Header = () => {
     let routes = useRouter();
     let [display, changeDisplay] = useState('none')
     return (
-        <div className="w-[100%] bg-white fixed z-20 pb-3 mb-13 animate__animated animate__fadeInDown">
+        <div className="w-[100svw] bg-white fixed z-20 pb-3 mb-13 animate__animated animate__fadeInDown">
             <div className="w-full ">
                 <div className="h-10 gap-5 bg-white border-b border-gray-200 flex lg:px-14 xl:px-14 2xl:px-14  md:px-14 justify-between">
                     <div className="mt-2">

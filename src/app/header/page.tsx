@@ -1,113 +1,153 @@
 "use client"
-import {     Button } from "antd"
-import Image from "next/image";
-import { MdClose, MdEmail, MdMenu, MdOndemandVideo } from 'react-icons/md';
-import 'animate.css';
+import { useState, useEffect } from 'react'
+import { motion } from "framer-motion";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import pastor1 from '../img/pastor.webp'
+import pastor2 from '../img/pastor2.webp'
+import choir from '../img/choir.webp'
+import drama from '../img/drama.webp'
+import certa1 from '../img/serious.jpg'
+import ayanfe from '../img/ayanfe.webp'
+import kenny from '../img/kenny.webp'
+import yportal from '../img/yoth1.webp'
+import testimony from '../img/testimony.webp'
+import Image from 'next/image';
+import { FaUserAlt, FaChalkboardTeacher, FaChurch } from 'react-icons/fa';
+import { MdCardGiftcard } from 'react-icons/md';
 
-import Link from "next/link";
-import wordlogo from '../img/wordlogo.png'
-import React, { useState } from 'react';
-import { useRouter } from "next/navigation";
-import { FaFacebookF, FaInstagram, FaTwitter, FaYoutube } from "react-icons/fa";
+const FreeStyle = () => {
+  const pic1 = pastor1;
+  const pic2 = certa1;
+  const pic3 = choir;
+  const pic4 = pastor2;
+  const pic5 = choir;
+  const pic6 = testimony;
+  const pic7 = ayanfe;
+  const pic8 = drama;
+  const pic9 = yportal;
+  const pic10 = kenny;
 
-const Header = () => {
-    let routes = useRouter();
-    let [display, changeDisplay] = useState('none')
-    return (
-        <div className="w-[100%] bg-white fixed z-20 pb-3 mb-13 animate__animated animate__fadeInDown">
-            <div className="w-full ">
-                <div className="h-10 gap-5 bg-white border-b border-gray-200 flex lg:px-14 xl:px-14 2xl:px-14  md:px-14 justify-between">
-                    <div className="mt-2">
-                        <span className="text-red-600 font-semibold text-[1.2rem] ">
-                            <Link href={"/login"}>Login</Link>
-                        </span>
-                    </div>
-                    <div className="flex items-center text-gray-600 text-sm">
-                        <div className="md:w-8 lg:w-8 xl:w-8 2xl:w-8 w-6 md:h-8 lg:h-8 xl:h-8 2xl:h-8 h-6 bg-red-600 rounded-full flex items-center justify-center">
-                            <FaTwitter className="text-white text-lg" />
-                        </div>
-                        <div className="md:w-8 lg:w-8 xl:w-8 2xl:w-8 w-6 md:h-8 lg:h-8 xl:h-8 2xl:h-8 h-6 bg-red-600 rounded-full flex items-center justify-center">
-                            <FaInstagram className="text-white text-lg" />
-                        </div>
-                        <div className="md:w-8 lg:w-8 xl:w-8 2xl:w-8 w-6 md:h-8 lg:h-8 xl:h-8 2xl:h-8 h-6 bg-red-600 rounded-full flex items-center justify-center">
-                            <FaFacebookF className="text-white text-lg" />
-                        </div>
-                        <div className="md:w-8 lg:w-8 xl:w-8 2xl:w-8 w-6 md:h-8 lg:h-8 xl:h-8 2xl:h-8 h-6 bg-red-600 rounded-full flex items-center justify-center">
-                            <FaYoutube className="text-white text-lg" />
-                        </div>
-                        <div className="ml-2 flex items-center">
-                            <MdEmail />
-                            <span className="ml-1">wordtabernacle@gmail.com</span>
-                        </div>
-                    </div>
-                </div>
-                <div className="hidden md:block lg:block xl:block 2xl:block">
-                    <div id="nav" className="h-10 w-[100svw] flex mt-10 justify-between px-14">
-                        <div>
-                            <Link href={"#"}>
-                                <div className="flex gap-1">
-                                    <div className="">
-                                        <Image alt="church logo" width={300} height={100} src={wordlogo} className="h-10 w-10" />
-                                    </div>
-                                    <span className="font-semibold  text-red-600 mt-3">WORD TABERNACLE</span>
-                                </div>
-                            </Link>
-                        </div>
-                        <div className="flex items-center gap-5">
-                            <Link href={"#"}>
-                                <div className="flex">
-                                    <MdOndemandVideo />
-                                    <span className="ml-1">Online</span>
-                                </div>
-                            </Link>
-                            <Link href={"#"}>About</Link>
-                            <Link href={"#"}>Contact</Link>
-                            <Link href={"#"}>Community</Link>
-                            <Link href={"#"}>Announcement</Link>
-                            <Button className="text-white bg-red-600 hover:bg-red-700 m-auto rounded-lg" onClick={() => { routes.push("/login") }}>LOGIN</Button>
-                        </div>
-                    </div>
-                </div>
+  const [_index, setIndex] = useState(0);
+  const slides = [
+    { image: pic1 },
+    { image: pic2 },
+    { image: pic3 },
+    { image: pic4 },
+    { image: pic5 },
+    { image: pic6 },
+    { image: pic7 },
+    { image: pic8 },
+    { image: pic9 },
+    { image: pic10 },
+  ];
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setIndex((prevIndex) => (prevIndex + 1) % slides.length);
+    }, 1000);
+
+    return () => {
+      clearInterval(interval);
+    };
+  }, []);
+
+  const cardVariants = {
+    initial: { opacity: 0, x: "100%" },
+    animate: { opacity: 1, x: "0%" },
+    exit: { opacity: 0, x: "-100%" },
+  };
+
+  const sliderSettings = {
+    dots: false,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 4000,
+  };
+
+  return (
+    <div className="flex flex-col items-center justify-center min-h-screen w-screen">
+  <div className="container my-[9rem] w-full relative">
+    <div className="absolute inset-0 bg-black opacity-50 pointer-events-none z-10 h-[97%] 2xl:h-[98.3%]"></div> {/* New div for shadow */}
+    <Slider {...sliderSettings}>
+      {slides.map((item, itemIndex) => (
+        <motion.div
+          initial="initial"
+          animate="animate"
+          exit="exit"
+          variants={cardVariants}
+          transition={{ duration: 0.5 }}
+          key={itemIndex}
+          className="flex justify-center items-center relative z-20"
+        >
+          <div className="relative flex flex-col items-center justify-center w-full">
+            <Image
+              width={2000}
+              height={600}
+              src={item.image}
+              alt="service"
+              className="w-full mb-4 xl:h-[40rem] 2xl:h-[40rem] lg:h-[30rem] md:h-[33rem] h-[17rem]"
+            />
+            <div id='imgtext' className='absolute font-bold top-0 left-0 w-full h-full text-white text-[2.9rem] m-[5rem] md:mt-0 xl:mt-0 lg:mt-0 2xl:mt-0 mt-[3.4rem]'>
+              <h2>The Word</h2>
+              <h2>Tabernacle</h2>
+              <p className='text-[1.1rem] font-normal'>Building word practitioners...</p>
+              <div>
+                <button className='text-[1.1rem] font-normal mt-5 bg-red-500 hover:bg-red-700 w-[8rem] h-[3rem] text-white ml-3'>JOIN US</button>
+              </div>
             </div>
-            <div className="items-center flex justify-between mt-5 md:hidden lg:hidden xl:hidden 2xl:hidden">
-                <Link href={"#"}>
-                    <div className="flex items-center">
-                        <div className="ml-4">
-                            <Image alt="church logo" width={300} height={100} src={wordlogo} className="h-6 w-6" />
-                        </div>
-                        <span className="font-semibold text-[.67rem] text-red-600">WORD <br /> TABERNACLE</span>
-                    </div>
-                </Link>
-                <div className=" ">
-                <Button id="openmenu" className="bg-#FFFAFA mr-2" aria-label="Open Menu" onClick={() => { changeDisplay('flex') }}>
-                    <MdMenu className="text-gray-700" />
-                </Button>
-            </div>
-            </div>
-           
-            <div className="fixed top-0 left-0 z-20 w-screen h-screen bg-#FFFAFA flex flex-col overflow-auto" style={{ display: display }}>
-                <div className="mt-5 justify-end flex">
-                    <Button className="bg-#FFFAFA mr-6" aria-label="Close Menu" onClick={() => { changeDisplay('none') }}>
-                        <MdClose className="text-gray-700" />
-                    </Button>
-                </div>
-                <div className="flex flex-col items-center">
-                    <Link href={"#"}>LOGIN</Link>
-                    <Link href={"#"}>
-                        <div className="flex items-center">
-                            <MdOndemandVideo />
-                            <span className="ml-1">Online</span>
-                        </div>
-                    </Link>
-                    <Link href={"#"}>About</Link>
-                    <Link href={"#"}>Contact</Link>
-                    <Link href={"#"}>Community</Link>
-                    <Link href={"#"}>Announcement</Link>
-                </div>
-            </div>
+          </div>
+        </motion.div>
+      ))}
+    </Slider>
+  </div>
+      <div id='imgnav' className="absolute shadow-sm rounded-md lg:mt-[36rem] xl:mt-[36rem] 2xl:mt-[43rem] z-30 mt-[27rem] md:mt-[36rem] lg:w-[70%] xl:w-[70%] md:w-[70%] mx-auto 2xl:w-3/5   pt-[1.25rem]  lg:pt-[2.125rem] px-[1.25rem] lg:pl-[2.5rem] lg:pr-[1.25rem] md:pb-[2.375rem] lg:pb-[2.375rem] xl:pb-[2.375rem] 2xl:pb-[2.375rem] bg-white   mb-[2.5rem]">
+      <div className="ml-[1.25rem] lg:ml-0">
+        QUICK LINKS
+      </div>
+      <div className="flex justify-between flex-wrap gap1">
+        <div className="flex items-center">
+          <div className="flex w-5 lg:w-[2.8125rem] xl:w-[2.8125rem] 2xl:w-[2.8125rem] md:w-[2.8125rem] h-6 lg:h-[2.8125rem] xl:h-[2.8125rem] 2xl:h-[2.8125rem] md:h-[2.8125rem] bg-[#FFF0F0] rounded-[0.3125rem] justify-center items-center">
+            <FaUserAlt />
+          </div>
+          <div className="font-semibold text-[0.55rem] md:text-[0.9375rem] lg:text-[1rem] xl:text-[1rem] 2xl:text-[1rem] ml-2">
+            BECOME A <br />
+            MEMBER
+          </div>
         </div>
-
-    )
+        <div className="flex items-center cursor-pointer">
+          <div className="flex w-5 lg:w-[2.8125rem] xl:w-[2.8125rem] 2xl:w-[2.8125rem] md:w-[2.8125rem] h-6 lg:h-[2.8125rem] xl:h-[2.8125rem] 2xl:h-[2.8125rem] md:h-[2.8125rem] bg-[#FFF0F0] rounded-[0.3125rem] justify-center items-center">
+            <FaChalkboardTeacher />
+          </div>
+          <div className="font-semibold text-[0.55rem] md:text-[0.9375rem] lg:text-[1rem] xl:text-[1rem] 2xl:text-[1rem] ml-2">
+            GET <br />
+            INVOLVED
+          </div>
+        </div>
+        <div className="flex items-center">
+          <div className="flex w-5 lg:w-[2.8125rem] xl:w-[2.8125rem] 2xl:w-[2.8125rem] md:w-[2.8125rem] h-6 lg:h-[2.8125rem] xl:h-[2.8125rem] 2xl:h-[2.8125rem] md:h-[2.8125rem] bg-[#FFF0F0] rounded-[0.3125rem] justify-center items-center">
+            <MdCardGiftcard />
+          </div>
+          <div className="font-semibold text-[0.55rem] md:text-[0.9375rem] lg:text-[1rem] xl:text-[1rem] 2xl:text-[1rem] ml-2">
+            GIVING <br />
+          </div>
+        </div>
+        <div className="flex items-center">
+          <div className="flex w-5 lg:w-[2.8125rem] xl:w-[2.8125rem] 2xl:w-[2.8125rem] md:w-[2.8125rem] h-6 lg:h-[2.8125rem] xl:h-[2.8125rem] 2xl:h-[2.8125rem] md:h-[2.8125rem] bg-[#FFF0F0] rounded-[0.3125rem] justify-center items-center">
+            <FaChurch />
+          </div>
+          <div className="font-semibold text-[0.55rem] md:text-[0.9375rem] lg:text-[1rem] xl:text-[1rem] 2xl:text-[1rem] ml-2">
+            LOCATIONS <br />
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+  )
 }
 
-export default Header;
+export default FreeStyle

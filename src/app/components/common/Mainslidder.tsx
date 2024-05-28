@@ -70,7 +70,7 @@ const FreeStyle = () => {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen ">
+    <div className="flex flex-col items-center justify-center min-h-screen w-screen">
   <div className="container my-[9rem] w-full relative">
     <div className="absolute inset-0 bg-black opacity-50 pointer-events-none z-10 h-[97%] 2xl:h-[98.3%]"></div> {/* New div for shadow */}
     <Slider {...sliderSettings}>
@@ -92,7 +92,7 @@ const FreeStyle = () => {
               alt="service"
               className="w-full mb-4 xl:h-[40rem] 2xl:h-[40rem] lg:h-[30rem] md:h-[33rem] h-[17rem]"
             />
-            <div id='imgtext' className='absolute font-bold top-0 left-0 w-full h-full text-white text-[2.9rem] m-[5rem]'>
+            <div id='imgtext' className='absolute font-bold top-0 left-0 w-full h-full text-white text-[2.9rem] m-[5rem] md:mt-0 xl:mt-0 lg:mt-0 2xl:mt-0 mt-[3.4rem]'>
               <h2>The Word</h2>
               <h2>Tabernacle</h2>
               <p className='text-[1.1rem] font-normal'>Building word practitioners...</p>
@@ -105,42 +105,42 @@ const FreeStyle = () => {
       ))}
     </Slider>
   </div>
-      <div id='imgnav' className="absolute lg:mt-[36rem] xl:mt-[36rem] 2xl:mt-[43rem] z-30 md:mt-[36rem]  w-[70%] mx-auto 2xl:w-3/5   pt-[1.25rem]  lg:pt-[2.125rem] px-[1.25rem] lg:pl-[2.5rem] lg:pr-[1.25rem] pb-[2.375rem] bg-white   mb-[2.5rem]">
+      <div id='imgnav' className="absolute shadow-sm rounded-md lg:mt-[36rem] xl:mt-[36rem] 2xl:mt-[43rem] z-30 mt-[27rem] md:mt-[36rem] lg:w-[70%] xl:w-[70%] md:w-[70%] mx-auto 2xl:w-3/5   pt-[1.25rem]  lg:pt-[2.125rem] px-[1.25rem] lg:pl-[2.5rem] lg:pr-[1.25rem] md:pb-[2.375rem] lg:pb-[2.375rem] xl:pb-[2.375rem] 2xl:pb-[2.375rem] bg-white   mb-[2.5rem]">
       <div className="ml-[1.25rem] lg:ml-0">
         QUICK LINKS
       </div>
-      <div className="flex justify-between flex-wrap">
+      <div className="flex justify-between flex-wrap gap1">
         <div className="flex items-center">
-          <div className="flex w-[1.875rem] md:w-[2.8125rem] h-[1.875rem] md:h-[2.8125rem] bg-[#FFF0F0] rounded-[0.3125rem] justify-center items-center">
+          <div className="flex w-5 lg:w-[2.8125rem] xl:w-[2.8125rem] 2xl:w-[2.8125rem] md:w-[2.8125rem] h-6 lg:h-[2.8125rem] xl:h-[2.8125rem] 2xl:h-[2.8125rem] md:h-[2.8125rem] bg-[#FFF0F0] rounded-[0.3125rem] justify-center items-center">
             <FaUserAlt />
           </div>
-          <div className="font-semibold text-[0.75rem] md:text-[0.9375rem] lg:text-[1rem] ml-2">
+          <div className="font-semibold text-[0.55rem] md:text-[0.9375rem] lg:text-[1rem] xl:text-[1rem] 2xl:text-[1rem] ml-2">
             BECOME A <br />
             MEMBER
           </div>
         </div>
         <div className="flex items-center cursor-pointer">
-          <div className="flex w-[1.875rem] md:w-[2.8125rem] h-[1.875rem] md:h-[2.8125rem] bg-[#FFF0F0] rounded-[0.3125rem] justify-center items-center">
+          <div className="flex w-5 lg:w-[2.8125rem] xl:w-[2.8125rem] 2xl:w-[2.8125rem] md:w-[2.8125rem] h-6 lg:h-[2.8125rem] xl:h-[2.8125rem] 2xl:h-[2.8125rem] md:h-[2.8125rem] bg-[#FFF0F0] rounded-[0.3125rem] justify-center items-center">
             <FaChalkboardTeacher />
           </div>
-          <div className="font-semibold text-[0.75rem] md:text-[0.9375rem] lg:text-[1rem] ml-2">
+          <div className="font-semibold text-[0.55rem] md:text-[0.9375rem] lg:text-[1rem] xl:text-[1rem] 2xl:text-[1rem] ml-2">
             GET <br />
             INVOLVED
           </div>
         </div>
         <div className="flex items-center">
-          <div className="flex w-[1.875rem] md:w-[2.8125rem] h-[1.875rem] md:h-[2.8125rem] bg-[#FFF0F0] rounded-[0.3125rem] justify-center items-center">
+          <div className="flex w-5 lg:w-[2.8125rem] xl:w-[2.8125rem] 2xl:w-[2.8125rem] md:w-[2.8125rem] h-6 lg:h-[2.8125rem] xl:h-[2.8125rem] 2xl:h-[2.8125rem] md:h-[2.8125rem] bg-[#FFF0F0] rounded-[0.3125rem] justify-center items-center">
             <MdCardGiftcard />
           </div>
-          <div className="font-semibold text-[0.75rem] md:text-[0.9375rem] lg:text-[1rem] ml-2">
+          <div className="font-semibold text-[0.55rem] md:text-[0.9375rem] lg:text-[1rem] xl:text-[1rem] 2xl:text-[1rem] ml-2">
             GIVING <br />
           </div>
         </div>
         <div className="flex items-center">
-          <div className="flex w-[1.875rem] md:w-[2.8125rem] h-[1.875rem] md:h-[2.8125rem] bg-[#FFF0F0] rounded-[0.3125rem] justify-center items-center">
+          <div className="flex w-5 lg:w-[2.8125rem] xl:w-[2.8125rem] 2xl:w-[2.8125rem] md:w-[2.8125rem] h-6 lg:h-[2.8125rem] xl:h-[2.8125rem] 2xl:h-[2.8125rem] md:h-[2.8125rem] bg-[#FFF0F0] rounded-[0.3125rem] justify-center items-center">
             <FaChurch />
           </div>
-          <div className="font-semibold text-[0.75rem] md:text-[0.9375rem] lg:text-[1rem] ml-2">
+          <div className="font-semibold text-[0.55rem] md:text-[0.9375rem] lg:text-[1rem] xl:text-[1rem] 2xl:text-[1rem] ml-2">
             LOCATIONS <br />
           </div>
         </div>
