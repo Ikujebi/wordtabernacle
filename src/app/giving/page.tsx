@@ -47,16 +47,21 @@ const page: FC = () => {
 
                 <section >
                     <h2 className='text-[1.25rem] font-semibold'>My Donation</h2>
-                    <article className='flex text-center items-center justify-center'>
-                    <h2 className='text-[1rem] my-[2rem] text-center font-semibold relative'>
-                            Recurring
-                            <span className='block  absolute  left-1/2 transform -translate-x-1/2 w-[120%] h-[3px] bg-red-400'></span>
-                        </h2>
-                        <h2 className='text-[1rem] my-[2rem] text-center font-semibold relative'>
-                            One-time
-                            <span className='block absolute  left-1/2 transform -translate-x-1/2 w-[120%] h-[3px] bg-red-400'></span>
-                        </h2>
-                    </article>
+                    <article className="flex items-center justify-center text-center ">
+      <div className="relative my-8">
+        <h2 className="text-base font-semibold relative inline-block bg-white px-2">
+          <span>Recurring</span>
+        </h2>
+        <span className="block absolute left-1/2 transform -translate-x-1/2 w-[120%] h-[3px] bg-red-400 bottom-0"></span>
+      </div>
+      <div className="relative my-8">
+        <h2 className="text-base font-semibold relative inline-block bg-white px-2">
+          <span>One-time</span>
+        </h2>
+        <span className="block absolute left-1/2 transform -translate-x-1/2 w-[120%] h-[3px] bg-red-400 bottom-0"></span>
+      </div>
+    </article>
+
                 </section>
                 </div>
             </main>
