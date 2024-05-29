@@ -52,13 +52,13 @@ const page: FC = () => {
         <h2 className="text-base font-semibold relative inline-block bg-white px-2">
           <span>Recurring</span>
         </h2>
-        <span className="block absolute left-1/2 transform -translate-x-1/2 w-[120%] h-[3px] bg-red-400 bottom-0"></span>
+        <span className="block shadow-md absolute left-1/2 transform -translate-x-1/2 w-[120%] h-[3px] bg-red-400 bottom-0"></span>
       </div>
       <div className="relative my-8">
         <h2 className="text-base font-semibold relative inline-block bg-white px-2">
           <span>One-time</span>
         </h2>
-        <span className="block absolute left-1/2 transform -translate-x-1/2 w-[120%] h-[3px] bg-red-400 bottom-0"></span>
+        <span className="block shadow-md absolute left-1/2 transform -translate-x-1/2 w-[120%] h-[3px] bg-gray-200 bottom-0"></span>
       </div>
     </article>
 
