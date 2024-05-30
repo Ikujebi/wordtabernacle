@@ -90,7 +90,7 @@ export default function home() {
   };
 
   return (
-    <div className='w-screen flex flex-col items-center justify-center font'>
+    <div className='w-screen flex flex-col items-center justify-center font-satoshi'>
       <Head>
         <link rel="shortcut icon" href='../app/img/wordlogo.png' />
       </Head>
