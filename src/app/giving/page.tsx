@@ -4,6 +4,7 @@ import Footer from '../components/common/Footer'
 import Image from 'next/image'
 import givbg from '../img/giveimg.jpg'
 import giving from '../img/Giving-Online-updated.webp'
+import { Select,Input } from 'antd'
 
 
 const page: FC = () => {
@@ -62,6 +63,12 @@ const page: FC = () => {
       </div>
     </article>
 
+
+                </section>
+                <section>
+                    <article>
+
+                    </article>
                 </section>
                 </div>
             </main>
