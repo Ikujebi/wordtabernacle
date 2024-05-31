@@ -5,7 +5,7 @@ import wordlogo from '../../img/wordlogo.png';
 
 const Footer = () => {
   return (
-    <div className="bg-black text-white pt-16">
+    <div className="bg-black text-white pt-16 font">
       <div className="container mx-auto">
         <div className="text-center pb-4">
           <h3 className="text-xl">Subscribe for updates</h3>
