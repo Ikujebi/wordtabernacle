@@ -5,13 +5,20 @@ import { MdClose, MdEmail, MdMenu, MdOndemandVideo } from 'react-icons/md';
 import 'animate.css';
 import Link from "next/link";
 import wordlogo from '../../img/wordlogo.png'
-import React, { useState } from 'react';
+import  { useState,FC } from 'react';
 import { useRouter } from "next/navigation";
 import { FaFacebookF, FaInstagram, FaTwitter, FaYoutube } from "react-icons/fa";
 
-const Header = () => {
+const Header: FC = () => {
     let routes = useRouter();
     let [display, changeDisplay] = useState('none')
+    const [subNavDisplay, setSubNavDisplay] = useState('none');
+   
+    const toggleSubNav = () => {
+        setSubNavDisplay(subNavDisplay === 'none' ? 'block' : 'none');
+    };
+
+
     return (
         <div className="w-[100svw] bg-white shadow-sm fixed z-20 pb-3 mb-13 animate__animated animate__fadeInDown">
             <div className="w-full ">
@@ -59,7 +66,16 @@ const Header = () => {
                                     <span className="ml-1">Online</span>
                                 </div>
                             </Link>
-                            <Link href={"#"}>About</Link>
+                            <div className="relative">
+                                <button onClick={toggleSubNav} className="flex items-center">
+                                    About
+                                </button>
+                                <div className={`absolute top-full left-0 mt-2 w-[500%] bg-white border border-gray-200 shadow-lg ${subNavDisplay}`} style={{ display: subNavDisplay }}>
+                                    <Link href={"#"} className="block px-4 py-2 text-gray-700 hover:bg-gray-100">Mission,Vision & Values</Link>
+                                    <Link href={"#"} className="block px-4 py-2 text-gray-700 hover:bg-gray-100">our-story</Link>
+                                    <Link href={"#"} className="block px-4 py-2 text-gray-700 hover:bg-gray-100">Executive Leadership</Link>
+                                </div>
+                            </div>
                             <Link href={"#"}>Contact</Link>
                             <Link href={"/community"}>Community</Link>
                             <Link href={"/giving"}>Giving</Link>

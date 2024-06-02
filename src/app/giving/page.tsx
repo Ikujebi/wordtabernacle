@@ -1,3 +1,4 @@
+"use client"
 import { FC } from 'react'
 import Header from '../components/common/Header'
 import Footer from '../components/common/Footer'
@@ -5,11 +6,18 @@ import Image from 'next/image'
 import givbg from '../img/giveimg.jpg'
 import giving from '../img/Giving-Online-updated.webp'
 import { Select,Input } from 'antd'
+import { useState } from 'react'
 
 
 const page: FC = () => {
+
+    const [value, setValue] = useState('');
+
+    const handleChange = (e:any) => {
+      setValue(e.target.value);
+    };
     return (
-        <div className='font-satoshi'>
+        <div className='font-satoshi text-red-400'>
             <header >
                 <Header />
             </header>
@@ -67,7 +75,31 @@ const page: FC = () => {
                 </section>
                 <section>
                     <article>
+                    <select id="cars" name="Fund" className='w-full h-[3rem] border-[1px] border-gray-400 focus:border-red-400 focus:outline-red-400 outline-[1px] mb-[3rem] pl-2 text-[1.3rem] text-red-400 mb-[3rem]'>
+        <option value="volvo">Tithe</option>
+        <option value="saab">Pastoral Support</option>
+        <option value="mercedes">Thrive Fund</option>
+        <option value="audi">Offering</option>
+        <option value="audi">Missions</option>
+        <option value="audi">Other-Please Specify</option>
+       
+    </select>
+    <input
+        type="text"
+        className={`w-full h-[3rem] border-[1px] border-gray-400 outline-[1px] mb-[3rem] pl-4 text-[1.3rem] placeholder-red-400 focus:outline-red-400 transition-colors duration-300 ${value.trim() ? 'placeholder-to-border' : ''}`}
+        placeholder="Note"
+        value={value}
+        onChange={handleChange}
+      />
+    <input
+        type="text"
+        className={`w-full h-[3rem] border-[1px] border-gray-400 outline-[1px] mb-[3rem] pl-4 text-[1.3rem] placeholder-red-400 focus:outline-red-400 transition-colors duration-300 ${value.trim() ? 'placeholder-to-border' : ''}`}
+        placeholder="Amount"
+        value={value}
+        onChange={handleChange}
+      />
 
+      
                     </article>
                 </section>
                 </div>
