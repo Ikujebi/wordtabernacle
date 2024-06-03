@@ -67,6 +67,7 @@ const FreeStyle = () => {
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 4000,
+    length: 10
   };
 
   return (

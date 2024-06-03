@@ -5,7 +5,6 @@ import Footer from '../components/common/Footer'
 import Image from 'next/image'
 import givbg from '../img/giveimg.jpg'
 import giving from '../img/Giving-Online-updated.webp'
-import { Select,Input } from 'antd'
 import { useState } from 'react'
 
 

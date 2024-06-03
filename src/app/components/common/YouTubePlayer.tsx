@@ -7,14 +7,9 @@ interface YouTubePlayerProps {
   }
 
 const YouTubePlayer: FC<YouTubePlayerProps> = ({ videoId }) => {
-    const [isPlaying, setIsPlaying] = useState(false);
+    const [_isPlaying, setIsPlaying] = useState(false);
 
-  const handlePlay = () => {
   
-    
-    setIsPlaying(true);
-      console.log("handlePlay clicked!!");
-  };
 
   const handlePause = () => {
     setIsPlaying(false);
