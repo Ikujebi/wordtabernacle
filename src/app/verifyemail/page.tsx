@@ -4,7 +4,7 @@ import { useEffect, useState } from "react"
 import Link from "next/link"
 
 
-const page = () => {
+const Page = () => {
     const [token, setToken] = useState("")
     const [verified, setVerified] = useState(false)
     const [error, setError] = useState(false)
@@ -59,4 +59,4 @@ const page = () => {
     )
 }
 
-export default page
+export default Page

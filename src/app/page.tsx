@@ -22,7 +22,7 @@ import Community from './components/common/Community';
 import BlogMain from './components/common/BlogMain'
 import YouTubePlayer from './components/common/YouTubePlayer';
 
-export default function home() {
+export default function Home() {
 
   const pic2 = pastor1
   const pic3 = pastor2

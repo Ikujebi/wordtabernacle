@@ -10,7 +10,7 @@ import msgg from '../img/msg-1001955056097-3260.webp'
 import msgg2 from '../img/msg-1001955056097-3253.webp'
 
 
-const page: FC = () => {
+const Page: FC = () => {
 
  
 
@@ -111,4 +111,4 @@ We are personally responsible and accountable to one another
   )
 }
 
-export default page
+export default Page

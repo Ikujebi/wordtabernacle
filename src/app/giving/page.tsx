@@ -8,7 +8,7 @@ import giving from '../img/Giving-Online-updated.webp'
 import { useState } from 'react'
 
 
-const page: FC = () => {
+const Page: FC = () => {
 
     const [value, setValue] = useState('');
 
@@ -110,4 +110,4 @@ const page: FC = () => {
     )
 }
 
-export default page
+export default Page
