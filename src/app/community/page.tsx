@@ -3,7 +3,7 @@ import choir from '../img/choir.webp'
 import cardimg from '../img/youthpreacher.webp'
 import cardimg2 from '../img/testimony.webp'
 
-const page:FC = () => {
+const Community:FC = () => {
   return (
     <div className="flex w-full h- items-center">
       <section className="w-[33.3%]">
@@ -37,4 +37,4 @@ const page:FC = () => {
   )
 }
 
-export default page
+export default Community
