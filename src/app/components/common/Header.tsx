@@ -50,7 +50,7 @@ const Header: FC = () => {
                 <div className="hidden md:block lg:block xl:block 2xl:block">
                     <div id="nav" className="h-10 w-[100svw] flex mt-10 justify-between px-14">
                         <div>
-                            <Link href={"#"}>
+                            <Link href={"/"}>
                                 <div className="flex gap-1">
                                     <div className="">
                                         <Image alt="church logo" width={300} height={100} src={wordlogo} className="h-10 w-10" />
@@ -88,9 +88,9 @@ const Header: FC = () => {
             <div className="items-center flex justify-between mt-5 md:hidden lg:hidden xl:hidden 2xl:hidden">
                 <Link href={"#"}>
                     <div className="flex items-center">
-                        <div className="ml-4">
+                        <Link href={"#"} className="ml-4">
                             <Image alt="church logo" width={300} height={100} src={wordlogo} className="h-6 w-6" />
-                        </div>
+                        </Link>
                         <span className="font-semibold text-[.67rem] text-red-600">WORD <br /> TABERNACLE</span>
                     </div>
                 </Link>

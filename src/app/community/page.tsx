@@ -9,7 +9,7 @@ const Community:FC = () => {
       <section className="w-[33.3%]">
         <div className="content h-[30rem] relative" style={{ backgroundImage: `url(${choir.src})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
           <div className="p-4 absolute bottom-0 left-0 right-0 text-center pb-[5rem]">
-            <h2 className="text-white text-center font-semibold">We're Joyful</h2>
+            <h2 className="text-white text-center font-semibold">We&apos;re Joyful</h2>
             <p className="text-white text-center font-semibold text-sm md:text-base">BECOME<br />A<br />MEMBER</p>
             <button className="bg-red-600 text-white md:w-[50%] lg:w-[50%] xl:w-[50%] 2xl:w-[50%] p-3 mt-5 ">JOIN US</button>
           </div>
