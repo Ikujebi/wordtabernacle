@@ -1,4 +1,4 @@
-
+"use client"
 
 const useProfile = ({params}: any) => {
     return (

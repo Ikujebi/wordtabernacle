@@ -1,3 +1,4 @@
+"use client"
 import {FC} from 'react'
 import choir from '../img/choir.webp'
 import cardimg from '../img/youthpreacher.webp'
