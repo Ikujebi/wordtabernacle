@@ -1,12 +1,10 @@
 "use client"
 import Link from 'next/link';
 import { Button } from 'antd'
-import pastor2 from './img/pastor.webp'
-import pastor1 from './img/pst1.jpg'
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import Header from "./components/common/Header";
 import Footer from "./components/common/Footer";
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import Mainpic from './components/common/Mainslidder'
 import Head from 'next/head';
 import Community from './components/common/Community';
@@ -15,31 +13,12 @@ import YouTubePlayer from './components/common/YouTubePlayer';
 
 export default function Home() {
 
-  const pic2 = pastor1
-  const pic3 = pastor2
+  
 
 
-  const [_index, setIndex] = useState(0);
-  const slides = [
+ 
 
-    {
-      image: pic2,
-    },
-    {
-      image: pic3,
-    },
-
-  ];
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setIndex((prevIndex) => (prevIndex + 1) % slides.length);
-    }, 5000);
-
-    return () => {
-      clearInterval(interval);
-    };
-  }, []);
+ 
 
 
 
