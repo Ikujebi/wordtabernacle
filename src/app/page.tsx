@@ -1,23 +1,14 @@
 "use client"
 import Link from 'next/link';
 import { Button } from 'antd'
-import { FaChalkboardTeacher, FaChurch, FaUserAlt } from 'react-icons/fa';
-import { MdCardGiftcard } from 'react-icons/md';
 import pastor2 from './img/pastor.webp'
 import pastor1 from './img/pst1.jpg'
-import choir from './img/choirblur.png'
-import femi from './img/femiblur.jpeg'
-import ruth from './img/ruthblur.png'
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
-import { motion } from "framer-motion";
-import Slider from "react-slick";
 import Header from "./components/common/Header";
 import Footer from "./components/common/Footer";
 import { useState, useEffect } from 'react'
-import Image from 'next/image';
 import Mainpic from './components/common/Mainslidder'
 import Head from 'next/head';
-import logo from '../app/img/wordlogo.png'
 import Community from './components/common/Community';
 import BlogMain from './components/common/BlogMain'
 import YouTubePlayer from './components/common/YouTubePlayer';
@@ -50,39 +41,27 @@ export default function Home() {
     };
   }, []);
 
-  const cardVariants = {
-    initial: { opacity: 0, x: "100%" },
-    animate: { opacity: 1, x: "0%" },
-    exit: { opacity: 0, x: "-100%" },
-  };
 
-  const sliderSettings = {
-    dots: false,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    autoplay: true,
-    autoplaySpeed: 5000,
-  };
+
+ 
   const [currentVideoIndex, setCurrentVideoIndex] = useState(0);
   const videoIds = [
-{videoId :"JcnaXJftxaU"},
-{videoId :"WzGJFZ_Ta7g"},
-{videoId :"m3G4gNBxWhs"},
-{videoId :"qQwOOPC2wbQ"},
-{videoId :"riA-6duFCGQ"},
-{videoId :"G8-Mg4Agz4w"},
-{videoId :"JRreFjk6nZs"},
+    { videoId: "JcnaXJftxaU" },
+    { videoId: "WzGJFZ_Ta7g" },
+    { videoId: "m3G4gNBxWhs" },
+    { videoId: "qQwOOPC2wbQ" },
+    { videoId: "riA-6duFCGQ" },
+    { videoId: "G8-Mg4Agz4w" },
+    { videoId: "JRreFjk6nZs" },
 
   ]
 
-  
+
   const handleNextVideo = () => {
 
     setCurrentVideoIndex((prevIndex) => (prevIndex + 1) % videoIds.length);
- console.log("handleNextVideo clicked!!!");
- 
+    console.log("handleNextVideo clicked!!!");
+
   };
 
   const handlePrevVideo = () => {
@@ -135,13 +114,13 @@ export default function Home() {
         </div>
         <div className="">
           <YouTubePlayer
-            videoId= {videoIds[currentVideoIndex].videoId}
-            
+            videoId={videoIds[currentVideoIndex].videoId}
+
           />
-             <div className="flex justify-center my-4">
-          <Button onClick={handlePrevVideo} className="mr-2 bg-red-400 w-[6rem]">Previous</Button>
-          <Button onClick={handleNextVideo} className='bg-green-400 w-[6rem]'>Next</Button>
-        </div>
+          <div className="flex justify-center my-4">
+            <Button onClick={handlePrevVideo} className="mr-2 bg-red-400 w-[6rem]">Previous</Button>
+            <Button onClick={handleNextVideo} className='bg-green-400 w-[6rem]'>Next</Button>
+          </div>
         </div>
         <div >
           <Footer />
