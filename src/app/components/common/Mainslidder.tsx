@@ -51,7 +51,7 @@ const FreeStyle = () => {
     return () => {
       clearInterval(interval);
     };
-  }, []);
+  }, [slides.length]);
 
   const cardVariants = {
     initial: { opacity: 0, x: "100%" },

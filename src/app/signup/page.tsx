@@ -65,7 +65,7 @@ username: "",
         return () => {
             document.removeEventListener("keydown", handleKeyPress);
         };
-    }, []);
+    }, [handleKeyPress]);
     return(
         <div className="flex bg-black text-white flex-col items-center justify-center min-h-screen py-2">
            <div className="flex gap-4"> <h1 className="">

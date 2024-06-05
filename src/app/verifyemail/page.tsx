@@ -9,16 +9,7 @@ const Page = () => {
     const [verified, setVerified] = useState(false)
     const [error, setError] = useState(false)
 
-    const verifyUserEmail = async () => {
-        try {
-            await axios.post('/api/users/verifyemail', { token })
-            setVerified(true)
-        } catch (error: any) {
-            setError(true)
-            console.log(error.response.data);
-
-        }
-    }
+   
 
     useEffect(() => {
         const urlToken = window.location.search.split("=")
@@ -28,9 +19,19 @@ const Page = () => {
 
     useEffect(() => {
         if (token.length > 0) {
+            const verifyUserEmail = async () => {
+                try {
+                    await axios.post('/api/users/verifyemail', { token })
+                    setVerified(true)
+                } catch (error: any) {
+                    setError(true)
+                    console.log(error.response.data);
+        
+                }
+            }
             verifyUserEmail();
         }
-    }, [token])
+    }, [ token])
 
 
     return (

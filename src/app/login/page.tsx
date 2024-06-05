@@ -48,18 +48,34 @@ export default function LoginPage() {
         }
     };
 
+   
+
     const handleKeyPress = useCallback((event:any) => {
         if (event.key === "Enter") {
+            const onLogin = async () => {
+                try {
+                    setLoading(true);
+                    const response = await axios.post("api/users/login", user);
+                    console.log("Login success", response.data);
+                    toast.success("Login success");
+                    router.push("/profile");
+                } catch (error:any) {
+                    console.log("Login Failed", error.message);
+                    toast.error(error.message);
+                } finally {
+                    setLoading(false);
+                }
+            };
             onLogin();
         }
-    }, [user]); // Add `user` as dependency
+    }, [router]); // Add `user` as dependency
 
     useEffect(() => {
-        document.addEventListener("keydown", handleKeyPress);
+        document.addEventListener("keypress", handleKeyPress);
         return () => {
-            document.removeEventListener("keydown", handleKeyPress);
+            document.removeEventListener("keypress", handleKeyPress);
         };
-    }, [handleKeyPress]);
+    });
 
     return (
         <div className="flex bg-[#80847c] text-white flex-col items-center justify-center min-h-screen py-2">
