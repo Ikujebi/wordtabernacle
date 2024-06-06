@@ -7,7 +7,7 @@ import Link from "next/link";
 import wordlogo from '../../img/wordlogo.png'
 import  { useState,FC } from 'react';
 import { useRouter } from "next/navigation";
-import { FaFacebookF, FaInstagram, FaTwitter, FaYoutube } from "react-icons/fa";
+import { FaFacebookF, FaInstagram, FaTwitter, FaYoutube,FaTiktok,FaTelegram   } from "react-icons/fa";
 
 const Header: FC = () => {
     let routes = useRouter();
@@ -29,22 +29,28 @@ const Header: FC = () => {
                         </span>
                     </div>
                     <div className="flex items-center text-gray-600 text-sm">
-                        <div className="md:w-8 lg:w-8 xl:w-8 2xl:w-8 w-6 md:h-8 lg:h-8 xl:h-8 2xl:h-8 h-6 bg-red-600 rounded-full flex items-center justify-center">
+                        <Link href={"https://x.com/wordtabernaclen"} className="md:w-8 lg:w-8 xl:w-8 2xl:w-8 w-6 md:h-8 lg:h-8 xl:h-8 2xl:h-8 h-6 bg-red-600 rounded-full flex items-center justify-center">
                             <FaTwitter className="text-white text-lg" />
-                        </div>
-                        <div className="md:w-8 lg:w-8 xl:w-8 2xl:w-8 w-6 md:h-8 lg:h-8 xl:h-8 2xl:h-8 h-6 bg-red-600 rounded-full flex items-center justify-center">
+                        </Link>
+                        <Link href={"https://www.instagram.com/wordtabernacleng/"} className="md:w-8 lg:w-8 xl:w-8 2xl:w-8 w-6 md:h-8 lg:h-8 xl:h-8 2xl:h-8 h-6 bg-red-600 rounded-full flex items-center justify-center">
                             <FaInstagram className="text-white text-lg" />
-                        </div>
-                        <div className="md:w-8 lg:w-8 xl:w-8 2xl:w-8 w-6 md:h-8 lg:h-8 xl:h-8 2xl:h-8 h-6 bg-red-600 rounded-full flex items-center justify-center">
+                        </Link>
+                        <Link href={"https://www.facebook.com/wordtabernacle"} className="md:w-8 lg:w-8 xl:w-8 2xl:w-8 w-6 md:h-8 lg:h-8 xl:h-8 2xl:h-8 h-6 bg-red-600 rounded-full flex items-center justify-center">
                             <FaFacebookF className="text-white text-lg" />
-                        </div>
-                        <div className="md:w-8 lg:w-8 xl:w-8 2xl:w-8 w-6 md:h-8 lg:h-8 xl:h-8 2xl:h-8 h-6 bg-red-600 rounded-full flex items-center justify-center">
+                        </Link>
+                        <Link href={"https://www.youtube.com/@wordtabernacleng"} className="md:w-8 lg:w-8 xl:w-8 2xl:w-8 w-6 md:h-8 lg:h-8 xl:h-8 2xl:h-8 h-6 bg-red-600 rounded-full flex items-center justify-center">
                             <FaYoutube className="text-white text-lg" />
-                        </div>
-                        <div className="ml-2 flex items-center">
+                        </Link>
+                        <Link href={"https://www.tiktok.com/@wordtabernacleng"} className="md:w-8 lg:w-8 xl:w-8 2xl:w-8 w-6 md:h-8 lg:h-8 xl:h-8 2xl:h-8 h-6 bg-red-600 rounded-full flex items-center justify-center">
+                            <FaTiktok  className="text-white text-lg" />
+                        </Link>
+                        <Link href={"https://t.me/+ufId9mRBMlVlMzY8"} className="md:w-8 lg:w-8 xl:w-8 2xl:w-8 w-6 md:h-8 lg:h-8 xl:h-8 2xl:h-8 h-6 bg-red-600 rounded-full flex items-center justify-center">
+                            <FaTelegram  className="text-white text-lg" />
+                        </Link>
+                        <a href={"mailto:wordtabernaclebc@gmail.com"} className="ml-2 flex items-center">
                             <MdEmail />
-                            <span className="ml-1">wordtabernacle@gmail.com</span>
-                        </div>
+                            <span className="ml-1">wordtabernaclebc@gmail.com</span>
+                        </a>
                     </div>
                 </div>
                 <div className="hidden md:block lg:block xl:block 2xl:block">
@@ -71,7 +77,7 @@ const Header: FC = () => {
                                     About
                                 </button>
                                 <div className={`absolute top-full left-0 mt-2 w-[500%] bg-white border border-gray-200 shadow-lg ${subNavDisplay}`} style={{ display: subNavDisplay }}>
-                                    <Link href={"#"} className="block px-4 py-2 text-gray-700 hover:bg-gray-100">Mission,Vision & Values</Link>
+                                    <Link href={"/mission"} className="block px-4 py-2 text-gray-700 hover:bg-gray-100">Mission,Vision & Values</Link>
                                     <Link href={"#"} className="block px-4 py-2 text-gray-700 hover:bg-gray-100">our-story</Link>
                                     <Link href={"#"} className="block px-4 py-2 text-gray-700 hover:bg-gray-100">Executive Leadership</Link>
                                 </div>
@@ -115,7 +121,16 @@ const Header: FC = () => {
                             <span className="ml-1">Online</span>
                         </div>
                     </Link>
-                    <Link href={"#"}>About</Link>
+                    <div className="relative">
+                                <Button onClick={toggleSubNav} className="flex items-center">
+                                    About
+                                </Button>
+                                <div className={`absolute top-full left-0 mt-2 w-[500%] bg-white border border-gray-200 shadow-lg ${subNavDisplay}`} style={{ display: subNavDisplay }}>
+                                    <Link href={"/mission"} className="block px-4 py-2 text-gray-700 hover:bg-gray-100">Mission,Vision & Values</Link>
+                                    <Link href={"#"} className="block px-4 py-2 text-gray-700 hover:bg-gray-100">our-story</Link>
+                                    <Link href={"#"} className="block px-4 py-2 text-gray-700 hover:bg-gray-100">Executive Leadership</Link>
+                                </div>
+                            </div>
                     <Link href={"#"}>Contact</Link>
                     <Link href={"#"}>Community</Link>
                     <Link href={"#"}>Announcement</Link>
