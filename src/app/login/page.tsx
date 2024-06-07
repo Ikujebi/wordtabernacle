@@ -68,7 +68,7 @@ export default function LoginPage() {
             };
             onLogin();
         }
-    }, [user]); // Add `user` as dependency
+    }, [user,router]); // Add `user` as dependency
 
     useEffect(() => {
         document.addEventListener("keypress", handleKeyPress);

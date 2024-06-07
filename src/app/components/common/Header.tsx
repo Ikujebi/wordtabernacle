@@ -86,7 +86,7 @@ const Header: FC = () => {
                             <Link href={"/community"}>Community</Link>
                             <Link href={"/giving"}>Giving</Link>
                             <Link href={"#"}>Announcement</Link>
-                            <Button className="text-white bg-red-600 hover:bg-red-700 m-auto rounded-lg" onClick={() => { routes.push("/login") }}>LOGIN</Button>
+                            <Button className="text-white bg-red-600 hover:!text-red-700 hover:!border-red-500 m-auto rounded-lg" onClick={() => { routes.push("/login") }}>LOGIN</Button>
                         </div>
                     </div>
                 </div>

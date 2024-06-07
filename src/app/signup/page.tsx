@@ -1,6 +1,6 @@
 "use client"
 import Link from "next/link"
-import React,{useState,useEffect} from "react"
+import React,{useState,useEffect, useCallback} from "react"
 import { useRouter } from "next/navigation"
 import  axios  from "axios"
 import toast from "react-hot-toast"
@@ -35,7 +35,8 @@ username: "",
             setButtonDisabled(true)
         }
     },[user]);
-    const onSignup = async() =>{
+
+    const onSignup = useCallback(async() =>{
         try {
             setLoading(true);
          const response =  await axios.post("/api/users/signup", user)
@@ -51,21 +52,21 @@ username: "",
         }finally{
             setLoading(false);
         }
-    }
+    },[router, user])
 
-    const handleKeyPress = (event:any) => {
-        if (event.key === "Enter") {
-            onSignup   ();
-        }
-    };
 
     // Attach event listener when component mounts
     useEffect(() => {
+        const handleKeyPress = (event:any) => {
+            if (event.key === "Enter") {
+                onSignup();
+            }
+        };
         document.addEventListener("keydown", handleKeyPress);
         return () => {
             document.removeEventListener("keydown", handleKeyPress);
         };
-    }, [handleKeyPress]);
+    }, [onSignup]);
     return(
         <div className="flex bg-black text-white flex-col items-center justify-center min-h-screen py-2">
            <div className="flex gap-4"> <h1 className="">
