@@ -79,7 +79,7 @@ const Header: FC = () => {
                                 <div className={`absolute top-full left-0 mt-2 w-[500%] bg-white border border-gray-200 shadow-lg ${subNavDisplay}`} style={{ display: subNavDisplay }}>
                                     <Link href={"/mission"} className="block px-4 py-2 text-gray-700 hover:bg-gray-100">Mission,Vision & Values</Link>
                                     <Link href={"#"} className="block px-4 py-2 text-gray-700 hover:bg-gray-100">our-story</Link>
-                                    <Link href={"#"} className="block px-4 py-2 text-gray-700 hover:bg-gray-100">Executive Leadership</Link>
+                                    <Link href={"/executive"} className="block px-4 py-2 text-gray-700 hover:bg-gray-100">Executive Leadership</Link>
                                 </div>
                             </div>
                             <Link href={"#"}>Contact</Link>
