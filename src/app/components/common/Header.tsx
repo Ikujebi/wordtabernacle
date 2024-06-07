@@ -15,9 +15,15 @@ const Header: FC = () => {
     const [subNavDisplay, setSubNavDisplay] = useState('none');
    
     const toggleSubNav = () => {
-        setSubNavDisplay(subNavDisplay === 'none' ? 'block' : 'none');
+        if (subNavDisplay === 'none') {
+            setSubNavDisplay('block');
+            setTimeout(() => {
+                setSubNavDisplay('none');
+            }, 5000);
+        } else {
+            setSubNavDisplay('none');
+        }
     };
-
 
     return (
         <div className="w-[100svw] bg-white shadow-sm fixed z-20 pb-3 mb-13 animate__animated animate__fadeInDown">
