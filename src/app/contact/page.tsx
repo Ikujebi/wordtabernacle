@@ -37,9 +37,9 @@ const Page: FC = () => {
     <h2>Phone</h2>
   </div>
   <div className='flex flex-col items-center'>
-    <p>(234) 807-318-0186</p>
-    <p>(234) 802-052-3796</p>
-    <p>(252) 442-3894 Fax</p>
+    <a href='call:+2348073180186'>(234) 807-318-0186</a>
+    <a href='call:+2348020523796'>(234) 802-052-3796</a>
+    <a href='whatsApp:+2348073180186'>(252) 442-3894 Fax</a>
   </div>
 </article>
 <article className='flex flex-col items-center pt-[3%]'>
