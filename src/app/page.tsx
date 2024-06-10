@@ -25,7 +25,7 @@ export default function Home() {
  
   const [currentVideoIndex, setCurrentVideoIndex] = useState(0);
   const videoIds = [
-    { videoId: "JcnaXJftxaU" },
+    { videoId: "iIOu9nboLek?si" },
     { videoId: "oNUt9WAKq8Y" },
     { videoId: "WzGJFZ_Ta7g" },
     { videoId: "m3G4gNBxWhs" },
