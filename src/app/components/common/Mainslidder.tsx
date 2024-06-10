@@ -94,7 +94,7 @@ const FreeStyle = () => {
               className="w-full  object-cover mb-4 xl:h-[40rem] 2xl:h-[40rem] lg:h-[30rem] md:h-[33rem] h-[17rem]"
             />
             <div id='imgtext' className='absolute font-bold top-0 left-0 w-full h-full text-white text-[2.9rem] m-[5rem] 2xl:text-[5rem] 2xl:m-[10rem] md:mt-[4rem] xl:mt-[5rem] lg:mt-[4rem] 2xl:mt-[10rem] mt-[3.4rem]'>
-              <h2>The Word</h2>
+              <h2>Word</h2>
               <h2>Tabernacle</h2>
               <p className='text-[1.1rem] font-normal'>Building word practitioners...</p>
               <div>
