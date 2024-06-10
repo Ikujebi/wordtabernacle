@@ -1,5 +1,5 @@
 import choir from '../common/../../img/choir.webp';
-import cardimg from '../common/../../img/youthpreacher.webp';
+import cardimg from '../common/../../img/minab.jpg';
 import cardimg2 from '../common/../../img/testimony.webp';
 
 const Community = () => {

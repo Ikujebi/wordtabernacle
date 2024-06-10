@@ -8,11 +8,11 @@ import pastor1 from '../../img/pastor.webp'
 import pastor2 from '../../img/pastor2.webp'
 import choir from '../../img/choir.webp'
 import drama from '../../img/drama.webp'
-import certa1 from '../../img/serious.jpg'
+import certa1 from '../../img/aerial.jpeg'
 import ayanfe from '../../img/ayanfe.webp'
-import kenny from '../../img/kenny.webp'
+import kenny from '../../img/miralight.webp'
 import yportal from '../../img/yoth1.webp'
-import testimony from '../../img/testimony.webp'
+import testimony from '../../img/emmasings.webp'
 import Image from 'next/image';
 import { FaUserAlt, FaChalkboardTeacher, FaChurch } from 'react-icons/fa';
 import { MdCardGiftcard } from 'react-icons/md';
@@ -91,7 +91,7 @@ const FreeStyle = () => {
               height={600}
               src={item.image}
               alt="service"
-              className="w-full  object-cover mb-4 xl:h-[40rem] 2xl:h-[40rem] lg:h-[30rem] md:h-[33rem] h-[17rem]"
+              className="w-full   mb-4 xl:h-[40rem] 2xl:h-[40rem] lg:h-[30rem] md:h-[33rem] h-[17rem]"
             />
             <div id='imgtext' className='absolute font-bold top-0 left-0 w-full h-full text-white text-[2.9rem] m-[5rem] 2xl:text-[5rem] 2xl:m-[10rem] md:mt-[4rem] xl:mt-[5rem] lg:mt-[4rem] 2xl:mt-[10rem] mt-[3.4rem]'>
               <h2>Word</h2>
@@ -107,9 +107,9 @@ const FreeStyle = () => {
     </Slider>
   </div>
       <div id='imgnav' className="absolute shadow-sm rounded-md lg:mt-[36rem] xl:mt-[36rem] 2xl:mt-[43rem] z-30 mt-[27rem] md:mt-[36rem] lg:w-[70%] xl:w-[70%] md:w-[70%] mx-auto 2xl:w-3/5   pt-[1.25rem]  lg:pt-[2.125rem] px-[1.25rem] lg:pl-[2.5rem] lg:pr-[1.25rem] md:pb-[2.375rem] lg:pb-[2.375rem] xl:pb-[2.375rem] 2xl:pb-[2.375rem] bg-white   mb-[2.5rem]">
-      <div className="ml-[1.25rem] lg:ml-0">
+      <h2 className="ml-[1.25rem] lg:ml-0 pb-3">
         QUICK LINKS
-      </div>
+      </h2>
       <div className="flex justify-between flex-wrap gap1">
         <div className="flex items-center">
           <div className="flex w-5 lg:w-[2.8125rem] xl:w-[2.8125rem] 2xl:w-[2.8125rem] md:w-[2.8125rem] h-6 lg:h-[2.8125rem] xl:h-[2.8125rem] 2xl:h-[2.8125rem] md:h-[2.8125rem] bg-[#FFF0F0] rounded-[0.3125rem] justify-center items-center">
