@@ -25,10 +25,10 @@ const Page: FC = () => {
             <span className='block absolute bottom-1 left-1/2 transform -translate-x-1/2 w-[100%] h-[4px] bg-white'></span>
           </h2>
         </div>
-        <section className='flex  gap-[3rem] justify-center bg-red-300 h-[60svh]'>
+        <section className='flex  gap-[3rem]  justify-center bg-red-300 h-[60svh]'>
           <div className='flex w-[80%] '>
-         <section className='bg-white mt-[-1rem] relative z-100 flex h-[30%]  justify-center w-full gap-10'>
-<article className='flex flex-col items-center pt-[3%]'>
+         <section className='bg-white mt-[-1rem]  relative z-100 flex h-[30%]  justify-center w-full gap-10 2xl:gap-[10rem]'>
+<article className='flex flex-col items-center pt-[3%] bg-green-300'>
   <div>
   <FaPhoneAlt className='text-[2rem]'/>
 
@@ -42,7 +42,7 @@ const Page: FC = () => {
     <a href='whatsApp:+2348073180186'>(252) 442-3894 Fax</a>
   </div>
 </article>
-<article className='flex flex-col items-center pt-[3%]'>
+<article className='flex flex-col items-center pt-[3%] bg-gray-300'>
   <div >
   <FaMapMarkerAlt  className='text-[2rem]'/>
 
@@ -56,7 +56,7 @@ const Page: FC = () => {
     <p>ibeshe,ikorodu,LG</p>
   </div>
 </article>
-<article className='flex flex-col items-center pt-[3%]'>
+<article className='flex flex-col items-center pt-[3%] bg-blue-300'>
 <div>
   <MdEmail className='text-[2rem]'/>
 
