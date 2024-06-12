@@ -72,6 +72,7 @@ const FreeStyle = () => {
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen w-screen">
+<<<<<<< Updated upstream
       <div className="container my-[9rem] w-full relative">
         <div className="absolute inset-0 bg-black opacity-50 pointer-events-none z-10 h-[97%] 2xl:h-[97.92%]"></div>{" "}
         {/* New div for shadow */}
@@ -110,6 +111,35 @@ const FreeStyle = () => {
                     </button>
                   </div>
                 </div>
+=======
+  <div className="container my-[9rem] w-full relative">
+    <div className="absolute inset-0 bg-black opacity-50 pointer-events-none z-10 h-[97%] 2xl:h-[98.3%]"></div> {/* New div for shadow */}
+    <Slider {...sliderSettings}>
+      {slides.map((item, itemIndex) => (
+        <motion.div
+          initial="initial"
+          animate="animate"
+          exit="exit"
+          variants={cardVariants}
+          transition={{ duration: 0.5 }}
+          key={itemIndex}
+          className="flex justify-center items-center relative z-20"
+        >
+          <div className="relative flex flex-col items-center justify-center w-full">
+            <Image
+              width={2000}
+              height={600}
+              src={item.image}
+              alt="service"
+              className="w-full  mb-4 xl:h-[40rem] 2xl:h-[40rem] lg:h-[30rem] md:h-[33rem] h-[17rem]"
+            />
+            <div id='imgtext' className='absolute font-bold top-0 left-0 w-full h-full text-white text-[2.9rem] m-[5rem] 2xl:text-[5rem] 2xl:m-[10rem] md:mt-[4rem] xl:mt-[5rem] lg:mt-[4rem] 2xl:mt-[10rem] mt-[3.4rem]'>
+              <h2>The Word</h2>
+              <h2>Tabernacle</h2>
+              <p className='text-[1.1rem] font-normal'>Building word practitioners...</p>
+              <div>
+                <button className='text-[1.1rem] font-normal mt-5 bg-red-500 hover:bg-red-700 md:w-[8rem] lg:w-[8rem] xl:w-[8rem] 2xl:w-[8rem] h-[2rem] md:h-[3rem] lg:h-[3rem] xl:h-[3rem] 2xl:h-[3rem] w-[5rem] text-white ml-3'>JOIN US</button>
+>>>>>>> Stashed changes
               </div>
             </motion.div>
           ))}
