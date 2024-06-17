@@ -129,18 +129,18 @@ const Page: FC = () => {
             </article>
           </section>
         </div>
-        <section className=" h-[60svh] flex justify-center mt-10">
+        <section className=" h-[60svh] flex justify-center ">
           <form
             onSubmit={handleSubmit}
-            className="border-[2px] border-gray-700 md:w-[60%] lg:w-[60%] xl:w-[60%] 2xl:w-[60%] shadow-xl pt-[5%]"
+            className="border-[2px] border-gray-700 md:w-[60%] lg:w-[60%] xl:w-[60%] 2xl:w-[60%] shadow-xl pt-[2%] mt-[5%]"
           >
             <article>
               <h2 className="flex justify-center py-[3%]  text-2xl font-semibold">
                 Contact us
               </h2>
-              <article className="md:flex lg:flex xl:flex 2xl:flex mx-[2rem]">
-                <div className=" w-[100%] mt-2">
-                  <label htmlFor="firstName" className="w-[45%]">
+              <article className="md:flex lg:flex xl:flex 2xl:flex mx-[2rem] justify-center gap-[3%]">
+                <div className=" w-[45%] mt-2">
+                  <label htmlFor="firstName" className="">
                     First name
                   </label>
                   <input
@@ -149,11 +149,11 @@ const Page: FC = () => {
                     name="firstName"
                     onChange={handleChange}
                     placeholder="First name"
-                    className="pl-1 block border-[1px] border-black outline-none "
+                    className="pl-1 block border-[1px] border-black outline-none w-[100%]"
                   />
                 </div>
                 <div className="w-[45%] mt-2">
-                  <label htmlFor="lastName" className="w-[45%] mt-2">
+                  <label htmlFor="lastName" className=" mt-2 ">
                     Last name
                   </label>
                   <input
@@ -162,12 +162,12 @@ const Page: FC = () => {
                     value={formData.lastName}
                     onChange={handleChange}
                     placeholder="Last name"
-                    className="pl-1 block border-[1px] border-black outline-none "
+                    className="pl-1 block border-[1px] border-black outline-none w-[100%]"
                   />
                 </div>
               </article>
-              <article className="md:flex lg:flex xl:flex 2xl:flex mx-[2rem] mt-[5%]">
-                <div className=" w-[100%] mt-2">
+              <article className="md:flex lg:flex xl:flex 2xl:flex mx-[2rem] mt-[5%] justify-center gap-[3%]">
+                <div className=" w-[45%] mt-2">
                   <label htmlFor="email" className="w-[45%]">
                     Email *
                   </label>
@@ -177,7 +177,7 @@ const Page: FC = () => {
                     name="email"
                     value={formData.email}
                     onChange={handleChange}
-                    className="pl-1 block border-[1px] border-black outline-none"
+                    className="pl-1 block border-[1px] border-black outline-none w-[100%]"
                   />
                 </div>
                 <div className="w-[45%] mt-2">
@@ -190,11 +190,12 @@ const Page: FC = () => {
                     name="phone"
                     value={formData.phone}
                     onChange={handleChange}
-                    className="pl-1 block border-[1px] border-black outline-none"
+                    className="pl-1 block border-[1px] border-black outline-none w-[100%]"
                   />
                 </div>
               </article>
-              <article className=" mx-[2rem] mt-[5%]">
+              <article className=" mx-[2rem] mt-[5%] flex flex-col items-center">
+               <div className="w-[94%]">
                 <label htmlFor="message">Message *</label>
                 <textarea
                   name="message"
@@ -204,10 +205,11 @@ const Page: FC = () => {
                   id=""
                   className="p-2 h-[10rem] mt-2 w-full block border-[1px] border-black outline-none"
                 ></textarea>
+                </div>
               </article>
               <button
                 type="submit"
-                className="w-full py-2 mt-4 bg-blue-500 text-white"
+                className="w-[30%] py-2 mt-1 bg-red-700 text-white ml-[10%] mt-[5%]"
               >
                 Submit
               </button>

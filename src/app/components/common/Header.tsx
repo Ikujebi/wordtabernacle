@@ -13,6 +13,8 @@ const Header: FC = () => {
     let routes = useRouter();
     let [display, changeDisplay] = useState('none')
     const [subNavDisplay, setSubNavDisplay] = useState('none');
+    const [missionNav, setmissionNav] = useState('none');
+
    
     const toggleSubNav = () => {
         if (subNavDisplay === 'none') {
@@ -89,7 +91,18 @@ const Header: FC = () => {
                                 </div>
                             </div>
                             <Link href={"/contact"}>Contact</Link>
-                            <Link href={"/community"}>Community</Link>
+                            <div className="relative">
+                                <button onClick={toggleSubNav} className="flex items-center">
+                                MINISTRIES
+                                </button>
+                                <div className={`absolute top-full left-0 mt-2 w-[500%] bg-white border border-gray-200 shadow-lg ${subNavDisplay}`} style={{ display: subNavDisplay }}>
+                                    <Link href={"/mission"} className="block px-4 py-2 text-gray-700 hover:bg-gray-100">EMER GENZ</Link>
+                                    <Link href={"#"} className="block px-4 py-2 text-gray-700 hover:bg-gray-100">TEENS</Link>
+                                    <Link href={"/executive"} className="block px-4 py-2 text-gray-700 hover:bg-gray-100">CHILDREN</Link>
+                                    <Link href={"/executive"} className="block px-4 py-2 text-gray-700 hover:bg-gray-100">WOMEN</Link>
+                                    <Link href={"/executive"} className="block px-4 py-2 text-gray-700 hover:bg-gray-100">MEN</Link>
+                                </div>
+                            </div>
                             <Link href={"/giving"}>Giving</Link>
                             <Link href={"#"}>Announcement</Link>
                             <Button className="text-white bg-red-600 hover:!text-red-700 hover:!border-red-500 m-auto rounded-lg" onClick={() => { routes.push("/login") }}>LOGIN</Button>
