@@ -132,7 +132,7 @@ const Page: FC = () => {
         <section className=" h-[60svh] flex justify-center ">
           <form
             onSubmit={handleSubmit}
-            className="border-[2px] border-gray-700 md:w-[60%] lg:w-[60%] xl:w-[60%] 2xl:w-[60%] shadow-xl pt-[2%] mt-[5%]"
+            className="border-[2px] border-gray-400 shadow-md md:w-[60%] lg:w-[60%] xl:w-[60%] 2xl:w-[60%] shadow-xl pt-[2%] mt-[5%]"
           >
             <article>
               <h2 className="flex justify-center py-[3%]  text-2xl font-semibold">
@@ -209,7 +209,7 @@ const Page: FC = () => {
               </article>
               <button
                 type="submit"
-                className="w-[30%] py-2 mt-1 bg-red-700 text-white ml-[10%] mt-[5%]"
+                className="w-[30%] py-2 mt-1 bg-red-700 text-white ml-[10%] mt-[2.5%]"
               >
                 Submit
               </button>
