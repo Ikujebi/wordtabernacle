@@ -132,14 +132,14 @@ const Page: FC = () => {
         <section className="h-[60svh] 2xl:h-[80svh] flex justify-center 2xl:mb-[5%]">
           <form
             onSubmit={handleSubmit}
-            className="border-[2px] border-gray-400 shadow-md md:w-[60%] lg:w-[60%] xl:w-[60%] 2xl:w-[60%] shadow-xl pt-[2%] mt-[5%] 2xl:h-[70svh] 2xl:mb-[3%]"
+            className="border-[2px] w-full border-gray-400 shadow-md md:w-[60%] lg:w-[60%] xl:w-[60%] 2xl:w-[60%] shadow-xl pt-[2%] mt-[5%] 2xl:h-[70svh] 2xl:mb-[3%]"
           >
             <article>
               <h2 className="flex justify-center py-[3%]  text-2xl font-semibold">
                 Contact us
               </h2>
               <article className="md:flex lg:flex xl:flex 2xl:flex mx-[2rem] justify-center gap-[3%]">
-                <div className=" w-[45%] mt-2">
+                <div className=" md:w-[45%] lg:w-[45%] xl:w-[45%] 2xl:w-[45%]  mt-2">
                   <label htmlFor="firstName" className="">
                     First name
                   </label>
@@ -149,10 +149,10 @@ const Page: FC = () => {
                     name="firstName"
                     onChange={handleChange}
                     placeholder="First name"
-                    className="pl-1 block border-[1px] border-black outline-none w-[100%]"
+                    className="pl-1 block border-[1px] border-gray-500 outline-none w-[100%]"
                   />
                 </div>
-                <div className="w-[45%] mt-2">
+                <div className="md:w-[45%] lg:w-[45%] xl:w-[45%] 2xl:w-[45%] mt-2">
                   <label htmlFor="lastName" className=" mt-2 ">
                     Last name
                   </label>
@@ -162,12 +162,12 @@ const Page: FC = () => {
                     value={formData.lastName}
                     onChange={handleChange}
                     placeholder="Last name"
-                    className="pl-1 block border-[1px] border-black outline-none w-[100%]"
+                    className="pl-1 block border-[1px] border-gray-500 outline-none w-[100%]"
                   />
                 </div>
               </article>
               <article className="md:flex lg:flex xl:flex 2xl:flex mx-[2rem] mt-[5%] justify-center gap-[3%]">
-                <div className=" w-[45%] mt-2">
+                <div className="md:w-[45%] lg:w-[45%] xl:w-[45%] 2xl:w-[45%] mt-2">
                   <label htmlFor="email" className="w-[45%]">
                     Email *
                   </label>
@@ -177,10 +177,10 @@ const Page: FC = () => {
                     name="email"
                     value={formData.email}
                     onChange={handleChange}
-                    className="pl-1 block border-[1px] border-black outline-none w-[100%]"
+                    className="pl-1 block border-[1px] border-gray-500 outline-none w-[100%]"
                   />
                 </div>
-                <div className="w-[45%] mt-2">
+                <div className="md:w-[45%] lg:w-[45%] xl:w-[45%] 2xl:w-[45%] mt-2">
                   <label htmlFor="lastName" className="w-[45%] mt-2">
                     Phone
                   </label>
@@ -190,7 +190,7 @@ const Page: FC = () => {
                     name="phone"
                     value={formData.phone}
                     onChange={handleChange}
-                    className="pl-1 block border-[1px] border-black outline-none w-[100%]"
+                    className="pl-1 block border-[1px] border-gray-500 outline-none w-[100%]"
                   />
                 </div>
               </article>
@@ -203,7 +203,7 @@ const Page: FC = () => {
                   value={formData.message}
                   onChange={handleChange}
                   id=""
-                  className="p-2 h-[10rem] mt-2 w-full block border-[1px] border-black outline-none"
+                  className="p-2 h-[5rem] md:h-[10rem] lg:h-[10rem] xl:h-[10rem] 2xl:h-[10rem] mt-2 w-full block border-[1px] border-gray-500 outline-none"
                 ></textarea>
                 </div>
               </article>
@@ -221,7 +221,7 @@ const Page: FC = () => {
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3963.711954552398!2d3.474328075840481!3d6.557999393435149!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x103bf2726b345a27%3A0xeb8c1cd955070248!2sWord%20Tabernacle%20Bible%20Church!5e0!3m2!1sen!2sng!4v1718294118256!5m2!1sen!2sng"
             width="700"
             height="450"
-            className="w-[65%] 2xl:h-[40rem]"
+            className="md:w-[65%] lg:w-[65%] xl:w-[65%] 2xl:w-[65%] w-[99%] 2xl:h-[40rem]"
             loading="lazy"
             style={{ border: 0 }}
             allowFullScreen={false}
