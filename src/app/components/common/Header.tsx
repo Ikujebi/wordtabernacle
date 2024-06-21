@@ -118,7 +118,7 @@ const Header: FC = () => {
                                 </button>
                                 {ministryNavVisible && (
                                     <div className="absolute top-full left-0 mt-2 w-[500%] bg-white border border-gray-200 shadow-lg">
-                                        <Link href={"/genz"} className="block px-4 py-2 text-gray-700 hover:bg-gray-100">EMER GENZ</Link>
+                                        <Link href={"/emergenz"} className="block px-4 py-2 text-gray-700 hover:bg-gray-100">EMER GENZ</Link>
                                         <Link href={"#"} className="block px-4 py-2 text-gray-700 hover:bg-gray-100">Teens</Link>
                                         <Link href={"/executive"} className="block px-4 py-2 text-gray-700 hover:bg-gray-100">Children</Link>
                                         <Link href={"/executive"} className="block px-4 py-2 text-gray-700 hover:bg-gray-100">Women</Link>
