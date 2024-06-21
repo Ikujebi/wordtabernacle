@@ -1,38 +1,59 @@
-"use client"
-import {     Button } from "antd"
+"use client";
+import { Button } from "antd";
 import Image from "next/image";
 import { MdClose, MdEmail, MdMenu, MdOndemandVideo } from 'react-icons/md';
 import 'animate.css';
 import Link from "next/link";
-import wordlogo from '../../img/wordlogo.png'
-import  { useState,FC } from 'react';
+import wordlogo from '../../img/wordlogo.png';
+import { useState, FC , useRef, useEffect} from 'react';
 import { useRouter } from "next/navigation";
-import { FaFacebookF, FaInstagram, FaTwitter, FaYoutube,FaTiktok,FaTelegram   } from "react-icons/fa";
+import { FaFacebookF, FaInstagram, FaTwitter, FaYoutube, FaTiktok, FaTelegram } from "react-icons/fa";
 
 const Header: FC = () => {
-    let routes = useRouter();
-    let [display, changeDisplay] = useState('none')
-    const [subNavDisplay, setSubNavDisplay] = useState('none');
-    const [missionNav, setmissionNav] = useState('none');
+    const router = useRouter();
+    const [mobileMenuVisible, setMobileMenuVisible] = useState(false);
+    const [subNavVisible, setSubNavVisible] = useState(false);
+    const [ministryNavVisible, setMinistryNavVisible] = useState(false);
 
-   
+    const subNavRef = useRef<HTMLDivElement>(null);
+    const ministryNavRef = useRef<HTMLDivElement>(null);
+    
     const toggleSubNav = () => {
-        if (subNavDisplay === 'none') {
-            setSubNavDisplay('block');
-            setTimeout(() => {
-                setSubNavDisplay('none');
-            }, 5000);
-        } else {
-            setSubNavDisplay('none');
+        setSubNavVisible(!subNavVisible);
+        setMinistryNavVisible(false);
+    };
+
+    const toggleMinistryNav = () => {
+        setMinistryNavVisible(!ministryNavVisible);
+        setSubNavVisible(false); 
+    };
+
+    const toggleMobileMenu = () => {
+        setMobileMenuVisible(!mobileMenuVisible);
+    };
+
+    const handleClickOutside = (event:any) => {
+        if (subNavRef.current && !subNavRef.current.contains(event.target)) {
+            setSubNavVisible(false);
+        }
+        if (ministryNavRef.current && !ministryNavRef.current.contains(event.target)) {
+            setMinistryNavVisible(false);
         }
     };
 
+    useEffect(() => {
+        document.addEventListener('mousedown', handleClickOutside);
+        return () => {
+            document.removeEventListener('mousedown', handleClickOutside);
+        };
+    }, []);
+
     return (
-        <div className="w-[100svw] bg-white shadow-sm fixed z-20 pb-3 mb-13 animate__animated animate__fadeInDown">
-            <div className="w-full ">
-                <div className="h-10 gap-5 bg-white border-b border-gray-200 flex lg:px-14 xl:px-14 2xl:px-14  md:px-14 justify-between">
+        <div className="w-full bg-white shadow-sm fixed z-20 pb-3 mb-13 animate__animated animate__fadeInDown">
+            <div className="w-full">
+                <div className="h-10 gap-5 bg-white border-b border-gray-200 flex lg:px-14 xl:px-14 2xl:px-14 md:px-14 justify-between">
                     <div className="mt-2">
-                        <span className="text-red-600 font-semibold text-[1.2rem] ">
+                        <span className="text-red-600 font-semibold text-[1.2rem]">
                             <Link href={"/login"}>Login</Link>
                         </span>
                     </div>
@@ -50,10 +71,10 @@ const Header: FC = () => {
                             <FaYoutube className="text-white text-lg" />
                         </Link>
                         <Link href={"https://www.tiktok.com/@wordtabernacleng"} className="md:w-8 lg:w-8 xl:w-8 2xl:w-8 w-6 md:h-8 lg:h-8 xl:h-8 2xl:h-8 h-6 bg-red-600 rounded-full flex items-center justify-center">
-                            <FaTiktok  className="text-white text-lg" />
+                            <FaTiktok className="text-white text-lg" />
                         </Link>
                         <Link href={"https://t.me/+ufId9mRBMlVlMzY8"} className="md:w-8 lg:w-8 xl:w-8 2xl:w-8 w-6 md:h-8 lg:h-8 xl:h-8 2xl:h-8 h-6 bg-red-600 rounded-full flex items-center justify-center">
-                            <FaTelegram  className="text-white text-lg" />
+                            <FaTelegram className="text-white text-lg" />
                         </Link>
                         <a href={"mailto:wordtabernaclebc@gmail.com"} className="ml-2 flex items-center">
                             <MdEmail />
@@ -62,102 +83,116 @@ const Header: FC = () => {
                     </div>
                 </div>
                 <div className="hidden md:block lg:block xl:block 2xl:block">
-                    <div id="nav" className="h-10 w-[100svw] flex mt-10 justify-between px-14">
+                    <div id="nav" className="h-10 w-full flex mt-10 justify-between px-14">
                         <div>
                             <Link href={"/"}>
                                 <div className="flex gap-1">
-                                    <div className="">
-                                        <Image alt="church logo" width={300} height={100} src={wordlogo} className="h-10 w-10" />
-                                    </div>
-                                    <span className="font-semibold  text-red-600 mt-3">WORD TABERNACLE</span>
+                                    <Image alt="church logo" width={300} height={100} src={wordlogo} className="h-10 w-10" />
+                                    <span className="font-semibold text-red-600 mt-3">WORD TABERNACLE</span>
                                 </div>
                             </Link>
                         </div>
                         <div className="flex items-center gap-5">
                             <Link href={"#"}>
-                                <div className="flex">
+                                <div className="flex items-center">
                                     <MdOndemandVideo />
                                     <span className="ml-1">Online</span>
                                 </div>
                             </Link>
-                            <div className="relative">
+                            <div className="relative" ref={subNavRef}>
                                 <button onClick={toggleSubNav} className="flex items-center">
                                     About
                                 </button>
-                                <div className={`absolute top-full left-0 mt-2 w-[500%] bg-white border border-gray-200 shadow-lg ${subNavDisplay}`} style={{ display: subNavDisplay }}>
-                                    <Link href={"/mission"} className="block px-4 py-2 text-gray-700 hover:bg-gray-100">Mission,Vision & Values</Link>
-                                    <Link href={"#"} className="block px-4 py-2 text-gray-700 hover:bg-gray-100">our-story</Link>
-                                    <Link href={"/executive"} className="block px-4 py-2 text-gray-700 hover:bg-gray-100">Executive Leadership</Link>
-                                </div>
+                                {subNavVisible && (
+                                    <div className="absolute top-full left-0 mt-2 w-[500%] bg-white border border-gray-200 shadow-lg">
+                                        <Link href={"/mission"} className="block px-4 py-2 text-gray-700 hover:bg-gray-100">Mission, Vision & Values</Link>
+                                        <Link href={"#"} className="block px-4 py-2 text-gray-700 hover:bg-gray-100">Our Story</Link>
+                                        <Link href={"/executive"} className="block px-4 py-2 text-gray-700 hover:bg-gray-100">Executive Leadership</Link>
+                                    </div>
+                                )}
                             </div>
                             <Link href={"/contact"}>Contact</Link>
-                            <div className="relative">
-                                <button onClick={toggleSubNav} className="flex items-center">
-                                MINISTRIES
+                            <div className="relative" ref={ministryNavRef}>
+                                <button onClick={toggleMinistryNav} className="flex items-center">
+                                    Ministries
                                 </button>
-                                <div className={`absolute top-full left-0 mt-2 w-[500%] bg-white border border-gray-200 shadow-lg ${subNavDisplay}`} style={{ display: subNavDisplay }}>
-                                    <Link href={"/mission"} className="block px-4 py-2 text-gray-700 hover:bg-gray-100">EMER GENZ</Link>
-                                    <Link href={"#"} className="block px-4 py-2 text-gray-700 hover:bg-gray-100">TEENS</Link>
-                                    <Link href={"/executive"} className="block px-4 py-2 text-gray-700 hover:bg-gray-100">CHILDREN</Link>
-                                    <Link href={"/executive"} className="block px-4 py-2 text-gray-700 hover:bg-gray-100">WOMEN</Link>
-                                    <Link href={"/executive"} className="block px-4 py-2 text-gray-700 hover:bg-gray-100">MEN</Link>
-                                </div>
+                                {ministryNavVisible && (
+                                    <div className="absolute top-full left-0 mt-2 w-[500%] bg-white border border-gray-200 shadow-lg">
+                                        <Link href={"/genz"} className="block px-4 py-2 text-gray-700 hover:bg-gray-100">EMER GENZ</Link>
+                                        <Link href={"#"} className="block px-4 py-2 text-gray-700 hover:bg-gray-100">Teens</Link>
+                                        <Link href={"/executive"} className="block px-4 py-2 text-gray-700 hover:bg-gray-100">Children</Link>
+                                        <Link href={"/executive"} className="block px-4 py-2 text-gray-700 hover:bg-gray-100">Women</Link>
+                                        <Link href={"/executive"} className="block px-4 py-2 text-gray-700 hover:bg-gray-100">Men</Link>
+                                    </div>
+                                )}
                             </div>
                             <Link href={"/giving"}>Giving</Link>
                             <Link href={"#"}>Announcement</Link>
-                            <Button className="text-white bg-red-600 hover:!text-red-700 hover:!border-red-500 m-auto rounded-lg" onClick={() => { routes.push("/login") }}>LOGIN</Button>
+                            <Button className="text-white bg-red-600 hover:!text-red-700 hover:!border-red-500 m-auto rounded-lg" onClick={() => { router.push("/login") }}>LOGIN</Button>
                         </div>
                     </div>
                 </div>
             </div>
             <div className="items-center flex justify-between mt-5 md:hidden lg:hidden xl:hidden 2xl:hidden">
-                <Link href={"#"}>
+                <Link href={"/"}>
                     <div className="flex items-center">
-                        <Link href={"#"} className="ml-4">
-                            <Image alt="church logo" width={300} height={100} src={wordlogo} className="h-6 w-6" />
-                        </Link>
-                        <span className="font-semibold text-[.67rem] text-red-600">WORD <br /> TABERNACLE</span>
+                        <Image alt="church logo" width={300} height={100} src={wordlogo} className="h-6 w-6" />
+                        <span className="font-semibold text-[.67rem] text-red-600 ml-2">WORD<br />TABERNACLE</span>
                     </div>
                 </Link>
-                <div className=" ">
-                <Button id="openmenu" className="bg-#FFFAFA mr-2" aria-label="Open Menu" onClick={() => { changeDisplay('flex') }}>
+                <Button className="bg-white mr-2" aria-label="Open Menu" onClick={toggleMobileMenu}>
                     <MdMenu className="text-gray-700" />
                 </Button>
             </div>
-            </div>
-           
-            <div className="fixed top-0 left-0 z-20 w-screen h-screen bg-#FFFAFA flex flex-col overflow-auto" style={{ display: display }}>
-                <div className="mt-5 justify-end flex">
-                    <Button className="bg-#FFFAFA mr-6" aria-label="Close Menu" onClick={() => { changeDisplay('none') }}>
-                        <MdClose className="text-gray-700" />
-                    </Button>
-                </div>
-                <div className="flex flex-col items-center">
-                    <Link href={"/login"}>LOGIN</Link>
-                    <Link href={"#"}>
-                        <div className="flex items-center">
-                            <MdOndemandVideo />
-                            <span className="ml-1">Online</span>
-                        </div>
-                    </Link>
-                    <div className="relative">
-                                <Button onClick={toggleSubNav} className="flex items-center">
-                                    About
-                                </Button>
-                                <div className={`absolute top-full left-0 mt-2 w-[500%] bg-white border border-gray-200 shadow-lg ${subNavDisplay}`} style={{ display: subNavDisplay }}>
-                                    <Link href={"/mission"} className="block px-4 py-2 text-gray-700 hover:bg-gray-100">Mission,Vision & Values</Link>
-                                    <Link href={"#"} className="block px-4 py-2 text-gray-700 hover:bg-gray-100">our-story</Link>
+            {mobileMenuVisible && (
+                <div className="fixed top-0 left-0 z-20 w-screen h-screen bg-white flex flex-col overflow-auto">
+                    <div className="mt-5 justify-end flex">
+                        <Button className="bg-white mr-6" aria-label="Close Menu" onClick={toggleMobileMenu}>
+                            <MdClose className="text-gray-700" />
+                        </Button>
+                    </div>
+                    <div className="flex flex-col items-center">
+                        <Link href={"/login"}>LOGIN</Link>
+                        <Link href={"#"}>
+                            <div className="flex items-center">
+                                <MdOndemandVideo />
+                                <span className="ml-1">Online</span>
+                            </div>
+                        </Link>
+                        <div className="relative">
+                            <Button onClick={toggleSubNav} className="flex items-center">
+                                About
+                            </Button>
+                            {subNavVisible && (
+                                <div className="absolute top-full left-0 mt-2 w-[500%] bg-white border border-gray-200 shadow-lg">
+                                    <Link href={"/mission"} className="block px-4 py-2 text-gray-700 hover:bg-gray-100">Mission, Vision & Values</Link>
+                                    <Link href={"#"} className="block px-4 py-2 text-gray-700 hover:bg-gray-100">Our Story</Link>
                                     <Link href={"/executive"} className="block px-4 py-2 text-gray-700 hover:bg-gray-100">Executive Leadership</Link>
                                 </div>
-                            </div>
-                    <Link href={"/contact"}>Contact</Link>
-                    <Link href={"#"}>Community</Link>
-                    <Link href={"#"}>Announcement</Link>
+                            )}
+                        </div>
+                        <Link href={"/contact"}>Contact</Link>
+                        <div className="relative">
+                            <Button onClick={toggleMinistryNav} className="flex items-center">
+                                Ministries
+                            </Button>
+                            {ministryNavVisible && (
+                                <div className="absolute top-full left-0 mt-2 w-[500%] bg-white border border-gray-200 shadow-lg">
+                                    <Link href={"/mission"} className="block px-4 py-2 text-gray-700 hover:bg-gray-100">EMER GENZ</Link>
+                                    <Link href={"#"} className="block px-4 py-2 text-gray-700 hover:bg-gray-100">Teens</Link>
+                                    <Link href={"/executive"} className="block px-4 py-2 text-gray-700 hover:bg-gray-100">Children</Link>
+                                    <Link href={"/executive"} className="block px-4 py-2 text-gray-700 hover:bg-gray-100">Women</Link>
+                                    <Link href={"/executive"} className="block px-4 py-2 text-gray-700 hover:bg-gray-100">Men</Link>
+                                </div>
+                            )}
+                        </div>
+                        <Link href={"/giving"}>Giving</Link>
+                        <Link href={"#"}>Announcement</Link>
+                    </div>
                 </div>
-            </div>
+            )}
         </div>
-
-    )
-}
+    );
+};
 
 export default Header;
