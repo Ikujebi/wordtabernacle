@@ -2,47 +2,15 @@
 import { FC, useState } from "react";
 import Header from "../components/common/Header";
 import Footer from "../components/common/Footer";
-import { FaMapMarkerAlt, FaPhoneAlt } from "react-icons/fa";
 import givbg from "../img/giveimg.jpg";
-import { MdEmail } from "react-icons/md";
-import emailjs from "emailjs-com";
+
 
 const Page: FC = () => {
-  const [formData, setFormData] = useState({
-    firstName: "",
-    lastName: "",
-    email: "",
-    phone: "",
-    message: "",
-  });
+ 
 
-  const handleChange = (e: any) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
+ 
 
-  const handleSubmit = (e: any) => {
-    e.preventDefault();
-
-    emailjs
-      .send("your_service_id", "your_template_id", formData, "your_user_id")
-      .then(
-        (result) => {
-          alert("Email sent successfully!");
-          setFormData({
-            firstName: "",
-            lastName: "",
-            email: "",
-            phone: "",
-            message: "",
-          });
-        },
-        (error) => {
-          alert("Failed to send email.");
-          console.error("Error:", error.text);
-        }
-      );
-  };
-
+   
   return (
     <div className="font-satoshi ">
       <header>
