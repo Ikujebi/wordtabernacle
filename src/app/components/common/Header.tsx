@@ -133,7 +133,7 @@ const Header: FC = () => {
                     </div>
                 </div>
             </div>
-            <div className="items-center flex justify-between mt-5 md:hidden lg:hidden xl:hidden 2xl:hidden">
+            <div className="items-center flex justify-around md:justify-between 2xl:justify-between xl:justify-between lg:justify-between mt-5 md:hidden lg:hidden xl:hidden 2xl:hidden">
                 <Link href={"/"}>
                     <div className="flex items-center">
                         <Image alt="church logo" width={300} height={100} src={wordlogo} className="h-6 w-6" />
