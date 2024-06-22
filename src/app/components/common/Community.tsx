@@ -4,7 +4,7 @@ import cardimg2 from '../common/../../img/testimony.webp';
 
 const Community = () => {
   return (
-    <div className="flex w-full h- items-center">
+    <div className="md:flex lg:flex xl:flex 2xl:flex w-full h- items-center">
       <section className="w-[33.3%]">
         <div className="content h-[30rem] relative" style={{ backgroundImage: `url(${choir.src})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
           <div className="p-4 absolute bottom-0 left-0 right-0 text-center pb-[5rem]">
