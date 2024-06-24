@@ -51,7 +51,7 @@ const Header: FC = () => {
     return (
         <div className="w-full bg-white shadow-sm fixed z-20 pb-3 mb-13 animate__animated animate__fadeInDown">
             <div className="w-full">
-                <div className="h-10 gap-5 bg-white border-b border-gray-200 flex lg:px-14 xl:px-14 2xl:px-14 md:px-14 justify-between">
+                <div className="h-10 gap-5 bg-white border-b border-gray-200 flex lg:px-14 xl:px-14 2xl:px-14 md:px-14 justify-around md:justify-between 2xl:justify-between xl:justify-between lg:justify-between">
                     <div className="mt-2">
                         <span className="text-red-600 font-semibold text-[1.2rem]">
                             <Link href={"/login"}>Login</Link>
@@ -76,7 +76,7 @@ const Header: FC = () => {
                         <Link href={"https://t.me/+ufId9mRBMlVlMzY8"} className="md:w-8 lg:w-8 xl:w-8 2xl:w-8 w-6 md:h-8 lg:h-8 xl:h-8 2xl:h-8 h-6 bg-red-600 rounded-full flex items-center justify-center">
                             <FaTelegram className="text-white text-lg" />
                         </Link>
-                        <a href={"mailto:wordtabernaclebc@gmail.com"} className="ml-2 flex items-center">
+                        <a href={"mailto:wordtabernaclebc@gmail.com"} className="ml-2 md:flex lg:flex 2xl:flex hidden xl:flex items-center ">
                             <MdEmail />
                             <span className="ml-1">wordtabernaclebc@gmail.com</span>
                         </a>
@@ -133,7 +133,7 @@ const Header: FC = () => {
                     </div>
                 </div>
             </div>
-            <div className="items-center flex justify-between mt-5 md:hidden lg:hidden xl:hidden 2xl:hidden">
+            <div className="items-center flex justify-around md:justify-between 2xl:justify-between xl:justify-between lg:justify-between mt-5 md:hidden lg:hidden xl:hidden 2xl:hidden">
                 <Link href={"/"}>
                     <div className="flex items-center">
                         <Image alt="church logo" width={300} height={100} src={wordlogo} className="h-6 w-6" />
