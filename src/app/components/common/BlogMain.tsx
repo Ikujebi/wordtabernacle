@@ -2,8 +2,8 @@ import React from "react";
 
 const BlogMain = () => {
   return (
-    <div className="flex flex-wrap justify-center bg-gray-50 px-5 gap-2 pt-2">
-      <div className="p-6 bg-white shadow-lg w-full  md:w-1/3 lg:w-1/3 xl:w-1/4 2xl:w-1/4 text-gray-800 relative">
+    <div className="flex  justify-center bg-gray-50 px-5 gap-1 pt-2">
+      <section className="p-6 bg-white shadow-lg w-full  md:w-1/3 lg:w-1/3 xl:w-1/4 2xl:w-1/4 text-gray-800 relative">
         <h2 className="font-bold text-lg sm:text-xl md:text-2xl lg:text-2xl xl:text-2xl mb-4">
           Qualified of the Lord
         </h2>
@@ -19,8 +19,8 @@ const BlogMain = () => {
             Oct 19, 2022
           </button>
         </div>
-      </div>
-      <div className="p-6 bg-white shadow-lg w-full  md:w-1/3 lg:w-1/3 xl:w-1/4 2xl:w-1/4 text-gray-800 relative">
+      </section>
+      <section className="p-6 bg-white shadow-lg w-full  md:w-1/3 lg:w-1/3 xl:w-1/4 2xl:w-1/4 text-gray-800 relative">
         <h2 className="font-bold text-lg sm:text-xl md:text-2xl lg:text-2xl xl:text-2xl mb-4">
           My Refuge and Fortress
         </h2>
@@ -38,8 +38,8 @@ const BlogMain = () => {
             Oct 19, 2022
           </button>
         </div>
-      </div>
-      <div className="p-6 bg-white shadow-lg w-full  md:w-1/3 lg:w-1/3 xl:w-1/4 2xl:w-1/4 text-gray-800 relative">
+      </section>
+      <section className="p-6 bg-white shadow-lg w-full  md:w-1/3 lg:w-1/3 xl:w-1/4 2xl:w-1/4 text-gray-800 relative">
         <h2 className="font-bold text-lg sm:text-xl md:text-2xl lg:text-2xl xl:text-2xl mb-4">
           Power and Wisdom
         </h2>
@@ -56,7 +56,7 @@ const BlogMain = () => {
             Oct 19, 2022
           </button>
         </div>
-      </div>
+      </section>
     </div>
   );
 };
