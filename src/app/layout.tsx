@@ -20,6 +20,7 @@ export default function RootLayout({
     <html lang="en">
       <Head>
         <link rel="icon" href={`${logo}`} sizes="any" />
+        <link rel="shortcut icon" href={`${logo}`} type="image/x-icon" />
       </Head>
       <body className={inter.className}>{children}</body>
     </html>
