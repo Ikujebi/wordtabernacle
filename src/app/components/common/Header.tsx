@@ -122,7 +122,7 @@ const Header: FC = () => {
                                         <Link href={"#"} className="block px-4 py-2 text-gray-700 hover:bg-gray-100">Teens</Link>
                                         <Link href={"/executive"} className="block px-4 py-2 text-gray-700 hover:bg-gray-100">Children</Link>
                                         <Link href={"/executive"} className="block px-4 py-2 text-gray-700 hover:bg-gray-100">Women</Link>
-                                        <Link href={"/executive"} className="block px-4 py-2 text-gray-700 hover:bg-gray-100">Men</Link>
+                                        <Link href={"/men"} className="block px-4 py-2 text-gray-700 hover:bg-gray-100">Men</Link>
                                     </div>
                                 )}
                             </div>
@@ -182,7 +182,7 @@ const Header: FC = () => {
                                     <Link href={"#"} className="block px-4 py-2 text-gray-700 hover:bg-gray-100">Teens</Link>
                                     <Link href={"/executive"} className="block px-4 py-2 text-gray-700 hover:bg-gray-100">Children</Link>
                                     <Link href={"/executive"} className="block px-4 py-2 text-gray-700 hover:bg-gray-100">Women</Link>
-                                    <Link href={"/executive"} className="block px-4 py-2 text-gray-700 hover:bg-gray-100">Men</Link>
+                                    <Link href={"/men"} className="block px-4 py-2 text-gray-700 hover:bg-gray-100">Men</Link>
                                 </div>
                             )}
                         </div>
