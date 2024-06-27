@@ -153,7 +153,7 @@ const Header: FC = () => {
                     </div>
                     <div className="flex flex-col items-center">
                         <Link href={"/login"}>LOGIN</Link>
-                        <Link href={"#"}>
+                        <Link href={"/online"}>
                             <div className="flex items-center">
                                 <MdOndemandVideo />
                                 <span className="ml-1">Online</span>
