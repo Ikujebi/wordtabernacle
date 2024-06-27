@@ -8,7 +8,7 @@ const page: FC = () => {
   return (
     <div>
         <Header/>
-    <div className='h-[100svh] flex items-center '> <YouTubePlayer videoId={videoId} ></YouTubePlayer></div>
+    <div className='h-[100svh] flex items-center mx-[5%]'> <YouTubePlayer  videoId={videoId} ></YouTubePlayer></div>
     </div> )
 }
 
