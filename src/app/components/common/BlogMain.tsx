@@ -2,7 +2,7 @@ import React from "react";
 
 const BlogMain = () => {
   return (
-    <div className="flex  justify-center bg-gray-50 px-5 gap-1 pt-2">
+    <div className="md:flex lg:flex xl:flex 2xl:flex  justify-center bg-gray-50 px-5 gap-1 pt-2">
       <section className="p-6 bg-white shadow-lg w-full  md:w-1/3 lg:w-1/3 xl:w-1/4 2xl:w-1/4 text-gray-800 relative">
         <h2 className="font-bold text-lg sm:text-xl md:text-2xl lg:text-2xl xl:text-2xl mb-4">
           Qualified of the Lord
