@@ -219,7 +219,7 @@ const Page: FC = () => {
         <section className="flex justify-center my-8 ">
           <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3963.711954552398!2d3.474328075840481!3d6.557999393435149!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x103bf2726b345a27%3A0xeb8c1cd955070248!2sWord%20Tabernacle%20Bible%20Church!5e0!3m2!1sen!2sng!4v1718294118256!5m2!1sen!2sng"
-            width="700"
+            width="600"
             height="450"
             className="md:w-[65%] lg:w-[65%] xl:w-[65%] 2xl:w-[65%] w-[99%] 2xl:h-[40rem]"
             loading="lazy"
