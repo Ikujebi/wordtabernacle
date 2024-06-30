@@ -32,6 +32,12 @@ const Header: FC = () => {
         setMobileMenuVisible(!mobileMenuVisible);
     };
 
+    const closeMobileMenu = () => {
+        setMobileMenuVisible(false);
+    };
+
+    const closeMobile = "onClick={closeMobileMenu} "
+
     const handleClickOutside = (event:any) => {
         if (subNavRef.current && !subNavRef.current.contains(event.target)) {
             setSubNavVisible(false);
@@ -152,42 +158,42 @@ const Header: FC = () => {
                         </Button>
                     </div>
                     <div className="flex flex-col items-center">
-                        <Link href={"/login"}>LOGIN</Link>
-                        <Link href={"/online"}>
+                        <Link onClick={closeMobileMenu} href={"/login"}>LOGIN</Link>
+                        <Link onClick={closeMobileMenu} href={"/online"}>
                             <div className="flex items-center">
                                 <MdOndemandVideo />
                                 <span className="ml-1">Online</span>
                             </div>
                         </Link>
                         <div className="relative">
-                            <Button onClick={toggleSubNav} className="flex items-center">
+                            <button onClick={toggleSubNav} className="flex items-center">
                                 About
-                            </Button>
+                            </button>
                             {subNavVisible && (
                                 <div className="absolute top-full left-0 mt-2 w-[500%] bg-white border border-gray-200 shadow-lg">
-                                    <Link href={"/mission"} className="block px-4 py-2 text-gray-700 hover:bg-gray-100">Mission, Vision & Values</Link>
-                                    <Link href={"#"} className="block px-4 py-2 text-gray-700 hover:bg-gray-100">Our Story</Link>
-                                    <Link href={"/executive"} className="block px-4 py-2 text-gray-700 hover:bg-gray-100">Executive Leadership</Link>
+                                    <Link onClick={closeMobileMenu} href={"/mission"} className="block px-4 py-2 text-gray-700 hover:bg-gray-100">Mission, Vision & Values</Link>
+                                    <Link onClick={closeMobileMenu} href={"#"} className="block px-4 py-2 text-gray-700 hover:bg-gray-100">Our Story</Link>
+                                    <Link onClick={closeMobileMenu} href={"/executive"} className="block px-4 py-2 text-gray-700 hover:bg-gray-100">Executive Leadership</Link>
                                 </div>
                             )}
                         </div>
-                        <Link href={"/contact"}>Contact</Link>
+                        <Link onClick={closeMobileMenu}  href={"/contact"}>Contact</Link>
                         <div className="relative">
-                            <Button onClick={toggleMinistryNav} className="flex items-center">
+                            <button onClick={toggleMinistryNav} className="flex items-center">
                                 Ministries
-                            </Button>
+                            </button>
                             {ministryNavVisible && (
                                 <div className="absolute top-full left-0 mt-2 w-[500%] bg-white border border-gray-200 shadow-lg">
-                                    <Link href={"/emergenz"} className="block px-4 py-2 text-gray-700 hover:bg-gray-100">EMERGENZ</Link>
-                                    <Link href={"#"} className="block px-4 py-2 text-gray-700 hover:bg-gray-100">Teens</Link>
-                                    <Link href={"/executive"} className="block px-4 py-2 text-gray-700 hover:bg-gray-100">Children</Link>
-                                    <Link href={"/executive"} className="block px-4 py-2 text-gray-700 hover:bg-gray-100">Women</Link>
-                                    <Link href={"/men"} className="block px-4 py-2 text-gray-700 hover:bg-gray-100">Men</Link>
+                                    <Link onClick={closeMobileMenu} href={"/emergenz"} className="block px-4 py-2 text-gray-700 hover:bg-gray-100">EMERGENZ</Link>
+                                    <Link onClick={closeMobileMenu} href={"#"} className="block px-4 py-2 text-gray-700 hover:bg-gray-100">Teens</Link>
+                                    <Link onClick={closeMobileMenu} href={"/executive"} className="block px-4 py-2 text-gray-700 hover:bg-gray-100">Children</Link>
+                                    <Link onClick={closeMobileMenu} href={"/executive"} className="block px-4 py-2 text-gray-700 hover:bg-gray-100">Women</Link>
+                                    <Link onClick={closeMobileMenu} href={"/men"} className="block px-4 py-2 text-gray-700 hover:bg-gray-100">Men</Link>
                                 </div>
                             )}
                         </div>
-                        <Link href={"/giving"}>Giving</Link>
-                        <Link href={"#"}>Announcement</Link>
+                        <Link onClick={closeMobileMenu} href={"/giving"}>Giving</Link>
+                        <Link onClick={closeMobileMenu} href={"#"}>Announcement</Link>
                     </div>
                 </div>
             )}
