@@ -91,7 +91,7 @@ const FreeStyle = () => {
                 <Image
                   width={2000}
                   height={100}
-                  objectFit="cover"
+                  quality={90}
                   src={item.image}
                   alt="service"
                   className="w-full mb-4 xl:h-[40rem] 2xl:h-[40rem] lg:h-[30rem] md:h-[33rem] h-[17rem]"
