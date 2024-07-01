@@ -5,27 +5,17 @@ import { MdClose, MdEmail, MdMenu, MdOndemandVideo } from 'react-icons/md';
 import 'animate.css';
 import Link from "next/link";
 import wordlogo from '../../img/wordlogo.png';
-import { useState, FC , useRef, useEffect} from 'react';
+import { useState, useEffect, FC } from 'react';
 import { useRouter } from "next/navigation";
 import { FaFacebookF, FaInstagram, FaTwitter, FaYoutube, FaTiktok, FaTelegram } from "react-icons/fa";
 
 const Header: FC = () => {
     const router = useRouter();
     const [mobileMenuVisible, setMobileMenuVisible] = useState(false);
-    const [subNavVisible, setSubNavVisible] = useState(false);
-    const [ministryNavVisible, setMinistryNavVisible] = useState(false);
+    const [activeSubNav, setActiveSubNav] = useState<string | null>(null);
 
-    const subNavRef = useRef<HTMLDivElement>(null);
-    const ministryNavRef = useRef<HTMLDivElement>(null);
-    
-    const toggleSubNav = () => {
-        setSubNavVisible(!subNavVisible);
-        setMinistryNavVisible(false);
-    };
-
-    const toggleMinistryNav = () => {
-        setMinistryNavVisible(!ministryNavVisible);
-        setSubNavVisible(false); 
+    const toggleSubNav = (subNav: string) => {
+        setActiveSubNav(prevSubNav => prevSubNav === subNav ? null : subNav);
     };
 
     const toggleMobileMenu = () => {
@@ -34,16 +24,12 @@ const Header: FC = () => {
 
     const closeMobileMenu = () => {
         setMobileMenuVisible(false);
+        setActiveSubNav(null);
     };
 
-    const closeMobile = "onClick={closeMobileMenu} "
-
-    const handleClickOutside = (event:any) => {
-        if (subNavRef.current && !subNavRef.current.contains(event.target)) {
-            setSubNavVisible(false);
-        }
-        if (ministryNavRef.current && !ministryNavRef.current.contains(event.target)) {
-            setMinistryNavVisible(false);
+    const handleClickOutside = (event: any) => {
+        if (!event.target.closest('.submenu')) {
+            setActiveSubNav(null);
         }
     };
 
@@ -82,7 +68,7 @@ const Header: FC = () => {
                         <Link href={"https://t.me/+ufId9mRBMlVlMzY8"} className="md:w-8 lg:w-8 xl:w-8 2xl:w-8 w-6 md:h-8 lg:h-8 xl:h-8 2xl:h-8 h-6 bg-red-600 rounded-full flex items-center justify-center">
                             <FaTelegram className="text-white text-lg" />
                         </Link>
-                        <a href={"mailto:wordtabernaclebc@gmail.com"} className="ml-2 md:flex lg:flex 2xl:flex hidden xl:flex items-center ">
+                        <a href={"mailto:wordtabernaclebc@gmail.com"} className="ml-2 md:flex lg:flex 2xl:flex hidden xl:flex items-center">
                             <MdEmail />
                             <span className="ml-1">wordtabernaclebc@gmail.com</span>
                         </a>
@@ -105,12 +91,12 @@ const Header: FC = () => {
                                     <span className="ml-1">Online</span>
                                 </div>
                             </Link>
-                            <div className="relative" ref={subNavRef}>
-                                <button onClick={toggleSubNav} className="flex items-center">
+                            <div className="relative">
+                                <button onClick={() => toggleSubNav('about')} className="flex items-center">
                                     About
                                 </button>
-                                {subNavVisible && (
-                                    <div className="absolute top-full left-0 mt-2 w-[500%] bg-white border border-gray-200 shadow-lg">
+                                {activeSubNav === 'about' && (
+                                    <div className="absolute top-full left-0 mt-2 w-[200%] bg-white border border-gray-200 shadow-lg submenu">
                                         <Link href={"/mission"} className="block px-4 py-2 text-gray-700 hover:bg-gray-100">Mission, Vision & Values</Link>
                                         <Link href={"#"} className="block px-4 py-2 text-gray-700 hover:bg-gray-100">Our Story</Link>
                                         <Link href={"/executive"} className="block px-4 py-2 text-gray-700 hover:bg-gray-100">Executive Leadership</Link>
@@ -118,13 +104,13 @@ const Header: FC = () => {
                                 )}
                             </div>
                             <Link href={"/contact"}>Contact</Link>
-                            <div className="relative" ref={ministryNavRef}>
-                                <button onClick={toggleMinistryNav} className="flex items-center">
+                            <div className="relative">
+                                <button onClick={() => toggleSubNav('ministries')} className="flex items-center">
                                     Ministries
                                 </button>
-                                {ministryNavVisible && (
-                                    <div className="absolute top-full left-0 mt-2 w-[500%] bg-white border border-gray-200 shadow-lg">
-                                        <Link href={"/emergenz"} className="block px-4 py-2 text-gray-700 hover:bg-gray-100">EMER GENZ</Link>
+                                {activeSubNav === 'ministries' && (
+                                    <div className="absolute top-full left-0 mt-2 w-[200%] bg-white border border-gray-200 shadow-lg submenu">
+                                        <Link href={"/emergenz"} className="block px-4 py-2 text-gray-700 hover:bg-gray-100">EMERGENZ</Link>
                                         <Link href={"#"} className="block px-4 py-2 text-gray-700 hover:bg-gray-100">Teens</Link>
                                         <Link href={"/executive"} className="block px-4 py-2 text-gray-700 hover:bg-gray-100">Children</Link>
                                         <Link href={"/executive"} className="block px-4 py-2 text-gray-700 hover:bg-gray-100">Women</Link>
@@ -166,24 +152,24 @@ const Header: FC = () => {
                             </div>
                         </Link>
                         <div className="relative">
-                            <button onClick={toggleSubNav} className="flex items-center">
+                            <button onClick={() => toggleSubNav('about')} className="flex items-center">
                                 About
                             </button>
-                            {subNavVisible && (
-                                <div className="absolute top-full left-0 mt-2 w-[500%] bg-white border border-gray-200 shadow-lg">
+                            {activeSubNav === 'about' && (
+                                <div className="absolute top-full left-0 mt-2 w-[400%] bg-white border border-gray-200 shadow-lg submenu z-100">
                                     <Link onClick={closeMobileMenu} href={"/mission"} className="block px-4 py-2 text-gray-700 hover:bg-gray-100">Mission, Vision & Values</Link>
                                     <Link onClick={closeMobileMenu} href={"#"} className="block px-4 py-2 text-gray-700 hover:bg-gray-100">Our Story</Link>
                                     <Link onClick={closeMobileMenu} href={"/executive"} className="block px-4 py-2 text-gray-700 hover:bg-gray-100">Executive Leadership</Link>
                                 </div>
                             )}
                         </div>
-                        <Link onClick={closeMobileMenu}  href={"/contact"}>Contact</Link>
+                        <Link onClick={closeMobileMenu} href={"/contact"}>Contact</Link>
                         <div className="relative">
-                            <button onClick={toggleMinistryNav} className="flex items-center">
+                            <button onClick={() => toggleSubNav('ministries')} className="flex items-center">
                                 Ministries
                             </button>
-                            {ministryNavVisible && (
-                                <div className="absolute top-full left-0 mt-2 w-[500%] bg-white border border-gray-200 shadow-lg">
+                            {activeSubNav === 'ministries' && (
+                                <div className="absolute top-full left-0 mt-2 w-[200%] bg-white border border-gray-200 shadow-lg submenu">
                                     <Link onClick={closeMobileMenu} href={"/emergenz"} className="block px-4 py-2 text-gray-700 hover:bg-gray-100">EMERGENZ</Link>
                                     <Link onClick={closeMobileMenu} href={"#"} className="block px-4 py-2 text-gray-700 hover:bg-gray-100">Teens</Link>
                                     <Link onClick={closeMobileMenu} href={"/executive"} className="block px-4 py-2 text-gray-700 hover:bg-gray-100">Children</Link>
