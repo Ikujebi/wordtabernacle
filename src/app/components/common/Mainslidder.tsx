@@ -72,9 +72,10 @@ const FreeStyle = () => {
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen w-screen">
-
       <div className="container my-[9rem] w-full relative">
-        <div className="absolute inset-0 bg-black opacity-50 pointer-events-none z-10 h-[95%] md:h-[97%] lg:h-[97%] xl:h-[97%] 2xl:h-[97.92%]"></div>{" "}
+
+        <div className="absolute inset-0  bg-black opacity-10 pointer-events-none z-10 h-[97%] 2xl:h-[97.92%]"></div>{" "}
+
         {/* New div for shadow */}
         <Slider {...sliderSettings}>
           {slides.map((item, itemIndex) => (
@@ -87,14 +88,14 @@ const FreeStyle = () => {
               key={itemIndex}
               className="flex justify-center items-center relative z-20"
             >
-              <div className="relative flex flex-col items-center justify-center w-full">
+              <div className="relative flex flex-col  items-center justify-center w-full">
                 <Image
                   width={2000}
                   height={100}
                   quality={90}
                   src={item.image}
                   alt="service"
-                  className="w-full mb-4 xl:h-[40rem] 2xl:h-[40rem] lg:h-[30rem] md:h-[33rem] h-[17rem]"
+                  className="w-full mb-4  xl:h-[40rem] 2xl:h-[40rem] lg:h-[30rem] md:h-[33rem] h-[17rem]"
                 />
                 <div
                   id="imgtext"
@@ -111,7 +112,6 @@ const FreeStyle = () => {
                     </button>
                   </div>
                 </div>
-
               </div>
             </motion.div>
           ))}
