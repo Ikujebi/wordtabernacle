@@ -41,7 +41,7 @@ const Header: FC = () => {
     }, []);
 
     return (
-        <div className="w-full bg-transparent bg-opacity-80 shadow-md fixed z-200 pb-3 mb-13 animate__animated animate__fadeInDown">
+        <div className="w-full bg-white bg-opacity-90 shadow-md fixed  pb-3 mb-13 animate__animated animate__fadeInDown z-50">
             <div className="w-full">
                 <div className="h-10 gap-5 bg-white border-b border-gray-200 flex lg:px-14 xl:px-14 2xl:px-14 md:px-14 justify-around md:justify-between 2xl:justify-between xl:justify-between lg:justify-between">
                     <div className="mt-2">

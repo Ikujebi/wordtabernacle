@@ -40,7 +40,7 @@ export default function Home() {
       <Head>
         <link rel="shortcut icon" href="../app/img/wordlogo.png" />
       </Head>
-      <div className="w-full">
+      <div className="w-full ">
         <Header />
       </div>
       <div>
