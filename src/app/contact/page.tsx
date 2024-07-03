@@ -62,7 +62,7 @@ const Page: FC = () => {
             <span className="block absolute bottom-1 left-1/2 transform -translate-x-1/2 w-[100%] h-[4px] bg-white"></span>
           </h2>
         </div>
-        <div className="bg-gray-300 h-[47svh] 2xl:h-[50svh]">
+        <div className="bg-gray-300 md:h-[47svh] lg:h-[47svh] xl:h-[47svh] h-[55svh] 2xl:h-[50svh] ">
           <section className="flex    justify-center  ">
             <div className="flex w-[75%] ">
               <section className="bg-white mt-[-1.5rem]  relative z-100 flex h-[125%]  justify-center w-full  text-[.6rem] md:text-[1rem] lg:text-[1rem] xl:text-[1rem] 2xl:text-[1rem]">
@@ -129,7 +129,7 @@ const Page: FC = () => {
             </article>
           </section>
         </div>
-        <section className="h-[60svh] 2xl:h-[80svh] flex justify-center 2xl:mb-[5%]">
+        <section className="md:h-[60svh] lg:h-[60svh] xl:h-[60svh] h-[80svh] 2xl:h-[80svh] flex justify-center 2xl:mb-[5%]">
           <form
             onSubmit={handleSubmit}
             className="border-[2px] w-full border-gray-400 shadow-md md:w-[60%] lg:w-[60%] xl:w-[60%] 2xl:w-[60%] shadow-xl pt-[2%] mt-[5%] 2xl:h-[70svh] 2xl:mb-[3%]"
@@ -219,7 +219,7 @@ const Page: FC = () => {
         <section className="flex justify-center my-8 ">
           <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3963.711954552398!2d3.474328075840481!3d6.557999393435149!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x103bf2726b345a27%3A0xeb8c1cd955070248!2sWord%20Tabernacle%20Bible%20Church!5e0!3m2!1sen!2sng!4v1718294118256!5m2!1sen!2sng"
-            width="700"
+            width="600"
             height="450"
             className="md:w-[65%] lg:w-[65%] xl:w-[65%] 2xl:w-[65%] w-[99%] 2xl:h-[40rem]"
             loading="lazy"

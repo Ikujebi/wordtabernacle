@@ -74,15 +74,15 @@ const Page: FC = () => {
                 </section>
                 <section>
                     <article>
-                    <select id="cars" name="Fund" className='w-full h-[3rem] border-[1px] border-gray-400 focus:border-red-400 focus:outline-red-400 outline-[1px] mb-[3rem] pl-2 text-[1.3rem] text-red-400 mb-[3rem]'>
-        <option value="volvo">Tithe</option>
-        <option value="saab">Pastoral Support</option>
-        <option value="mercedes">Thrive Fund</option>
-        <option value="audi">Offering</option>
-        <option value="audi">Missions</option>
-        <option value="audi">Other-Please Specify</option>
-       
-    </select>
+                    <select id="funds" name="Fund" className='w-full h-[3rem] border-[1px] border-gray-400 focus:border-red-400 focus:outline-red-400 outline-[1px] mb-[3rem] pl-2 text-[1.3rem] text-red-400 mb-[3rem]'>
+    <option value="" disabled selected hidden>Fund</option>
+    <option value="tithe">Tithe</option>
+    <option value="pastor">Pastoral Support</option>
+    <option value="thrive">Thrive Fund</option>
+    <option value="offering">Offering</option>
+    <option value="missions">Missions</option>
+    <option value="others">Other-Please Specify</option>
+</select>
     <input
         type="text"
         className={`w-full h-[3rem] border-[1px] border-gray-400 outline-[1px] mb-[3rem] pl-4 text-[1.3rem] placeholder-red-400 focus:outline-red-400 transition-colors duration-300 ${value.trim() ? 'placeholder-to-border' : ''}`}

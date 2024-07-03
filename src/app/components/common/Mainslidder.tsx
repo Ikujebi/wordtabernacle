@@ -73,7 +73,9 @@ const FreeStyle = () => {
   return (
     <div className="flex flex-col items-center justify-center min-h-screen w-screen">
       <div className="container my-[9rem] w-full relative">
+
         <div className="absolute inset-0  bg-black opacity-10 pointer-events-none z-10 h-[97%] 2xl:h-[97.92%]"></div>{" "}
+
         {/* New div for shadow */}
         <Slider {...sliderSettings}>
           {slides.map((item, itemIndex) => (
@@ -90,7 +92,7 @@ const FreeStyle = () => {
                 <Image
                   width={2000}
                   height={100}
-                  objectFit="cover"
+                  quality={90}
                   src={item.image}
                   alt="service"
                   className="w-full mb-4  xl:h-[40rem] 2xl:h-[40rem] lg:h-[30rem] md:h-[33rem] h-[17rem]"
@@ -105,7 +107,7 @@ const FreeStyle = () => {
                     Building word practitioners...
                   </p>
                   <div>
-                    <button className="text-[1.1rem] font-normal mt-5 bg-red-500 hover:bg-red-700 md:w-[8rem] lg:w-[8rem] xl:w-[8rem] 2xl:w-[8rem] h-[2rem] md:h-[3rem] lg:h-[3rem] xl:h-[3rem] 2xl:h-[3rem] w-[5rem] text-white ml-3">
+                    <button className="text-[1.1rem] font-normal md:mt-5 lg:mt-5 xl:mt-5 2xl:mt-5 mt-[-1rem] bg-red-500 hover:bg-red-700 md:w-[8rem] lg:w-[8rem] xl:w-[8rem] 2xl:w-[8rem] h-[2rem] md:h-[3rem] lg:h-[3rem] xl:h-[3rem] 2xl:h-[3rem] w-[5rem] text-white ml-3">
                       JOIN US
                     </button>
                   </div>
