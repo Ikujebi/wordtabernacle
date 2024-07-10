@@ -119,7 +119,7 @@ const Header: FC = () => {
                                 )}
                             </div>
                             <Link href={"/giving"}>Giving</Link>
-                            <Link href={"#"}>Announcement</Link>
+                            <Link href={"/prayer"}>Prayer Requests</Link>
                             <Button className="text-white bg-red-600 hover:!text-red-700 hover:!border-red-500 m-auto rounded-lg" onClick={() => { router.push("/login") }}>LOGIN</Button>
                         </div>
                     </div>
