@@ -85,7 +85,7 @@ const Header: FC = () => {
                             </Link>
                         </div>
                         <div className="flex items-center gap-5">
-                            <Link href={"#"}>
+                            <Link href={"/online"}>
                                 <div className="flex items-center">
                                     <MdOndemandVideo />
                                     <span className="ml-1">Online</span>
@@ -96,7 +96,7 @@ const Header: FC = () => {
                                     About
                                 </button>
                                 {activeSubNav === 'about' && (
-                                    <div className="absolute top-full left-0 mt-2 w-[200%] bg-white border border-gray-200 shadow-lg submenu">
+                                    <div className="absolute rounded-md top-full left-0 mt-2 w-[480%] bg-white border border-gray-200 shadow-lg submenu">
                                         <Link href={"/mission"} className="block px-4 py-2 text-gray-700 hover:bg-gray-100">Mission, Vision & Values</Link>
                                         <Link href={"#"} className="block px-4 py-2 text-gray-700 hover:bg-gray-100">Our Story</Link>
                                         <Link href={"/executive"} className="block px-4 py-2 text-gray-700 hover:bg-gray-100">Executive Leadership</Link>
@@ -109,7 +109,7 @@ const Header: FC = () => {
                                     Ministries
                                 </button>
                                 {activeSubNav === 'ministries' && (
-                                    <div className="absolute top-full left-0 mt-2 w-[200%] bg-white border border-gray-200 shadow-lg submenu">
+                                    <div className="absolute rounded-md top-full left-0 mt-2 w-[200%] bg-white border border-gray-200 shadow-lg submenu">
                                         <Link href={"/emergenz"} className="block px-4 py-2 text-gray-700 hover:bg-gray-100">EMERGENZ</Link>
                                         <Link href={"#"} className="block px-4 py-2 text-gray-700 hover:bg-gray-100">Teens</Link>
                                         <Link href={"/executive"} className="block px-4 py-2 text-gray-700 hover:bg-gray-100">Children</Link>
