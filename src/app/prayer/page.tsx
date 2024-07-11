@@ -81,8 +81,8 @@ const Page: FC = () => {
                 </section>
                 <section className='mx-auto my-6 mt-6  '>
                 <Link href='#' className="flex gap-1">
-                                    <Image alt="church logo" width={300} height={100} src={churchlogo.src} className="w-[15rem] h-[13rem]" />
-                                    <span className="font-semibold text-red-600 mt-[5rem] text-[2rem]">WORD TABERNACLE</span>
+                                    <Image alt="church logo" width={300} height={100} src={churchlogo.src} className="md:w-[15rem] lg:w-[15rem] xl:w-[15rem] 2xl:w-[15rem] w-[4rem] md:h-[13rem] lg:h-[13rem] xl:h-[13rem] 2xl:h-[13rem] h-[4rem]" />
+                                    <span className="font-semibold text-red-600 md:mt-[5rem] lg:mt-[5rem] xl:mt-[5rem] 2xl:mt-[5rem] mt-[1.5rem] md:text-[2rem] lg:text-[2rem] xl:text-[2rem] 2xl:text-[2rem]">WORD TABERNACLE</span>
                                 </Link>
                        
                 </section>
@@ -99,7 +99,7 @@ const Page: FC = () => {
                 <section>
                 <form
             onSubmit={handleSubmit}
-            className=" w-full  shadow-md shadow-xl pt-[2%] mt-[5%] 2xl:h-[70svh] 2xl:mb-[3%] mb-[1rem] pb-2"
+            className=" w-full  shadow-md shadow-xl pt-[2%] mt-[5%] 2xl:h-[101svh] 2xl:mb-[3%] mb-[1rem] pb-2"
           >
             <article>
               <h2 className="flex justify-center py-[3%]  text-2xl font-semibold">
