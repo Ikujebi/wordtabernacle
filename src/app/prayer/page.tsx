@@ -47,7 +47,7 @@ const Page: FC = () => {
             }
           );
       };
-    const [value, setValue] = useState('');
+    
 
     const [valueRadio, setValueRadio] = useState(1);
 

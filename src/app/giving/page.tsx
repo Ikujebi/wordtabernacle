@@ -16,7 +16,7 @@ const Page: FC = () => {
       setValue(e.target.value);
     };
     return (
-        <div className='font-satoshi text-red-400'>
+        <div className='font-satoshi '>
             <header >
                 <Header />
             </header>

@@ -27,8 +27,8 @@ const Page: FC = () => {
             <span className='block absolute bottom-1 left-1/2 transform -translate-x-1/2 w-[100%] h-[4px] bg-white'></span>
           </h2>
         </div>
-        <div className='max-w-[67%]  text-[.83rem] xl:text-[.83rem] 2xl:text-[1.1rem] xl:w-[50%] 2xl:w-[40%]  mx-auto'>
-          <section className='mx-auto my-6 flex mb-[5rem]'>
+        <div className='md:max-w-[67%] lg:max-w-[67%] xl:max-w-[67%] 2xl:max-w-[87%]  text-[.83rem] xl:text-[.83rem] 2xl:text-[1.1rem] xl:w-[50%] 2xl:w-[40%]  mx-auto'>
+          <section className='mx-auto my-6 flex mb-[5rem] mt-[5.5%] gap-[3%]'>
             <article>
             <h2 className='text-[155%] font-semibold'>
 OUR VISION</h2>
@@ -42,8 +42,8 @@ OUR VISION</h2>
            
             </article>
 
-            <article>
-              <Image width={1000} height={600} src={msgg2.src} alt="" className='w-[60rem] h-[13rem]' />
+            <article >
+              <Image width={1000} height={600} src={msgg2.src} alt="" className='rounded-md mt-[3%] md:w-[60rem] lg:w-[60rem] xl:w-[60rem] 2xl:w-[80rem] h-[13rem]' />
             </article>
           </section>
           <section className='mx-auto my-6 flex mb-[5rem] gap-3'>
@@ -55,7 +55,7 @@ OUR VISION</h2>
   </article>
 
   <article className='md:order-0 lg:order-0 xl:order-0 2xl:order-0 '>
-    <Image className=' w-[60rem] h-[13rem]' width={1000} height={600} src={msgg.src} alt="" />
+    <Image className='mt-[3%] rounded-md md:w-[60rem] lg:w-[60rem] xl:w-[60rem] 2xl:w-[80rem] h-[13rem]' width={1000} height={600} src={msgg.src} alt="" />
   </article>
 </section>
           
@@ -68,7 +68,7 @@ OUR VISION</h2>
             <span className='block absolute bottom-1 left-1/2 transform -translate-x-1/2 w-[100%] h-[4px] bg-white'></span>
           </h2>
         </div>
-        <section className='flex flex-col justify-center items-center text-gray-600 mt-[3rem] '>
+        <section className='flex flex-col  justify-center items-center text-gray-600 mt-[3rem] '>
           <article className='flex  w-[50rem]'>
             <h2 className='font-semibold w-[13rem] text-[1.1rem] text-red-800'>
             Accountability
