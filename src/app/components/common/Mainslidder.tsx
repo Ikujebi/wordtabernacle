@@ -106,8 +106,8 @@ const FreeStyle = () => {
                   <p className="text-[1.1rem] font-normal">
                     Building word practitioners...
                   </p>
-                  <div>
-                    <button className="text-[1.1rem] font-normal md:mt-5 lg:mt-5 xl:mt-5 2xl:mt-5 mt-[-1rem] bg-red-500 hover:bg-red-700 md:w-[8rem] lg:w-[8rem] xl:w-[8rem] 2xl:w-[8rem] h-[2rem] md:h-[3rem] lg:h-[3rem] xl:h-[3rem] 2xl:h-[3rem] w-[5rem] text-white ml-3">
+                  <div className="relative">
+                    <button className="absolute  text-[1.1rem] font-normal md:mt-5 lg:mt-5 xl:mt-5 2xl:mt-5 mt-[.8rem] bg-red-500 hover:bg-red-700 md:w-[8rem] lg:w-[8rem] xl:w-[8rem] 2xl:w-[8rem] h-[2rem] md:h-[3rem] lg:h-[3rem] xl:h-[3rem] 2xl:h-[3rem] w-[5rem] text-white ml-3">
                       JOIN US
                     </button>
                   </div>
