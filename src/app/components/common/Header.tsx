@@ -5,17 +5,26 @@ import { MdClose, MdEmail, MdMenu, MdOndemandVideo } from 'react-icons/md';
 import 'animate.css';
 import Link from "next/link";
 import wordlogo from '../../img/wordlogo.png';
-import { useState, useEffect, FC } from 'react';
+import { useState, useEffect, useRef, FC } from 'react';
 import { useRouter } from "next/navigation";
 import { FaFacebookF, FaInstagram, FaTwitter, FaYoutube, FaTiktok, FaTelegram } from "react-icons/fa";
+
+interface NavItem {
+    name: string;
+    link: string;
+    icon?: JSX.Element;
+    spacing?: boolean;
+    subItems?: NavItem[];
+}
 
 const Header: FC = () => {
     const router = useRouter();
     const [mobileMenuVisible, setMobileMenuVisible] = useState(false);
     const [activeSubNav, setActiveSubNav] = useState<string | null>(null);
+    const submenuRef = useRef<HTMLDivElement>(null);
 
     const toggleSubNav = (subNav: string) => {
-        setActiveSubNav(prevSubNav => prevSubNav === subNav ? null : subNav);
+        setActiveSubNav(prevSubNav => (prevSubNav === subNav ? null : subNav));
     };
 
     const toggleMobileMenu = () => {
@@ -27,8 +36,8 @@ const Header: FC = () => {
         setActiveSubNav(null);
     };
 
-    const handleClickOutside = (event: any) => {
-        if (!event.target.closest('.submenu')) {
+    const handleClickOutside = (event: MouseEvent) => {
+        if (submenuRef.current && !submenuRef.current.contains(event.target as Node)) {
             setActiveSubNav(null);
         }
     };
@@ -40,8 +49,74 @@ const Header: FC = () => {
         };
     }, []);
 
+    const navItems: NavItem[] = [
+        {
+            name: "Online",
+            icon: <MdOndemandVideo />,
+            link: "/dashboard/details",
+        },
+        {
+            name: "About",
+            link: "",
+            subItems: [
+                { name: "Mission, Vision & Values", link: "/mission" },
+                { name: "Our Story", link: "#" },
+                { name: "Executive Leadership", link: "/executive" },
+            ],
+        },
+        {
+            name: "Contact",
+            link: "/contact",
+        },
+        {
+            name: "Ministries",
+            link: "",
+            subItems: [
+                { name: "EMERGENZ", link: "/emergenz" },
+                { name: "Teens", link: "#" },
+                { name: "Children", link: "/executive" },
+                { name: "Women", link: "/executive" },
+                { name: "Men", link: "/men" },
+            ],
+        },
+        {
+            name: "Giving",
+            link: "/giving",
+        },
+        {
+            name: "Prayer Requests",
+            link: "/prayer",
+        },
+    ];
+
+    const renderNavItem = (item: NavItem, index: number) => (
+        <div key={index} className="relative">
+            {item.subItems ? (
+                <>
+                    <button onClick={() => toggleSubNav(item.name)} className="flex items-center">
+                        {item.name}
+                    </button>
+                    {activeSubNav === item.name && (
+                        <div className="absolute rounded-md top-full left-0 mt-2 bg-white border border-gray-200 shadow-lg submenu">
+                            {item.subItems.map((subItem, subIndex) => (
+                                <Link key={subIndex} href={subItem.link} className="block px-4 py-2 text-gray-700 hover:bg-gray-100">
+                                    {subItem.name}
+                                </Link>
+                            ))}
+                        </div>
+                    )}
+                </>
+            ) : (
+                <Link href={item.link} className="flex items-center">
+                    {item.icon}
+                    <span className="ml-1">{item.name}</span>
+                </Link>
+            )}
+        </div>
+    );
+
     return (
-        <div className="w-full bg-white bg-opacity-90 shadow-md fixed  pb-3 mb-13 animate__animated animate__fadeInDown z-50">
+        <div className="w-[100svw] bg-white bg-opacity-90 shadow-md fixed pb-3 mb-13 animate__animated animate__fadeInDown z-50">
             <div className="w-full">
                 <div className="h-10 gap-5 bg-white border-b border-gray-200 flex lg:px-14 xl:px-14 2xl:px-14 md:px-14 justify-around md:justify-between 2xl:justify-between xl:justify-between lg:justify-between">
                     <div className="mt-2">
@@ -85,108 +160,59 @@ const Header: FC = () => {
                             </Link>
                         </div>
                         <div className="flex items-center gap-5">
-                            <Link href={"/online"}>
-                                <div className="flex items-center">
-                                    <MdOndemandVideo />
-                                    <span className="ml-1">Online</span>
-                                </div>
-                            </Link>
-                            <div className="relative">
-                                <button onClick={() => toggleSubNav('about')} className="flex items-center">
-                                    About
-                                </button>
-                                {activeSubNav === 'about' && (
-                                    <div className="absolute rounded-md top-full left-0 mt-2 w-[480%] bg-white border border-gray-200 shadow-lg submenu">
-                                        <Link href={"/mission"} className="block px-4 py-2 text-gray-700 hover:bg-gray-100">Mission, Vision & Values</Link>
-                                        <Link href={"#"} className="block px-4 py-2 text-gray-700 hover:bg-gray-100">Our Story</Link>
-                                        <Link href={"/executive"} className="block px-4 py-2 text-gray-700 hover:bg-gray-100">Executive Leadership</Link>
-                                    </div>
-                                )}
-                            </div>
-                            <Link href={"/contact"}>Contact</Link>
-                            <div className="relative">
-                                <button onClick={() => toggleSubNav('ministries')} className="flex items-center">
-                                    Ministries
-                                </button>
-                                {activeSubNav === 'ministries' && (
-                                    <div className="absolute rounded-md top-full left-0 mt-2 w-[200%] bg-white border border-gray-200 shadow-lg submenu">
-                                        <Link href={"/emergenz"} className="block px-4 py-2 text-gray-700 hover:bg-gray-100">EMERGENZ</Link>
-                                        <Link href={"#"} className="block px-4 py-2 text-gray-700 hover:bg-gray-100">Teens</Link>
-                                        <Link href={"/executive"} className="block px-4 py-2 text-gray-700 hover:bg-gray-100">Children</Link>
-                                        <Link href={"/executive"} className="block px-4 py-2 text-gray-700 hover:bg-gray-100">Women</Link>
-                                        <Link href={"/men"} className="block px-4 py-2 text-gray-700 hover:bg-gray-100">Men</Link>
-                                    </div>
-                                )}
-                            </div>
-                            <Link href={"/giving"}>Giving</Link>
-                            <Link href={"/prayer"}>Prayer Requests</Link>
+                            {navItems.map(renderNavItem)}
                             <Button className="text-white bg-red-600 hover:!text-red-700 hover:!border-red-500 m-auto rounded-lg" onClick={() => { router.push("/login") }}>LOGIN</Button>
                         </div>
                     </div>
                 </div>
             </div>
-            <div className="items-center flex justify-around md:justify-between 2xl:justify-between xl:justify-between lg:justify-between mt-5 md:hidden lg:hidden xl:hidden 2xl:hidden">
+            <div className="items-center w-[100svw] flex justify-around md:justify-between 2xl:justify-between xl:justify-between lg:justify-between mt-5 md:hidden lg:hidden xl:hidden 2xl:hidden">
                 <Link href={"/"}>
                     <div className="flex items-center">
                         <Image alt="church logo" width={300} height={100} src={wordlogo} className="h-6 w-6" />
-                        <span className="font-semibold text-[.67rem] text-red-600 ml-2">WORD<br />TABERNACLE</span>
+                        <span className="font-semibold text-red-600">WORD TABERNACLE</span>
                     </div>
                 </Link>
-                {!mobileMenuVisible && (
-                    <Button className="bg-white mr-2 " aria-label="Open Menu" onClick={toggleMobileMenu}>
-                    <MdMenu className="text-gray-700" />
-                </Button>
-                )}
-                
+                <Button className="text-white bg-red-600 hover:!text-red-700 hover:!border-red-500 m-auto rounded-lg" onClick={toggleMobileMenu}><MdMenu className="h-6 w-6" /></Button>
             </div>
-            {mobileMenuVisible && (
-    <div className="w-screen h-screen mt-5 bg-white flex flex-col overflow-auto z-20">
-        <div className=" justify-end flex">
-            <Button className="bg-white mr-[3.2rem]" aria-label="Close Menu" onClick={toggleMobileMenu}>
-                <MdClose className="text-gray-700" />
-            </Button>
-        </div>
-        <div className="flex flex-col items-center">
-            <Link onClick={closeMobileMenu} href={"/login"}>LOGIN</Link>
-            <Link onClick={closeMobileMenu} href={"/online"}>
-                <div className="flex items-center">
-                    <MdOndemandVideo />
-                    <span className="ml-1">Online</span>
+            <div className={`lg:hidden 2xl:hidden xl:hidden md:hidden bg-white mt-5 absolute z-100 w-full h-full mt-[10%] top-0 ${mobileMenuVisible ? "left-0"  : "left-[-100%]"} duration-500`}>
+                <div className="flex justify-between">
+                    <Link href={"/"} className="ml-5">
+                        <div className="flex items-center">
+                            <Image alt="church logo" width={300} height={100} src={wordlogo} className="h-6 w-6" />
+                            <span className="font-semibold text-red-600">WORD TABERNACLE</span>
+                        </div>
+                    </Link>
+                    <Button className="text-red-600 hover:bg-red-600 mt-5 mr-5 rounded-lg" onClick={toggleMobileMenu}><MdClose className="h-6 w-6" /></Button>
                 </div>
-            </Link>
-            <div className="flex flex-col items-start">
-                <button onClick={() => toggleSubNav('about')} className="flex items-center">
-                    About
-                </button>
-                {activeSubNav === 'about' && (
-                    <div className="flex flex-col rounded-2xl items-start w-full bg-white border border-gray-200 shadow-lg submenu mt-2">
-                        <Link onClick={closeMobileMenu} href={"/mission"} className="block px-4 py-2 text-gray-700 hover:bg-gray-100 w-full">Mission, Vision & Values</Link>
-                        <Link onClick={closeMobileMenu} href={"#"} className="block px-4 py-2 text-gray-700 hover:bg-gray-100 w-full">Our Story</Link>
-                        <Link onClick={closeMobileMenu} href={"/executive"} className="block px-4 py-2 text-gray-700 hover:bg-gray-100 w-full">Executive Leadership</Link>
-                    </div>
-                )}
+                <div className="p-5">
+                    {navItems.map((item, index) => (
+                        <div key={index} className="my-5">
+                            {item.subItems ? (
+                                <>
+                                    <button onClick={() => toggleSubNav(item.name)} className="flex items-center w-full">
+                                        {item.name}
+                                    </button>
+                                    {activeSubNav === item.name && (
+                                        <div className="submenu mt-2">
+                                            {item.subItems.map((subItem, subIndex) => (
+                                                <Link key={subIndex} href={subItem.link} className="block px-4 py-2 text-gray-700 hover:bg-gray-100">
+                                                    {subItem.name}
+                                                </Link>
+                                            ))}
+                                        </div>
+                                    )}
+                                </>
+                            ) : (
+                                <Link href={item.link} className="flex items-center">
+                                    {item.icon}
+                                    <span className="ml-1">{item.name}</span>
+                                </Link>
+                            )}
+                        </div>
+                    ))}
+                </div>
             </div>
-            <Link onClick={closeMobileMenu} href={"/contact"}>Contact</Link>
-            <div className="flex flex-col items-start">
-                <button onClick={() => toggleSubNav('ministries')} className="flex items-center">
-                    Ministries
-                </button>
-                {activeSubNav === 'ministries' && (
-                    <div className="flex flex-col rounded-2xl items-start w-full bg-white border border-gray-200 shadow-lg submenu mt-2">
-                        <Link onClick={closeMobileMenu} href={"/emergenz"} className="block px-4 py-2 text-gray-700 hover:bg-gray-100 w-full">EMERGENZ</Link>
-                        <Link onClick={closeMobileMenu} href={"#"} className="block px-4 py-2 text-gray-700 hover:bg-gray-100 w-full">Teens</Link>
-                        <Link onClick={closeMobileMenu} href={"/executive"} className="block px-4 py-2 text-gray-700 hover:bg-gray-100 w-full">Children</Link>
-                        <Link onClick={closeMobileMenu} href={"/executive"} className="block px-4 py-2 text-gray-700 hover:bg-gray-100 w-full">Women</Link>
-                        <Link onClick={closeMobileMenu} href={"/men"} className="block px-4 py-2 text-gray-700 hover:bg-gray-100 w-full">Men</Link>
-                    </div>
-                )}
-            </div>
-            <Link onClick={closeMobileMenu} href={"/giving"}>Giving</Link>
-            <Link onClick={closeMobileMenu} href={"/prayer"}>Announcement</Link>
-        </div>
-    </div>
-)}
-
         </div>
     );
 };
