@@ -27,8 +27,8 @@ const Page: FC = () => {
             <span className='block absolute bottom-1 left-1/2 transform -translate-x-1/2 w-[100%] h-[4px] bg-white'></span>
           </h2>
         </div>
-        <div className='md:max-w-[67%] lg:max-w-[67%] xl:max-w-[67%] 2xl:max-w-[87%]  text-[.83rem] xl:text-[.83rem] 2xl:text-[1.1rem] xl:w-[50%] 2xl:w-[40%]  mx-auto'>
-          <section className='mx-auto my-6 flex mb-[5rem] mt-[5.5%] gap-[3%]'>
+        <div className='md:max-w-[67%] lg:max-w-[67%] xl:max-w-[67%] 2xl:max-w-[87%]  text-[.83rem] xl:text-[.83rem] 2xl:text-[1.1rem] xl:w-[50%] 2xl:w-[40%]  mx-auto md:p-0 lg:p-0 xl:p-0 2xl:p-0 p-[1rem]'>
+          <section className='mx-auto my-6 md:flex lg:flex xl:flex 2xl:flex mb-[5rem] mt-[5.5%] gap-[3%]'>
             <article>
             <h2 className='text-[155%] font-semibold'>
 OUR VISION</h2>
@@ -46,15 +46,15 @@ OUR VISION</h2>
               <Image width={1000} height={600} src={msgg2.src} alt="" className='rounded-md mt-[3%] md:w-[60rem] lg:w-[60rem] xl:w-[60rem] 2xl:w-[80rem] h-[13rem]' />
             </article>
           </section>
-          <section className='mx-auto my-6 flex mb-[5rem] gap-3'>
-  <article className='md:order-1 xl:order-1 lg:order-1 2xl:order-1 '>
+          <section className='mx-auto my-6 md:flex lg:flex xl:flex 2xl:flex mb-[5rem] gap-3'>
+  <article className='md:order-1 xl:order-1 lg:order-1 2xl:order-1 order-0'>
     <h2 className='text-[155%] font-semibold'>OUR MISSION</h2>
     <h3 className='text-[135%] font-semibold'>"People empowering people and communities in every area of life to the glory of God."</h3>
     <p  className=' xl:text-[1rem] 2xl:text-[1rem] text-[.96rem] mt-3'>Word Tabernacle Church is more than a building consisting of four walls. It is a spiritual vehicle for socio-economic, system-level change committed to the Vision of “Everyone Thriving”.</p>
 
   </article>
 
-  <article className='md:order-0 lg:order-0 xl:order-0 2xl:order-0 '>
+  <article className='md:order-0 lg:order-0 xl:order-0 2xl:order-0 order-1'>
     <Image className='mt-[3%] rounded-md md:w-[60rem] lg:w-[60rem] xl:w-[60rem] 2xl:w-[80rem] h-[13rem]' width={1000} height={600} src={msgg.src} alt="" />
   </article>
 </section>
@@ -68,12 +68,12 @@ OUR VISION</h2>
             <span className='block absolute bottom-1 left-1/2 transform -translate-x-1/2 w-[100%] h-[4px] bg-white'></span>
           </h2>
         </div>
-        <section className='flex flex-col  justify-center items-center text-gray-600 mt-[3rem] '>
-          <article className='flex  w-[50rem]'>
+        <section className='flex flex-col    justify-center items-center text-gray-600 mt-[3rem]  md:p-0 lg:p-0 xl:p-0 2xl:p-0 p-[1rem]'>
+          <article className='md:flex lg:flex xl:flex 2xl:flex  md:w-[50rem] lg:w-[50rem] xl:w-[50rem] 2xl:w-[50rem]'>
             <h2 className='font-semibold w-[13rem] text-[1.1rem] text-red-800'>
             Accountability
             </h2>
-            <div className='w-[30rem]'>
+            <div className=' md:w-[30rem] lg:w-w-[30rem] xl:w-[30rem] 2xl:w-[30rem]'>
             <p >
 We are personally responsible and accountable to one another
  for our attitude, actions, and integrity as a means of
@@ -86,11 +86,11 @@ We are personally responsible and accountable to one another
             </div>
             
           </article>
-          <article className='flex w-[50rem]'>
+          <article className='md:flex lg:flex xl:flex 2xl:flex  md:w-[50rem] lg:w-[50rem] xl:w-[50rem] 2xl:w-[50rem]'>
             <h2 className='font-semibold w-[13rem] text-[1.1rem] text-red-800'>
             Authority
             </h2>
-            <div className='w-[30rem]'>
+            <div className='md:w-[30rem] lg:w-w-[30rem] xl:w-[30rem] 2xl:w-[30rem]'>
             <p>
             The Holy Bible is divinely inspired by God and is the inerrant
              authority by which God communicates, 
