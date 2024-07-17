@@ -183,6 +183,8 @@ const Header: FC = () => {
                             <span className="font-semibold text-red-600">WORD TABERNACLE</span>
                         </div>
                     </Link>
+                    
+                     {/* testing an error */}
                     <Button className="text-red-600 hover:bg-red-600 mt-5 mr-5 rounded-lg" onClick={toggleMobileMenu}><MdClose className="h-6 w-6" /></Button>
                 </div>
                 <div className="p-5">
