@@ -11,7 +11,9 @@ const Community = () => {
           <div className="p-4 absolute bottom-0 left-0 right-0 text-center pb-[5rem]">
             <h2 className="text-white text-center font-semibold text-lg md:text-2xl xl:text-2xl 2xl:text-2xl">We're Joyful</h2>
             <p className="text-white text-center font-semibold text-lg md:text-xl">BECOME<br />A<br />MEMBER</p>
+            <Link href={"/signup"}>
             <button className="bg-red-600 text-white md:w-[50%] lg:w-[50%] xl:w-[50%] 2xl:w-[50%] p-3 mt-5 ">JOIN US</button>
+            </Link>
           </div>
         </div>
       </section>
@@ -20,7 +22,9 @@ const Community = () => {
           <div className="p-4 absolute bottom-0 left-0 right-0 text-center pb-[5rem]">
             <h2 className="text-white text-center font-semibold text-lg md:text-2xl xl:text-2xl 2xl:text-2xl">Build Capacity</h2>
             <p className="text-white text-center font-semibold text-lg md:text-xl">JOIN OUR<br />LEADERSHIP<br />CLASS</p>
+            <Link href={"/signup"}>
             <button className="bg-red-600 text-white  md:w-[50%] lg:w-[50%] xl:w-[50%] 2xl:w-[50%] p-3 mt-5">START HERE</button>
+            </Link>
           </div>
         </div>
       </section>
