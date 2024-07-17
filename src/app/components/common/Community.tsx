@@ -1,6 +1,7 @@
 import choir from '../common/../../img/choir.webp';
 import cardimg from '../common/../../img/minab.jpg';
 import cardimg2 from '../common/../../img/testimony.webp';
+import Link from 'next/link';
 
 const Community = () => {
   return (
@@ -28,8 +29,9 @@ const Community = () => {
           <div className="p-4 absolute bottom-0 left-0 right-0 text-center pb-[5rem]">
             <h2 className="text-white text-center font-semibold text-lg md:text-2xl xl:text-2xl 2xl:text-2xl">Prophetic session</h2>
             <p className="text-white text-center font-semibold text-lg md:text-xl">REQUEST<br />A<br />PRAYER SESSION</p>
+            <Link href={"/prayer"}>
             <button className="bg-red-600 text-white  md:w-[50%] lg:w-[50%] xl:w-[50%] 2xl:w-[50%]  p-3 mt-5 ">LETS PRAY</button>
-          </div>
+            </Link>  </div>
         </div>
       </section>
     </div>
