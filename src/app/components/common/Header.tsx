@@ -53,7 +53,7 @@ const Header: FC = () => {
         {
             name: "Online",
             icon: <MdOndemandVideo />,
-            link: "/dashboard/details",
+            link: "/online",
         },
         {
             name: "About",
