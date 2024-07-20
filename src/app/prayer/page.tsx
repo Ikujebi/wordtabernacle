@@ -68,7 +68,7 @@ const Page: FC = () => {
                         <span className='block absolute bottom-1 left-1/2 transform -translate-x-1/2 w-[120%] h-[3px] bg-white'></span>
                     </h2>
                 </div>
-                <div className='max-w-[67%] text-red-700 text-[.83rem] xl:text-[.83rem] 2xl:text-[1.1rem] xl:w-[50%] 2xl:w-[40%]  mx-auto'>
+                <div className='md:max-w-[67%] lg:max-w-[67%] xl:max-w-[67%] 2xl:max-w-[67%] text-red-700 text-[.83rem] xl:text-[.83rem] 2xl:text-[1.1rem] xl:w-[50%] 2xl:w-[40%]  mx-auto'>
                 <section className='mx-auto my-6 '>
                     <h2 className='text-center font-bold text-[1.5rem]'>NEED PRAYER?</h2>
                     <p className='text-center'>
@@ -80,7 +80,7 @@ const Page: FC = () => {
                          <p className='text-center font-semibold xl:text-[1rem] 2xl:text-[1rem] text-[.97rem] mt-3'>Complete the form below to give online.</p>
                 </section>
                 <section className='mx-auto my-6 mt-6  '>
-                <Link href='#' className="flex gap-1">
+                <Link href='#' className="flex justify-center gap-1">
                                     <Image alt="church logo" width={300} height={100} src={churchlogo.src} className="md:w-[15rem] lg:w-[15rem] xl:w-[15rem] 2xl:w-[15rem] w-[4rem] md:h-[13rem] lg:h-[13rem] xl:h-[13rem] 2xl:h-[13rem] h-[4rem]" />
                                     <span className="font-semibold text-red-600 md:mt-[5rem] lg:mt-[5rem] xl:mt-[5rem] 2xl:mt-[5rem] mt-[1.5rem] md:text-[2rem] lg:text-[2rem] xl:text-[2rem] 2xl:text-[2rem]">WORD TABERNACLE</span>
                                 </Link>
@@ -91,7 +91,7 @@ const Page: FC = () => {
                 </section>
 
                 <section >
-                    <h2 className='text-[1.7rem] font-semibold'>Prayer Requests</h2>
+                    <h2 className='text-[1.7rem] font-semibold md:ml-0 lg:ml-0 xl:ml-0 2xl:ml-0 ml-7'>Prayer Requests</h2>
                    
 
 
@@ -99,7 +99,7 @@ const Page: FC = () => {
                 <section>
                 <form
             onSubmit={handleSubmit}
-            className=" w-full  shadow-md shadow-xl pt-[2%] mt-[5%] 2xl:h-[101svh] 2xl:mb-[3%] mb-[1rem] pb-2"
+            className="w-full 2xl:w-full  shadow-xl pt-[2%] mt-[5%] 2xl:h-[101svh] 2xl:mb-[3%] mb-[1rem] pb-2"
           >
             <article>
               <h2 className="flex justify-center py-[3%]  text-2xl font-semibold">
