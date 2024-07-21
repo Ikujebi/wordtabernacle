@@ -4,7 +4,7 @@ import {FC} from 'react'
 
 const page:FC = () => {
   return (
-    <div>page</div>
+    <div>church vision</div>
   )
 }
 
