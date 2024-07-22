@@ -95,7 +95,7 @@ const FreeStyle = () => {
                   quality={90}
                   src={item.image}
                   alt="service"
-                  className="w-full mb-4  xl:h-[40rem] 2xl:h-[40rem] lg:h-[30rem] md:h-[33rem] h-[17rem]"
+                  className="w-full mb-4  xl:h-[40rem] 2xl:h-[40rem] lg:h-[30rem] md:h-[33rem] h-[17rem] object-cover object-top"
                 />
                 <div
                   id="imgtext"
