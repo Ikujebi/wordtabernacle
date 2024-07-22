@@ -151,9 +151,11 @@ const Header: FC = () => {
                 </div>
                 <div className="hidden md:block lg:block xl:block 2xl:block">
                     <div id="nav" className="h-10 w-full flex mt-10 justify-between px-14">
+                    <div id="nav" className="h-10 w-full flex mt-10 justify-between px-14 ">
                         <div>
                             <Link href={"/"}>
                                 <div className="flex gap-1">
+                                <div className="flex gap-1 ">
                                     <Image alt="church logo" width={300} height={100} src={wordlogo} className="h-10 w-10" />
                                     <span className="font-semibold text-red-600 mt-3">WORD TABERNACLE</span>
                                 </div>
@@ -175,10 +177,16 @@ const Header: FC = () => {
                 </Link>
                 <Button className="text-white bg-red-600 hover:!text-red-700 hover:!border-red-500 m-auto rounded-lg" onClick={toggleMobileMenu}><MdMenu className="h-6 w-6" /></Button>
             </div>
+<<<<<<< Updated upstream
             <div className={`lg:hidden 2xl:hidden xl:hidden md:hidden bg-white mt-5 absolute z-100 w-full overflow-auto h-[73svh] mt-[10%] top-0 ${mobileMenuVisible ? "left-0"  : "left-[-100%]"} duration-500`}>
                 <div className="flex justify-between">
+=======
+            <div className={`lg:hidden 2xl:hidden xl:hidden md:hidden bg-white  absolute z-100 w-screen h-[38.9svh]  mt-[10%] top-0 ${mobileMenuVisible ? "left-0"  : "left-[-100%]"} duration-500`}>
+                <div className="flex justify-between ">
+>>>>>>> Stashed changes
                     <Link href={"/"} className="ml-5">
                         <div className="flex items-center">
+                        <div className="flex items-center ">
                             <Image alt="church logo" width={300} height={100} src={wordlogo} className="h-6 w-6" />
                             <span className="font-semibold text-red-600">WORD TABERNACLE</span>
                         </div>

@@ -37,6 +37,7 @@ export default function Home() {
 
   return (
     <div className="w-screen flex flex-col items-center justify-center font-satoshi">
+    <div className="w-[100svw] flex flex-col items-center justify-center font-satoshi">
       <Head>
         <link rel="shortcut icon" href="../app/img/wordlogo.png" />
       </Head>
