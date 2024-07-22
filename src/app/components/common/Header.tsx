@@ -150,11 +150,9 @@ const Header: FC = () => {
                     </div>
                 </div>
                 <div className="hidden md:block lg:block xl:block 2xl:block">
-                    <div id="nav" className="h-10 w-full flex mt-10 justify-between px-14">
                     <div id="nav" className="h-10 w-full flex mt-10 justify-between px-14 ">
                         <div>
                             <Link href={"/"}>
-                                <div className="flex gap-1">
                                 <div className="flex gap-1 ">
                                     <Image alt="church logo" width={300} height={100} src={wordlogo} className="h-10 w-10" />
                                     <span className="font-semibold text-red-600 mt-3">WORD TABERNACLE</span>
@@ -185,7 +183,6 @@ const Header: FC = () => {
                 <div className="flex justify-between ">
 >>>>>>> Stashed changes
                     <Link href={"/"} className="ml-5">
-                        <div className="flex items-center">
                         <div className="flex items-center ">
                             <Image alt="church logo" width={300} height={100} src={wordlogo} className="h-6 w-6" />
                             <span className="font-semibold text-red-600">WORD TABERNACLE</span>
