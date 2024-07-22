@@ -68,6 +68,8 @@ const FreeStyle = () => {
     autoplay: true,
     autoplaySpeed: 3000,
     length: 10,
+    arrows: false,
+    
   };
 
   return (

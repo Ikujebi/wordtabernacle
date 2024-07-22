@@ -36,7 +36,7 @@ export default function Home() {
   };
 
   return (
-    <div className="w-screen flex flex-col items-center justify-center font-satoshi">
+    <div className="w-screen  flex flex-col items-center justify-center font-satoshi bg">
       <Head>
         <link rel="shortcut icon" href="../app/img/wordlogo.png" />
       </Head>
@@ -83,7 +83,7 @@ export default function Home() {
         <div className="flex flex-wrap mt-0 sm:mt-0 md:mt-20 lg:mt-20">
           {/* Your other code goes here */}
         </div>
-        <div className="w-full bg-black py-8 md:py-12 mt-16 lg:mt-24">
+        <div className="w-screen bg-black py-8 md:py-12 mt-16 lg:mt-24">
           <div className="mx-auto">
             <div className="text-white text-center font-bold text-3xl md:text-5xl md:leading-tight">
               "A church you can <span className="brand">believe</span> in."
