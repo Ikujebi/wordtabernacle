@@ -43,7 +43,7 @@ OUR VISION</h2>
             </article>
 
             <article >
-              <Image width={1000} height={600} src={msgg2.src} alt="" className='rounded-md object-cover mt-[3%] md:w-[60rem] lg:w-[60rem] xl:w-[60rem] 2xl:w-[80rem] h-[13rem]' />
+              <Image width={1000} height={600} src={msgg2.src} alt="" className='rounded-md object-cover  mt-[3%] md:w-[60rem] lg:w-[60rem] xl:w-[60rem] 2xl:w-[80rem] h-[13rem]' />
             </article>
           </section>
           <section className='mx-auto my-6 md:flex lg:flex xl:flex 2xl:flex mb-[5rem] gap-3'>
