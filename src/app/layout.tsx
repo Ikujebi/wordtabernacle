@@ -22,7 +22,7 @@ export default function RootLayout({
         <link rel="icon" href={`${logo}`} sizes="any" />
         <link rel="shortcut icon" href={`${logo}`} type="image/x-icon" />
       </Head>
-      <body className={`${inter.className} w-[100svw]`}>{children}</body>
+      <body className={inter.className}>{children}</body>
     </html>
   );
 }
