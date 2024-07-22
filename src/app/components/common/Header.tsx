@@ -176,7 +176,7 @@ const Header: FC = () => {
                 <Button className="text-white bg-red-600 hover:!text-red-700 hover:!border-red-500 m-auto rounded-lg" onClick={toggleMobileMenu}><MdMenu className="h-6 w-6" /></Button>
             </div>
 
-            <div className={`lg:hidden 2xl:hidden xl:hidden md:hidden bg-white  absolute z-100 w-screen h-[38.9svh]  mt-[10%] top-0 ${mobileMenuVisible ? "left-0"  : "left-[-100%]"} duration-500`}>
+            <div className={`lg:hidden 2xl:hidden xl:hidden md:hidden bg-white  absolute z-100 w-screen h-78.9svh]  mt-[10%] top-0 ${mobileMenuVisible ? "left-0"  : "left-[-100%]"} duration-500`}>
                 <div className="flex justify-between ">
 
                     <Link href={"/"} className="ml-5">
