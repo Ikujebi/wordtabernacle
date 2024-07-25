@@ -124,7 +124,7 @@ const Header: FC = () => {
                             <Link href={"/login"}>Login</Link>
                         </span>
                     </div>
-                    <div className="flex items-center text-gray-600 text-sm">
+                    <div className="flex items-center text-gray-600 text-sm md:gap-1 lg:gap-2 xl:gap-2 2xl:gap-2 gap-2">
                         <Link href={"https://x.com/wordtabernaclen"} className="md:flex lg:flex 2xl:flex hidden xl:flex md:w-8 lg:w-8 xl:w-8 2xl:w-8 w-6 md:h-8 lg:h-8 xl:h-8 2xl:h-8 h-6 bg-red-600 rounded-full flex items-center justify-center">
                             <FaTwitter className="text-white text-lg" />
                         </Link>
