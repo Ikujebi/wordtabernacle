@@ -124,7 +124,7 @@ const Page: FC = () => {
             <article className="flex flex-col items-center">
               <h3>Wednesday Equip Service:</h3>
               <p className=" text-[90%] ">
-                Wednesdays at 12:00PM - Rocky Mount & Online/E-City Campus
+                Wednesdays at 06:30PM - main auditorium
               </p>
             </article>
           </section>
