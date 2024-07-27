@@ -1,65 +1,68 @@
-import { connect } from "@/dbConfig/dbConfig"
-import mongoose from 'mongoose';
-import User from "@/models/userModel"
-import { NextRequest, NextResponse } from "next/server"
+import { connect } from "@/dbConfig/dbConfig";
+import Contact from "@/models/contactModel";
+import { NextRequest, NextResponse } from "next/server";
 
-const contactSchema = new mongoose.Schema({
-    name: {
-      type: String,
-      required: true,
-    },
-    email: {
-      type: String,
-      required: true,
-    },
-    message: {
-      type: String,
-      required: true,
-    },
-    date: {
-      type: Date,
-      default: Date.now,
-    },
-  });
-  
-  const Contact = mongoose.models.Contact || mongoose.model('Contact', contactSchema);
 
-  
-let contactMessages:any = [];
+interface ContactRequest {
+  firstName: string;
+  lastName: string;
+  email: string;
+  phone: string;
+  message: string;
+}
 
-connect().then(() => {
-    console.log("logged in to mongoDB successfully");
+export async function POST(request: NextRequest) {
+  try {
+    const { firstName,lastName, email,phone, message }: ContactRequest = await request.json();
 
-}).catch((error) => {
-    console.error("error connecting to mongoDB ", error.message)
-})
+    const newContact = new Contact({
+      firstName,
+      lastName,
+       email,
+       phone,
+        message ,
+    });
 
-export default async function handler(NextRequest:any, NextResponse:any) {
-    if (NextRequest.method === 'POST') {
-      try {
-        const { name, email, message } = NextRequest.body;
-  
-        const newContact = new Contact({
-          name,
-          email,
-          message,
-        });
-  
-        await newContact.save();
-  
-        NextResponse.status(200).json({ message: 'Message received' });
-      } catch (error) {
-        NextResponse.status(500).json({ message: 'Error saving message', error: "User does not exist" });
-      }
-    } else if (NextRequest.method === 'GET') {
-      try {
-        const messages = await Contact.find();
-        NextResponse.status(200).json(messages);
-      } catch (error) {
-        NextResponse.status(500).json({ message: 'Error retrieving messages', error: "User does not exist" });
-      }
+    await newContact.save();
+
+    return NextResponse.json({ message: 'Message received' }, { status: 200 });
+  } catch (error) {
+    if (error instanceof Error) {
+      return NextResponse.json({ message: 'Error saving message', error: error.message }, { status: 500 });
     } else {
-        NextResponse.setHeader('Allow', ['GET', 'POST']);
-        NextResponse.status(405).end(`Method ${NextRequest.method} Not Allowed`);
+      return NextResponse.json({ message: 'An unknown error occurred' }, { status: 500 });
     }
   }
+}
+
+export async function GET() {
+  try {
+    const messages = await Contact.find();
+    return NextResponse.json(messages, { status: 200 });
+  } catch (error) {
+    if (error instanceof Error) {
+      return NextResponse.json({ message: 'Error retrieving messages', error: error.message }, { status: 500 });
+    } else {
+      return NextResponse.json({ message: 'An unknown error occurred' }, { status: 500 });
+    }
+  }
+}
+
+export async function handler(request: any) {
+  const { method } = request;
+  if (method === 'POST') {
+    return POST(request);
+  } else if (method === 'GET') {
+    return GET();
+  } else {
+    return NextResponse.json({ message: `Method ${method} Not Allowed` }, { status: 405 });
+  }
+}
+
+connect()
+  .then(() => {
+    console.log("Logged in to MongoDB successfully");
+  })
+  .catch((error) => {
+    console.error("Error connecting to MongoDB ", error.message);
+  });

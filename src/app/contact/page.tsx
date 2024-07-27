@@ -6,6 +6,7 @@ import { FaMapMarkerAlt, FaPhoneAlt } from "react-icons/fa";
 import givbg from "../img/giveimg.jpg";
 import { MdEmail } from "react-icons/md";
 import emailjs from "emailjs-com";
+import axios from "axios";
 
 const Page: FC = () => {
   const [formData, setFormData] = useState({
@@ -20,29 +21,46 @@ const Page: FC = () => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e: any) => {
+  const handleSubmit = async  (e: any) => {
     e.preventDefault();
 
-    emailjs
-      .send("your_service_id", "your_template_id", formData, "your_user_id")
-      .then(
-        (result) => {
-          alert("Email sent successfully!");
-          setFormData({
-            firstName: "",
-            lastName: "",
-            email: "",
-            phone: "",
-            message: "",
-          });
-        },
-        (error) => {
-          alert("Failed to send email.");
-          console.error("Error:", error.text);
-        }
-      );
+    if (!formData.firstName || !formData.lastName || !formData.email || !formData.message) {
+      alert("Please fill in all required fields.");
+      return;
+    }
+    try {
+      // Send data to API endpoint
+      const response = await axios.post('/api/contact', formData);
+
+      if (response.status === 200) {
+       
+        // Send email if saving to the database is successful
+        const result = await emailjs.send(
+          "your_service_id",
+          "your_template_id",
+          formData,
+          "your_user_id"
+        );
+
+        alert("Email sent successfully!");
+        setFormData({
+          firstName: "",
+          lastName: "",
+          email: "",
+          phone: "",
+          message: "",
+        });
+      } else {
+        alert("Failed to save contact.");
+        console.error('Error:', response.data);
+      }
+    } catch (error) {
+      alert("Failed to send email.");
+      console.error("Error:", error);
+    }
   };
 
+    
   return (
     <div className="font-satoshi ">
       <header>
