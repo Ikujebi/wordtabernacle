@@ -2,7 +2,7 @@ import { connect } from "@/dbConfig/dbConfig";
 import Contact from "@/models/contactModel";
 import { NextRequest, NextResponse } from "next/server";
 
-
+// Interface for ContactRequest
 interface ContactRequest {
   firstName: string;
   lastName: string;
@@ -11,18 +11,17 @@ interface ContactRequest {
   message: string;
 }
 
-export async function POST(request: NextRequest) {
+// Function to handle POST request
+async function handlePost(request: NextRequest) {
   try {
-    const { firstName,lastName, email,phone, message }: ContactRequest = await request.json();
+    // Parsing the JSON body
+    const body: ContactRequest = await request.json();
+    const { firstName, lastName, email, phone, message } = body;
 
-    const newContact = new Contact({
-      firstName,
-      lastName,
-       email,
-       phone,
-        message ,
-    });
-
+    // Creating new contact document
+    const newContact = new Contact({ firstName, lastName, email, phone, message });
+    
+    // Saving the new contact to the database
     await newContact.save();
 
     return NextResponse.json({ message: 'Message received' }, { status: 200 });
@@ -35,8 +34,10 @@ export async function POST(request: NextRequest) {
   }
 }
 
-export async function GET() {
+// Function to handle GET request
+async function handleGet() {
   try {
+    // Fetching all contact messages from the database
     const messages = await Contact.find();
     return NextResponse.json(messages, { status: 200 });
   } catch (error) {
@@ -48,21 +49,19 @@ export async function GET() {
   }
 }
 
-export async function handler(request: any) {
-  const { method } = request;
-  if (method === 'POST') {
-    return POST(request);
-  } else if (method === 'GET') {
-    return GET();
-  } else {
-    return NextResponse.json({ message: `Method ${method} Not Allowed` }, { status: 405 });
-  }
-}
-
+// Establishing database connection
 connect()
   .then(() => {
-    console.log("Logged in to MongoDB successfully");
+    console.log("Connected to MongoDB successfully");
   })
   .catch((error) => {
-    console.error("Error connecting to MongoDB ", error.message);
+    console.error("Error connecting to MongoDB:", error.message);
   });
+
+export async function POST(request: NextRequest) {
+  return handlePost(request);
+}
+
+export async function GET() {
+  return handleGet();
+}
