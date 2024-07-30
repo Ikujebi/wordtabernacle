@@ -16,7 +16,7 @@ const Footer = () => {
    
   ];
   return (
-    <div className="bg-black text-white pt-16 font w-[100svw]">
+    <div className="bg-black text-white pt-16 font  2xl-w-screen">
       <div className="container mx-auto">
         <div className="text-center pb-4">
           <h3 className="text-xl">Subscribe for updates</h3>
@@ -48,7 +48,7 @@ const Footer = () => {
                         </a>
             </div>
             <div className="flex justify-center mt-4">
-              <p className="text-sm">Word Tabernacle. All Rights Reserved</p>
+              <p className="text-sm"> <span className='text-lg '>&copy;</span> Word Tabernacle. v1.00  All Rights Reserved (2024)</p>
             </div>
           </div>
         </div>
