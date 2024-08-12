@@ -75,7 +75,7 @@ const Header: FC = () => {
                 { name: "EMERGENZ", link: "/emergenz" },
                 { name: "Teens", link: "#" },
                 { name: "Children", link: "/executive" },
-                { name: "Women", link: "/executive" },
+                { name: "Women", link: "/women" },
                 { name: "Men", link: "/men" },
             ],
         },
