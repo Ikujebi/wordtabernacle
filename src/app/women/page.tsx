@@ -43,7 +43,7 @@ const Page:FC = () => {
       <header>
         <Header />
       </header>
-      <main className="pt-[10rem]">
+      <main className="md:pt-[10rem] lg:pt-[10rem] xl:pt-[10rem] 2xl:pt-[10rem] pt-[6.77rem]">
         <div
           className="content h-[6rem] 2xl:h-[8rem] relative flex justify-center items-center"
           style={{
