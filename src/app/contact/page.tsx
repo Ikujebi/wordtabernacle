@@ -7,6 +7,9 @@ import givbg from "../img/giveimg.jpg";
 import { MdEmail } from "react-icons/md";
 import emailjs from "emailjs-com";
 import axios from "axios";
+import { message } from "antd";
+import styles from "../CustomMessage.module.css"
+import { useRouter } from 'next/navigation';
 
 const Page: FC = () => {
   const [formData, setFormData] = useState({
@@ -16,22 +19,25 @@ const Page: FC = () => {
     phone: "",
     message: "",
   });
-
+  const router = useRouter();
   const handleChange = (e: any) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
+    console.log('Updated formData:', formData);
   };
 
   const handleSubmit = async  (e: any) => {
     e.preventDefault();
 
     if (!formData.firstName || !formData.lastName || !formData.email || !formData.message) {
-      alert("Please fill in all required fields.");
+      message.warning("Please fill in all required fields.");
       return;
     }
+    const loadingMessageKey = 'contactFormLoading';
     try {
+      message.loading({ content: 'Submitting your message...', key: loadingMessageKey ,className: styles.loader});
       // Send data to API endpoint
-      const response = await axios.post('/api/contact', formData);
-
+      const response = await axios.post('/api/users/contact', formData);
+      console.log('Backend response:', response);
       if (response.status === 200) {
        
         // Send email if saving to the database is successful
@@ -41,7 +47,7 @@ const Page: FC = () => {
           formData,
           "your_user_id"
         );
-
+        message.success({ content: `Backend response: ${response.data.message}`, key: loadingMessageKey, duration: 2 });
         alert("Email sent successfully!");
         setFormData({
           firstName: "",
@@ -50,7 +56,10 @@ const Page: FC = () => {
           phone: "",
           message: "",
         });
-      } else {
+        router.push('/');
+      } 
+     
+      else {
         alert("Failed to save contact.");
         console.error('Error:', response.data);
       }
@@ -150,7 +159,7 @@ const Page: FC = () => {
         <section className="md:h-[60svh] lg:h-[60svh] xl:h-[60svh] h-[80svh] 2xl:h-[80svh] flex justify-center 2xl:mb-[5%]">
           <form
             onSubmit={handleSubmit}
-            className="border-[2px] w-full border-gray-400 shadow-md md:w-[60%] lg:w-[60%] xl:w-[60%] 2xl:w-[60%] shadow-xl pt-[2%] mt-[5%] 2xl:h-[70svh] 2xl:mb-[3%]"
+            className="border-[2px] overflow-auto  w-full border-gray-400 shadow-md md:w-[60%] lg:w-[60%] xl:w-[60%] 2xl:w-[60%] shadow-xl pt-[2%] mt-[5%] 2xl:h-[70svh] 2xl:mb-[3%]"
           >
             <article>
               <h2 className="flex justify-center py-[3%]  text-2xl font-semibold">
