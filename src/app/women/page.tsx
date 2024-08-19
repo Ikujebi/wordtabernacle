@@ -55,18 +55,18 @@ const Page: FC = () => {
           </h2>
         </div>
 
-        <section className="flex justify-center items-center m-auto mt-[3%] mb-[5%]">
-  <div className="flex flex-col w-[50%] items-center">
+        <section className="md:flex lg:flex xl:flex  2xl:flex justify-center items-center m-auto mt-[3%] mb-[5%]">
+  <div className="flex flex-col md:w-[50%] lg:w-[50%] m-auto xl:w-[50%] 2xl:w-[50%] items-center">
     
     <Image src={grid.src} alt="" width={200} height={120} className="xl:ml-[25%] 2xl:ml-[25%]  ml-[40%] text-red-500 " />
     <Image src={women7.src} alt="" width={200} height={110} className="mt-[-7rem] mx-auto" />
   </div>
-  <div className="flex flex-col items-center mt-[3%] w-[50%] 2xl:text-[1.5rem] text-[1.2rem] xl:text-[1.5rem]">
-    <article className="w-[50%] text-center">
+  <div className="flex  flex-col items-center mt-[3%] w-[50%] 2xl:text-[1.5rem] text-[1.2rem] xl:text-[1.5rem]">
+    <article className="md:w-[50%] lg:w-[50%] xl:w-[50%] 2xl:w-[50%] text-center">
       The WTC Women's ministry provides a regional gathering for women who have determined there is no greater goal than to ensure they have become the person God has intended them to be.
     </article>
     <article className="bg-gradient-to-r from-indigo-100 mt-[5%] flex justify-center rounded-3xl">
-      <p className="w-[50%] text-center">
+      <p className="md:w-[50%] lg:w-[50%] xl:w-[50%] 2xl:w-[50%] text-center">
         For more details, contact the church administration offices via phone or email at wordtabernacle@gmail.com.
       </p>
     </article>
