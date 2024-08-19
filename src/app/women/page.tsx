@@ -1,5 +1,5 @@
 "use client";
-import { useState,FC } from "react";
+import { useState, FC } from "react";
 import Image from "next/image";
 import Header from "../components/common/Header";
 import Footer from "../components/common/Footer";
@@ -10,11 +10,10 @@ import women3 from "../img/women3.webp";
 import women4 from "../img/women4.webp";
 import women5 from "../img/women5.webp";
 import women6 from "../img/women6.webp";
+import women7 from "../img/women7.jpg";
+import grid from "../img/grid.svg";
 
-
-const Page:FC = () => {
-  
-  
+const Page: FC = () => {
   const [showFullGallery, setShowFullGallery] = useState(false);
 
   const openGallery = () => setShowFullGallery(true);
@@ -37,13 +36,11 @@ const Page:FC = () => {
   const initialImages = women.slice(0, 9);
 
   return (
-    
-    <div className="font-satoshi" >
-      
+    <div className="font-satoshi">
       <header>
         <Header />
       </header>
-      <main className="md:pt-[10rem] lg:pt-[10rem] xl:pt-[10rem] 2xl:pt-[10rem] pt-[6.77rem]">
+      <main className="md:pt-[10rem] lg:pt-[10rem] xl:pt-[10rem] 2xl:pt-[10rem] pt-[6.77rem] font-semibold">
         <div
           className="content h-[6rem] 2xl:h-[8rem] relative flex justify-center items-center"
           style={{
@@ -58,27 +55,35 @@ const Page:FC = () => {
           </h2>
         </div>
 
-        <section className="flex flex-col items-center mt-[3%]">
-          <article className="w-[45%] text-center">
-            The WTC Women's ministry provides a regional gathering for women who
-            have determined there is no greater goal than to ensure they have
-            become the man God has intended them to be.
-          </article>
-          <article className="bg-gradient-to-r from-indigo-300 mt-[5%] flex justify-center">
-            <p className="w-[45%] text-center">
-              For more details contact the church administration offices via
-              phone at 252-442-2925 or email at wordtabernacle.gmail.com.
-            </p>
-          </article>
-        </section>
-        
-        <section onClick={closeGallery} className="bg-purple-200 from-indigo-300 flex flex-col items-center pb-[2rem]">
+        <section className="flex justify-center items-center m-auto mt-[3%] mb-[5%]">
+  <div className="flex flex-col w-[50%] items-center">
+    
+    <Image src={grid.src} alt="" width={200} height={120} className="xl:ml-[25%] 2xl:ml-[25%]  ml-[40%] text-red-500 " />
+    <Image src={women7.src} alt="" width={200} height={110} className="mt-[-7rem] mx-auto" />
+  </div>
+  <div className="flex flex-col items-center mt-[3%] w-[50%] 2xl:text-[1.5rem] text-[1.2rem] xl:text-[1.5rem]">
+    <article className="w-[50%] text-center">
+      The WTC Women's ministry provides a regional gathering for women who have determined there is no greater goal than to ensure they have become the person God has intended them to be.
+    </article>
+    <article className="bg-gradient-to-r from-indigo-100 mt-[5%] flex justify-center rounded-3xl">
+      <p className="w-[50%] text-center">
+        For more details, contact the church administration offices via phone or email at wordtabernacle@gmail.com.
+      </p>
+    </article>
+  </div>
+</section>
+
+
+        <section
+          onClick={closeGallery}
+          className="bg-purple-200 from-indigo-300 flex flex-col items-center pb-[2rem]"
+        >
           <h2 className="text-white font-semibold 2xl:text-[1.9rem] text-[1.5rem] relative inline-block my-[3%]">
             Women's Gallery
             <span className="block absolute bottom-0 left-1/2 transform -translate-x-1/2 w-[60%] h-[3px] bg-white "></span>
           </h2>
 
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3 2xl:grid-cols-4 gap-4" >
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3 2xl:grid-cols-4 gap-4">
             {initialImages.map((image, index) => (
               <Image
                 key={index}
@@ -102,7 +107,6 @@ const Page:FC = () => {
           {showFullGallery && (
             <div className="absolute inset-0 bg-black bg-opacity-75 flex justify-center items-center mt-[25rem]">
               <div className="bg-white p-6 rounded-lg">
-                
                 <div className="grid grid-cols-3 gap-4 mt-4">
                   {women.map((image, index) => (
                     <Image
@@ -113,14 +117,15 @@ const Page:FC = () => {
                       height={200}
                     />
                   ))}
-
                 </div>
                 <div className=" flex items-center">
-                <button className="mt-4 bg-red-500 text-white py-2 px-4 rounded " onClick={closeGallery}>
-                  Close
-                </button>
+                  <button
+                    className="mt-4 bg-red-500 text-white py-2 px-4 rounded "
+                    onClick={closeGallery}
+                  >
+                    Close
+                  </button>
                 </div>
-                
               </div>
             </div>
           )}
