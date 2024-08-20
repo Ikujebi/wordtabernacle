@@ -55,23 +55,33 @@ const Page: FC = () => {
           </h2>
         </div>
 
-        <section className="md:flex lg:flex xl:flex  2xl:flex justify-center items-center m-auto mt-[3%] mb-[5%]">
-  <div className="flex flex-col md:w-[50%] lg:w-[50%] m-auto xl:w-[50%] 2xl:w-[50%] items-center">
-    
-    <Image src={grid.src} alt="" width={200} height={120} className="xl:ml-[25%] 2xl:ml-[25%]  ml-[40%] text-red-500 " />
-    <Image src={women7.src} alt="" width={200} height={110} className="mt-[-7rem] mx-auto" />
-  </div>
-  <div className="flex  flex-col items-center mt-[3%] w-[50%] 2xl:text-[1.5rem] text-[1.2rem] xl:text-[1.5rem]">
-    <article className="md:w-[50%] lg:w-[50%] xl:w-[50%] 2xl:w-[50%] text-center">
+        <section className="flex flex-col md:flex-row justify-center items-center mt-[3%] mb-[5%]">
+  <div id="word" className="flex flex-col items-center w-full md:w-[50%] text-[1.17rem] md:text-[1.2rem] xl:text-[1.5rem]">
+    <article className="w-[90%] md:w-[70%] lg:w-[60%] text-center">
       The WTC Women's ministry provides a regional gathering for women who have determined there is no greater goal than to ensure they have become the person God has intended them to be.
     </article>
+    
+    {/* The image is placed here and shown only on mobile */}
+    <div className="flex md:hidden my-4 flex-col items-center w-full  m-auto">
+    <Image src={grid.src} alt="" width={200} height={120} className="ml-[35%] md:ml-[25%] xl:ml-[25%] text-red-500 " />
+    <Image src={women7.src} alt="" width={200} height={110} className="mt-[-4rem] mx-auto" />
+    </div>
+
     <article className="bg-gradient-to-r from-indigo-100 mt-[5%] flex justify-center rounded-3xl">
-      <p className="md:w-[50%] lg:w-[50%] xl:w-[50%] 2xl:w-[50%] text-center">
+      <p className="w-[90%] md:w-[70%] lg:w-[60%] text-center">
         For more details, contact the church administration offices via phone or email at wordtabernacle@gmail.com.
       </p>
     </article>
   </div>
+
+  {/* This image block will only show on larger screens */}
+  <div id="image" className="hidden md:flex flex-col items-center w-full md:w-[50%] m-auto">
+    <Image src={grid.src} alt="" width={200} height={120} className="ml-0 md:ml-[25%] xl:ml-[25%] text-red-500" />
+    <Image src={women7.src} alt="" width={200} height={110} className="mt-[-4rem] mx-auto" />
+  </div>
 </section>
+
+
 
 
         <section
