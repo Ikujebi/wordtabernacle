@@ -19,6 +19,8 @@ const Page: FC = () => {
         email: "",
         phone: "",
         message: "",
+        member: "",
+        contactMethod: "",
       });
     
       const handleChange = (e: any) => {
@@ -39,6 +41,8 @@ const Page: FC = () => {
                 email: "",
                 phone: "",
                 message: "",
+                member: "",
+                contactMethod: "",
               });
             },
             (error) => {
@@ -49,12 +53,7 @@ const Page: FC = () => {
       };
     
 
-    const [valueRadio, setValueRadio] = useState(1);
-
-  const onChange = (e:any) => {
-    setValueRadio(e.target.value);
-  };
-
+    
     
     return (
         <div className='font-satoshi '>
@@ -165,9 +164,9 @@ const Page: FC = () => {
               <article className=" mx-[2rem] mt-[5%] flex flex-col ">
                 <h3>Preferred Method of Contact (optional)
                 </h3>
-                <Radio.Group onChange={onChange} value={valueRadio}>
-        <Radio className='text-[1rem]' value={1}>Email</Radio><br />
-        <Radio className='text-[1rem]' value={2}>Phone</Radio>
+                <Radio.Group onChange={handleChange} value={formData.contactMethod}>
+        <Radio className='text-[1rem]' value={"email">Email</Radio><br />
+        <Radio className='text-[1rem]' value="phone">Phone</Radio>
         
       </Radio.Group>
               </article>
@@ -189,9 +188,9 @@ const Page: FC = () => {
                 <h3>Are you a member of WTC (optional)
 
                 </h3>
-                <Radio.Group onChange={onChange} value={valueRadio}>
-        <Radio className='text-[1rem]' value={1}>Yes</Radio><br />
-        <Radio className='text-[1rem]' value={2}>No</Radio>
+                <Radio.Group onChange={handleChange} value={formData.member}>
+        <Radio className='text-[1rem]' value="yes">Yes</Radio><br />
+        <Radio className='text-[1rem]' value="no">No</Radio>
         
       </Radio.Group>
               </article>

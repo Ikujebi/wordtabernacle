@@ -10,10 +10,18 @@ import { useState } from 'react'
 
 const Page: FC = () => {
 
-    const [value, setValue] = useState('');
+    const [formData, setFormData] = useState({
+        fund: '',
+        note: '',
+        amount: ''
+    });
 
-    const handleChange = (e:any) => {
-      setValue(e.target.value);
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
+        const { name, value } = e.target;
+        setFormData(prevData =>({
+            ...prevData,
+            [name]: value
+        }))
     };
     return (
         <div className='font-satoshi '>
@@ -74,7 +82,11 @@ const Page: FC = () => {
                 </section>
                 <section>
                     <article>
-                    <select id="funds" name="Fund" className='w-full h-[3rem] border-[1px] border-gray-400 focus:border-red-400 focus:outline-red-400 outline-[1px] mb-[3rem] pl-2 text-[1.3rem] text-red-400 mb-[3rem]'>
+                    <select id="funds" 
+                    name="Fund" 
+                    value={formData.fund}
+                    onChange={handleChange}
+                    className='w-full h-[3rem] border-[1px] border-gray-400 focus:border-red-400 focus:outline-red-400 outline-[1px] mb-[3rem] pl-2 text-[1.3rem] text-red-400 mb-[3rem]'>
     <option value="" disabled selected hidden>Fund</option>
     <option value="tithe">Tithe</option>
     <option value="pastor">Pastoral Support</option>
@@ -85,16 +97,18 @@ const Page: FC = () => {
 </select>
     <input
         type="text"
-        className={`w-full h-[3rem] border-[1px] border-gray-400 outline-[1px] mb-[3rem] pl-4 text-[1.3rem] placeholder-red-400 focus:outline-red-400 transition-colors duration-300 ${value.trim() ? 'placeholder-to-border' : ''}`}
+        className={`w-full h-[3rem] border-[1px] border-gray-400 outline-[1px] mb-[3rem] pl-4 text-[1.3rem] placeholder-red-400 focus:outline-red-400 transition-colors duration-300 ${formData.note.trim() ? 'placeholder-to-border' : ''}`}
         placeholder="Note"
-        value={value}
+        name='note'
+        value={formData.note}
         onChange={handleChange}
       />
     <input
         type="text"
-        className={`w-full h-[3rem] border-[1px] border-gray-400 outline-[1px] mb-[3rem] pl-4 text-[1.3rem] placeholder-red-400 focus:outline-red-400 transition-colors duration-300 ${value.trim() ? 'placeholder-to-border' : ''}`}
+        className={`w-full h-[3rem] border-[1px] border-gray-400 outline-[1px] mb-[3rem] pl-4 text-[1.3rem] placeholder-red-400 focus:outline-red-400 transition-colors duration-300 ${formData.amount.trim() ? 'placeholder-to-border' : ''}`}
         placeholder="Amount"
-        value={value}
+        name='anount'
+        value={formData.amount}
         onChange={handleChange}
       />
 
