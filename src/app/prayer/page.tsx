@@ -165,7 +165,7 @@ const Page: FC = () => {
                 <h3>Preferred Method of Contact (optional)
                 </h3>
                 <Radio.Group onChange={handleChange} value={formData.contactMethod}>
-        <Radio className='text-[1rem]' value={"email">Email</Radio><br />
+        <Radio className='text-[1rem]' value="email">Email</Radio><br />
         <Radio className='text-[1rem]' value="phone">Phone</Radio>
         
       </Radio.Group>
