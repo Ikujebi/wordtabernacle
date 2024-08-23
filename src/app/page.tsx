@@ -115,12 +115,12 @@ export default function Home() {
         </div>
       </div>
 
-      <Link
+      {/* <Link
         className="bg-green-500 hover:bg-green-700 div-white py-2 px-4 mt-15 font-bold rounded"
         href={"/profile"}
       >
         PROFILE
-      </Link>
+      </Link> */}
     </div>
   );
 }
