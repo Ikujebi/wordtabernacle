@@ -12,10 +12,13 @@ interface ContactRequest {
 }
 
 // Function to handle POST request
+
 async function handlePost(request: NextRequest) {
   try {
     // Parsing the JSON body
+    console.log('POST request received');
     const body: ContactRequest = await request.json();
+    console.log('Request body:', body);
     const { firstName, lastName, email, phone, message } = body;
 
     // Creating new contact document

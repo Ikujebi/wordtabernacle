@@ -98,13 +98,13 @@ export default function Home() {
           <div className="flex justify-center my-4">
             <Button
               onClick={handlePrevVideo}
-              className="mr-2 bg-red-400 w-[6rem] hover:!border-red-500 hover:!text-red-700"
+              className="mr-2 bg-red-400 w-[6rem] hover:!border-red-500 hover:!font-bold hover:!text-red-700"
             >
               Previous
             </Button>
             <Button
               onClick={handleNextVideo}
-              className="bg-green-400 w-[6rem] hover:!border-green-500 hover:!text-green-700"
+              className="bg-green-400 w-[6rem] hover:!font-bold hover:!border-green-500 hover:!text-green-700"
             >
               Next
             </Button>
@@ -115,12 +115,12 @@ export default function Home() {
         </div>
       </div>
 
-      <Link
+      {/* <Link
         className="bg-green-500 hover:bg-green-700 div-white py-2 px-4 mt-15 font-bold rounded"
         href={"/profile"}
       >
         PROFILE
-      </Link>
+      </Link> */}
     </div>
   );
 }
