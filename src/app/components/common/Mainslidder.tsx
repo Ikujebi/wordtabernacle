@@ -74,7 +74,7 @@ const FreeStyle = () => {
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen w-screen">
-      <div className="container my-[9rem] w-full relative">
+      <div className="container my-[9rem] md:my-[6rem] lg:my-[6rem]  w-full relative">
 
         <div className="absolute inset-0  bg-black opacity-10 pointer-events-none z-10 h-[95%] md:h-[97%] lg:h-[97%] xl:h-[97%] 2xl:h-[97.92%]"></div>{" "}
 
