@@ -82,4 +82,6 @@
 .ant-message-notice .anticon-spin {
   color: red !important;
 }
-
+.ant-spin-dot-item {
+  background-color: red !important;
+}

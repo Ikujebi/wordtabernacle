@@ -143,9 +143,9 @@ const Header: FC = () => {
                         <Link href={"https://t.me/+ufId9mRBMlVlMzY8"} className="md:w-8 lg:w-8 xl:w-8 2xl:w-8 w-6 md:h-8 lg:h-8 xl:h-8 2xl:h-8 h-6 bg-red-600 rounded-full flex items-center justify-center">
                             <FaTelegram className="text-white text-lg" />
                         </Link>
-                        <a href={"mailto:wordtabernaclebc@gmail.com"} className="ml-2 md:flex lg:flex 2xl:flex hidden xl:flex items-center">
+                        <a href={"mailto: wordtabernaclebcng@gmail.com"} className="ml-2 md:flex lg:flex 2xl:flex hidden xl:flex items-center">
                             <MdEmail />
-                            <span className="ml-1">wordtabernaclebc@gmail.com</span>
+                            <span className="ml-1"> wordtabernaclebcng@gmail.com</span>
                         </a>
                     </div>
                 </div>
