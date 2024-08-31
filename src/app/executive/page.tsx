@@ -4,21 +4,19 @@ import Header from '../components/common/Header'
 import Footer from '../components/common/Footer'
 import Image from 'next/image'
 import givbg from '../img/giveimg.jpg'
-import pastor from '../img/pastor.webp'
-import pastorMrs from '../img/mumcy.jpg'
-import ministerAbraham from '../img/minab.jpg'
-import ministerjames from '../img/minjames.jpg'
-import mrsFelix from '../img/mrsfelix.jpg'
+
 
 
 
 
 const Page: FC = () => {
-
+const pastor = "https://res.cloudinary.com/dalylashp/image/upload/v1725101809/pastor_ypsalo.webp"
+ const pastorMrs = "https://res.cloudinary.com/dalylashp/image/upload/v1725101800/pastermrs_iscziw.webp"
+const  ministerAbraham = "https://res.cloudinary.com/dalylashp/image/upload/v1725101654/minab_vedu6k.jpg"
+ const ministerjames  = "https://res.cloudinary.com/dalylashp/image/upload/v1725101665/minjames_nqlte4.jpg"
+ const mrsFelix = "https://res.cloudinary.com/dalylashp/image/upload/v1725101688/mrsfelix_sijxhs.jpg" 
  
-
- 
-  return (
+ return (
     <div className='font-satoshi '>
       <header >
         <Header />
@@ -33,7 +31,7 @@ const Page: FC = () => {
         <section className='flex  gap-[3rem] justify-center mt-[4rem]'>
           <div className='md:flex lg:flex xl:flex 2xl:flex w-[80%] gap-[3rem] '>
           <article className=' md:w-[35%] lg:w-[35%] xl:w-[35%] 2xl:w-[30%] '>
-            <Image width={1000} height={500} src={pastor.src} alt="pastor" className='w-full h-[35svh]' />
+            <Image width={1000} height={500} src={pastor} alt="pastor" className='w-full h-[35svh]' />
           </article>
          
           <article className='md:w-[60%] lg:w-[60%] xl:w-[60%] 2xl:w-[60%]'>
@@ -76,7 +74,7 @@ const Page: FC = () => {
         <section className='flex  gap-[3rem] justify-center mt-[4rem]'>
           <div className='md:flex lg:flex xl:flex 2xl:flex w-[80%] gap-[3rem] '>
           <article className=' md:w-[35%] lg:w-[35%] xl:w-[35%] 2xl:w-[30%] '>
-            <Image width={1000} height={500} src={pastorMrs.src} alt="pastor" className='w-full h-[35svh]' />
+            <Image width={1000} height={500} src={pastorMrs} alt="pastor" className='w-full h-[35svh]' />
           </article>
          
           <article className='md:w-[60%] lg:w-[60%] xl:w-[60%] 2xl:w-[60%]'>
@@ -119,7 +117,7 @@ const Page: FC = () => {
         <section className='flex  gap-[3rem] justify-center mt-[4rem]'>
           <div className='md:flex lg:flex xl:flex 2xl:flex w-[80%] gap-[3rem] '>
           <article className=' md:w-[35%] lg:w-[35%] xl:w-[35%] 2xl:w-[30%] '>
-            <Image width={1000} height={500} src={ministerAbraham.src} alt="pastor" className='w-full h-[35svh]' />
+            <Image width={1000} height={500} src={ministerAbraham} alt="pastor" className='w-full h-[35svh]' />
           </article>
          
           <article className='md:w-[60%] lg:w-[60%] xl:w-[60%] 2xl:w-[60%]'>
@@ -162,7 +160,7 @@ const Page: FC = () => {
         <section className='flex  gap-[3rem] justify-center mt-[4rem]'>
           <div className='md:flex lg:flex xl:flex 2xl:flex w-[80%] gap-[3rem] '>
           <article className=' md:w-[35%] lg:w-[35%] xl:w-[35%] 2xl:w-[30%] '>
-            <Image width={1000} height={500} src={ministerjames.src} alt="pastor" className='w-full h-[35svh]' />
+            <Image width={1000} height={500} src={ministerjames} alt="pastor" className='w-full h-[35svh]' />
           </article>
          
           <article className='md:w-[60%] lg:w-[60%] xl:w-[60%] 2xl:w-[60%]'>
@@ -205,7 +203,7 @@ const Page: FC = () => {
         <section className='flex  gap-[3rem] justify-center mt-[4rem]'>
           <div className='md:flex lg:flex xl:flex 2xl:flex w-[80%] gap-[3rem] '>
           <article className=' md:w-[35%] lg:w-[35%] xl:w-[35%] 2xl:w-[30%] '>
-            <Image width={1000} height={500} src={ministerjames.src} alt="pastor" className='w-full h-[35svh]' />
+            <Image width={1000} height={500} src={ministerjames} alt="pastor" className='w-full h-[35svh]' />
           </article>
          
           <article className='md:w-[60%] lg:w-[60%] xl:w-[60%] 2xl:w-[60%]'>
@@ -248,7 +246,7 @@ const Page: FC = () => {
         <section className='flex  gap-[3rem] justify-center mt-[4rem]'>
           <div className='md:flex lg:flex xl:flex 2xl:flex w-[80%] gap-[3rem] '>
           <article className=' md:w-[35%] lg:w-[35%] xl:w-[35%] 2xl:w-[30%] '>
-            <Image width={1000} height={500} src={mrsFelix.src} alt="pastor" className='w-full h-[35svh]' />
+            <Image width={1000} height={500} src={mrsFelix} alt="pastor" className='w-full h-[35svh]' />
           </article>
          
           <article className='md:w-[60%] lg:w-[60%] xl:w-[60%] 2xl:w-[60%]'>

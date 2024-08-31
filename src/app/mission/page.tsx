@@ -6,15 +6,14 @@ import Image from 'next/image'
 import givbg from '../img/giveimg.jpg'
 
 import redbg from '../img/redbgi.webp'
-import msgg from '../img/msg-1001955056097-3260.webp'
-import msgg2 from '../img/msg-1001955056097-3253.webp'
+
 
 
 const Page: FC = () => {
 
  
-
- 
+const msgg = "https://res.cloudinary.com/dalylashp/image/upload/v1725101699/msg-1001955056097-3253_ckzgsa.webp"
+ const msgg2 = "https://res.cloudinary.com/dalylashp/image/upload/v1725101712/msg-1001955056097-3260_qxe986.webp"
   return (
     <div className='font-satoshi '>
       <header >
@@ -44,7 +43,7 @@ OUR VISION</h2>
 
             <article >
 
-              <Image width={1000} height={600} src={msgg2.src} alt="" className='rounded-md object-cover object-top   mt-[3%] md:w-[60rem] lg:w-[60rem] xl:w-[60rem] 2xl:w-[80rem] h-[13rem]' />
+              <Image width={1000} height={600} src={msgg2} alt="" className='rounded-md object-cover object-top   mt-[3%] md:w-[60rem] lg:w-[60rem] xl:w-[60rem] 2xl:w-[80rem] h-[13rem]' />
             </article>
           </section>
           <section className='mx-auto my-6 md:flex lg:flex xl:flex 2xl:flex mb-[5rem] gap-3'>
@@ -56,7 +55,8 @@ OUR VISION</h2>
   </article>
 
   <article className='md:order-0 lg:order-0 xl:order-0 2xl:order-0 order-1'>
-    <Image className='mt-[3%] rounded-md md:w-[60rem] lg:w-[60rem] xl:w-[60rem] 2xl:w-[80rem] h-[13rem] object-cover object-top' width={1000} height={600} src={msgg.src} alt="" />
+    <Image className='mt-[3%] rounded-md md:w-[60rem] lg:w-[60rem] xl:w-[60rem] 2xl:w-[80rem] h-[13rem] object-cover object-top'
+     width={1000} height={600} src={msgg} alt="" />
   </article>
 </section>
           

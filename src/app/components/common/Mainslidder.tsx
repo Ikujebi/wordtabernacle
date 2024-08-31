@@ -4,30 +4,23 @@ import { motion } from "framer-motion";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import pastor1 from "../../img/pastor.webp";
-import pastor2 from "../../img/ruth.jpg";
-import choir from "../../img/choir.webp";
-import drama from "../../img/drama.webp";
-import certa1 from "../../img/choir7.webp";
-import ayanfe from "../../img/ayanfe.webp";
-import kenny from "../../img/miralight.webp";
-import yportal from "../../img/dance.webp";
-import testimony from "../../img/childrenchoir.webp";
 import Image from "next/image";
 import { FaUserAlt, FaChalkboardTeacher, FaChurch } from "react-icons/fa";
 import { MdCardGiftcard } from "react-icons/md";
 
 const FreeStyle = () => {
-  const pic1 = pastor1;
-  const pic2 = certa1;
-  const pic3 = choir;
-  const pic4 = pastor2;
-  const pic5 = choir;
-  const pic6 = testimony;
-  const pic7 = ayanfe;
-  const pic8 = drama;
-  const pic9 = yportal;
-  const pic10 = kenny;
+  const pic1 = "https://res.cloudinary.com/dalylashp/image/upload/v1725101809/pastor_ypsalo.webp";
+  const pic2 = "https://res.cloudinary.com/dalylashp/image/upload/v1725101517/choir7_umfdyb.webp";
+  const pic3 = "https://res.cloudinary.com/dalylashp/image/upload/v1725101508/choir_ekkuf6.webp";
+  const pic4 = "https://res.cloudinary.com/dalylashp/image/upload/v1725101899/ruth_vn60xa.jpg";
+  const pic5 = "https://res.cloudinary.com/dalylashp/image/upload/v1725101372/aerial_nlcnjk.jpg";
+  const pic6 = "https://res.cloudinary.com/dalylashp/image/upload/v1725101463/childrencho_yfl42i.webp";
+  const pic7 = "https://res.cloudinary.com/dalylashp/image/upload/v1725101419/ayanfe_w7dp1v.webp";
+  const pic8 = "https://res.cloudinary.com/dalylashp/image/upload/v1725101584/drama_bnrzlz.webp";
+  const pic9 = "https://res.cloudinary.com/dalylashp/image/upload/v1725101572/dance_r0rtdv.webp";
+  const pic10 = "https://res.cloudinary.com/dalylashp/image/upload/v1725102037/youth2_zd5tok.webp";
+  const pic11 = "https://res.cloudinary.com/dalylashp/image/upload/v1725101777/pactitioners_jepeb3.webp"
+const pic12 = "https://res.cloudinary.com/dalylashp/image/upload/v1725101790/part_nbo4ux.webp"
 
   const [_index, setIndex] = useState(0);
   const slides = [
@@ -41,6 +34,8 @@ const FreeStyle = () => {
     { image: pic8 },
     { image: pic9 },
     { image: pic10 },
+    { image: pic11 },
+    { image: pic12 },
   ];
 
   useEffect(() => {
@@ -73,8 +68,8 @@ const FreeStyle = () => {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen w-screen">
-      <div className="container my-[9rem] md:my-[6rem] lg:my-[6rem]  w-full relative">
+    <div className="flex flex-col items-center justify-center min-h-screen w-screen md:mt-rem]">
+      <div className="container my-[9rem] md:my-[8.3rem] lg:my-[8.3rem]  w-full relative">
 
         <div className="absolute inset-0  bg-black opacity-10 pointer-events-none z-10 h-[95%] md:h-[97%] lg:h-[97%] xl:h-[97%] 2xl:h-[97.92%]"></div>{" "}
 

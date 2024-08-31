@@ -97,7 +97,7 @@ const Header: FC = () => {
                         {item.name}
                     </button>
                     {activeSubNav === item.name && (
-                        <div className="absolute rounded-md top-full left-0 mt-2 bg-white border border-gray-200 shadow-lg submenu">
+                        <div className="absolute rounded-md top-full left-0 mt-2 bg-white border border-gray-200 shadow-lg submenu mb-[1rem]">
                             {item.subItems.map((subItem, subIndex) => (
                                 <Link key={subIndex} href={subItem.link} className="block px-4 py-2 text-gray-700 hover:bg-gray-100">
                                     {subItem.name}
@@ -155,7 +155,7 @@ const Header: FC = () => {
                             <Link href={"/"}>
                                 <div className="flex gap-1 ">
                                     <Image alt="church logo" width={300} height={100} src={wordlogo} className="h-10 w-10" />
-                                    <span className="font-semibold text-red-600 mt-3">WORD TABERNACLE</span>
+                                    <span className="font-semibold text-red-600 mt-3 ">WORD TABERNACLE</span>
                                 </div>
                             </Link>
                         </div>

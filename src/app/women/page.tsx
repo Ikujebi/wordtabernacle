@@ -4,13 +4,7 @@ import Image from "next/image";
 import Header from "../components/common/Header";
 import Footer from "../components/common/Footer";
 import givbg from "../img/giveimg.jpg";
-import women1 from "../img/women1.webp";
-import women2 from "../img/women2.webp";
-import women3 from "../img/women3.webp";
-import women4 from "../img/women4.webp";
-import women5 from "../img/women5.webp";
-import women6 from "../img/women6.webp";
-import women7 from "../img/women7.jpg";
+
 import grid from "../img/grid.svg";
 
 const Page: FC = () => {
@@ -23,6 +17,15 @@ const Page: FC = () => {
 
   const closeGallery = () => setShowFullGallery(false);
 
+  const women1 = "https://res.cloudinary.com/dalylashp/image/upload/v1725101924/women1_yi6bxl.webp"
+  const women2 = "https://res.cloudinary.com/dalylashp/image/upload/v1725101937/women2_nk682e.webp"
+const women3 = "https://res.cloudinary.com/dalylashp/image/upload/v1725101958/women3_ps8rop.webp"
+const women4 = "https://res.cloudinary.com/dalylashp/image/upload/v1725101970/women4_jrezw9.webp"
+const women5 = "https://res.cloudinary.com/dalylashp/image/upload/v1725101977/women5_hzw0rr.webp"
+const women6 = "https://res.cloudinary.com/dalylashp/image/upload/v1725101987/women6_yjmiat.webp"
+const women7 ="https://res.cloudinary.com/dalylashp/image/upload/v1725101997/women7_fwqwl3.jpg"
+const women8 = "https://res.cloudinary.com/dalylashp/image/upload/v1725101777/pactitioners_jepeb3.webp"
+
   const women = [
     { src: women1, alt: "Photo 1" },
     { src: women2, alt: "Photo 2" },
@@ -31,6 +34,7 @@ const Page: FC = () => {
     { src: women5, alt: "Photo 5" },
     { src: women6, alt: "Photo 6" },
     { src: women7, alt: "Photo 7" },
+    { src: women8, alt: "Photo 7" },
     // Add more images as needed
   ];
 
@@ -63,7 +67,7 @@ const Page: FC = () => {
             </article>
             <div className="flex md:hidden my-4 flex-col items-center w-full  m-auto">
               <Image src={grid.src} alt="" width={200} height={120} className="ml-[35%] md:ml-[25%] xl:ml-[25%] md:w-[50%] md:h-[15rem]" />
-              <Image src={women7.src} alt="" width={200} height={110} className="mt-[-4rem] mx-auto" />
+              <Image src={women7} alt="" width={200} height={110} className="mt-[-4rem] mx-auto" />
             </div>
             <article className="bg-gradient-to-r from-indigo-100 mt-[5%] flex justify-center rounded-3xl">
               <p className="w-[90%] md:w-[70%] lg:w-[60%] text-center">
@@ -74,7 +78,7 @@ const Page: FC = () => {
 
           <div id="image" className="hidden md:flex flex-col items-center w-full md:w-[50%] 2xl:w-[40%] lg:w-[50%] m-auto">
             <Image src={grid.src} alt="" width={200} height={120} className="ml-0 md:ml-[-10%] xl:ml-[-10%] md:w-[50%] md:h-[13rem]" />
-            <Image src={women7.src} alt="" width={200} height={110} className="mt-[-6rem] ml-[-.2rem] mx-auto md:w-[50%] md:h-[15rem]" />
+            <Image src={women7} alt="" width={200} height={110} className="mt-[-6rem] ml-[-.2rem] mx-auto md:w-[50%] md:h-[15rem]" />
           </div>
         </section>
 

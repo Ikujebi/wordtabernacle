@@ -2,9 +2,7 @@
 import { FC, useState } from "react";
 import Header from "../components/common/Header";
 import Footer from "../components/common/Footer";
-import { FaMapMarkerAlt, FaPhoneAlt } from "react-icons/fa";
 import givbg from "../img/giveimg.jpg";
-import { MdEmail } from "react-icons/md";
 import emailjs from "emailjs-com";
 
 const Page: FC = () => {
