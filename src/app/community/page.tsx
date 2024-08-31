@@ -1,10 +1,11 @@
 "use client"
 import {FC} from 'react'
-import choir from '../img/choir.webp'
-import cardimg from '../img/youthpreacher.webp'
-import cardimg2 from '../img/testimony.webp'
+
 
 const Community:FC = () => {
+  const choir = ""
+  const cardimg = ""
+  const cardimg2 = ""
   return (
     <div className="flex w-full h- items-center">
       <section className="w-[33.3%]">
