@@ -54,7 +54,7 @@ const Page: FC = () => {
       <Header />
       </div>
 
-      <div className="xl:w-[60%] md:w-[60%] mx-auto grid gap-5 h-[100svh] pt-[7.5rem] md:pt-[10rem] lg:pt-[10rem] xl:pt-[10rem] 2xl:pt-[10rem]">
+      <div className="xl:w-[60%] md:w-[60%] mx-auto grid gap-5 h-[100svh] pt-[7.5rem] md:pt-[9rem] lg:pt-[10rem] xl:pt-[10rem] 2xl:pt-[10rem]">
         {data.map((item, index) => (
           <Link
           href={item.link}
