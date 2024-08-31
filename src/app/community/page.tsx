@@ -3,13 +3,13 @@ import {FC} from 'react'
 
 
 const Community:FC = () => {
-  const choir = ""
-  const cardimg = ""
-  const cardimg2 = ""
+  const choir = "https://res.cloudinary.com/dalylashp/image/upload/v1725101790/part_nbo4ux.webp"
+  const cardimg = "https://res.cloudinary.com/dalylashp/image/upload/v1725101790/part_nbo4ux.webp"
+  const cardimg2 = "https://res.cloudinary.com/dalylashp/image/upload/v1725101790/part_nbo4ux.webp"
   return (
     <div className="flex w-full h- items-center">
       <section className="w-[33.3%]">
-        <div className="content h-[30rem] relative" style={{ backgroundImage: `url(${choir.src})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
+        <div className="content h-[30rem] relative" style={{ backgroundImage: `url(${choir})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
           <div className="p-4 absolute bottom-0 left-0 right-0 text-center pb-[5rem]">
             <h2 className="text-white text-center font-semibold">We&apos;re Joyful</h2>
             <p className="text-white text-center font-semibold text-sm md:text-base">BECOME<br />A<br />MEMBER</p>
@@ -18,7 +18,7 @@ const Community:FC = () => {
         </div>
       </section>
       <section className="w-[33.3%]">
-        <div className="content h-[30rem] relative" style={{ backgroundImage: `url(${cardimg.src})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
+        <div className="content h-[30rem] relative" style={{ backgroundImage: `url(${cardimg})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
           <div className="p-4 absolute bottom-0 left-0 right-0 text-center pb-[5rem]">
             <h2 className="text-white text-center font-semibold">Build Capacity</h2>
             <p className="text-white text-center font-semibold text-lg md:text-xl">JOIN OUR<br />LEADERSHIP<br />CLASS</p>
@@ -27,7 +27,7 @@ const Community:FC = () => {
         </div>
       </section>
       <section className="w-[33.3%]">
-        <div className="content h-[30rem] relative" style={{ backgroundImage: `url(${cardimg2.src})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
+        <div className="content h-[30rem] relative" style={{ backgroundImage: `url(${cardimg2})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
           <div className="p-4 absolute bottom-0 left-0 right-0 text-center pb-[5rem]">
             <h2 className="text-white text-center font-semibold">Prophetic session</h2>
             <p className="text-white text-center font-semibold text-lg md:text-xl">REQUEST<br />A<br />PRAYER SESSION</p>
