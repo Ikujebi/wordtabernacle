@@ -3,8 +3,8 @@ import {FC} from 'react'
 
 
 const Community:FC = () => {
-  const choir = "https://res.cloudinary.com/dalylashp/image/upload/v1725101790/part_nbo4ux.webp"
-  const cardimg = "https://res.cloudinary.com/dalylashp/image/upload/v1725101790/part_nbo4ux.webp"
+  const choir = "https://res.cloudinary.com/dalylashp/image/upload/v1725129867/photo_5933838834204786585_y_sw5gkj.jpg"
+  const cardimg = "https://res.cloudinary.com/dalylashp/image/upload/v1725129856/photo_5933838834204786597_y_zm9hpb.jpg"
   const cardimg2 = "https://res.cloudinary.com/dalylashp/image/upload/v1725129876/photo_5933838834204786583_y_ivyxxk.jpg"
   return (
     <div className="flex w-full h- items-center">
