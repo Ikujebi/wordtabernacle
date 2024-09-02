@@ -26,7 +26,7 @@ const msgg = "https://res.cloudinary.com/dalylashp/image/upload/v1725101699/msg-
             <span className='block absolute bottom-1 left-1/2 transform -translate-x-1/2 w-[100%] h-[4px] bg-white'></span>
           </h2>
         </div>
-        <div className='md:max-w-[67%] lg:max-w-[67%] xl:max-w-[67%] 2xl:max-w-[87%]  text-[.83rem] xl:text-[.83rem] 2xl:text-[1.1rem] xl:w-[50%] 2xl:w-[40%]  mx-auto md:p-0 lg:p-0 xl:p-0 2xl:p-0 p-[1rem]'>
+        <div className='  text-[.83rem]  mx-auto  p-[1rem]  md:hidden lg:hidden xl:hidden 2xl:hidden'>
           <section className='mx-auto my-6 md:flex lg:flex xl:flex 2xl:flex mb-[5rem] mt-[5.5%] gap-[3%]'>
             <article>
             <h2 className='text-[155%] font-semibold'>
@@ -63,6 +63,55 @@ OUR VISION</h2>
           
         
         </div>
+
+        <div className='md:max-w-[67%] lg:max-w-[67%] xl:max-w-[67%] 2xl:max-w-[87%] text-[.83rem] xl:text-[.83rem] 2xl:text-[1.1rem] xl:w-[50%] 2xl:w-[40%] mx-auto md:p-0 lg:p-0 xl:p-0 2xl:p-0 p-[1rem] hidden md:block lg:block xl:block 2xl:block'>
+  <section className='mx-auto my-6 md:flex lg:flex xl:flex 2xl:flex mb-[5rem] mt-[5.5%] gap-[3%]'>
+    <article className='order-0 md:order-0'>
+      <h2 className='text-[155%] font-semibold'>OUR VISION</h2>
+      <h3 className='text-[135%] font-semibold'>"Everyone Thriving"</h3>
+      <p className='text-[.96rem]'>
+        Word Tabernacle Church is more than a building consisting of four walls.
+        It is a spiritual vehicle for socio-economic, system-level change committed
+        to the Vision of “Everyone Thriving”.
+      </p>
+    </article>
+
+    <article className='order-1 md:order-1'>
+      <Image 
+        width={1000} 
+        height={600} 
+        src={msgg2} 
+        alt="" 
+        className='rounded-md object-cover object-top mt-[3%] md:w-[60rem] lg:w-[60rem] xl:w-[60rem] 2xl:w-[80rem] h-[13rem]' 
+      />
+    </article>
+  </section>
+
+  <section className='mx-auto my-6 md:flex lg:flex xl:flex 2xl:flex mb-[5rem] gap-3'>
+    <article className='order-1 md:order-0 lg:order-0 xl:order-0 2xl:order-0'>
+      <Image 
+        className='mt-[3%] rounded-md md:w-[60rem] lg:w-[60rem] xl:w-[60rem] 2xl:w-[80rem] h-[13rem] object-cover object-top'
+        width={1000} 
+        height={600} 
+        src={msgg} 
+        alt="" 
+      />
+    </article>
+
+    <article className='order-1 md:order-1 lg:order-1 xl:order-1 2xl:order-1'>
+      <h2 className='text-[155%] font-semibold'>OUR MISSION</h2>
+      <h3 className='text-[135%] font-semibold'>
+        "People empowering people and communities in every area of life to the glory of God."
+      </h3>
+      <p className='xl:text-[1rem] 2xl:text-[1rem] text-[.96rem] mt-3'>
+        Word Tabernacle Church is more than a building consisting of four walls.
+        It is a spiritual vehicle for socio-economic, system-level change committed
+        to the Vision of “Everyone Thriving”.
+      </p>
+    </article>
+  </section>
+</div>
+        
         <div className="content  h-[6rem] relative flex justify-center items-center" style={{ backgroundImage: `url(${redbg.src})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
           <h2 className='text-white font-semibold text-[1.9rem] relative inline-block'>
           Our Values
