@@ -47,8 +47,8 @@ const Footer = () => {
                             
                         </a>
             </div>
-            <div className="flex justify-center mt-4">
-              <p className="text-sm"> <span className='text-lg '>&copy;</span> Word Tabernacle. v1.00  All Rights Reserved (2024)</p>
+            <div className="flex justify-center mt-4 ">
+              <div className="xl:text-sm 2xl:text-sm flex text-[.75rem]"> <p className='mr-[3px] mt-[-.45rem]'><span className='text-lg  mt-[-0.27rem]'>&copy;</span> Word Tabernacle. v1.00</p><p>All Rights Reserved (2024) </p>   </div>
             </div>
           </div>
         </div>
