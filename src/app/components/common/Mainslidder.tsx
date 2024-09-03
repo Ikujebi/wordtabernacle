@@ -13,7 +13,7 @@ const FreeStyle = () => {
   const pic2 = "https://res.cloudinary.com/dalylashp/image/upload/v1725101517/choir7_umfdyb.webp";
   const pic3 = "https://res.cloudinary.com/dalylashp/image/upload/v1725101508/choir_ekkuf6.webp";
   const pic4 = "https://res.cloudinary.com/dalylashp/image/upload/v1725101899/ruth_vn60xa.jpg";
-  const pic5 = "https://res.cloudinary.com/dalylashp/image/upload/v1725101372/aerial_nlcnjk.jpg";
+  const pic5 = "https://res.cloudinary.com/dalylashp/image/upload/v1725356890/5933838834204786631_hg4uhx.jpg";
   const pic6 = "https://res.cloudinary.com/dalylashp/image/upload/v1725101463/childrencho_yfl42i.webp";
   const pic7 = "https://res.cloudinary.com/dalylashp/image/upload/v1725101419/ayanfe_w7dp1v.webp";
   const pic8 = "https://res.cloudinary.com/dalylashp/image/upload/v1725101584/drama_bnrzlz.webp";
@@ -21,6 +21,8 @@ const FreeStyle = () => {
   const pic10 = "https://res.cloudinary.com/dalylashp/image/upload/v1725102037/youth2_zd5tok.webp";
   const pic11 = "https://res.cloudinary.com/dalylashp/image/upload/v1725101777/pactitioners_jepeb3.webp"
 const pic12 = "https://res.cloudinary.com/dalylashp/image/upload/v1725101790/part_nbo4ux.webp"
+const pic13 = "https://res.cloudinary.com/dalylashp/image/upload/v1725356891/5933838834204786637_esw96j.jpg"
+const pic14 = "https://res.cloudinary.com/dalylashp/image/upload/v1725356890/5933838834204786640_r1lu2y.jpg"
 
   const [_index, setIndex] = useState(0);
   const slides = [
@@ -36,6 +38,8 @@ const pic12 = "https://res.cloudinary.com/dalylashp/image/upload/v1725101790/par
     { image: pic10 },
     { image: pic11 },
     { image: pic12 },
+    { image: pic13 },
+    { image: pic14 },
   ];
 
   useEffect(() => {
