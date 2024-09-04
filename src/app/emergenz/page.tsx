@@ -8,8 +8,19 @@ import givbg from "../img/giveimg.jpg";
 
 const Page: FC = () => {
  
-
- 
+  const pic2 = "https://res.cloudinary.com/dalylashp/image/upload/v1725101517/choir7_umfdyb.webp";
+  const pic3 = "https://res.cloudinary.com/dalylashp/image/upload/v1725101508/choir_ekkuf6.webp";
+  const pic4 = "https://res.cloudinary.com/dalylashp/image/upload/v1725101899/ruth_vn60xa.jpg";
+  const pic5 = "https://res.cloudinary.com/dalylashp/image/upload/v1725356890/5933838834204786631_hg4uhx.jpg";
+  const pic6 = "https://res.cloudinary.com/dalylashp/image/upload/v1725101463/childrencho_yfl42i.webp";
+  
+  const youthpic = [
+    {image : pic2},
+    {image : pic3},
+    {image : pic4},
+    {image : pic5},
+    {image : pic6}
+  ]
 
    
   return (
@@ -47,7 +58,7 @@ const Page: FC = () => {
         
         </p></article>
        </section >
-       <section className="bg-purple-200 from-indigo-300 flex flex-col items-center h-[50svh]">
+       <section className="bg-purple-200 from-indigo-300 flex flex-col items-center h-full pb-[2rem]">
        <h2 className="text-white font-semibold 2xl:text-[1.9rem] text-[1.5rem] relative inline-block my-[3%]">
        Teen and Youth Spotlights
             <span className="block absolute bottom-0 left-1/2 transform -translate-x-1/2 w-[60%] h-[3px] bg-white "></span>
@@ -57,6 +68,15 @@ const Page: FC = () => {
             <Image src={givbg.src} width={1000} height={500} alt="" className="w-[25%] h-[150%]"/>
             <Image src={givbg.src} width={1000} height={500} alt="" className="w-[25%] h-[150%]"/>
             
+          </article>
+          <article className="flex justify-center gap-5 mt-[5rem]">
+          <div  className="grid grid-cols-12 gap-4">
+            {youthpic.map((item,i)=>(
+              
+              <div key={i} className="col-span-3 ">
+              <Image  src={item.image} width={1000} height={500} alt="" className=" "/>
+              </div> ))} 
+              </div>
           </article>
        </section>
       </main>
