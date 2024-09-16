@@ -12,7 +12,7 @@ import redbg from '../img/redbgi.webp'
 const Page: FC = () => {
 
  
-const msgg = "https://res.cloudinary.com/dalylashp/image/upload/v1725101699/msg-1001955056097-3253_ckzgsa.webp"
+const msgg = "https://res.cloudinary.com/dalylashp/image/upload/v1725356890/5933838834204786640_r1lu2y.jpg"
  const msgg2 = "https://res.cloudinary.com/dalylashp/image/upload/v1725101712/msg-1001955056097-3260_qxe986.webp"
   return (
     <div className='font-satoshi '>
