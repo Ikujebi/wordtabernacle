@@ -191,7 +191,7 @@ const Header: FC = () => {
                 </div>
                 <div className="p-5">
                     {navItems.map((item, index) => (
-                        <div key={index} className="my-5">
+                        <div key={index} className="my-5 font-bold">
                             {item.subItems ? (
                                 <>
                                     <button onClick={() => toggleSubNav(item.name)} className="flex items-center w-full">

@@ -13,14 +13,14 @@ const FreeStyle = () => {
   const pic2 = "https://res.cloudinary.com/dalylashp/image/upload/v1725101517/choir7_umfdyb.webp";
   const pic3 = "https://res.cloudinary.com/dalylashp/image/upload/v1725101508/choir_ekkuf6.webp";
   const pic4 = "https://res.cloudinary.com/dalylashp/image/upload/v1725101899/ruth_vn60xa.jpg";
-  const pic5 = "https://res.cloudinary.com/dalylashp/image/upload/v1725356890/5933838834204786631_hg4uhx.jpg";
-  const pic6 = "https://res.cloudinary.com/dalylashp/image/upload/v1725101463/childrencho_yfl42i.webp";
+  const pic5 = "https://res.cloudinary.com/dalylashp/image/upload/v1726579602/word06_mzxdqf.jpg";
+  const pic6 = "https://res.cloudinary.com/dalylashp/image/upload/v1726579634/word014_mzx1rz.jpg";
   const pic7 = "https://res.cloudinary.com/dalylashp/image/upload/v1725101419/ayanfe_w7dp1v.webp";
   const pic8 = "https://res.cloudinary.com/dalylashp/image/upload/v1725101584/drama_bnrzlz.webp";
   const pic9 = "https://res.cloudinary.com/dalylashp/image/upload/v1725101572/dance_r0rtdv.webp";
   const pic10 = "https://res.cloudinary.com/dalylashp/image/upload/v1725102037/youth2_zd5tok.webp";
-  const pic11 = "https://res.cloudinary.com/dalylashp/image/upload/v1725101777/pactitioners_jepeb3.webp"
-const pic12 = "https://res.cloudinary.com/dalylashp/image/upload/v1725101790/part_nbo4ux.webp"
+  const pic11 = "https://res.cloudinary.com/dalylashp/image/upload/v1726579601/word04_ynvjdt.jpg"
+const pic12 = "https://res.cloudinary.com/dalylashp/image/upload/v1726579634/word15_ctucr4.jpg"
 const pic13 = "https://res.cloudinary.com/dalylashp/image/upload/v1725356891/5933838834204786637_esw96j.jpg"
 const pic14 = "https://res.cloudinary.com/dalylashp/image/upload/v1725356890/5933838834204786640_r1lu2y.jpg"
 
@@ -72,8 +72,8 @@ const pic14 = "https://res.cloudinary.com/dalylashp/image/upload/v1725356890/593
   };
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen w-screen md:mt-rem]">
-      <div className="container my-[9rem] md:my-[8.3rem] lg:my-[8.3rem]  w-full relative">
+    <div className="flex flex-col items-center justify-center min-h-screen xl:mt-[-10rem] w-screen md:mt-rem]">
+      <div className="container  my-[9rem] md:my-[8.3rem] lg:my-[8.3rem] xl:px-[3rem]  w-full relative">
 
         <div className="absolute inset-0  bg-black opacity-10 pointer-events-none z-10 h-[95%] md:h-[97%] lg:h-[97%] xl:h-[97%] 2xl:h-[97.92%]"></div>{" "}
 
