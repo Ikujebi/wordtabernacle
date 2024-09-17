@@ -9,10 +9,10 @@ import givbg from "../img/giveimg.jpg";
 const Page: FC = () => {
  
   const pic2 = "https://res.cloudinary.com/dalylashp/image/upload/v1725101517/choir7_umfdyb.webp";
-  const pic3 = "https://res.cloudinary.com/dalylashp/image/upload/v1725101508/choir_ekkuf6.webp";
-  const pic4 = "https://res.cloudinary.com/dalylashp/image/upload/v1725101899/ruth_vn60xa.jpg";
+  const pic3 = "https://res.cloudinary.com/dalylashp/image/upload/v1726579634/word14_apmp4h.jpg";
+  const pic4 = "https://res.cloudinary.com/dalylashp/image/upload/v1726579602/word_mrsJJ4_uerkqo.jpg";
   const pic5 = "https://res.cloudinary.com/dalylashp/image/upload/v1725356890/5933838834204786631_hg4uhx.jpg";
-  const pic6 = "https://res.cloudinary.com/dalylashp/image/upload/v1725101463/childrencho_yfl42i.webp";
+  const pic6 = "https://res.cloudinary.com/dalylashp/image/upload/v1726579602/word05_a4mu7h.jpg";
   
   const youthpic = [
     {image : pic2},
