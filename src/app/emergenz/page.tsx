@@ -13,13 +13,17 @@ const Page: FC = () => {
   const pic4 = "https://res.cloudinary.com/dalylashp/image/upload/v1726579602/word_mrsJJ4_uerkqo.jpg";
   const pic5 = "https://res.cloudinary.com/dalylashp/image/upload/v1725356890/5933838834204786631_hg4uhx.jpg";
   const pic6 = "https://res.cloudinary.com/dalylashp/image/upload/v1726579602/word05_a4mu7h.jpg";
+  const pic7 = "https://res.cloudinary.com/dalylashp/image/upload/v1726579602/word5_l7jfsl.jpg"
+  const pic8 =  "https://res.cloudinary.com/dalylashp/image/upload/v1726579603/word6_dojbxq.jpg"
   
   const youthpic = [
     {image : pic2},
     {image : pic3},
     {image : pic4},
     {image : pic5},
-    {image : pic6}
+    {image : pic6},
+    {image : pic7},
+    {image : pic8},
   ]
 
    
