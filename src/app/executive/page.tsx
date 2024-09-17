@@ -14,8 +14,9 @@ const pastor = "https://res.cloudinary.com/dalylashp/image/upload/v1725101809/pa
  const pastorMrs = "https://res.cloudinary.com/dalylashp/image/upload/v1725101800/pastermrs_iscziw.webp"
 const  ministerAbraham = "https://res.cloudinary.com/dalylashp/image/upload/v1725101654/minab_vedu6k.jpg"
  const ministerjames  = "https://res.cloudinary.com/dalylashp/image/upload/v1725101665/minjames_nqlte4.jpg"
- const mrsFelix = "https://res.cloudinary.com/dalylashp/image/upload/v1725101688/mrsfelix_sijxhs.jpg" 
- 
+ const mrsFelix = "https://res.cloudinary.com/dalylashp/image/upload/v1725356883/5954255936203899436_tqvofb.jpg" 
+ const mrsJJ = "https://res.cloudinary.com/dalylashp/image/upload/v1726579602/WORD_MRSjj2_dlz6ft.jpg"
+
  return (
     <div className='font-satoshi '>
       <header >
@@ -203,7 +204,7 @@ const  ministerAbraham = "https://res.cloudinary.com/dalylashp/image/upload/v172
         <section className='flex  gap-[3rem] justify-center mt-[4rem]'>
           <div className='md:flex lg:flex xl:flex 2xl:flex w-[80%] gap-[3rem] '>
           <article className=' md:w-[35%] lg:w-[35%] xl:w-[35%] 2xl:w-[30%] '>
-            <Image width={1000} height={500} src={ministerjames} alt="pastor" className='w-full h-[35svh]' />
+            <Image width={1000} height={500} src={mrsJJ} alt="pastor" className='w-full h-[35svh]' />
           </article>
          
           <article className='md:w-[60%] lg:w-[60%] xl:w-[60%] 2xl:w-[60%]'>
