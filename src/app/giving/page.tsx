@@ -4,7 +4,6 @@ import Header from '../components/common/Header'
 import Footer from '../components/common/Footer'
 import Image from 'next/image'
 import givbg from '../img/giveimg.jpg'
-import giving from '../img/Giving-Online-updated.webp'
 import { useState } from 'react'
 
 
@@ -15,6 +14,8 @@ const Page: FC = () => {
         note: '',
         amount: ''
     });
+
+    const giving = "https://res.cloudinary.com/dalylashp/image/upload/v1726922487/WhatsApp_Image_2024-09-21_at_1.40.43_PM_uykcnw.jpg"
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
         const { name, value } = e.target;
@@ -54,7 +55,7 @@ const Page: FC = () => {
                             Give now
                             <span className='block absolute bottom-0 left-1/2 transform -translate-x-1/2 w-[12%] h-[3px] bg-red-400'></span>
                         </h2>
-                        <Image width={1000} height={500} src={giving.src} alt="" />
+                        <Image width={1000} height={500} src={giving} alt="" className='h-[25rem]'/>
 
                 </section>
                 <section>
