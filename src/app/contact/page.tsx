@@ -75,7 +75,7 @@ const Page: FC = () => {
       <header>
         <Header />
       </header>
-      <main className="pt-[10rem]">
+      <main className="pt-[8rem]">
         <div
           className="content  h-[6rem] 2xl:h-[8rem]  relative flex justify-center items-center"
           style={{
@@ -89,7 +89,7 @@ const Page: FC = () => {
             <span className="block absolute bottom-1 left-1/2 transform -translate-x-1/2 w-[100%] h-[4px] bg-white"></span>
           </h2>
         </div>
-        <div className="bg-gray-300 md:h-[47svh] lg:h-[47svh] xl:h-[47svh] h-[55svh] 2xl:h-[50svh] ">
+        <div className="bg-gray-300  xl:pb-[1rem]">
           <section className="flex    justify-center  ">
             <div className="flex w-[75%] ">
               <section className="bg-white mt-[-1.5rem]  relative z-100 flex h-[125%]  justify-center w-full  text-[.6rem] md:text-[1rem] lg:text-[1rem] xl:text-[1rem] 2xl:text-[1rem]">
@@ -103,7 +103,7 @@ const Page: FC = () => {
                   <div className="flex flex-col items-center">
                     <a href="call:+2348073180186">(234) 807-318-0186</a>
                     <a href="call:+2348020523796">(234) 802-052-3796</a>
-                    <a href="whatsApp:+2348073180186">(252) 442-3894 Fax</a>
+                    
                   </div>
                 </article>
                 <article className="flex flex-col items-center pt-[1.5%] w-[33.3%]">
@@ -134,7 +134,7 @@ const Page: FC = () => {
               </section>
             </div>
           </section>
-          <section className="mt-[5%] 2xl:mt-[2.7%] flex flex-col items-center text-gray-800  text-[1.1rem]">
+          <section className="pt-[1rem] xl:pt-0  2xl:mt-[2.7%] flex flex-col items-center text-gray-800  text-[1.1rem]">
             <h2 className="font-bold text-[150%]">SERVICE TIMES</h2>
             <article className="flex flex-col items-center">
               <h3>GenZ Service:</h3>
@@ -156,10 +156,10 @@ const Page: FC = () => {
             </article>
           </section>
         </div>
-        <section className="md:h-[60svh] lg:h-[60svh] xl:h-[60svh] h-[80svh] 2xl:h-[80svh] flex justify-center 2xl:mb-[5%]">
+        <section className=" flex justify-center 2xl:mb-[5%] pb-5">
           <form
             onSubmit={handleSubmit}
-            className="border-[2px] overflow-auto  w-full border-gray-400 shadow-md md:w-[60%] lg:w-[60%] xl:w-[60%] 2xl:w-[60%] shadow-xl pt-[2%] mt-[5%] 2xl:h-[70svh] 2xl:mb-[3%]"
+            className="border-[2px]  w-full border-gray-400 shadow-md md:w-[60%] lg:w-[60%] xl:w-[60%] 2xl:w-[60%] shadow-xl py-[2%] mt-[5%]  2xl:mb-[3%]"
           >
             <article>
               <h2 className="flex justify-center py-[3%]  text-2xl font-semibold">
