@@ -15,7 +15,8 @@ const Page: FC = () => {
   const pic6 = "https://res.cloudinary.com/dalylashp/image/upload/v1726579602/word05_a4mu7h.jpg";
   const pic7 = "https://res.cloudinary.com/dalylashp/image/upload/v1726579602/word5_l7jfsl.jpg"
   const pic8 =  "https://res.cloudinary.com/dalylashp/image/upload/v1726579603/word6_dojbxq.jpg"
-  
+  const pic9 = "https://res.cloudinary.com/dalylashp/image/upload/v1726579602/word06_mzxdqf.jpg"
+const pic10 = "https://res.cloudinary.com/dalylashp/image/upload/v1726579602/word06_mzxdqf.jpg"
   const youthpic = [
     {image : pic2},
     {image : pic3},
