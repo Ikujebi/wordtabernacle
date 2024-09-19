@@ -56,12 +56,12 @@ const mixlr = "https://res.cloudinary.com/dalylashp/image/upload/v1726743756/wor
         {data.map((item, index) => (
           <div
             key={index}
-            className="inline-block w-[calc(45%-1rem)] sm:w-[calc(45%%-1rem)] lg:w-[calc(45%-1rem)] xl:w-[calc(45%-1rem)] px-2 mb-4 text-center"
+            className="inline-block w-full sm:w-[calc(45%-1rem)] lg:w-[calc(45%-1rem)] xl:w-[calc(45%-1rem)] 2xl:w-[calc(25%-1rem)] px-2 mb-4 text-center"
           >
             <Link
               href={item.link}
               onClick={() => setRequest("programmeId", index + 1)}
-              className={` block h-[14rem] p-2 w-full shadow-xl cursor-pointer overflow-hidden rounded-md ${state.programmeId === index + 1 ? 'shadow-xl' : ''}`}
+              className={` block h-[10.6rem] md:h-[12rem] lg:h-[14rem] xl:h-[14rem] 2xl:h-[14rem] p-2 w-full shadow-xl cursor-pointer overflow-hidden rounded-md ${state.programmeId === index + 1 ? 'shadow-xl' : ''}`}
             >
               <NextImage
                 src={item.img}
