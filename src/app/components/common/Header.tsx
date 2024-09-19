@@ -87,10 +87,7 @@ const Header: FC = () => {
             name: "Prayer Requests",
             link: "/prayer",
         },
-        {
-            name: "Login",
-            link: "/login",
-        },
+       
     ];
 
     const renderNavItem = (item: NavItem, index: number) => (
@@ -212,13 +209,19 @@ const Header: FC = () => {
                                     )}
                                 </>
                             ) : (
-                                <Link href={item.link} className="flex items-center">
+                              <Link href={item.link} className="flex items-center">
                                     {item.icon}
                                     <span className="ml-1">{item.name}</span>
                                 </Link>
+                              
                             )}
+                            
                         </div>
                     ))}
+                    <Link href='/login' className="flex items-center">
+                                    
+                                    <b className="ml-1">Login</b>
+                                </Link>
                 </div>
             </div>
         </div>
