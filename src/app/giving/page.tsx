@@ -83,11 +83,11 @@ const Page: FC = () => {
                 <section>
                     <article>
                     <select id="funds" 
-                    name="Fund" 
+                    name="fund" 
                     value={formData.fund}
                     onChange={handleChange}
                     className='w-full h-[3rem] border-[1px] border-gray-400 focus:border-red-400 focus:outline-red-400 outline-[1px] mb-[3rem] pl-2 text-[1.3rem] text-red-400 mb-[3rem]'>
-    <option value="" disabled selected hidden>Fund</option>
+    <option value="" disabled  hidden>Fund</option>
     <option value="tithe">Tithe</option>
     <option value="pastor">Pastoral Support</option>
     <option value="thrive">Thrive Fund</option>
