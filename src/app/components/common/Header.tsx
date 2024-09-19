@@ -121,31 +121,31 @@ const Header: FC = () => {
                 <div className="h-10 gap-5 bg-white border-b border-gray-200 flex lg:px-14 xl:px-14 2xl:px-14 md:px-14 justify-around md:justify-between 2xl:justify-between xl:justify-between lg:justify-between">
                     <div className="mt-2">
                         <span className="text-red-600 font-semibold text-[1.2rem]">
-                            <Link href={"/login"}>Login</Link>
+                            {/* <Link href={"/login"}>Login</Link> */}
                         </span>
                     </div>
                     <div className="flex items-center text-gray-600 text-sm md:gap-1 lg:gap-2 xl:gap-2 2xl:gap-2 gap-2">
-                        <Link href={"https://x.com/wordtabernaclen"} className="md:flex lg:flex 2xl:flex hidden xl:flex md:w-8 lg:w-8 xl:w-8 2xl:w-8 w-6 md:h-8 lg:h-8 xl:h-8 2xl:h-8 h-6 bg-red-600 rounded-full flex items-center justify-center">
-                            <FaTwitter className="text-white text-lg" />
+                        <Link href={"https://x.com/wordtabernaclen"} className="md:flex lg:flex 2xl:flex hidden xl:flex md:w-6 lg:w-6 xl:w-6 2xl:w-6 w-6 md:h-6 lg:h-6 xl:h-6 2xl:h-6 h-6 bg-red-600 rounded-full flex items-center justify-center">
+                            <FaTwitter className="text-white text-md" />
                         </Link>
-                        <Link href={"https://www.instagram.com/wordtabernacleng/"} className="md:w-8 lg:w-8 xl:w-8 2xl:w-8 w-6 md:h-8 lg:h-8 xl:h-8 2xl:h-8 h-6 bg-red-600 rounded-full flex items-center justify-center">
-                            <FaInstagram className="text-white text-lg" />
+                        <Link href={"https://www.instagram.com/wordtabernacleng/"} className="md:w-6 lg:w-6 xl:w-6 2xl:w-6 w-6 md:h-6 lg:h-6 xl:h-6 2xl:h-6 h-6 bg-red-600 rounded-full flex items-center justify-center">
+                            <FaInstagram className="text-white text-md" />
                         </Link>
-                        <Link href={"https://www.facebook.com/wordtabernacle"} className="md:w-8 lg:w-8 xl:w-8 2xl:w-8 w-6 md:h-8 lg:h-8 xl:h-8 2xl:h-8 h-6 bg-red-600 rounded-full flex items-center justify-center">
-                            <FaFacebookF className="text-white text-lg" />
+                        <Link href={"https://www.facebook.com/wordtabernacle"} className="md:w-6 lg:w-6 xl:w-6 2xl:w-6 w-6 md:h-6 lg:h-6 xl:h-6 2xl:h-6 h-6 bg-red-600 rounded-full flex items-center justify-center">
+                            <FaFacebookF className="text-white text-md" />
                         </Link>
-                        <Link href={"https://www.youtube.com/@wordtabernacleng"} className="md:w-8 lg:w-8 xl:w-8 2xl:w-8 w-6 md:h-8 lg:h-8 xl:h-8 2xl:h-8 h-6 bg-red-600 rounded-full flex items-center justify-center">
-                            <FaYoutube className="text-white text-lg" />
+                        <Link href={"https://www.youtube.com/@wordtabernacleng"} className="md:w-6 lg:w-6 xl:w-6 2xl:w-6 w-6 md:h-6 lg:h-6 xl:h-6 2xl:h-6 h-6 bg-red-600 rounded-full flex items-center justify-center">
+                            <FaYoutube className="text-white text-md" />
                         </Link>
-                        <Link href={"https://www.tiktok.com/@wordtabernacleng"} className="md:flex lg:flex 2xl:flex hidden xl:flex md:w-8 lg:w-8 xl:w-8 2xl:w-8 w-6 md:h-8 lg:h-8 xl:h-8 2xl:h-8 h-6 bg-red-600 rounded-full flex items-center justify-center">
-                            <FaTiktok className="text-white text-lg" />
+                        <Link href={"https://www.tiktok.com/@wordtabernacleng"} className="md:w-6 lg:w-6 xl:w-6 2xl:w-6 w-6 md:h-6 lg:h-6 xl:h-6 2xl:h-6 w-6 md:h-8 lg:h-8 xl:h-8 2xl:h-8 h-6 bg-red-600 rounded-full flex items-center justify-center">
+                            <FaTiktok className="text-white text-md" />
                         </Link>
-                        <Link href={"https://t.me/+ufId9mRBMlVlMzY8"} className="md:w-8 lg:w-8 xl:w-8 2xl:w-8 w-6 md:h-8 lg:h-8 xl:h-8 2xl:h-8 h-6 bg-red-600 rounded-full flex items-center justify-center">
-                            <FaTelegram className="text-white text-lg" />
+                        <Link href={"https://t.me/+ufId9mRBMlVlMzY8"} className="md:w-6 lg:w-6 xl:w-6 2xl:w-6 w-6 md:h-6 lg:h-6 xl:h-6 2xl:h-6 h-6 bg-red-600 rounded-full flex items-center justify-center">
+                            <FaTelegram className="text-white text-md" />
                         </Link>
-                        <a href={"mailto: wordtabernaclebcng@gmail.com"} className="ml-2 md:flex lg:flex 2xl:flex hidden xl:flex items-center">
-                            <MdEmail />
-                            <span className="ml-1"> wordtabernaclebcng@gmail.com</span>
+                        <a href={"mailto:wordtabernaclebc@gmail.com"} className="md:w-6 lg:w-6 xl:w-6 2xl:w-6 w-6 md:h-6 lg:h-6 xl:h-6 2xl:h-6 h-6 bg-red-600 rounded-full flex items-center justify-center">
+                            <MdEmail  className="text-white text-md"/>
+                            
                         </a>
                     </div>
                 </div>

@@ -7,7 +7,7 @@ const Community = () => {
   const cardimg = "https://res.cloudinary.com/dalylashp/image/upload/v1725101654/minab_vedu6k.jpg"
  const cardimg2 = "https://res.cloudinary.com/dalylashp/image/upload/v1725101907/testimony_umqwcb.webp"
   return (
-    <div className="md:flex lg:flex xl:flex 2xl:flex w-full h- items-center">
+    <div className="md:flex lg:flex xl:flex 2xl:flex w-full  items-center ">
       <section className="md:w-[33.3%] lg:w-[33.3%] xl:w-[33.3%] 2xl:w-[33.3%]">
         <div className="content h-[30rem] relative" style={{ backgroundImage: `url(${choir})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
           <div className="p-4 absolute bottom-0 left-0 right-0 text-center pb-[5rem]">

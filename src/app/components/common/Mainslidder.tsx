@@ -13,17 +13,17 @@ const FreeStyle = () => {
   const pic2 = "https://res.cloudinary.com/dalylashp/image/upload/v1725101517/choir7_umfdyb.webp";
   const pic3 = "https://res.cloudinary.com/dalylashp/image/upload/v1725101508/choir_ekkuf6.webp";
   const pic4 = "https://res.cloudinary.com/dalylashp/image/upload/v1725101899/ruth_vn60xa.jpg";
-  const pic5 = "https://res.cloudinary.com/dalylashp/image/upload/v1726579602/word06_mzxdqf.jpg";
+  const pic5 = "https://res.cloudinary.com/dalylashp/image/upload/v1725101435/chil_h7ppg5.webp";
   const pic6 = "https://res.cloudinary.com/dalylashp/image/upload/v1726579634/word014_mzx1rz.jpg";
-  const pic7 = "https://res.cloudinary.com/dalylashp/image/upload/v1725101419/ayanfe_w7dp1v.webp";
+  const pic7 = "https://res.cloudinary.com/dalylashp/image/upload/v1726579603/word10_xclcex.jpg";
   const pic8 = "https://res.cloudinary.com/dalylashp/image/upload/v1725101584/drama_bnrzlz.webp";
   const pic9 = "https://res.cloudinary.com/dalylashp/image/upload/v1725101572/dance_r0rtdv.webp";
-  const pic10 = "https://res.cloudinary.com/dalylashp/image/upload/v1725102037/youth2_zd5tok.webp";
-  const pic11 = "https://res.cloudinary.com/dalylashp/image/upload/v1726579601/word04_ynvjdt.jpg"
+  const pic10 = "https://res.cloudinary.com/dalylashp/image/upload/v1725356885/5933838834204786673_a2ehgl.jpg";
+  const pic11 = "https://res.cloudinary.com/dalylashp/image/upload/v1725356883/5954255936203899439_foslh0.jpg"
 const pic12 = "https://res.cloudinary.com/dalylashp/image/upload/v1726579634/word15_ctucr4.jpg"
 const pic13 = "https://res.cloudinary.com/dalylashp/image/upload/v1725356891/5933838834204786637_esw96j.jpg"
 const pic14 = "https://res.cloudinary.com/dalylashp/image/upload/v1725356890/5933838834204786640_r1lu2y.jpg"
-
+const pic15 = "https://res.cloudinary.com/dalylashp/image/upload/v1725356882/5954255936203899432_oht64e.jpg"
   const [_index, setIndex] = useState(0);
   const slides = [
     { image: pic1 },
@@ -40,6 +40,7 @@ const pic14 = "https://res.cloudinary.com/dalylashp/image/upload/v1725356890/593
     { image: pic12 },
     { image: pic13 },
     { image: pic14 },
+    { image: pic15 },
   ];
 
   useEffect(() => {
@@ -72,10 +73,10 @@ const pic14 = "https://res.cloudinary.com/dalylashp/image/upload/v1725356890/593
   };
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen xl:mt-[-10rem] w-screen md:mt-rem]">
-      <div className="container  my-[9rem] md:my-[8.3rem] lg:my-[8.3rem] xl:px-[3rem]  w-full relative">
+    <div className="flex flex-col items-center justify-center min-h-screen xl:mt-[-10rem] w-screen  2xl:mt-[1rem] md:px-[2rem]  2xl:px-[4rem]">
+      <div className="container  my-[9rem] md:my-[8.3rem] lg:my-[8.3rem] xl:px-[3rem] 2xl:px-[0]  w-full relative ">
 
-        <div className="absolute inset-0  bg-black opacity-10 pointer-events-none z-10 h-[95%] md:h-[97%] lg:h-[97%] xl:h-[97%] 2xl:h-[97.92%]"></div>{" "}
+        <div className="absolute inset-0  bg-black opacity-10 pointer-events-none z-10 h-[95%] md:h-[97%] lg:h-[97%] xl:h-[97%]  2xl:h-[97.92%] "></div>{" "}
 
         {/* New div for shadow */}
         <Slider {...sliderSettings}>
@@ -96,7 +97,7 @@ const pic14 = "https://res.cloudinary.com/dalylashp/image/upload/v1725356890/593
                   quality={90}
                   src={item.image}
                   alt="service"
-                  className="w-full mb-4  xl:h-[40rem] 2xl:h-[40rem] lg:h-[30rem] md:h-[33rem] h-[17rem] object-cover object-top"
+                  className="w-full mb-4  xl:h-[40rem]  2xl:h-[70svh] lg:h-[30rem] md:h-[33rem] h-[17rem] object-cover object-top"
                 />
                 <div
                   id="imgtext"

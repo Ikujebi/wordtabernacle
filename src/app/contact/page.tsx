@@ -127,7 +127,7 @@ const Page: FC = () => {
                     <h2>Email</h2>
                   </div>
                   <div className="flex flex-col items-center max-w-[100%]">
-                    <p className="md:block lg:block xl:block 2xl:block hidden">wordtabernaclebc@gmail.com</p>
+                    <p className="md:block lg:block xl:block 2xl:block hidden">wordtabernaclebcng@gmail.com</p>
                   </div>
                 </article>
                 <article></article>
