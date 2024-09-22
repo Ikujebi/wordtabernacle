@@ -106,7 +106,7 @@ const women8 = "https://res.cloudinary.com/dalylashp/image/upload/v1725101777/pa
             View Full Gallery
           </button>
           {showFullGallery && (
-            <div className="fixed inset-0 bg-white bg-opacity-25 flex justify-center items-center z-50">
+            <div className="fixed inset-0 bg-white bg-opacity-25 flex justify-center items-center z-50 overflow-auto">
               <div className="bg-white p-6 rounded-lg">
                 <div className="grid grid-cols-3 gap-4 mt-4">
                   {women.map((image, index) => (

@@ -98,7 +98,7 @@ const Page: FC = () => {
                 <section>
                 <form
             onSubmit={handleSubmit}
-            className="w-full 2xl:w-full  shadow-xl pt-[2%] mt-[5%] 2xl:h-[101svh] 2xl:mb-[3%] mb-[1rem] pb-2"
+            className="w-full   shadow-xl pt-[2%] mt-[5%]  2xl:mb-[3%] mb-[1rem] pb-10"
           >
             <article>
               <h2 className="flex justify-center py-[3%]  text-2xl font-semibold">
