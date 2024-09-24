@@ -14,7 +14,7 @@ import YouTubePlayer from "./components/common/YouTubePlayer";
 export default function Home() {
   const [currentVideoIndex, setCurrentVideoIndex] = useState(0);
   const videoIds = [
-    { videoId: "iIOu9nboLek?si" },
+    { videoId: "escj7P0cWO0" },
     { videoId: "oNUt9WAKq8Y" },
     { videoId: "WzGJFZ_Ta7g" },
     { videoId: "m3G4gNBxWhs" },
@@ -22,6 +22,7 @@ export default function Home() {
     { videoId: "riA-6duFCGQ" },
     { videoId: "G8-Mg4Agz4w" },
     { videoId: "JRreFjk6nZs" },
+    { videoId: "iIOu9nboLek?si" },
   ];
 
   const handleNextVideo = () => {
