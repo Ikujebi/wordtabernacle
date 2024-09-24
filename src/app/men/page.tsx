@@ -16,6 +16,9 @@ const men5 = "https://res.cloudinary.com/dalylashp/image/upload/v1726579601/word
 const men6 = "https://res.cloudinary.com/dalylashp/image/upload/v1725101419/ayanfe_w7dp1v.webp"
 const men7 ="https://res.cloudinary.com/dalylashp/image/upload/v1725101371/youthpreacher_ucoete.webp"
 const men8 = "https://res.cloudinary.com/dalylashp/image/upload/v1725102045/youth3_m22wch.webp"
+const men9 = "https://res.cloudinary.com/dalylashp/image/upload/v1727168938/photo_6019429698393719062_y_ijgaz6.jpg"
+const men10 = "https://res.cloudinary.com/dalylashp/image/upload/v1727168955/photo_6019429698393719061_y_qiqjqg.jpg"
+const men11 = "https://res.cloudinary.com/dalylashp/image/upload/v1727168967/photo_6019429698393719049_y_f3hugc.jpg"
 
   const men = [
     { src: men1, alt: "Photo 1" },
@@ -25,11 +28,14 @@ const men8 = "https://res.cloudinary.com/dalylashp/image/upload/v1725102045/yout
     { src: men5, alt: "Photo 5" },
     { src: men6, alt: "Photo 6" },
     { src: men7, alt: "Photo 7" },
-    { src: men8, alt: "Photo 7" },
+    { src: men8, alt: "Photo 8" },
+    { src: men9, alt: "Photo 9" },
+    { src: men10, alt: "Photo 10" },
+    { src: men11, alt: "Photo 11" },
     // Add more images as needed
   ];
 
-  const initialImages = men.slice(0, 9);
+  const initialImages = men.slice(0, 10);
 
  
 
@@ -60,8 +66,8 @@ const men8 = "https://res.cloudinary.com/dalylashp/image/upload/v1725102045/yout
          for men who have determined there is no greater goal than
          to ensure they have become the man God has intended them to be.
         </article>
-        <article className="bg-gradient-to-r from-indigo-100 mt-[5%] flex justify-center rounded-3xl">
-              <p className="w-[90%] md:w-[70%] lg:w-[60%] text-center">
+        <article className="w-4/5 md:w-3/5 bg-gradient-to-r from-indigo-300 to-purple-400 text-center py-8 rounded-lg shadow-lg px-4">
+              <p className="">
                 For more details, contact the church administration offices via phone or email at wordtabernacle@gmail.com.
               </p>
             </article>
@@ -73,7 +79,7 @@ Men's Round Table
             <span className="block absolute bottom-0 left-1/2 transform -translate-x-1/2 w-[60%] h-[3px] bg-white "></span>
           </h2>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3 2xl:grid-cols-4 gap-4">
-            {initialImages.map((image, index) => (
+            {men.map((image, index) => (
               <Image
                 key={index}
                 src={image.src}

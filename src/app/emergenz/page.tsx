@@ -22,6 +22,12 @@ const Page: FC = () => {
   {image: "https://res.cloudinary.com/dalylashp/image/upload/v1725102028/youth1_jqttiv.webp"},
   {image:"https://res.cloudinary.com/dalylashp/image/upload/v1726579603/word8_zg3qwb.jpg"},
     { image: "https://res.cloudinary.com/dalylashp/image/upload/v1726579602/word06_mzxdqf.jpg" },
+  {image: "https://res.cloudinary.com/dalylashp/image/upload/v1727168960/photo_6019429698393719060_y_s4icix.jpg"},
+  {image: "https://res.cloudinary.com/dalylashp/image/upload/v1727168947/photo_6019429698393719056_y_m3vakz.jpg"},
+  {image: "https://res.cloudinary.com/dalylashp/image/upload/v1727168969/photo_6019429698393719042_y_mj1qhe.jpg"},
+  {image: "https://res.cloudinary.com/dalylashp/image/upload/v1727168835/photo_6019429698393719085_y_kk7p7y.jpg"},
+  {image: "https://res.cloudinary.com/dalylashp/image/upload/v1727168912/photo_6019429698393719052_y_nnhf8g.jpg"},
+  
   ];
 
   return (

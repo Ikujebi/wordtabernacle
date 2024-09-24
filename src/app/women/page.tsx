@@ -69,7 +69,7 @@ const women8 = "https://res.cloudinary.com/dalylashp/image/upload/v1725101777/pa
               <Image src={grid.src} alt="" width={200} height={120} className="ml-[35%] md:ml-[25%] xl:ml-[25%] md:w-[50%] md:h-[15rem]" />
               <Image src={women7} alt="" width={200} height={110} className="mt-[-4rem] mx-auto" />
             </div>
-            <article className="bg-gradient-to-r from-indigo-100 mt-[5%] flex justify-center rounded-3xl">
+            <article className="bg-gradient-to-r from-indigo-300 to-purple-400 mt-[5%] flex justify-center rounded-3xl mx-[.4rem]">
               <p className="w-[90%] md:w-[70%] lg:w-[60%] text-center">
                 For more details, contact the church administration offices via phone or email at wordtabernacle@gmail.com.
               </p>
