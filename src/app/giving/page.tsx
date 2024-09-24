@@ -55,7 +55,7 @@ const Page: FC = () => {
                             Give now
                             <span className='block absolute bottom-0 left-1/2 transform -translate-x-1/2 w-[12%] h-[3px] bg-red-400'></span>
                         </h2>
-                        <Image width={1000} height={500} src={giving} alt="" className='h-[25rem]'/>
+                        <Image width={1000} height={500} src={giving} alt="" className='md:h-[25rem] lg:h-[25rem] xl:h-[25rem] 2xl:h-[25rem]'/>
 
                 </section>
                 <section>
