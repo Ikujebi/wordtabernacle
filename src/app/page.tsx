@@ -1,5 +1,5 @@
 "use client";
-import Link from "next/link";
+
 import { Button } from "antd";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import Header from "./components/common/Header";

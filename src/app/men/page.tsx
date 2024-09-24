@@ -12,7 +12,7 @@ const Page: FC = () => {
   const men2 = "https://res.cloudinary.com/dalylashp/image/upload/v1725102055/youthpreacher_egmmcn.webp"
 const men3 = "https://res.cloudinary.com/dalylashp/image/upload/v1725129856/photo_5933838834204786597_y_zm9hpb.jpg"
 const men4 = "https://res.cloudinary.com/dalylashp/image/upload/v1725101602/femiblur_xwz9xr.jpg"
-const men5 = "https://res.cloudinary.com/dalylashp/image/upload/v1725101977/women5_hzw0rr.webphttps://res.cloudinary.com/dalylashp/image/upload/v1725101594/emmasings_xitbgn.webp"
+const men5 = "https://res.cloudinary.com/dalylashp/image/upload/v1726579601/word17_cvh62v.jpg"
 const men6 = "https://res.cloudinary.com/dalylashp/image/upload/v1725101419/ayanfe_w7dp1v.webp"
 const men7 ="https://res.cloudinary.com/dalylashp/image/upload/v1725101371/youthpreacher_ucoete.webp"
 const men8 = "https://res.cloudinary.com/dalylashp/image/upload/v1725102045/youth3_m22wch.webp"
@@ -66,7 +66,7 @@ const men8 = "https://res.cloudinary.com/dalylashp/image/upload/v1725102045/yout
               </p>
             </article>
        </section >
-       <section className="bg-purple-200 from-indigo-300 flex flex-col items-center h-[50svh]">
+       <section className="bg-purple-200 from-indigo-300 flex flex-col items-center ">
        <h2 className="text-white font-semibold 2xl:text-[1.9rem] text-[1.5rem] relative inline-block my-[3%]">
        
 Men's Round Table
