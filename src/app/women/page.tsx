@@ -9,33 +9,32 @@ import grid from "../img/grid.svg";
 
 const Page: FC = () => {
   const [showFullGallery, setShowFullGallery] = useState(false);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
-  const openGallery = () => {
-    console.log("Opening gallery");
+  const openGallery = (index: number) => {
+    setCurrentImageIndex(index);
     setShowFullGallery(true);
   };
 
   const closeGallery = () => setShowFullGallery(false);
 
-  const women1 = "https://res.cloudinary.com/dalylashp/image/upload/v1725101924/women1_yi6bxl.webp"
-  const women2 = "https://res.cloudinary.com/dalylashp/image/upload/v1725101937/women2_nk682e.webp"
-const women3 = "https://res.cloudinary.com/dalylashp/image/upload/v1725101958/women3_ps8rop.webp"
-const women4 = "https://res.cloudinary.com/dalylashp/image/upload/v1725101970/women4_jrezw9.webp"
-const women5 = "https://res.cloudinary.com/dalylashp/image/upload/v1725101977/women5_hzw0rr.webp"
-const women6 = "https://res.cloudinary.com/dalylashp/image/upload/v1725101987/women6_yjmiat.webp"
-const women7 ="https://res.cloudinary.com/dalylashp/image/upload/v1725101997/women7_fwqwl3.jpg"
-const women8 = "https://res.cloudinary.com/dalylashp/image/upload/v1725101777/pactitioners_jepeb3.webp"
+  const goToNext = () => {
+    setCurrentImageIndex((prevIndex) => (prevIndex + 1) % women.length);
+  };
+
+  const goToPrev = () => {
+    setCurrentImageIndex((prevIndex) => (prevIndex - 1 + women.length) % women.length);
+  };
 
   const women = [
-    { src: women1, alt: "Photo 1" },
-    { src: women2, alt: "Photo 2" },
-    { src: women3, alt: "Photo 3" },
-    { src: women4, alt: "Photo 4" },
-    { src: women5, alt: "Photo 5" },
-    { src: women6, alt: "Photo 6" },
-    { src: women7, alt: "Photo 7" },
-    { src: women8, alt: "Photo 7" },
-    // Add more images as needed
+    { src: "https://res.cloudinary.com/dalylashp/image/upload/v1725101924/women1_yi6bxl.webp", alt: "Photo 1" },
+    { src: "https://res.cloudinary.com/dalylashp/image/upload/v1725101937/women2_nk682e.webp", alt: "Photo 2" },
+    { src: "https://res.cloudinary.com/dalylashp/image/upload/v1725101958/women3_ps8rop.webp", alt: "Photo 3" },
+    { src: "https://res.cloudinary.com/dalylashp/image/upload/v1725101970/women4_jrezw9.webp", alt: "Photo 4" },
+    { src: "https://res.cloudinary.com/dalylashp/image/upload/v1725101977/women5_hzw0rr.webp", alt: "Photo 5" },
+    { src: "https://res.cloudinary.com/dalylashp/image/upload/v1725101987/women6_yjmiat.webp", alt: "Photo 6" },
+    { src: "https://res.cloudinary.com/dalylashp/image/upload/v1725101997/women7_fwqwl3.jpg", alt: "Photo 7" },
+    { src: "https://res.cloudinary.com/dalylashp/image/upload/v1725101777/pactitioners_jepeb3.webp", alt: "Photo 8" },
   ];
 
   const initialImages = women.slice(0, 9);
@@ -60,28 +59,6 @@ const women8 = "https://res.cloudinary.com/dalylashp/image/upload/v1725101777/pa
           </h2>
         </div>
 
-        <section className="flex flex-col md:flex-row justify-center items-center mt-[3%] mb-[5%]">
-          <div id="word" className="flex flex-col items-center w-full md:w-[50%] text-[1.17rem] md:text-[1.2rem] xl:text-[1.5rem]">
-            <article className="w-[90%] md:w-[70%] lg:w-[60%] text-center">
-              The WTC Women's ministry provides a regional gathering for women who have determined there is no greater goal than to ensure they have become the person God has intended them to be.
-            </article>
-            <div className="flex md:hidden my-4 flex-col items-center w-full  m-auto">
-              <Image src={grid.src} alt="" width={200} height={120} className="ml-[35%] md:ml-[25%] xl:ml-[25%] md:w-[50%] md:h-[15rem]" />
-              <Image src={women7} alt="" width={200} height={110} className="mt-[-4rem] mx-auto" />
-            </div>
-            <article className="bg-gradient-to-r from-indigo-300 to-purple-400 mt-[5%] flex justify-center rounded-3xl mx-[.4rem] 2xl:mx-[5rem]">
-              <p className="w-[90%] md:w-[70%] lg:w-[60%] text-center">
-                For more details, contact the church administration offices via phone or email at wordtabernacle@gmail.com.
-              </p>
-            </article>
-          </div>
-
-          <div id="image" className="hidden md:flex flex-col items-center w-full md:w-[50%] 2xl:w-[40%] lg:w-[50%] m-auto">
-            <Image src={grid.src} alt="" width={200} height={120} className="ml-0 md:ml-[-10%] xl:ml-[-10%] md:w-[50%] md:h-[13rem]" />
-            <Image src={women7} alt="" width={200} height={110} className="mt-[-6rem] ml-[-.2rem] mx-auto md:w-[50%] md:h-[15rem]" />
-          </div>
-        </section>
-
         <section className="bg-purple-200 from-indigo-300 flex flex-col items-center pb-[2rem]">
           <h2 className="text-white font-semibold 2xl:text-[1.9rem] text-[1.5rem] relative inline-block my-[3%]">
             Women's Gallery
@@ -96,42 +73,53 @@ const women8 = "https://res.cloudinary.com/dalylashp/image/upload/v1725101777/pa
                 width={300}
                 height={200}
                 priority
+                onClick={() => openGallery(index)}
+                className="cursor-pointer"
               />
             ))}
           </div>
-          <button
-            className="mt-4 bg-blue-500 text-white py-2 px-4 rounded"
-            onClick={openGallery}
-          >
-            View Full Gallery
-          </button>
-          {showFullGallery && (
-            <div className="fixed inset-0 bg-white bg-opacity-25 flex justify-center items-center z-50 overflow-auto">
-              <div className="bg-white p-6 rounded-lg">
-                <div className="grid grid-cols-3 gap-4 mt-4">
-                  {women.map((image, index) => (
-                    <Image
-                      key={index}
-                      src={image.src}
-                      alt={image.alt}
-                      width={300}
-                      height={200}
-                      priority
-                    />
-                  ))}
-                </div>
-                <div className="flex justify-center">
-                  <button
-                    className="mt-4 bg-red-500 text-white py-2 px-4 rounded"
-                    onClick={closeGallery}
-                  >
-                    Close
-                  </button>
-                </div>
-              </div>
-            </div>
-          )}
         </section>
+
+        {showFullGallery && (
+          <div className="fixed inset-0 bg-black bg-opacity-90 flex justify-center items-center z-50">
+            {/* Close button */}
+            <button
+              className="absolute top-5 right-5 bg-white text-black p-2 rounded-full z-50"
+              onClick={closeGallery}
+            >
+              ✕
+            </button>
+
+            {/* Previous button */}
+            <button
+              className="absolute left-10 text-white text-4xl z-50 p-4 bg-gray-600 bg-opacity-50 rounded-full hover:bg-opacity-100"
+              onClick={goToPrev}
+              aria-label="Previous"
+            >
+              ‹
+            </button>
+
+            {/* Image display */}
+            <div className="flex justify-center items-center">
+              <Image
+                src={women[currentImageIndex].src}
+                alt={women[currentImageIndex].alt}
+                width={800}
+                height={600}
+                className="rounded-lg"
+              />
+            </div>
+
+            {/* Next button */}
+            <button
+              className="absolute right-10 text-white text-4xl z-50 p-4 bg-gray-600 bg-opacity-50 rounded-full hover:bg-opacity-100"
+              onClick={goToNext}
+              aria-label="Next"
+            >
+              ›
+            </button>
+          </div>
+        )}
       </main>
       <footer className="w-full">
         <Footer />
