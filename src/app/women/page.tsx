@@ -59,6 +59,35 @@ const Page: FC = () => {
           </h2>
         </div>
 
+        <section className="flex flex-col md:flex-row justify-center items-center mt-[3%] mb-[5%]">
+          <div id="word" className="flex flex-col items-center w-full md:w-[50%] text-[1.17rem] md:text-[1.2rem] xl:text-[1.5rem]">
+            <article className="w-[90%] md:w-[70%] lg:w-[60%] text-center">
+              The WTC Women's ministry provides a regional gathering for women who have determined there is no greater goal than to ensure they have become the person God has intended them to be.
+            </article>
+            <div className="flex md:hidden my-4 flex-col items-center w-full  m-auto">
+              <Image src={grid.src} alt="" width={200} height={120} className="ml-[45%] md:ml-[25%] xl:ml-[25%] md:w-[50%] md:h-[15rem]" />
+              <div className="mt-[-8rem] mx-auto rounded-xl overflow-hidden md:w-[50%] md:h-[14rem]">
+  <Image src={women[6].src} alt={women[6].alt} width={200} height={110} />
+</div>
+
+            </div>
+            <article className="bg-gradient-to-r from-indigo-300 to-purple-400 mt-[5%] flex justify-center rounded-3xl mx-[.4rem] 2xl:mx-[5rem]">
+              <p className="w-[90%] md:w-[70%] lg:w-[60%] text-center">
+                For more details, contact the church administration offices via phone or email at wordtabernacle@gmail.com.
+              </p>
+            </article>
+          </div>
+
+          <div id="image" className="hidden md:flex flex-col items-center w-full md:w-[50%] 2xl:w-[40rem] lg:w-[50%] m-auto">
+            <Image src={grid.src} alt="" width={200} height={120} className="ml-0 md:ml-[-10%] 2xl:ml-[-20%] md:w-[50%] md:h-[13rem] 2xl:w-[15rem]" />
+           
+            <div className="mt-[-8rem] ml-[1rem]  mx-auto rounded-2xl overflow-hidden md:w-[50%] md:h-[15rem] 2xl:w-[60%]">
+  <Image className="rounded-xl 2xl:w-[15rem]" src={women[6].src} alt={women[6].alt} width={200} height={110}/>
+</div>
+
+          </div>
+        </section>
+
         <section className="bg-purple-200 from-indigo-300 flex flex-col items-center pb-[2rem]">
           <h2 className="text-white font-semibold 2xl:text-[1.9rem] text-[1.5rem] relative inline-block my-[3%]">
             Women's Gallery
@@ -110,7 +139,7 @@ const Page: FC = () => {
               />
             </div>
 
-            {/* Next button */}
+           
             <button
               className="absolute right-10 text-white text-4xl z-50 p-4 bg-gray-600 bg-opacity-50 rounded-full hover:bg-opacity-100"
               onClick={goToNext}
