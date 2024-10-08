@@ -10,6 +10,7 @@ import grid from "../img/grid.svg";
 const Page: FC = () => {
   const [showFullGallery, setShowFullGallery] = useState(false);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [showMore, setShowMore] = useState(false);
 
   const openGallery = (index: number) => {
     setCurrentImageIndex(index);
@@ -35,9 +36,23 @@ const Page: FC = () => {
     { src: "https://res.cloudinary.com/dalylashp/image/upload/v1725101987/women6_yjmiat.webp", alt: "Photo 6" },
     { src: "https://res.cloudinary.com/dalylashp/image/upload/v1725101997/women7_fwqwl3.jpg", alt: "Photo 7" },
     { src: "https://res.cloudinary.com/dalylashp/image/upload/v1725101777/pactitioners_jepeb3.webp", alt: "Photo 8" },
+    { src: "https://res.cloudinary.com/dalylashp/image/upload/v1728399272/photo_5773882741589395449_y_gl78fh.jpg", alt: "Photo 9" },
+    { src: "https://res.cloudinary.com/dalylashp/image/upload/v1725101777/pactitioners_jepeb3.webp", alt: "Photo 10" },
+    { src: "https://res.cloudinary.com/dalylashp/image/upload/v1728399270/photo_5773882741589395450_y_wcbs2a.jpg", alt: "Photo 11" },
+    { src: "https://res.cloudinary.com/dalylashp/image/upload/v1728399269/photo_5773882741589395446_y_tkv1ro.jpg", alt: "Photo 12" },
+    { src: "https://res.cloudinary.com/dalylashp/image/upload/v1728399264/photo_5773882741589395505_y_ltpsfa.jpg", alt: "Photo 13" },
+    { src: "https://res.cloudinary.com/dalylashp/image/upload/v1728399260/photo_5773882741589395443_y_sextth.jpg", alt: "Photo 14" },
+    { src: "https://res.cloudinary.com/dalylashp/image/upload/v1728399259/photo_5773882741589395469_y_sf1lzt.jpg", alt: "Photo 15" },
+    { src: "https://res.cloudinary.com/dalylashp/image/upload/v1728399249/photo_5773882741589395473_y_whjwsi.jpg", alt: "Photo 16" },
+    { src: "https://res.cloudinary.com/dalylashp/image/upload/v1728399231/photo_5773882741589395504_y_yckiol.jpg", alt: "Photo 17" },
+    { src: "https://res.cloudinary.com/dalylashp/image/upload/v1728399228/photo_5773882741589395455_y_lbfnwy.jpg", alt: "Photo 8" },
   ];
 
-  const initialImages = women.slice(0, 9);
+  const initialImages = women.slice(0, 13);
+
+  const handleShowMore = () => {
+    setShowMore((prev) => !prev);
+  };
 
   return (
     <div className="font-satoshi relative">
@@ -94,7 +109,7 @@ const Page: FC = () => {
             <span className="block absolute bottom-0 left-1/2 transform -translate-x-1/2 w-[60%] h-[3px] bg-white"></span>
           </h2>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3 2xl:grid-cols-4 gap-4">
-            {initialImages.map((image, index) => (
+            {initialImages.slice(0,13).map((image, index) => (
               <Image
                 key={index}
                 src={image.src}

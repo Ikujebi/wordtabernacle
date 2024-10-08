@@ -27,7 +27,15 @@ const Page: FC = () => {
     { src: "https://res.cloudinary.com/dalylashp/image/upload/v1725102045/youth3_m22wch.webp", alt: "Photo 8" },
     { src: "https://res.cloudinary.com/dalylashp/image/upload/v1727168938/photo_6019429698393719062_y_ijgaz6.jpg", alt: "Photo 9" },
     { src: "https://res.cloudinary.com/dalylashp/image/upload/v1727168955/photo_6019429698393719061_y_qiqjqg.jpg", alt: "Photo 10" },
-    { src: "https://res.cloudinary.com/dalylashp/image/upload/v1727168967/photo_6019429698393719049_y_f3hugc.jpg", alt: "Photo 11" }
+    { src: "https://res.cloudinary.com/dalylashp/image/upload/v1727168967/photo_6019429698393719049_y_f3hugc.jpg", alt: "Photo 11" },
+    { src: "https://res.cloudinary.com/dalylashp/image/upload/v1727168960/photo_6019429698393719060_y_s4icix.jpg", alt: "Photo 12" },
+    { src: "https://res.cloudinary.com/dalylashp/image/upload/v1727168960/photo_6019429698393719060_y_s4icix.jpg", alt: "Photo 13" },
+    { src: "https://res.cloudinary.com/dalylashp/image/upload/v1728399273/photo_5773882741589395498_y_icg2je.jpg", alt: "Photo 14" },
+    { src: "https://res.cloudinary.com/dalylashp/image/upload/v1728399270/photo_5773882741589395440_y_pfcer7.jpg", alt: "Photo 15" },
+    { src: "https://res.cloudinary.com/dalylashp/image/upload/v1728399262/photo_5773882741589395485_y_itiwh5.jpg", alt: "Photo 16" },
+    { src: "https://res.cloudinary.com/dalylashp/image/upload/v1728399250/photo_5773882741589395480_y_ebc0sn.jpg", alt: "Photo 17" },
+    { src: "https://res.cloudinary.com/dalylashp/image/upload/v1728399237/photo_5773882741589395438_y_c6aays.jpg", alt: "Photo 18" },
+    { src: "https://res.cloudinary.com/dalylashp/image/upload/v1728399231/photo_5773882741589395456_y_syv4l8.jpg", alt: "Photo 19" },
   ];
 
   const goToNext = () => {
@@ -75,7 +83,7 @@ const Page: FC = () => {
             <span className="block absolute bottom-0 left-1/2 transform -translate-x-1/2 w-[60%] h-[3px] bg-white"></span>
           </h2>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-4 gap-4">
-            {menImages.map((image, index) => (
+            {menImages.slice(0,12).map((image, index) => (
               <Image
                 key={index}
                 src={image.src}
