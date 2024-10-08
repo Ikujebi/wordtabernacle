@@ -40,7 +40,7 @@ const Page: FC = () => {
     { src: "https://res.cloudinary.com/dalylashp/image/upload/v1725101777/pactitioners_jepeb3.webp", alt: "Photo 10" },
     { src: "https://res.cloudinary.com/dalylashp/image/upload/v1728399270/photo_5773882741589395450_y_wcbs2a.jpg", alt: "Photo 11" },
     { src: "https://res.cloudinary.com/dalylashp/image/upload/v1728399269/photo_5773882741589395446_y_tkv1ro.jpg", alt: "Photo 12" },
-    { src: "https://res.cloudinary.com/dalylashp/image/upload/v1728399264/photo_5773882741589395505_y_ltpsfa.jpg", alt: "Photo 13" },
+    { src: "https://res.cloudinary.com/dalylashp/image/upload/v1728400222/wordwoman5000_vpdxa7.jpg", alt: "Photo 13" },
     { src: "https://res.cloudinary.com/dalylashp/image/upload/v1728399260/photo_5773882741589395443_y_sextth.jpg", alt: "Photo 14" },
     { src: "https://res.cloudinary.com/dalylashp/image/upload/v1728399259/photo_5773882741589395469_y_sf1lzt.jpg", alt: "Photo 15" },
     { src: "https://res.cloudinary.com/dalylashp/image/upload/v1728399249/photo_5773882741589395473_y_whjwsi.jpg", alt: "Photo 16" },
