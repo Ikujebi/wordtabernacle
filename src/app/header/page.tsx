@@ -1,127 +1,148 @@
 "use client"
-import { FC } from 'react'
-import Header from '../components/common/Header'
-import Footer from '../components/common/Footer'
-import Image from 'next/image'
-import givbg from '../img/giveimg.jpg'
+import Link from "next/link"
+import {useState,useEffect, useCallback,FC} from "react"
+import { useRouter } from "next/navigation"
+import  axios  from "axios"
+import toast from "react-hot-toast"
+import { FaEye } from "react-icons/fa";
+import { FaEyeSlash  } from "react-icons/fa";
+import Footer from "../components/common/Footer"
+import Header from "../components/common/Header"
+import Image from "next/image"
 
-import redbg from '../img/redbgi.webp'
-
-
-
-const Page: FC = () => {
 
  
-const msgg = "https://res.cloudinary.com/dalylashp/image/upload/v1725101699/msg-1001955056097-3253_ckzgsa.webp"
- const msgg2 = "https://res.cloudinary.com/dalylashp/image/upload/v1725101712/msg-1001955056097-3260_qxe986.webp"
-  return (
-    <div className='font-satoshi '>
-      <header >
-        <Header />
-      </header>
-      <main className='pt-[10rem]'>
-        <div className="content  h-[6rem] relative flex justify-center items-center" style={{ backgroundImage: `url(${givbg.src})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
-          <h2 className='text-white font-semibold text-[1.9rem] relative inline-block'>
-            Vision, Mission, & Values
-            <span className='block absolute bottom-1 left-1/2 transform -translate-x-1/2 w-[100%] h-[4px] bg-white'></span>
-          </h2>
-        </div>
-        <div className='md:max-w-[67%] lg:max-w-[67%] xl:max-w-[67%] 2xl:max-w-[87%] text-[.83rem] xl:text-[.83rem] 2xl:text-[1.1rem] xl:w-[50%] 2xl:w-[40%] mx-auto md:p-0 lg:p-0 xl:p-0 2xl:p-0 p-[1rem]'>
-  <section className='mx-auto my-6 md:flex lg:flex xl:flex 2xl:flex mb-[5rem] mt-[5.5%] gap-[3%]'>
-    <article className='order-0 md:order-0'>
-      <h2 className='text-[155%] font-semibold'>OUR VISION</h2>
-      <h3 className='text-[135%] font-semibold'>"Everyone Thriving"</h3>
-      <p className='text-[.96rem]'>
-        Word Tabernacle Church is more than a building consisting of four walls.
-        It is a spiritual vehicle for socio-economic, system-level change committed
-        to the Vision of “Everyone Thriving”.
-      </p>
-    </article>
 
-    <article className='order-1 md:order-1'>
-      <Image 
-        width={1000} 
-        height={600} 
-        src={msgg2} 
-        alt="" 
-        className='rounded-md object-cover object-top mt-[3%] md:w-[60rem] lg:w-[60rem] xl:w-[60rem] 2xl:w-[80rem] h-[13rem]' 
-      />
-    </article>
-  </section>
+const  SignupPage: FC =() => {
+    const OpenEye = <FaEye />
+    const CloseEye = <FaEyeSlash  />
+    const sermonpix = "https://res.cloudinary.com/dalylashp/image/upload/v1728486243/86QxYjwq8LU_qhirfa.png"
+    const [showPassword, setShowPassword] = useState(false); // Step 1
 
-  <section className='mx-auto my-6 md:flex lg:flex xl:flex 2xl:flex mb-[5rem] gap-3'>
-    <article className='order-1 md:order-0 lg:order-0 xl:order-0 2xl:order-0'>
-      <Image 
-        className='mt-[3%] rounded-md md:w-[60rem] lg:w-[60rem] xl:w-[60rem] 2xl:w-[80rem] h-[13rem] object-cover object-top'
-        width={1000} 
-        height={600} 
-        src={msgg} 
-        alt="" 
-      />
-    </article>
+    const togglePasswordVisibility = () => {
+        setShowPassword((prev) => !prev); 
+    };
+    const [loading, setLoading] = useState(false)
+    const router = useRouter();
+    const [user, setUser] = useState({
+email: "",
+password: "",
+username: "",
 
-    <article className='order-1 md:order-1 lg:order-1 xl:order-1 2xl:order-1'>
-      <h2 className='text-[155%] font-semibold'>OUR MISSION</h2>
-      <h3 className='text-[135%] font-semibold'>
-        "People empowering people and communities in every area of life to the glory of God."
-      </h3>
-      <p className='xl:text-[1rem] 2xl:text-[1rem] text-[.96rem] mt-3'>
-        Word Tabernacle Church is more than a building consisting of four walls.
-        It is a spiritual vehicle for socio-economic, system-level change committed
-        to the Vision of “Everyone Thriving”.
-      </p>
-    </article>
-  </section>
-</div>
+    })
+    const [buttonDisabled, setButtonDisabled] = useState(false)
 
+    useEffect(() =>{
+        if (user.email.length > 0 && user.password.length > 0 && user.username.length > 0){
+            setButtonDisabled(false)
+        }else{
+            setButtonDisabled(true)
+        }
+    },[user]);
 
-        <div className="content  h-[6rem] relative flex justify-center items-center" style={{ backgroundImage: `url(${redbg.src})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
-          <h2 className='text-white font-semibold text-[1.9rem] relative inline-block'>
-          Our Values
-            <span className='block absolute bottom-1 left-1/2 transform -translate-x-1/2 w-[100%] h-[4px] bg-white'></span>
-          </h2>
-        </div>
-        <section className='flex flex-col    justify-center items-center text-gray-600 mt-[3rem]  md:p-0 lg:p-0 xl:p-0 2xl:p-0 p-[1rem]'>
-          <article className='md:flex lg:flex xl:flex 2xl:flex  md:w-[50rem] lg:w-[50rem] xl:w-[50rem] 2xl:w-[50rem]'>
-            <h2 className='font-semibold w-[13rem] text-[1.1rem] text-red-800'>
-            Accountability
-            </h2>
-            <div className=' md:w-[30rem] lg:w-w-[30rem] xl:w-[30rem] 2xl:w-[30rem]'>
-            <p >
-We are personally responsible and accountable to one another
- for our attitude, actions, and integrity as a means of
-  accomplishing vision, building character,
- ensuring sound decision making, and growing as balanced disciples.
-            </p>
-            <p className='my-[2rem] text-[1rem]' >
-            (Acts 15:4; Job 31:6)
-            </p>
-            </div>
+    const onSignup = useCallback(async() =>{
+        try {
+            setLoading(true);
+         const response =  await axios.post("/api/users/signup", user)
+
+         console.log("Signup success", response.data);
+         router.push("/login")
+         
             
-          </article>
-          <article className='md:flex lg:flex xl:flex 2xl:flex  md:w-[50rem] lg:w-[50rem] xl:w-[50rem] 2xl:w-[50rem]'>
-            <h2 className='font-semibold w-[13rem] text-[1.1rem] text-red-800'>
-            Authority
-            </h2>
-            <div className='md:w-[30rem] lg:w-w-[30rem] xl:w-[30rem] 2xl:w-[30rem]'>
+        } catch (error:any) {
+            console.log(`signUp failed  ${error.message}`);
+            
+            toast.error(error.message)
+        }finally{
+            setLoading(false);
+        }
+    },[router, user])
+
+
+    // Attach event listener when component mounts
+    useEffect(() => {
+        const handleKeyPress = (event:any) => {
+            if (event.key === "Enter") {
+                onSignup();
+            }
+        };
+        document.addEventListener("keydown", handleKeyPress);
+        return () => {
+            document.removeEventListener("keydown", handleKeyPress);
+        };
+    }, [onSignup]);
+    return(
+        <div className="">
+          <header><Header/></header>
+          <main>
+            <section className="flex items-center justify-center min-h-screen gap-5">
+
+            
+            <article className="w-[50%]  py-2 mx-[3rem]">
+              <div className="mb-1">
+            <Image src={sermonpix} width={2000} height={200} alt=""/>
+            
+            </div>
+            <p className="text-[.7rem] text-red-400 my-5">Upcoming Event</p>
+            <p>HOW TO TRULY TRUST SOMEONE</p>
+            </article>
+            <article className="py-2 w-[50%]">
+           <div className="flex gap-4"> <h1 className="">
+                {loading ? "Processing !!!!": 'Signup nibi '}
+                -&gt;
+            </h1>
+            <hr />
+            <div className="flex flex-col mt-5 text-black">
+            <label htmlFor="username">username</label>
+            <input
+            className="p-2 border border-gray-300 rounded-xl mb-2 focus:outline-none  focus:border-gray-600"
+            id="username" type="text" value={user.username} placeholder="username" onChange={(e) => setUser
+             ({...user, username:e.target.value})}/>
+            <label htmlFor="email">email</label>
+            <input
+            className="p-2 border border-gray-300 rounded-xl mb-2 focus:outline-none  focus:border-gray-600"
+            id="email" type="email" value={user.email} placeholder="email" onChange={(e) => setUser
+             ({...user, email:e.target.value})}/>
+            <label htmlFor="password">password</label>
+            <div className="relative">
+                        <input
+                            className="p-2 border border-gray-300 rounded-xl mb-2 focus:outline-none  focus:border-gray-600"
+                            id="password"
+                            type={showPassword ? "text" : "password"} 
+                            value={user.password}
+                            placeholder="password"
+                            onChange={(e) =>
+                                setUser({ ...user, password: e.target.value })
+                            }
+                        />
+                        <button
+                            type="button"
+                            className="absolute top-1/2 right-2 transform -translate-y-1/2  "
+                            onClick={togglePasswordVisibility}
+                        >
+                            {showPassword ? OpenEye : CloseEye}
+                        </button>
+                    </div>
+             
+             <button 
+             onClick={onSignup}
+             disabled={buttonDisabled}
+             className="text-white p-2 border border-gray-300 rounded-2xl mb-4 focus:outline-none  focus:border-gray-600">
+                {buttonDisabled ? "No signup": "Signup"} </button>
+             </div></div>
             <p>
-            The Holy Bible is divinely inspired by God and is the inerrant
-             authority by which God communicates, 
-            instructs, reveals, and directs our growth and our goals
+                <Link href={"/login"}>Visit login</Link>
             </p>
-            <p className='my-[2rem] text-[1rem]'>
-            (2 Tim 3:16-17) 
+            <p>
+                <Link href={"/"}>HOME</Link>
             </p>
-            </div>
-            
-          </article>
-        </section>
-      </main>
-      <footer>
-        <Footer />
-      </footer>
-    </div>
-  )
+            </article>
+            </section>
+            </main>
+            <footer>
+              <Footer/>
+            </footer>
+        </div>
+    )
 }
-
-export default Page
+export default SignupPage;
