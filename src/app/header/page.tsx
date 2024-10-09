@@ -90,13 +90,13 @@ username: "",
             <p id="p2">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Dui faucibus in ornare quam viverra orci sagittis eu volutpat.</p>
           <p id="p3">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Dui faucibus in ornare quam viverra orci sagittis eu volutpat. Pharetra sit amet aliquam id diam maecenas ultricies.</p>
             </article>
-            <article className="py-2 w-[50%]">
-           <div className="flex gap-4"> <h1 className="">
+            <article className=" w-[50%]">
+           <div className="flex flex-col items-center shadow-xl mx-2 py-5 bg-white rounded-xl"> <h1 className="">
                 {loading ? "Processing !!!!": 'Signup nibi '}
                 -&gt;
             </h1>
             <hr />
-            <div className="flex flex-col mt-5 text-black">
+            <div className="flex flex-col mt-5 text-black ">
             <label htmlFor="username">username</label>
             <input
             className="p-2 border border-gray-300 rounded-xl mb-2 focus:outline-none  focus:border-gray-600"
@@ -133,13 +133,14 @@ username: "",
              disabled={buttonDisabled}
              className=" p-2 border border-gray-300 rounded-2xl mb-4 focus:outline-none  focus:border-gray-600">
                 {buttonDisabled ? "No signup": "Signup"} </button>
-             </div></div>
+             </div>
             <p>
                 <Link href={"/login"}>Visit login</Link>
             </p>
             <p>
                 <Link href={"/"}>HOME</Link>
             </p>
+            </div>
             </article>
             </section>
             </main>
