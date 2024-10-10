@@ -92,7 +92,7 @@ username: "",
             </article>
             <article className=" w-[50%]">
            <div className="flex flex-col items-center shadow-xl mx-2 py-5 bg-white rounded-xl"> <h1 className="">
-                {loading ? "Processing !!!!": 'Signup nibi '}
+                {loading ? "Processing !!!!": 'Signup Here '}
                 -&gt;
             </h1>
             <hr />
