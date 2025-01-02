@@ -162,7 +162,7 @@ const Header: FC = () => {
                         </div>
                         <div className="flex items-center gap-5">
                             {navItems.map(renderNavItem)}
-                            <Button className="text-white bg-red-600 hover:!text-red-700 hover:!border-red-500 m-auto rounded-lg" onClick={() => { router.push("/login") }}>LOGIN</Button>
+                            <Button className="text-white bg-red-600 hover:!text-red-700 hover:!border-red-500 m-auto rounded-lg" onClick={() => { router.push("/in") }}>LOGIN</Button>
                         </div>
                     </div>
                 </div>
@@ -218,7 +218,7 @@ const Header: FC = () => {
                             
                         </div>
                     ))}
-                    <Link href='/login' className="flex items-center">
+                    <Link href='/in' className="flex items-center">
                                     
                                     <b className="ml-1">Login</b>
                                 </Link>
