@@ -10,7 +10,7 @@ interface ProfilePageProps {
   children: React.ReactNode;
 }
 
-const ProfilePage:FC <ProfilePageProps> = ({ children }) => {
+const ProfilePage:FC  = () => {
 
   const router = useRouter()
 
@@ -44,7 +44,7 @@ const ProfilePage:FC <ProfilePageProps> = ({ children }) => {
       </aside>
 
       {/* Main Content */}
-      <main className="flex-grow p-4">{children}</main>
+      <main className="flex-grow p-4">{}</main>
     </div>
 
 
