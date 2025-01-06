@@ -1,7 +1,7 @@
 "use client";
 
 import { Fragment, useState, useEffect } from "react";
-
+import Image from "next/image";
 import { IoHomeOutline } from "react-icons/io5";
 import { CgNotes } from "react-icons/cg";
 import { FaUserClock } from "react-icons/fa6";
@@ -108,7 +108,7 @@ const Sidebar: React.FC = () => {
         {/* Sidebar Header */}
         <div className="flex items-center gap-4 mb-6">
           <div className=" flex items-center justify-center h-12 w-12 rounded-md">
-            <img src={logo.src} alt="" />
+            <Image src={logo.src} width={1000} height={1000} alt="" />
           </div>
           <div>
             <h1 className="text-lg font-semibold">Admin</h1>
