@@ -4,6 +4,7 @@ import Link from "next/link"
 import toast from "react-hot-toast"
 import { useRouter } from "next/navigation"
 import { useState,FC } from "react"
+import Sidebar from "../components/admin/Sidebar"
 
 interface ProfilePageProps {
   children: React.ReactNode;
@@ -38,20 +39,8 @@ const ProfilePage:FC <ProfilePageProps> = ({ children }) => {
   return (
 <div className="flex h-screen">
       {/* Sidebar */}
-      <aside className="w-64 bg-gray-800 text-white p-4">
-        <nav>
-          <ul>
-            <li>
-              <Link href="/cms/dashboard">Dashboard</Link>
-            </li>
-            <li>
-              <Link href="/cms/members">Members</Link>
-            </li>
-            <li>
-              <Link href="/cms/events">Events</Link>
-            </li>
-          </ul>
-        </nav>
+      <aside className="">
+      <Sidebar/>
       </aside>
 
       {/* Main Content */}

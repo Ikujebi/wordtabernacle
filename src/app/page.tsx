@@ -10,6 +10,7 @@ import Head from "next/head";
 import Community from "./components/common/Community";
 import BlogMain from "./components/common/BlogMain";
 import YouTubePlayer from "./components/common/YouTubePlayer";
+import { Toaster } from "react-hot-toast";
 
 export default function Home() {
   const [currentVideoIndex, setCurrentVideoIndex] = useState(0);
@@ -44,6 +45,7 @@ export default function Home() {
       <div className="w-full ">
         <Header />
       </div>
+      <Toaster position="top-right" />
       <div>
         <Mainpic />
       </div>

@@ -1,25 +1,31 @@
-import  {FC, useState } from "react";
+import { FC, useState } from "react";
 import { BiLogOut } from "react-icons/bi";
-import { useNavigate } from "react-router-dom";
+import { useRouter } from "next/router";
 import { Modal } from "antd";
 
 const LogoutButton: FC = () => {
-  const navigate = useNavigate();
+  const router = useRouter(); // Call useRouter at the top level of the component
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
+
   const showModal = () => {
     setIsModalOpen(true);
   };
+
   const handleOk = () => {
     setIsModalOpen(false);
-    sessionStorage.removeItem("token");
-    sessionStorage.removeItem("userRole");
-    navigate("/", {
-      replace: true,
-    });
+    // Clear session storage
+    if (typeof window !== "undefined") {
+      sessionStorage.removeItem("token");
+      sessionStorage.removeItem("userRole");
+    }
+    // Navigate to the login page
+    router.replace("/"); // Call router.replace directly, not in a callback
   };
+
   const handleCancel = () => {
     setIsModalOpen(false);
   };
+
   const logoutHandler = () => {
     showModal();
   };
