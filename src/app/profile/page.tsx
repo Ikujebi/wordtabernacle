@@ -3,9 +3,13 @@ import axios from "axios"
 import Link from "next/link"
 import toast from "react-hot-toast"
 import { useRouter } from "next/navigation"
-import { useState } from "react"
+import { useState,FC } from "react"
 
-const ProfilePage = () => {
+interface ProfilePageProps {
+  children: React.ReactNode;
+}
+
+const ProfilePage:FC <ProfilePageProps> = ({ children }) => {
 
   const router = useRouter()
 
@@ -32,7 +36,38 @@ const ProfilePage = () => {
   }
 
   return (
-    <div className="flex bg-black text-white flex-col items-center justify-center min-h-screen py-2">
+<div className="flex h-screen">
+      {/* Sidebar */}
+      <aside className="w-64 bg-gray-800 text-white p-4">
+        <nav>
+          <ul>
+            <li>
+              <Link href="/cms/dashboard">Dashboard</Link>
+            </li>
+            <li>
+              <Link href="/cms/members">Members</Link>
+            </li>
+            <li>
+              <Link href="/cms/events">Events</Link>
+            </li>
+          </ul>
+        </nav>
+      </aside>
+
+      {/* Main Content */}
+      <main className="flex-grow p-4">{children}</main>
+    </div>
+
+
+  
+  )
+}
+
+export default ProfilePage
+
+
+  
+    {/* <div className="flex bg-black text-white flex-col items-center justify-center min-h-screen py-2">
       <h1>Profile</h1>
       <hr />
       <p>Profile page</p>
@@ -49,8 +84,4 @@ const ProfilePage = () => {
       <Link className="bg-pink-500 hover:bg-green-700 text-white py-2 px-4 mt-[20rem] ml-[20rem] font-bold rounded" href={"/"}>
         HOME
       </Link >
-    </div>
-  )
-}
-
-export default ProfilePage
+    </div> */}
