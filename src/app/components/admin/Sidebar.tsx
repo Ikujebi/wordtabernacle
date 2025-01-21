@@ -111,8 +111,8 @@ const Sidebar: React.FC = () => {
             <Image src={logo.src} width={1000} height={1000} alt="" />
           </div>
           <div>
-            <h1 className="text-lg font-semibold">Admin</h1>
-            <p className="text-sm font-light">DASHBOARD</p>
+            <h1 className="text-lg font-semibold"><u className="text-red-">WTBC</u> C.M.S</h1>
+            
           </div>
         </div>
 
@@ -133,39 +133,8 @@ const Sidebar: React.FC = () => {
                   <span>{item.name}</span>
                 </button>}
 
-                {/* Sub-Items */}
-                {item.subItems && (
-                  <Fragment>
-                    <button
-                      onClick={() => toggleExpand(index)}
-                      className="w-full text-left px-4 text-sm text-gray-600"
-                      aria-expanded={expandedIndex === index}
-                    >
-                      {expandedIndex === index ? "▲ Submenu" : "▼ Submenu"}
-                    </button>
-                    {/* <ul
-                      className={`${
-                        expandedIndex === index ? "block" : "hidden"
-                      } pl-6 space-y-1`}
-                    >
-                      {item.subItems.map((subItem, subIndex) => (
-                        <li key={subIndex}>
-                          <button
-                             onClick={() => navigateTo(subItem.link)}
-                            className={`flex items-center gap-4 w-full px-4 py-1 text-left ${
-                              router.pathname === subItem.link
-                                ? "bg-green-500 text-white rounded-lg font-bold"
-                                : "text-gray-600 hover:bg-green-100"
-                            }`}
-                          >
-                            {subItem.icon}
-                            <span>{subItem.name}</span>
-                          </button>
-                        </li>
-                      ))}
-                    </ul> */}
-                  </Fragment>
-                )}
+               
+              
               </li>
             </Fragment>
           ))}

@@ -39,9 +39,13 @@ const ProfilePage:FC  = () => {
   return (
 <div className="flex h-screen">
       {/* Sidebar */}
-      <aside className="">
+      <header className="flex">
+      <aside className="w-30%">
       <Sidebar/>
+      
       </aside>
+      <div className="w-70% ml-[14rem]">rgvr</div>
+      </header>
 
       {/* Main Content */}
       <main className="flex-grow p-4">{}</main>
