@@ -20,7 +20,7 @@ const Community:FC = () => {
       <section className="w-[33.3%]">
         <div className="content h-[30rem] relative" style={{ backgroundImage: `url(${cardimg})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
           <div className="p-4 absolute bottom-0 left-0 right-0 text-center pb-[5rem]">
-            <h2 className="text-white text-center font-semibold">Build Capacity</h2>
+            <h2 className="text-white text-center font-semibold bg-black">Build Capacity</h2>
             <p className="text-white text-center font-semibold text-lg md:text-xl">JOIN OUR<br />LEADERSHIP<br />CLASS</p>
             <button className="bg-red-600 text-white  md:w-[50%] lg:w-[50%] xl:w-[50%] 2xl:w-[50%] p-3 mt-5">START HERE</button>
           </div>

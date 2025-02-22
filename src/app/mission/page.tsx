@@ -40,7 +40,7 @@ const Page: FC = () => {
               <h2 className="text-[155%] font-semibold text-red-600">
                 OUR VISION
               </h2>
-              <h3 className="text-[135%] font-semibold">"Everyone Thriving"</h3>
+              <h3 className="text-[135%] font-semibold">"..Empowering Lives, Raising Word Practitioners.. <span>John 1: 12-14</span>"</h3>
               <p className="text-[.96rem]">
                 Word Tabernacle Church is more than a building consisting of
                 four walls. It is a spiritual vehicle for socio-economic,
@@ -97,7 +97,7 @@ const Page: FC = () => {
               <h2 className="text-[155%] font-semibold text-red-600">
                 OUR VISION
               </h2>
-              <h3 className="text-[135%] font-semibold">"Everyone Thriving"</h3>
+              <h3 className="text-[135%] font-semibold">"..Empowering Lives, Raising Word Practitioners.. <span className="text-[.81rem]">John 1: 12-14</span>"</h3>
               <p className="text-[.96rem]">
                 Word Tabernacle Church is more than a building consisting of
                 four walls. It is a spiritual vehicle for socio-economic,
@@ -139,8 +139,7 @@ const Page: FC = () => {
               <p className="xl:text-[1rem] 2xl:text-[1rem] text-[.96rem] mt-3">
                 Word Tabernacle Church is more than a building consisting of
                 four walls. It is a spiritual vehicle for socio-economic,
-                system-level change committed to the Vision of “Everyone
-                Thriving”.
+                system-level change committed to the Vision of “..Empowering Lives,”.
               </p>
             </article>
           </section>
