@@ -72,7 +72,7 @@ export default function Home() {
               this Sunday! God bless.
             </div>
             <div className="text-white mt-4 text-right font-medium text-base sm:text-sm xl:text-md 2xl:text-xl  px-[10%] md:text-[1.05rem]">
-              - Pastor Ayorinde Ayodeji
+              - Pastor Ayodeji Ayorinde 
             </div>
           </div>
         </div>
