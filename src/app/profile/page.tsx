@@ -1,22 +1,19 @@
 "use client"
-import axios from "axios"
-import Link from "next/link"
-import toast from "react-hot-toast"
-import { useRouter } from "next/navigation"
-import { useState,FC } from "react"
+
+import { FC } from "react"
 import Sidebar from "../components/admin/Sidebar"
 
-interface ProfilePageProps {
+/* interface ProfilePageProps {
   children: React.ReactNode;
-}
+} */
 
-const ProfilePage:FC<ProfilePageProps>  = () => {
+const ProfilePage:FC  = () => {
 
-  const router = useRouter()
+  // const router = useRouter()
 
-  const [data, setData] = useState("nothing!!!")
+  
 
-  const logout = async () => {
+/*   const logout = async () => {
     try {
       await axios.get('api/users/logout')
       router.push("/login")
@@ -26,15 +23,15 @@ const ProfilePage:FC<ProfilePageProps>  = () => {
       toast.error(error.message)
 
     }
-  }
+  } */
    
-  const getUserDetails = async () =>{
+/*   const getUserDetails = async () =>{
    const response = await axios.get("/api/users/admin")
 
    console.log(response.data);
    setData(response.data.data._id)
    
-  }
+  } */
 
   return (
 <div className="flex h-screen">
