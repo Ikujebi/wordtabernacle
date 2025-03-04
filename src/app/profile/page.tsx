@@ -10,7 +10,7 @@ interface ProfilePageProps {
   children: React.ReactNode;
 }
 
-const ProfilePage:FC  = () => {
+const ProfilePage:FC<ProfilePageProps>  = () => {
 
   const router = useRouter()
 

@@ -8,6 +8,8 @@ import toast from "react-hot-toast";
 import Image from "next/image";
 import wordlogo from "../img/wordlogo.png";
 import Footer from "../components/common/Footer";
+import { Spin } from "antd";
+
 
 export default function LoginPage() {
   const router = useRouter();
@@ -88,6 +90,7 @@ export default function LoginPage() {
         alt="Word Logo"
         className="w-[5rem] mt-[-5rem] mb-5"
       />
+      <Spin spinning={loading}>
       <div className="bg-white rounded-2xl text-[#80847c]  px-[5rem] py-[6rem]">
         <div className="gap-4 ">
           <h1 className="text-center">
@@ -122,6 +125,7 @@ export default function LoginPage() {
                 {showPassword ? OpenEye : CloseEye}
               </button>
             </div>
+            
             <button
               onClick={onLogin}
               disabled={buttonDisabled}
@@ -129,12 +133,15 @@ export default function LoginPage() {
             >
               {buttonDisabled ? "No Login" : "Login here"}
             </button>
+            
           </div>
         </div>
+       
       </div>
       <footer className="fixed bottom-0 left-0 right-0 z-10  h-[13.8rem]">
         <Footer />
       </footer>
+      </Spin>
     </div>
   );
 }
