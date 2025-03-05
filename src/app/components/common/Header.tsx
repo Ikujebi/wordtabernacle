@@ -74,7 +74,7 @@ const Header: FC = () => {
             subItems: [
                 { name: "EMERGENZ", link: "/emergenz" },
                 { name: "Teens", link: "#" },
-                { name: "Children", link: "/executive" },
+                { name: "Children", link: "/children" },
                 { name: "Women", link: "/women" },
                 { name: "Men", link: "/men" },
             ],

@@ -14,16 +14,16 @@ const FreeStyle = () => {
   const pic3 = "https://res.cloudinary.com/dalylashp/image/upload/v1725101517/choir7_umfdyb.webp";
   const pic4 = "https://res.cloudinary.com/dalylashp/image/upload/v1725101508/choir_ekkuf6.webp";
   const pic5 = "https://res.cloudinary.com/dalylashp/image/upload/v1725101899/ruth_vn60xa.jpg";
-  const pic6 = "https://res.cloudinary.com/dalylashp/image/upload/v1725101435/chil_h7ppg5.webp";
+  const pic6 = "https://res.cloudinary.com/dalylashp/image/upload/v1741170865/children_wt_1_-_Copy_fxxjel.jpg";
   const pic7 = "https://res.cloudinary.com/dalylashp/image/upload/v1726579634/word014_mzx1rz.jpg";
-  const pic8 = "https://res.cloudinary.com/dalylashp/image/upload/v1726579603/word10_xclcex.jpg";
+  const pic8 = "https://res.cloudinary.com/dalylashp/image/upload/v1741170862/pastor_wt_2_rmubmv.jpg";
   const pic9 = "https://res.cloudinary.com/dalylashp/image/upload/v1725101584/drama_bnrzlz.webp";
-  const pic10 = "https://res.cloudinary.com/dalylashp/image/upload/v1725101572/dance_r0rtdv.webp";
+  const pic10 = "https://res.cloudinary.com/dalylashp/image/upload/v1741170792/5917919615231575381_tynulx.jpg";
   const pic11 = "https://res.cloudinary.com/dalylashp/image/upload/v1725356885/5933838834204786673_a2ehgl.jpg";
   const pic12 = "https://res.cloudinary.com/dalylashp/image/upload/v1741177452/WhatsApp_Image_2025-03-05_at_12.17.14_PM_xxgrfe.jpg"
   const pic13 = "https://res.cloudinary.com/dalylashp/image/upload/v1725356883/5954255936203899439_foslh0.jpg"
 const pic14 = "https://res.cloudinary.com/dalylashp/image/upload/v1726579634/word15_ctucr4.jpg"
-const pic15 = "https://res.cloudinary.com/dalylashp/image/upload/v1725356891/5933838834204786637_esw96j.jpg"
+const pic15 = "https://res.cloudinary.com/dalylashp/image/upload/v1741170792/5917919615231575331_f5inmd.jpg"
 const pic16 = "https://res.cloudinary.com/dalylashp/image/upload/v1725356890/5933838834204786640_r1lu2y.jpg"
 const pic17 = "https://res.cloudinary.com/dalylashp/image/upload/v1725356882/5954255936203899432_oht64e.jpg"
   const [_index, setIndex] = useState(0);
@@ -107,9 +107,8 @@ const pic17 = "https://res.cloudinary.com/dalylashp/image/upload/v1725356882/595
                   id="imgtext"
                   className="absolute font-bold top-0 left-0 w-full h-full text-white text-[2.9rem] m-[5rem] 2xl:text-[5rem] 2xl:m-[10rem] md:mt-[4rem] xl:mt-[5rem] lg:mt-[4rem] 2xl:mt-[10rem] mt-[3.4rem]"
                 >
-                  <h2>Word</h2>
-                  <h2>Tabernacle</h2>
-                  <p className="text-[1.1rem] font-normal">
+                  
+                  <p className="text-[1.1rem] font-normal md:mt-[8rem] lg:mt-[8rem] xl:mt-[8rem] 2xl:mt-[8rem] mt-[2rem]">
                     Building word practitioners...
                   </p>
                   <div className="relative">
