@@ -159,7 +159,9 @@ const pic15 = "https://res.cloudinary.com/dalylashp/image/upload/v1725356882/595
               LOCATION <br />
             </div>
           </div>
+          
         </div>
+      
       </div>
     </div>
   );

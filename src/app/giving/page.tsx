@@ -58,8 +58,14 @@ const Page: FC = () => {
                         <Image width={1000} height={500} src={giving} alt="" className='md:h-[25rem] lg:h-[25rem] xl:h-[25rem] 2xl:h-[25rem]'/>
 
                 </section>
-                <section>
+                <section className=' text-[.9rem] mb-10'>
+                       <div className='mb-2'><b> USDT Account </b>
+                        <p>Access Bank: 1854926739</p>
+                        </div>
 
+                       <div ><b> Pounds Account </b>
+                        <p>Access Bank: 1854925543</p>
+                        </div>
                 </section>
 
                 <section >

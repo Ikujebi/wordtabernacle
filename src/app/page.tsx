@@ -46,7 +46,12 @@ export default function Home() {
         <Header />
       </div>
       <Toaster position="top-right" />
+       
+      <div className="absolute top-[9rem] md:top-[14rem] lg:top-[14rem] xl:top-[14rem] 2xl:top-[14rem] left-0 w-full text-center md:text-[2rem] lg:text-[2rem] xl:text-[2rem] 2xl:text-[2rem] text-[.9rem] text-red-600">
+  2025: MY YEAR OF GOODNEWS
+</div>
       <div>
+        
         <Mainpic />
       </div>
       <div>
