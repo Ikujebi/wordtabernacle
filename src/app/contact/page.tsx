@@ -114,7 +114,7 @@ const Page: FC = () => {
                     <h2>Address</h2>
                   </div>
                   <div className="flex flex-col items-center">
-                    <p className="text-center">Word Tabernacle Church</p>
+                    <p className="text-center">Word Tabernacle Bible Church</p>
                     <p>2, Ajetunmobi street</p>
                     <p>ibeshe,ikorodu,LG</p>
                   </div>

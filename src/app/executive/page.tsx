@@ -174,9 +174,9 @@ const  ministerAbraham = "https://res.cloudinary.com/dalylashp/image/upload/v172
             </p>
           </article>
             <p className='mt-5'>
-            Pastor James David Gailliard is the Organizing and 
-            Senior Pastor of Word Tabernacle Church located in
-             Rocky Mount, North Carolina. At the intersection of
+            Pastor Ayodeji Ayorinde  is the Organizing and 
+            Senior Pastor of Word Tabernacle Bible Church located in
+             Ikorodu, Lagos. At the intersection of
               pastoral ministry and public policy he has formed 
               a collaborative model of human, socio-political- 
               economic and community development,
@@ -196,7 +196,7 @@ const  ministerAbraham = "https://res.cloudinary.com/dalylashp/image/upload/v172
              of theology, counseling, and business administration.
             </p>
             <p className='mt-8'>
-            Pastor Gailliard is a proud husband to Angela, with whom he shares a blended family of seven children and three grandchildren. Affectionately known as Pastor G, he is a spiritual father, son, and brother to many. To unwind, he can be found on his Harley Davidson or shooting a game of pool.
+            Pastor Ayo is a proud husband to Tosin, with whom he shares a blended family of two children . Affectionately known as Pastor AYO, he is a spiritual father, son, and brother to many. To unwind, he can be found on his Harley Davidson or shooting a game of pool.
             </p>
           </article>
           </div>
@@ -210,7 +210,7 @@ const  ministerAbraham = "https://res.cloudinary.com/dalylashp/image/upload/v172
           <article className='md:w-[60%] lg:w-[60%] xl:w-[60%] 2xl:w-[60%]'>
           <article>
             <h1>
-            Ayodeji D. Ayorinde  |  Senior Pastor
+            Tosin Ayorinde  |  Senior Pastor
             </h1>
             <p className='flex gap-5 text-[.8rem] underline'><a href="">Download Bio</a>
             <a href="">Download Press Photos</a>
