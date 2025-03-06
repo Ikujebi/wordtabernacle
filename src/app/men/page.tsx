@@ -21,14 +21,14 @@ const Page: FC = () => {
     { src: "https://res.cloudinary.com/dalylashp/image/upload/v1725102055/youthpreacher_egmmcn.webp", alt: "Photo 2" },
     { src: "https://res.cloudinary.com/dalylashp/image/upload/v1725129856/photo_5933838834204786597_y_zm9hpb.jpg", alt: "Photo 3" },
     { src: "https://res.cloudinary.com/dalylashp/image/upload/v1725101602/femiblur_xwz9xr.jpg", alt: "Photo 4" },
-    { src: "https://res.cloudinary.com/dalylashp/image/upload/v1726579601/word17_cvh62v.jpg", alt: "Photo 5" },
-    { src: "https://res.cloudinary.com/dalylashp/image/upload/v1725101419/ayanfe_w7dp1v.webp", alt: "Photo 6" },
+    { src: "https://res.cloudinary.com/dalylashp/image/upload/v1741256207/men_wt_3_x2l3iq.jpg", alt: "Photo 5" },
+    { src: "https://res.cloudinary.com/dalylashp/image/upload/v1741256207/men_wt_4_jl6pmt.jpg", alt: "Photo 6" },
     { src: "https://res.cloudinary.com/dalylashp/image/upload/v1725101371/youthpreacher_ucoete.webp", alt: "Photo 7" },
-    { src: "https://res.cloudinary.com/dalylashp/image/upload/v1725102045/youth3_m22wch.webp", alt: "Photo 8" },
+    { src: "https://res.cloudinary.com/dalylashp/image/upload/v1741256207/men_wt_1_kan4k2.jpg", alt: "Photo 8" },
     { src: "https://res.cloudinary.com/dalylashp/image/upload/v1727168938/photo_6019429698393719062_y_ijgaz6.jpg", alt: "Photo 9" },
     { src: "https://res.cloudinary.com/dalylashp/image/upload/v1727168955/photo_6019429698393719061_y_qiqjqg.jpg", alt: "Photo 10" },
     { src: "https://res.cloudinary.com/dalylashp/image/upload/v1727168967/photo_6019429698393719049_y_f3hugc.jpg", alt: "Photo 11" },
-    { src: "https://res.cloudinary.com/dalylashp/image/upload/v1727168960/photo_6019429698393719060_y_s4icix.jpg", alt: "Photo 12" },
+    { src: "https://res.cloudinary.com/dalylashp/image/upload/v1741256207/men_wt_2_egf1rh.jpg", alt: "Photo 12" },
     { src: "https://res.cloudinary.com/dalylashp/image/upload/v1727168960/photo_6019429698393719060_y_s4icix.jpg", alt: "Photo 13" },
     { src: "https://res.cloudinary.com/dalylashp/image/upload/v1728399273/photo_5773882741589395498_y_icg2je.jpg", alt: "Photo 14" },
     { src: "https://res.cloudinary.com/dalylashp/image/upload/v1728399270/photo_5773882741589395440_y_pfcer7.jpg", alt: "Photo 15" },
@@ -44,6 +44,10 @@ const Page: FC = () => {
 
   const goToPrev = () => {
     setCurrentImageIndex((prevIndex) => (prevIndex - 1 + menImages.length) % menImages.length);
+  };
+
+  const handleShowMore = () => {
+    setShowFullGallery((prev) => !prev);
   };
 
   return (
@@ -96,6 +100,12 @@ const Page: FC = () => {
               />
             ))}
           </div>
+          <b 
+    onClick={handleShowMore} 
+    className="text-white text-[1.2rem] cursor-pointer mt-4"
+  >
+    {showFullGallery ? "Show Less" : "Show More"}
+  </b>
         </section>
 
         {showFullGallery && (
@@ -108,6 +118,8 @@ const Page: FC = () => {
             </button>
             <div className="flex justify-center items-center">
               <Image src={menImages[currentImageIndex].src} alt={menImages[currentImageIndex].alt} width={800} height={600} className="rounded-lg" />
+            
+              
             </div>
             <button className="absolute right-10 text-white text-4xl p-4 bg-gray-600 bg-opacity-50 rounded-full hover:bg-opacity-100" onClick={goToNext}>
               ›
