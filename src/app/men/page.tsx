@@ -104,7 +104,7 @@ const Page: FC = () => {
     onClick={handleShowMore} 
     className="text-white text-[1.2rem] cursor-pointer mt-4"
   >
-    {showFullGallery ? "Show Less" : "Show More"}
+    {showFullGallery ? "Show Less" : "Show Gallery"}
   </b>
         </section>
 
