@@ -1,9 +1,300 @@
-import React from 'react'
 
-const page = () => {
-  return (
-    <div>page</div>
+
+"use client"
+import { FC } from 'react'
+import Header from '../components/common/Header'
+import Footer from '../components/common/Footer'
+import Image from 'next/image'
+import givbg from '../img/giveimg.jpg'
+
+
+
+
+
+const Page: FC = () => {
+const pastor = "https://res.cloudinary.com/dalylashp/image/upload/v1725101809/pastor_ypsalo.webp"
+ const pastorMrs = "https://res.cloudinary.com/dalylashp/image/upload/v1725101800/pastermrs_iscziw.webp"
+const  ministerAbraham = "https://res.cloudinary.com/dalylashp/image/upload/v1725101654/minab_vedu6k.jpg"
+ const ministerjames  = "https://res.cloudinary.com/dalylashp/image/upload/v1725101665/minjames_nqlte4.jpg"
+ const mrsFelix = "https://res.cloudinary.com/dalylashp/image/upload/v1725356883/5954255936203899436_tqvofb.jpg" 
+ const mrsJJ = "https://res.cloudinary.com/dalylashp/image/upload/v1726579602/WORD_MRSjj2_dlz6ft.jpg"
+
+ return (
+    <div className='font-satoshi '>
+      <header >
+        <Header />
+      </header>
+      <main className='pt-[10rem]'>
+      <div className="content  h-[6rem] 2xl:h-[8rem]  relative flex justify-center items-center" style={{ backgroundImage: `url(${givbg.src})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
+          <h2 className='text-white font-semibold 2xl:text-[1.9rem] text-[1.5rem] relative inline-block'>
+          Executive Leadership Team
+            <span className='block absolute bottom-1 left-1/2 transform -translate-x-1/2 w-[100%] h-[4px] bg-white'></span>
+          </h2>
+        </div>
+        <section className='flex  gap-[3rem] justify-center mt-[4rem]'>
+          <div className='md:flex lg:flex xl:flex 2xl:flex w-[80%] gap-[3rem] '>
+          <article className=' md:w-[35%] lg:w-[35%] xl:w-[35%] 2xl:w-[30%] '>
+            <Image width={1000} height={500} src={pastor} alt="pastor" className='w-full h-[35svh]' />
+          </article>
+         
+          <article className='md:w-[60%] lg:w-[60%] xl:w-[60%] 2xl:w-[60%]'>
+          <article>
+            <h1>
+            Ayodeji D. Ayorinde  |  Senior Pastor
+            </h1>
+            <p className='flex gap-5 text-[.8rem] underline'><a href="">Download Bio</a>
+            <a href="">Download Press Photos</a>
+            </p>
+          </article>
+            <p className='mt-5'>
+            Pastor James David Gailliard is the Organizing and 
+            Senior Pastor of Word Tabernacle Church located in
+             Rocky Mount, North Carolina. At the intersection of
+              pastoral ministry and public policy he has formed 
+              a collaborative model of human, socio-political- 
+              economic and community development,
+               another avenue by which he has accomplished
+                this was by serving two consecutive terms 
+                in the North Carolina General Assembly, 
+                becoming “living history” as the only person 
+                of color to be elected to represent House District 25 
+                (Nash-Rocky Mount). As a Commissioner of MyFutureNC, 
+                he is one of the architects of the
+                 statewide educational attainment goal.
+            </p>
+            <p className='mt-8'>
+            Visionary, pioneer, leader, humanitarian,
+             and philanthropist, Pastor Gailliard was
+              named the 2016 Distinguished Citizen by the Rocky Mount Chamber of Commerce, and most recently recognized for making an impact within his community as the recipient of the 2023 President Joseph R. Biden, Jr. Lifetime Achievement Award. He is the Founder-Chairman of The REACH Center, Inc, a member of the Board of Trustees, Elizabeth City State University as well as the Board of Preachers, Morehouse College, his alma mater, and he is the former Chairman of the Board for the North Carolina Legislative Black Caucus Foundation. His academic background is an unusual combination
+             of theology, counseling, and business administration.
+            </p>
+            <p className='mt-8'>
+            Pastor Gailliard is a proud husband to Angela, with whom he shares a blended family of seven children and three grandchildren. Affectionately known as Pastor G, he is a spiritual father, son, and brother to many. To unwind, he can be found on his Harley Davidson or shooting a game of pool.
+            </p>
+          </article>
+          </div>
+        </section>
+        <section className='flex  gap-[3rem] justify-center mt-[4rem]'>
+          <div className='md:flex lg:flex xl:flex 2xl:flex w-[80%] gap-[3rem] '>
+          <article className=' md:w-[35%] lg:w-[35%] xl:w-[35%] 2xl:w-[30%] '>
+            <Image width={1000} height={500} src={pastorMrs} alt="pastor" className='w-full h-[35svh]' />
+          </article>
+         
+          <article className='md:w-[60%] lg:w-[60%] xl:w-[60%] 2xl:w-[60%]'>
+          <article>
+            <h1>
+            Ayodeji D. Ayorinde  |  Senior Pastor
+            </h1>
+            <p className='flex gap-5 text-[.8rem] underline'><a href="">Download Bio</a>
+            <a href="">Download Press Photos</a>
+            </p>
+          </article>
+            <p className='mt-5'>
+            Pastor James David Gailliard is the Organizing and 
+            Senior Pastor of Word Tabernacle Church located in
+             Rocky Mount, North Carolina. At the intersection of
+              pastoral ministry and public policy he has formed 
+              a collaborative model of human, socio-political- 
+              economic and community development,
+               another avenue by which he has accomplished
+                this was by serving two consecutive terms 
+                in the North Carolina General Assembly, 
+                becoming “living history” as the only person 
+                of color to be elected to represent House District 25 
+                (Nash-Rocky Mount). As a Commissioner of MyFutureNC, 
+                he is one of the architects of the
+                 statewide educational attainment goal.
+            </p>
+            <p className='mt-8'>
+            Visionary, pioneer, leader, humanitarian,
+             and philanthropist, Pastor Gailliard was
+              named the 2016 Distinguished Citizen by the Rocky Mount Chamber of Commerce, and most recently recognized for making an impact within his community as the recipient of the 2023 President Joseph R. Biden, Jr. Lifetime Achievement Award. He is the Founder-Chairman of The REACH Center, Inc, a member of the Board of Trustees, Elizabeth City State University as well as the Board of Preachers, Morehouse College, his alma mater, and he is the former Chairman of the Board for the North Carolina Legislative Black Caucus Foundation. His academic background is an unusual combination
+             of theology, counseling, and business administration.
+            </p>
+            <p className='mt-8'>
+            Pastor Gailliard is a proud husband to Angela, with whom he shares a blended family of seven children and three grandchildren. Affectionately known as Pastor G, he is a spiritual father, son, and brother to many. To unwind, he can be found on his Harley Davidson or shooting a game of pool.
+            </p>
+          </article>
+          </div>
+        </section>
+        <section className='flex  gap-[3rem] justify-center mt-[4rem]'>
+          <div className='md:flex lg:flex xl:flex 2xl:flex w-[80%] gap-[3rem] '>
+          <article className=' md:w-[35%] lg:w-[35%] xl:w-[35%] 2xl:w-[30%] '>
+            <Image width={1000} height={500} src={ministerAbraham} alt="pastor" className='w-full h-[35svh]' />
+          </article>
+         
+          <article className='md:w-[60%] lg:w-[60%] xl:w-[60%] 2xl:w-[60%]'>
+          <article>
+            <h1>
+            Ayodeji D. Ayorinde  |  Senior Pastor
+            </h1>
+            <p className='flex gap-5 text-[.8rem] underline'><a href="">Download Bio</a>
+            <a href="">Download Press Photos</a>
+            </p>
+          </article>
+            <p className='mt-5'>
+            Pastor James David Gailliard is the Organizing and 
+            Senior Pastor of Word Tabernacle Church located in
+             Rocky Mount, North Carolina. At the intersection of
+              pastoral ministry and public policy he has formed 
+              a collaborative model of human, socio-political- 
+              economic and community development,
+               another avenue by which he has accomplished
+                this was by serving two consecutive terms 
+                in the North Carolina General Assembly, 
+                becoming “living history” as the only person 
+                of color to be elected to represent House District 25 
+                (Nash-Rocky Mount). As a Commissioner of MyFutureNC, 
+                he is one of the architects of the
+                 statewide educational attainment goal.
+            </p>
+            <p className='mt-8'>
+            Visionary, pioneer, leader, humanitarian,
+             and philanthropist, Pastor Gailliard was
+              named the 2016 Distinguished Citizen by the Rocky Mount Chamber of Commerce, and most recently recognized for making an impact within his community as the recipient of the 2023 President Joseph R. Biden, Jr. Lifetime Achievement Award. He is the Founder-Chairman of The REACH Center, Inc, a member of the Board of Trustees, Elizabeth City State University as well as the Board of Preachers, Morehouse College, his alma mater, and he is the former Chairman of the Board for the North Carolina Legislative Black Caucus Foundation. His academic background is an unusual combination
+             of theology, counseling, and business administration.
+            </p>
+            <p className='mt-8'>
+            Pastor Gailliard is a proud husband to Angela, with whom he shares a blended family of seven children and three grandchildren. Affectionately known as Pastor G, he is a spiritual father, son, and brother to many. To unwind, he can be found on his Harley Davidson or shooting a game of pool.
+            </p>
+          </article>
+          </div>
+        </section>
+        <section className='flex  gap-[3rem] justify-center mt-[4rem]'>
+          <div className='md:flex lg:flex xl:flex 2xl:flex w-[80%] gap-[3rem] '>
+          <article className=' md:w-[35%] lg:w-[35%] xl:w-[35%] 2xl:w-[30%] '>
+            <Image width={1000} height={500} src={ministerjames} alt="pastor" className='w-full h-[35svh]' />
+          </article>
+         
+          <article className='md:w-[60%] lg:w-[60%] xl:w-[60%] 2xl:w-[60%]'>
+          <article>
+            <h1>
+            Ayodeji D. Ayorinde  |  Senior Pastor
+            </h1>
+            <p className='flex gap-5 text-[.8rem] underline'><a href="">Download Bio</a>
+            <a href="">Download Press Photos</a>
+            </p>
+          </article>
+            <p className='mt-5'>
+            Pastor Ayodeji Ayorinde  is the Organizing and 
+            Senior Pastor of Word Tabernacle Bible Church located in
+             Ikorodu, Lagos. At the intersection of
+              pastoral ministry and public policy he has formed 
+              a collaborative model of human, socio-political- 
+              economic and community development,
+               another avenue by which he has accomplished
+                this was by serving two consecutive terms 
+                in the North Carolina General Assembly, 
+                becoming “living history” as the only person 
+                of color to be elected to represent House District 25 
+                (Nash-Rocky Mount). As a Commissioner of MyFutureNC, 
+                he is one of the architects of the
+                 statewide educational attainment goal.
+            </p>
+            <p className='mt-8'>
+            Visionary, pioneer, leader, humanitarian,
+             and philanthropist, Pastor Gailliard was
+              named the 2016 Distinguished Citizen by the Rocky Mount Chamber of Commerce, and most recently recognized for making an impact within his community as the recipient of the 2023 President Joseph R. Biden, Jr. Lifetime Achievement Award. He is the Founder-Chairman of The REACH Center, Inc, a member of the Board of Trustees, Elizabeth City State University as well as the Board of Preachers, Morehouse College, his alma mater, and he is the former Chairman of the Board for the North Carolina Legislative Black Caucus Foundation. His academic background is an unusual combination
+             of theology, counseling, and business administration.
+            </p>
+            <p className='mt-8'>
+            Pastor Ayo is a proud husband to Tosin, with whom he shares a blended family of two children . Affectionately known as Pastor AYO, he is a spiritual father, son, and brother to many. To unwind, he can be found on his Harley Davidson or shooting a game of pool.
+            </p>
+          </article>
+          </div>
+        </section>
+        <section className='flex  gap-[3rem] justify-center mt-[4rem]'>
+          <div className='md:flex lg:flex xl:flex 2xl:flex w-[80%] gap-[3rem] '>
+          <article className=' md:w-[35%] lg:w-[35%] xl:w-[35%] 2xl:w-[30%] '>
+            <Image width={1000} height={500} src={mrsJJ} alt="pastor" className='w-full h-[35svh]' />
+          </article>
+         
+          <article className='md:w-[60%] lg:w-[60%] xl:w-[60%] 2xl:w-[60%]'>
+          <article>
+            <h1>
+            Tosin Ayorinde  |  Senior Pastor
+            </h1>
+            <p className='flex gap-5 text-[.8rem] underline'><a href="">Download Bio</a>
+            <a href="">Download Press Photos</a>
+            </p>
+          </article>
+            <p className='mt-5'>
+            Pastor James David Gailliard is the Organizing and 
+            Senior Pastor of Word Tabernacle Church located in
+             Rocky Mount, North Carolina. At the intersection of
+              pastoral ministry and public policy he has formed 
+              a collaborative model of human, socio-political- 
+              economic and community development,
+               another avenue by which he has accomplished
+                this was by serving two consecutive terms 
+                in the North Carolina General Assembly, 
+                becoming “living history” as the only person 
+                of color to be elected to represent House District 25 
+                (Nash-Rocky Mount). As a Commissioner of MyFutureNC, 
+                he is one of the architects of the
+                 statewide educational attainment goal.
+            </p>
+            <p className='mt-8'>
+            Visionary, pioneer, leader, humanitarian,
+             and philanthropist, Pastor Gailliard was
+              named the 2016 Distinguished Citizen by the Rocky Mount Chamber of Commerce, and most recently recognized for making an impact within his community as the recipient of the 2023 President Joseph R. Biden, Jr. Lifetime Achievement Award. He is the Founder-Chairman of The REACH Center, Inc, a member of the Board of Trustees, Elizabeth City State University as well as the Board of Preachers, Morehouse College, his alma mater, and he is the former Chairman of the Board for the North Carolina Legislative Black Caucus Foundation. His academic background is an unusual combination
+             of theology, counseling, and business administration.
+            </p>
+            <p className='mt-8'>
+            Pastor Gailliard is a proud husband to Angela, with whom he shares a blended family of seven children and three grandchildren. Affectionately known as Pastor G, he is a spiritual father, son, and brother to many. To unwind, he can be found on his Harley Davidson or shooting a game of pool.
+            </p>
+          </article>
+          </div>
+        </section>
+        <section className='flex  gap-[3rem] justify-center mt-[4rem]'>
+          <div className='md:flex lg:flex xl:flex 2xl:flex w-[80%] gap-[3rem] '>
+          <article className=' md:w-[35%] lg:w-[35%] xl:w-[35%] 2xl:w-[30%] '>
+            <Image width={1000} height={500} src={mrsFelix} alt="pastor" className='w-full h-[35svh]' />
+          </article>
+         
+          <article className='md:w-[60%] lg:w-[60%] xl:w-[60%] 2xl:w-[60%]'>
+          <article>
+            <h1>
+            Ayodeji D. Ayorinde  |  Senior Pastor
+            </h1>
+            <p className='flex gap-5 text-[.8rem] underline'><a href="">Download Bio</a>
+            <a href="">Download Press Photos</a>
+            </p>
+          </article>
+            <p className='mt-5'>
+            Pastor James David Gailliard is the Organizing and 
+            Senior Pastor of Word Tabernacle Church located in
+             Rocky Mount, North Carolina. At the intersection of
+              pastoral ministry and public policy he has formed 
+              a collaborative model of human, socio-political- 
+              economic and community development,
+               another avenue by which he has accomplished
+                this was by serving two consecutive terms 
+                in the North Carolina General Assembly, 
+                becoming “living history” as the only person 
+                of color to be elected to represent House District 25 
+                (Nash-Rocky Mount). As a Commissioner of MyFutureNC, 
+                he is one of the architects of the
+                 statewide educational attainment goal.
+            </p>
+            <p className='mt-8'>
+            Visionary, pioneer, leader, humanitarian,
+             and philanthropist, Pastor Gailliard was
+              named the 2016 Distinguished Citizen by the Rocky Mount Chamber of Commerce, and most recently recognized for making an impact within his community as the recipient of the 2023 President Joseph R. Biden, Jr. Lifetime Achievement Award. He is the Founder-Chairman of The REACH Center, Inc, a member of the Board of Trustees, Elizabeth City State University as well as the Board of Preachers, Morehouse College, his alma mater, and he is the former Chairman of the Board for the North Carolina Legislative Black Caucus Foundation. His academic background is an unusual combination
+             of theology, counseling, and business administration.
+            </p>
+            <p className='mt-8'>
+            Pastor Gailliard is a proud husband to Angela, with whom he shares a blended family of seven children and three grandchildren. Affectionately known as Pastor G, he is a spiritual father, son, and brother to many. To unwind, he can be found on his Harley Davidson or shooting a game of pool.
+            </p>
+          </article>
+          </div>
+        </section>
+      </main>
+      <footer className=' w-full'>
+        <Footer />
+      </footer>
+    </div>
   )
 }
 
-export default page
+export default Page
