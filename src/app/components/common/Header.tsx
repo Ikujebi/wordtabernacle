@@ -60,7 +60,7 @@ const Header: FC = () => {
             link: "",
             subItems: [
                 { name: "Mission, Vision & Values", link: "/mission" },
-                { name: "Our Story", link: "#" },
+                { name: "Our Story", link: "executive" },
                 { name: "Executive Leadership", link: "/executive" },
             ],
         },
@@ -73,7 +73,7 @@ const Header: FC = () => {
             link: "",
             subItems: [
                 { name: "EMERGENZ", link: "/emergenz" },
-                { name: "Teens", link: "#" },
+                { name: "Teens", link: "executive" },
                 { name: "Children", link: "/children" },
                 { name: "Women", link: "/women" },
                 { name: "Men", link: "/men" },
