@@ -17,7 +17,7 @@ const Page: FC = () => {
       <header>
         <Header />
       </header>
-      <main className="pt-[10rem] bg-red-300 w-[100svw]">
+      <main className="pt-[10rem]  w-[100svw]">
         <div
           className="content  h-[6rem] relative flex justify-center items-center"
           style={{
@@ -90,7 +90,7 @@ const Page: FC = () => {
 
         <div
           id="laptop"
-          className="xl:bg-green-200 md:max-w-[67%] lg:w-full xl:w-full 2xl:max-w-[87%] text-[.83rem] xl:text-[.83rem] 2xl:text-[1.1rem]  2xl:w-[40%] mx-auto md:p-0 lg:p-0 xl:p-0 2xl:p-0 p-[1rem] hidden md:block lg:block xl:block 2xl:block"
+          className="md:max-w-[67%] lg:w-full xl:w-full 2xl:max-w-[87%] text-[.83rem] xl:text-[.83rem] 2xl:text-[1.1rem]  2xl:w-[40%] mx-auto md:p-0 lg:p-0 xl:p-0 2xl:p-0 p-[1rem] hidden md:block lg:block xl:block 2xl:block"
         >
           <section className="mx-auto my-6 md:flex lg:flex xl:flex 2xl:flex mb-[5rem] mt-[5.5%] gap-[3%]">
             <article className="order-0 md:order-0">
@@ -101,8 +101,7 @@ const Page: FC = () => {
               <p className="text-[.96rem]">
                 Word Tabernacle Church is more than a building consisting of
                 four walls. It is a spiritual vehicle for socio-economic,
-                system-level change committed to the Vision of “Everyone
-                Thriving”.
+                system-level change committed to the Vision of “..Empowering Lives,”.
               </p>
             </article>
 
