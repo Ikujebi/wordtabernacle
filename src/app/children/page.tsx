@@ -26,9 +26,9 @@ const Page: FC = () => {
   const goToPrev = () => {
     setCurrentImageIndex((prevIndex) => (prevIndex - 1 + children.length) % children.length);
   };
-
+  
   const children = [
-    { src: "https://res.cloudinary.com/dalylashp/image/upload/v1741170864/baby_wt_1_dbvwtw.jpg", alt: "Photo 1" },
+    { src: "https://res.cloudinary.com/dalylashp/image/upload/v1742203350/IMG_7567_kqoock.jpg", alt: "Photo 1" },
     { src: "https://res.cloudinary.com/dalylashp/image/upload/v1741170865/children_wt_1_kolmi1.jpg", alt: "Photo 2" },
     { src: "https://res.cloudinary.com/dalylashp/image/upload/v1742203383/IMG_7590_rgebic.jpg", alt: "Photo 3" },
     { src: "https://res.cloudinary.com/dalylashp/image/upload/v1741179426/wt_child_3_pvddyo.jpg", alt: "Photo 4" },
@@ -38,7 +38,7 @@ const Page: FC = () => {
     { src: "https://res.cloudinary.com/dalylashp/image/upload/v1742203139/IMG_4570_enhokc.jpg", alt: "Photo 8" },
     { src: "https://res.cloudinary.com/dalylashp/image/upload/v1741179412/wt_child_7_cgfuqi.jpg", alt: "Photo 9" },
     { src: "https://res.cloudinary.com/dalylashp/image/upload/v1742203323/IMG_7541_dgo944.jpg", alt: "Photo 10" },
-    { src: "https://res.cloudinary.com/dalylashp/image/upload/v1742203350/IMG_7567_kqoock.jpg", alt: "Photo 11" },
+    { src: "https://res.cloudinary.com/dalylashp/image/upload/v1741170864/baby_wt_1_dbvwtw.jpg", alt: "Photo 11" },
     { src: "https://res.cloudinary.com/dalylashp/image/upload/v1742203324/IMG_7550_mal0si.jpg", alt: "Photo 12" },
     { src: "https://res.cloudinary.com/dalylashp/image/upload/v1741179395/wt_child_2_ntxwdt.jpg", alt: "Photo 13" },
     { src: "https://res.cloudinary.com/dalylashp/image/upload/v1742203314/IMG_7536_g2mnl0.jpg", alt: "Photo 14" },
