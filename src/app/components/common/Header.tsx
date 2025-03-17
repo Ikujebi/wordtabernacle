@@ -151,7 +151,7 @@ const Header: FC = () => {
                     </div>
                 </div>
                 <div className="hidden md:block lg:block xl:block 2xl:block">
-                    <div id="nav" className="h-10 w-full flex mt-10 justify-between px-14 ">
+                    <div id="nav" className=" w-full flex mt-3 justify-between px-14 ">
                         <div>
                             <Link href={"/"}>
                                 <div className="flex gap-1 ">
