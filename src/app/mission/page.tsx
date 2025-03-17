@@ -9,7 +9,7 @@ import redbg from "../img/redbgi.webp";
 
 const Page: FC = () => {
   const msgg =
-    "https://res.cloudinary.com/dalylashp/image/upload/v1725356890/5933838834204786640_r1lu2y.jpg";
+    "https://res.cloudinary.com/dalylashp/image/upload/v1741177452/WhatsApp_Image_2025-03-05_at_12.17.13_PM_peifwo.jpg";
   const msgg2 =
     "https://res.cloudinary.com/dalylashp/image/upload/v1725101712/msg-1001955056097-3260_qxe986.webp";
   return (
@@ -78,7 +78,7 @@ const Page: FC = () => {
 
             <article className="md:order-0 lg:order-0 xl:order-0 2xl:order-0 order-1">
               <Image
-                className="mt-[3%] rounded-md md:w-[60rem] lg:w-[60rem] xl:w-[60rem] 2xl:w-[80rem] h-[13rem] object-cover object-top"
+                className="mt-[3%] rounded-md md:w-[60rem] lg:w-[60rem] xl:w-[60rem] 2xl:w-[80rem] h-[15rem] object-cover object-top"
                 width={1000}
                 height={600}
                 src={msgg}
@@ -119,7 +119,7 @@ const Page: FC = () => {
           <section className="mx-auto my-6 md:flex lg:flex xl:flex 2xl:flex mb-[5rem] gap-3">
             <article className="order-1 md:order-0 lg:order-0 xl:order-0 2xl:order-0">
               <Image
-                className="mt-[3%] rounded-md md:w-[60rem] lg:w-[60rem] xl:w-[60rem] 2xl:w-[80rem] h-[13rem] object-cover object-top"
+                className="mt-[3%] rounded-md md:w-[60rem] lg:w-[60rem] xl:w-[60rem] 2xl:w-[80rem] h-[18rem] object-cover object-top"
                 width={1000}
                 height={600}
                 src={msgg}
