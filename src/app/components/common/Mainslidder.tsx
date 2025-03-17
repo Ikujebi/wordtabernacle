@@ -10,7 +10,7 @@ import { MdCardGiftcard } from "react-icons/md";
 
 const FreeStyle = () => {
   const pic1 = "https://res.cloudinary.com/dalylashp/image/upload/v1725101809/pastor_ypsalo.webp";
-  const pic2 = "https://res.cloudinary.com/dalylashp/image/upload/v1742206446/4B3A0377_-_Copy_wtokmh.jpg";
+  const pic2 = "https://res.cloudinary.com/dalylashp/image/upload/v1742208049/4B3A0086_bceoyc.jpg";
   const pic3 = "https://res.cloudinary.com/dalylashp/image/upload/v1725101517/choir7_umfdyb.webp";
   const pic4 = "https://res.cloudinary.com/dalylashp/image/upload/v1725101508/choir_ekkuf6.webp";
   const pic5 = "https://res.cloudinary.com/dalylashp/image/upload/v1725101899/ruth_vn60xa.jpg";
@@ -101,7 +101,7 @@ const pic17 = "https://res.cloudinary.com/dalylashp/image/upload/v1725356882/595
                   quality={90}
                   src={item.image}
                   alt="service"
-                  className="w-full mb-4  xl:h-[40rem]  2xl:h-[70svh] lg:h-[30rem] md:h-[33rem] h-[17rem] object-cover object-top"
+                  className="w-full mb-4  xl:h-[40rem]  2xl:h-[70svh] lg:h-[30rem] md:h-[33rem] h-[17rem] object-cover object-center"
                 />
                 <div
                   id="imgtext"
