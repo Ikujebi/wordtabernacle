@@ -8,6 +8,29 @@ import givbg from "../img/giveimg.jpg";
 import redbg from "../img/redbgi.webp";
 
 const Page: FC = () => {
+
+  const values = [
+    {
+      title: 'Excellence',
+      message: "We strive for excellence in all we do, honoring God with our best efforts and continuously improving in our service, ministry, and personal growth.(Colossians 3:23; Proverbs 22:29)"
+    },
+    {
+      title: 'Love',
+      message: 'We are committed to loving God and people unconditionally, demonstrating Christ-like compassion, kindness, and selflessness in our relationships and service.(John 13:34-35; 1 Corinthians 13:4-7)'
+    },
+    {
+      title: 'Integrity',
+      message: 'We uphold truth and honesty in all aspects of life, ensuring that our words, actions, and decisions align with God’s principles.(Proverbs 11:3; 2 Corinthians 8:21)'
+    },
+    {
+      title: 'Accountability',
+      message: 'We are personally responsible and accountable to one another for our attitude, actions, and integrity as a means of accomplishing vision, building character, ensuring sound decision-making, and growing as balanced disciples.(Acts 15:4; Job 31:6)'
+    },
+    {
+      title: 'Creativity',
+      message: 'We embrace God-given creativity in expressing our faith, solving problems, and advancing His Kingdom in innovative and impactful ways.(Exodus 35:31-32; Proverbs 8:12)'
+    },
+  ]
   const msgg =
     "https://res.cloudinary.com/dalylashp/image/upload/v1741177452/WhatsApp_Image_2025-03-05_at_12.17.13_PM_peifwo.jpg";
   const msgg2 =
@@ -17,7 +40,7 @@ const Page: FC = () => {
       <header>
         <Header />
       </header>
-      <main className="pt-[10rem]  w-[100svw]">
+      <main className="pt-[6.6rem]  w-[100svw]">
         <div
           className="content  h-[6rem] relative flex justify-center items-center"
           style={{
@@ -158,33 +181,21 @@ const Page: FC = () => {
           </h2>
         </div>
         <section className="flex flex-col    justify-center items-center text-gray-600 mt-[3rem]  md:p-0 lg:p-0 xl:p-0 2xl:p-0 p-[1rem]">
-          <article className="md:flex lg:flex xl:flex 2xl:flex  md:w-[50rem] lg:w-[50rem] xl:w-[50rem] 2xl:w-[50rem]">
+          
+          {values.map((value,index)=>(
+            <article key={index} className="md:flex lg:flex xl:flex 2xl:flex  md:w-[50rem] lg:w-[50rem] xl:w-[50rem] 2xl:w-[50rem] mb-[3rem]">
             <h2 className="font-semibold w-[13rem] text-[1.1rem] text-red-800">
-              Accountability
-            </h2>
-            <div className=" md:w-[30rem] lg:w-w-[30rem] xl:w-[30rem] 2xl:w-[30rem]">
-              <p>
-                We are personally responsible and accountable to one another for
-                our attitude, actions, and integrity as a means of accomplishing
-                vision, building character, ensuring sound decision making, and
-                growing as balanced disciples.
-              </p>
-              <p className="my-[2rem] text-[1rem]">(Acts 15:4; Job 31:6)</p>
-            </div>
-          </article>
-          <article className="md:flex lg:flex xl:flex 2xl:flex  md:w-[50rem] lg:w-[50rem] xl:w-[50rem] 2xl:w-[50rem]">
-            <h2 className="font-semibold w-[13rem] text-[1.1rem] text-red-800">
-              Authority
+            {value.title} 
             </h2>
             <div className="md:w-[30rem] lg:w-w-[30rem] xl:w-[30rem] 2xl:w-[30rem]">
               <p>
-                The Holy Bible is divinely inspired by God and is the inerrant
-                authority by which God communicates, instructs, reveals, and
-                directs our growth and our goals
+                {value.message}
               </p>
-              <p className="my-[2rem] text-[1rem]">(2 Tim 3:16-17)</p>
+              
             </div>
           </article>
+          ))}
+          
         </section>
       </main>
       <footer>
