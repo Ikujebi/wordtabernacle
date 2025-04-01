@@ -77,8 +77,9 @@ const pic17 = "https://res.cloudinary.com/dalylashp/image/upload/v1725356882/595
   };
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen xl:mt-[-10rem] w-screen  2xl:mt-[1rem] md:px-[2rem]  2xl:px-[4rem]">
-      <div className="container  my-[9rem] md:my-[8.3rem] lg:my-[8.3rem] xl:px-[3rem] 2xl:px-[0]  w-full relative ">
+    <div className="flex items-center justify-center min-h-screen">
+    <div className=" flex justify-center xl:mt-[-6rem] 2xl:w-[80%] xl:w-[80%] w-screen  2xl:mt-[.1rem] md:px-[2rem]  2xl:px-[4rem]">
+      <div className="container  my-[rem] md:my-[rem] lg:my-[8.3rem] xl:px-[3rem] 2xl:px-[0]  w-full  ">
 
         <div className="absolute inset-0  bg-black opacity-10 pointer-events-none z-10 h-[95%] md:h-[97%] lg:h-[97%] xl:h-[97%]  2xl:h-[97.92%] "></div>{" "}
 
@@ -124,7 +125,7 @@ const pic17 = "https://res.cloudinary.com/dalylashp/image/upload/v1725356882/595
       </div>
       <div
         id="imgnav"
-        className=" absolute shadow-xl rounded-md lg:mt-[36rem] xl:mt-[36rem] 2xl:mt-[45rem] z-30 mt-[31rem] md:mt-[36rem] w-[100%] lg:w-[70%] xl:w-[70%] md:w-[70%] mx-auto 2xl:w-3/5   pt-[1.25rem]  lg:pt-[2.125rem] px-[1.25rem] lg:pl-[2.5rem] lg:pr-[1.25rem] md:pb-[2.375rem] lg:pb-[2.375rem] xl:pb-[2.375rem] 2xl:pb-[2.375rem] bg-white   mb-[2.5rem]"
+        className=" absolute shadow-xl rounded-md lg:mt-[31rem] xl:mt-[31rem] 2xl:mt-[41rem] z-30 mt-[31rem] md:mt-[31rem] w-[100%] lg:w-[70%] xl:w-[70%] md:w-[70%] mx-auto 2xl:w-3/5   pt-[1.25rem]  lg:pt-[2.125rem] px-[1.25rem] lg:pl-[2.5rem] lg:pr-[1.25rem] md:pb-[2.375rem] lg:pb-[2.375rem] xl:pb-[2.375rem] 2xl:pb-[2.375rem] bg-white   mb-[2.5rem]"
       >
         <h2 className="ml-[1.25rem] lg:ml-0 pb-3 text-center ">QUICK LINKS</h2>
         <div className="flex justify-between flex-wrap gap1">
@@ -166,6 +167,7 @@ const pic17 = "https://res.cloudinary.com/dalylashp/image/upload/v1725356882/595
         </div>
       
       </div>
+    </div>
     </div>
   );
 };
