@@ -14,7 +14,7 @@ const FreeStyle = () => {
   const pic3 = "https://res.cloudinary.com/dalylashp/image/upload/v1725101517/choir7_umfdyb.webp";
   const pic4 = "https://res.cloudinary.com/dalylashp/image/upload/v1725101508/choir_ekkuf6.webp";
   const pic5 = "https://res.cloudinary.com/dalylashp/image/upload/v1742208222/4B3A0582_jjz3l6.jpg";
-  const pic6 = "https://res.cloudinary.com/dalylashp/image/upload/v1741170865/children_wt_1_-_Copy_fxxjel.jpg";
+  const pic6 = "https://res.cloudinary.com/dalylashp/image/upload/v1742204404/IMG_9136_d3n52q.webp";
   const pic7 = "https://res.cloudinary.com/dalylashp/image/upload/v1726579634/word014_mzx1rz.jpg";
   const pic8 = "https://res.cloudinary.com/dalylashp/image/upload/v1741170862/pastor_wt_2_rmubmv.jpg";
   const pic9 = "https://res.cloudinary.com/dalylashp/image/upload/v1725101584/drama_bnrzlz.webp";
