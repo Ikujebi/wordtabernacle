@@ -22,7 +22,7 @@ const Page: FC = () => {
   {image: "https://res.cloudinary.com/dalylashp/image/upload/v1725102028/youth1_jqttiv.webp"},
   {image:"https://res.cloudinary.com/dalylashp/image/upload/v1726579603/word8_zg3qwb.jpg"},
     { image: "https://res.cloudinary.com/dalylashp/image/upload/v1726579602/word06_mzxdqf.jpg" },
-    { image: "https://res.cloudinary.com/dalylashp/image/upload/v1728399231/photo_5773882741589395504_y_yckiol.jpg" },
+    { image: "https://res.cloudinary.com/dalylashp/image/upload/v1744039980/6001458593154582620_ilsqx9.jpg" },
   {image: "https://res.cloudinary.com/dalylashp/image/upload/v1727168960/photo_6019429698393719060_y_s4icix.jpg"},
   {image: "https://res.cloudinary.com/dalylashp/image/upload/v1727168947/photo_6019429698393719056_y_m3vakz.jpg"},
   {image: "https://res.cloudinary.com/dalylashp/image/upload/v1727168969/photo_6019429698393719042_y_mj1qhe.jpg"},
@@ -30,6 +30,8 @@ const Page: FC = () => {
   {image: "https://res.cloudinary.com/dalylashp/image/upload/v1727168912/photo_6019429698393719052_y_nnhf8g.jpg"},
   {image: "https://res.cloudinary.com/dalylashp/image/upload/v1728399270/photo_5773882741589395450_y_wcbs2a.jpg"},
   {image: "https://res.cloudinary.com/dalylashp/image/upload/v1728399269/photo_5773882741589395446_y_tkv1ro.jpg"},
+  {image: "https://res.cloudinary.com/dalylashp/image/upload/v1744040171/6001458593154582629_gyhfmg.jpg"},
+  {image: "https://res.cloudinary.com/dalylashp/image/upload/v1744040164/6001458593154582634_pjutzn.jpg"},
   
   
   ];
