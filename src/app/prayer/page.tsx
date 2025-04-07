@@ -76,7 +76,7 @@ const Page: FC = () => {
                       communicate with Him, we place a priority on it.
                       Let us pray for you. Submit your prayer request.</p>
                         
-                         <p className='text-center font-semibold xl:text-[1rem] 2xl:text-[1rem] text-[.97rem] mt-3'>Complete the form below to give online.</p>
+                         <p className='text-center font-semibold xl:text-[1rem] 2xl:text-[1rem] text-[.97rem] mt-3'>Complete the form below to send in your prayer requests.</p>
                 </section>
                 <section className='mx-auto my-6 mt-6  '>
                 <Link href='#' className="flex justify-center gap-1">

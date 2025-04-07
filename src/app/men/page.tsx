@@ -17,8 +17,8 @@ const Page: FC = () => {
   const closeGallery = () => setShowFullGallery(false);
 
   const menImages = [
-    { src: "https://res.cloudinary.com/dalylashp/image/upload/v1725356886/5933838834204786686_dppko6.jpg", alt: "Photo 1" },
-    { src: "https://res.cloudinary.com/dalylashp/image/upload/v1725102055/youthpreacher_egmmcn.webp", alt: "Photo 2" },
+    { src: "https://res.cloudinary.com/dalylashp/image/upload/v1744040525/6021491372890113638_w0hlb6.jpg", alt: "Photo 1" },
+    { src: "https://res.cloudinary.com/dalylashp/image/upload/v1744040522/6001458593154582797_w3mfsq.jpg", alt: "Photo 2" },
     { src: "https://res.cloudinary.com/dalylashp/image/upload/v1725129856/photo_5933838834204786597_y_zm9hpb.jpg", alt: "Photo 3" },
     { src: "https://res.cloudinary.com/dalylashp/image/upload/v1725101602/femiblur_xwz9xr.jpg", alt: "Photo 4" },
     { src: "https://res.cloudinary.com/dalylashp/image/upload/v1741256207/men_wt_3_x2l3iq.jpg", alt: "Photo 5" },

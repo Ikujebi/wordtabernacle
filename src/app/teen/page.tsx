@@ -69,7 +69,7 @@ const Page: FC = () => {
           }}
         >
           <h2 className="text-white font-semibold 2xl:text-[1.9rem] text-[1.5rem] relative inline-block">
-            children's Ministry
+            teens' Ministry
             <span className="block absolute bottom-1 left-1/2 transform -translate-x-1/2 w-[100%] h-[4px] bg-white"></span>
           </h2>
         </div>
