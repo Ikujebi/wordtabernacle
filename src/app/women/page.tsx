@@ -77,7 +77,7 @@ const Page: FC = () => {
         <section className="flex flex-col md:flex-row justify-center items-center mt-[3%] mb-[5%]">
           <div id="word" className="flex flex-col items-center w-full md:w-[50%] text-[1.17rem] md:text-[1.2rem] xl:text-[1.5rem]">
             <article className="w-[90%] md:w-[70%] lg:w-[60%] text-center">
-              The WTC Women's ministry provides a regional gathering for women who have determined there is no greater goal than to ensure they have become the person God has intended them to be.
+              The WTBC Women's ministry provides a regional gathering for women who have determined there is no greater goal than to ensure they have become the person God has intended them to be.
             </article>
             <div className="flex md:hidden my-4 flex-col items-center w-full  m-auto">
               <Image src={grid.src} alt="" width={200} height={120} className="ml-[45%] md:ml-[25%] xl:ml-[25%] md:w-[50%] md:h-[15rem]" />

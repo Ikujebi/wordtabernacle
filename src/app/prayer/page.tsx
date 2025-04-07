@@ -185,7 +185,7 @@ const Page: FC = () => {
               </article>
 
               <article className=" mx-[2rem] mt-[5%] flex flex-col ">
-                <h3>Are you a member of WTC (optional)
+                <h3>Are you a member of WTBC (optional)
 
                 </h3>
                 <Radio.Group onChange={handleChange} value={formData.member}>

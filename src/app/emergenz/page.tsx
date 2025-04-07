@@ -57,7 +57,7 @@ const Page: FC = () => {
         <section className="flex flex-col items-center mt-12">
           <article className="w-4/5 md:w-3/5 text-center mb-8">
             <p className="text-lg">
-              WTC Youth Ministries are where young adults can grow, worship, fellowship, serve, and discover their
+              WTBC Youth Ministries are where young adults can grow, worship, fellowship, serve, and discover their
               identity and purpose in Christ in a fun and safe environment.
             </p>
           </article>

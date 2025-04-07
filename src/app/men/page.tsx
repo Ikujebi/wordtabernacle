@@ -72,7 +72,7 @@ const Page: FC = () => {
 
         <section className="flex flex-col items-center mt-[3%]">
           <article className="w-[45%] text-center">
-            The WTC Mens Roundtable provides a regional gathering for men who have determined there is no greater goal than to ensure they have become the man God has intended them to be.
+            The WTBC Mens Roundtable provides a regional gathering for men who have determined there is no greater goal than to ensure they have become the man God has intended them to be.
           </article>
           <article className="w-4/5 md:w-3/5 bg-gradient-to-r from-indigo-300 to-purple-400 text-center py-8 rounded-lg shadow-lg px-4">
             <p>

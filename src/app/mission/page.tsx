@@ -155,8 +155,7 @@ const Page: FC = () => {
                 OUR MISSION
               </h2>
               <h3 className="text-[135%] font-semibold">
-                "People empowering people and communities in every area of life
-                to the glory of God."
+                "To see Everyone Who in Connection with us, become who God Designed them to be. "
               </h3>
               <p className="xl:text-[1rem] 2xl:text-[1rem] text-[.96rem] mt-3">
                 Word Tabernacle Church is more than a building consisting of
