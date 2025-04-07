@@ -88,7 +88,7 @@ const Page: FC = () => {
             </div>
             <article className="bg-gradient-to-r from-indigo-300 to-purple-400 mt-[5%] flex justify-center rounded-3xl mx-[.4rem] 2xl:mx-[5rem]">
               <p className="w-[90%] md:w-[70%] lg:w-[60%] text-center">
-                For more details, contact the church administration offices via phone or email at wordtabernacle@gmail.com.
+                For more details, contact the church administration offices via phone or email at wordtabernaclebc@gmail.com.
               </p>
             </article>
           </div>

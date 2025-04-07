@@ -76,7 +76,7 @@ const Page: FC = () => {
           </article>
           <article className="w-4/5 md:w-3/5 bg-gradient-to-r from-indigo-300 to-purple-400 text-center py-8 rounded-lg shadow-lg px-4">
             <p>
-              For more details, contact the church administration offices via phone or email at wordtabernacle@gmail.com.
+              For more details, contact the church administration offices via phone or email at wordtabernaclebc@gmail.com.
             </p>
           </article>
         </section>
