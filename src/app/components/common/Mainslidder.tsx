@@ -81,7 +81,7 @@ const pic17 = "https://res.cloudinary.com/dalylashp/image/upload/v1725356882/595
     <div className=" flex justify-center xl:mt-[-6rem] 2xl:w-[80%] xl:w-[80%] w-screen  2xl:mt-[.1rem] md:px-[2rem]  2xl:px-[4rem]">
       <div className="container  my-[rem] md:my-[rem] lg:my-[8.3rem] xl:px-[3rem] 2xl:px-[0]  w-full  ">
 
-        <div className="absolute inset-0  bg-black opacity-10 pointer-events-none z-10 h-[95%] md:h-[97%] lg:h-[97%] xl:h-[97%]  2xl:h-[97.92%] "></div>{" "}
+        <div className="absolute inset-0  bg-black opacity-20 pointer-events-none  z-10 h-[95%] md:h-[97%] lg:h-[97%] xl:h-[97%]  2xl:h-[97.92%] "></div>{" "}
 
         {/* New div for shadow */}
         <Slider {...sliderSettings}>
@@ -93,7 +93,7 @@ const pic17 = "https://res.cloudinary.com/dalylashp/image/upload/v1725356882/595
               variants={cardVariants}
               transition={{ duration: 0.5 }}
               key={itemIndex}
-              className="flex justify-center items-center relative z-20"
+              className="flex justify-center items-center relative z-20 "
             >
               <div className="relative flex flex-col  items-center justify-center w-full">
                 <Image
@@ -102,7 +102,7 @@ const pic17 = "https://res.cloudinary.com/dalylashp/image/upload/v1725356882/595
                   quality={90}
                   src={item.image}
                   alt="service"
-                  className="w-full mb-4  xl:h-[40rem]  2xl:h-[70svh] lg:h-[30rem] md:h-[33rem] h-[17rem] object-cover object-top"
+                  className="w-full mb-4  xl:h-[45rem]  2xl:h-[70svh] lg:h-[40rem] md:h-[36rem] h-[17rem] object-cover object-top"
                 />
                 <div
                   id="imgtext"
@@ -125,7 +125,7 @@ const pic17 = "https://res.cloudinary.com/dalylashp/image/upload/v1725356882/595
       </div>
       <div
         id="imgnav"
-        className=" absolute shadow-xl rounded-md lg:mt-[31rem] xl:mt-[31rem] 2xl:mt-[41rem] z-30 mt-[18rem] md:mt-[31rem] w-[100%] lg:w-[70%] xl:w-[70%] md:w-[70%] mx-auto 2xl:w-3/5   pt-[1.25rem]  lg:pt-[2.125rem] px-[1.25rem] lg:pl-[2.5rem] lg:pr-[1.25rem] md:pb-[2.375rem] lg:pb-[2.375rem] xl:pb-[2.375rem] 2xl:pb-[2.375rem] bg-white   mb-[2.5rem]"
+        className=" absolute shadow-xl  rounded-md lg:mt-[46rem] xl:mt-[37rem] 2xl:mt-[41rem] z-30 mt-[18rem] md:mt-[35rem] w-[100%] lg:w-[70%] xl:w-[70%] md:w-[70%] mx-auto 2xl:w-3/5   pt-[1.25rem]  lg:pt-[2.125rem] px-[1.25rem] lg:pl-[2.5rem] lg:pr-[1.25rem] md:pb-[2.375rem] lg:pb-[2.375rem] xl:pb-[2.375rem] 2xl:pb-[2.375rem] bg-white   mb-[2.5rem]"
       >
         <h2 className="ml-[1.25rem] lg:ml-0 pb-3 text-center ">QUICK LINKS</h2>
         <div className="flex justify-between flex-wrap gap1">
