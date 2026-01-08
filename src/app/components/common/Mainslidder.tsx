@@ -77,7 +77,7 @@ const pic17 = "https://res.cloudinary.com/dalylashp/image/upload/v1725356882/595
   };
 
   return (
-    <div className="flex items-center justify-center min-h-screen">
+    <div className="flex items-center justify-center min-h-[80svh]  md:min-h-screen">
     <div className=" flex justify-center xl:mt-[-6rem] 2xl:w-[80%] xl:w-[80%] w-screen  2xl:mt-[.1rem] md:px-[2rem]  2xl:px-[4rem]">
       <div className="container  my-[rem] md:my-[rem] lg:my-[8.3rem] xl:px-[3rem] 2xl:px-[0]  w-full  ">
 
@@ -102,7 +102,7 @@ const pic17 = "https://res.cloudinary.com/dalylashp/image/upload/v1725356882/595
                   quality={90}
                   src={item.image}
                   alt="service"
-                  className="w-full mb-4  xl:h-[40rem]  2xl:h-[70svh] lg:h-[40rem] md:h-[36rem] h-[17rem] object-cover object-top"
+                  className="w-full mb-4  xl:h-[40rem]  2xl:h-[70svh] lg:h-[40rem] md:h-[36rem] h-[29.7rem] object-cover object-top"
                 />
                 <div
                   id="imgtext"
