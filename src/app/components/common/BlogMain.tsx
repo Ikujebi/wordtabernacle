@@ -1,4 +1,6 @@
-import React, { useState } from "react"
+"use client";
+
+import React, { useState } from "react";
 
 const blogs = [
   {
@@ -22,59 +24,93 @@ const blogs = [
       "To say God is All-knowing and most powerful is not an understatement. He reigns supreme as the most wise of all and the most powerful. Hence, He is Omnipotent and Omniscient. Do you seek wisdom and power (which I enjoin you to passionately seek)? Come to God who gives liberally and without recounting.",
     date: "Oct 19, 2022",
   },
-]
+];
 
 const BlogMain = () => {
-  const [expanded, setExpanded] = useState<number | null>(null)
-  const [expandedCount, setExpandedCount] = useState(0)
+  const [expanded, setExpanded] = useState<number | null>(null);
 
-  const handleExpand = (id: number) => {
-    if (expanded === id) {
-      setExpanded(null)
-      setExpandedCount((prev) => Math.max(prev - 1, 0))
-    } else {
-      setExpanded(id)
-      setExpandedCount((prev) => prev + 1)
-    }
-  }
+  const toggleExpand = (id: number) => {
+    setExpanded(expanded === id ? null : id);
+  };
 
   return (
-    <div  className={`flex justify-center my-12 shadow-xl transition-all duration-300 ${
-      expandedCount > 0 ? "min-h-[40svh]" : "min-h-[25svh]"
-    }`}>
-      <div className="w-full max-w-screen-xl flex flex-wrap md:flex-nowrap justify-center gap-6">
-        {blogs.map((blog) => {
-          const words = blog.message.split(" ")
-          const isExpanded = expanded === blog.id
+    <div className="w-full bg-white py-20 lg:py-28 px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto">
+        
+        {/* Editorial Section Header */}
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 lg:mb-16 pb-6 border-b border-zinc-100">
+          <div className="space-y-2">
+            <span className="text-red-600 font-mono text-xs uppercase tracking-[0.3em] block">
+              Weekly Devotionals
+            </span>
+            <h2 className="text-3xl sm:text-4xl font-black tracking-tight text-zinc-900">
+              Spiritual Insights & Words
+            </h2>
+          </div>
+          <p className="text-zinc-500 font-light text-sm max-w-xs mt-4 md:mt-0">
+            Timeless teachings from Word Tabernacle to ground your weekly faith and practice.
+          </p>
+        </div>
 
-          return (
-            <section
-              key={blog.id}
-              className="p-6 bg-white shadow-lg w-full sm:w-1/2 md:w-1/3 lg:w-1/3 xl:w-1/4 2xl:w-1/4 text-gray-800 relative border-t border-red-100"
-            >
-              <h2 className="font-bold text-lg sm:text-xl md:text-2xl lg:text-2xl xl:text-2xl mb-4">
-                {blog.title}
-              </h2>
-              <p className="text-sm sm:text-base md:text-lg lg:text-lg xl:text-lg mb-4 text-justify">
-                {isExpanded ? blog.message : words.slice(0, 25).join(" ") + "..."}
-              </p>
-              <button
-                onClick={() => setExpanded(isExpanded ? null : blog.id)}
-                className="text-base text-red-500 mb-4 focus:outline-none"
+        {/* Clean, Modular Flexible Height Deck Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-start">
+          {blogs.map((blog) => {
+            const words = blog.message.split(" ");
+            const isExpanded = expanded === blog.id;
+
+            return (
+              <article
+                key={blog.id}
+                className="group flex flex-col justify-between bg-zinc-50 hover:bg-white border border-zinc-100 p-8 rounded-xl shadow-sm hover:shadow-xl hover:border-zinc-200/60 transition-all duration-300 min-h-[340px]"
               >
-                {isExpanded ? "Show Less" : "Show More"}
-              </button>
-              <div className="mt-8">
-                <button className="absolute bottom-6 left-10 right-10 bg-red-500 text-white px-4 py-2 rounded-md">
-                  {blog.date}
-                </button>
-              </div>
-            </section>
-          )
-        })}
+                <div className="space-y-4">
+                  {/* Metadata Tag */}
+                  <div className="flex items-center gap-2 text-zinc-400 font-mono text-xs tracking-wider">
+                    <span>{blog.date}</span>
+                    <span>•</span>
+                    <span className="text-red-500">Devotional</span>
+                  </div>
+
+                  {/* Card Title */}
+                  <h3 className="font-extrabold text-xl text-zinc-900 tracking-tight group-hover:text-red-600 transition-colors duration-200">
+                    {blog.title}
+                  </h3>
+
+                  {/* Paragraph Body Block */}
+                  <p className="text-zinc-600 font-light text-sm sm:text-base leading-relaxed text-justify">
+                    {isExpanded ? blog.message : `${words.slice(0, 20).join(" ")}...`}
+                  </p>
+                </div>
+
+                {/* Content-relative Interactive Actions Layout */}
+                <div className="pt-6 mt-6 border-t border-zinc-200/60 flex items-center justify-between">
+                  <button
+                    onClick={() => toggleExpand(blog.id)}
+                    className="text-xs font-bold uppercase tracking-widest text-zinc-800 hover:text-red-600 focus:outline-none transition-colors flex items-center gap-1.5"
+                  >
+                    {isExpanded ? (
+                      <>
+                        COLLAPSE <span className="font-sans text-[10px]">▲</span>
+                      </>
+                    ) : (
+                      <>
+                        READ MORE <span className="font-sans text-[10px]">▼</span>
+                      </>
+                    )}
+                  </button>
+
+                  <div className="px-3 py-1 bg-zinc-200/50 rounded text-[11px] font-mono font-medium text-zinc-600 uppercase">
+                    Word Archive
+                  </div>
+                </div>
+              </article>
+            );
+          })}
+        </div>
+
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default BlogMain
+export default BlogMain;
