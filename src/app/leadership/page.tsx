@@ -46,7 +46,7 @@ const LeadershipClassPage: FC = () => {
                         <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-rose-50 text-rose-600 border border-rose-100 uppercase tracking-wider mb-4">
                             Ministry Development
                         </span>
-                        <h1 className="text-3xl md:text-4xl font-black text-zinc-900 tracking-tight leading-none mb-4">
+                        <h1 className="text-3xl md:text-4xl font-black text-zinc-900 tracking-tight leading-tight mb-4">
                             Wordtabanacle Leadership Academy
                         </h1>
                         <p className="text-zinc-500 text-sm font-medium leading-relaxed max-w-md">
@@ -58,8 +58,8 @@ const LeadershipClassPage: FC = () => {
 
                     {/* Quick Perks / Info Stack */}
                     <div className="space-y-4">
-                        <div className="flex gap-4 p-3 rounded-2xl bg-white border border-zinc-200/60 shadow-sm">
-                            <div className="flex items-center justify-center w-10 h-10 rounded-xl bg-zinc-900 text-rose-400 shrink-0">
+                        <div className="flex gap-4 p-3 rounded-2xl bg-white border border-zinc-200/60 shadow-sm items-center">
+                            <div className="flex items-center justify-center w-10 h-10 rounded-xl bg-zinc-900 text-rose-400 shrink-0 shadow-sm">
                                 <HiCalendarDays className="text-lg" />
                             </div>
                             <div>
@@ -68,8 +68,8 @@ const LeadershipClassPage: FC = () => {
                             </div>
                         </div>
 
-                        <div className="flex gap-4 p-3 rounded-2xl bg-white border border-zinc-200/60 shadow-sm">
-                            <div className="flex items-center justify-center w-10 h-10 rounded-xl bg-zinc-50 text-zinc-600 border border-zinc-100 shrink-0">
+                        <div className="flex gap-4 p-3 rounded-2xl bg-white border border-zinc-200/60 shadow-sm items-center">
+                            <div className="flex items-center justify-center w-10 h-10 rounded-xl bg-zinc-50 text-zinc-600 border border-zinc-100 shrink-0 shadow-sm">
                                 <HiAcademicCap className="text-lg" />
                             </div>
                             <div>
@@ -78,8 +78,8 @@ const LeadershipClassPage: FC = () => {
                             </div>
                         </div>
 
-                        <div className="flex gap-4 p-3 rounded-2xl bg-white border border-zinc-200/60 shadow-sm">
-                            <div className="flex items-center justify-center w-10 h-10 rounded-xl bg-zinc-50 text-zinc-600 border border-zinc-100 shrink-0">
+                        <div className="flex gap-4 p-3 rounded-2xl bg-white border border-zinc-200/60 shadow-sm items-center">
+                            <div className="flex items-center justify-center w-10 h-10 rounded-xl bg-zinc-50 text-zinc-600 border border-zinc-100 shrink-0 shadow-sm">
                                 <HiUserGroup className="text-lg" />
                             </div>
                             <div>
@@ -90,12 +90,13 @@ const LeadershipClassPage: FC = () => {
                     </div>
 
                     {/* Guidelines Banner */}
-                    <div className="p-4 bg-zinc-900 text-white rounded-2xl space-y-2 shadow-inner">
+                    <div className="p-4 bg-zinc-900 text-white rounded-2xl space-y-2 shadow-xl border border-zinc-800">
                         <div className="flex items-center gap-2 text-rose-400 text-xs font-black uppercase tracking-wider">
                             <HiCheckCircle className="text-base" /> Prerequisites
                         </div>
                         <p className="text-zinc-400 text-xs font-medium leading-relaxed">
-                            Applicants must have served as church workers for a minimum of six months and be currently serving in unit.            </p>
+                            Applicants must have served as church workers for a minimum of six months and be currently serving in unit.
+                        </p>
                     </div>
                 </div>
 
@@ -115,11 +116,11 @@ const LeadershipClassPage: FC = () => {
                     >
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                             <Form.Item
-                                label={<span className="text-zinc-700 text-xs font-bold uppercase tracking-wider ">Full Name</span>}
+                                label={<span className="text-zinc-700 text-xs font-bold uppercase tracking-wider">Full Name</span>}
                                 name="fullName"
                                 rules={[{ required: true, message: "Please input your full name" }]}
                             >
-                                <Input placeholder="John Doe" className="h-10 rounded-xl border-zinc-200 focus:border-zinc-900 focus:ring-0 hover:border-transparent" />
+                                <Input placeholder="John Doe" className="h-11 rounded-xl border-zinc-200 focus:border-zinc-900 focus:ring-0 text-sm hover:border-zinc-200" />
                             </Form.Item>
 
                             <Form.Item
@@ -130,7 +131,7 @@ const LeadershipClassPage: FC = () => {
                                     { type: "email", message: "Please enter a valid email address" }
                                 ]}
                             >
-                                <Input placeholder="johndoe@example.com" className="h-10 rounded-xl border-zinc-200 focus:border-zinc-900 focus:ring-0 hover:border-transparent" />
+                                <Input placeholder="johndoe@example.com" className="h-11 rounded-xl border-zinc-200 focus:border-zinc-900 focus:ring-0 text-sm" />
                             </Form.Item>
                         </div>
 
@@ -140,15 +141,15 @@ const LeadershipClassPage: FC = () => {
                                 name="phone"
                                 rules={[{ required: true, message: "Please input your phone number" }]}
                             >
-                                <Input placeholder="+ (234) 000-0000" className="h-10 rounded-xl border-zinc-200 focus:border-zinc-900 focus:ring-0 hover:border-transparent" />
+                                <Input placeholder="+ (234) 000-0000" className="h-11 rounded-xl border-zinc-200 focus:border-zinc-900 focus:ring-0 text-sm hover:border-zinc-200" />
                             </Form.Item>
 
                             <Form.Item
-                                label={<span className="text-zinc-700 text-xs font-bold uppercase tracking-wider">Length of Service in the Workforce</span>}
+                                label={<span className="text-zinc-700 text-xs font-bold uppercase tracking-wider hover:border-zinc-200">Length of Service in the Workforce</span>}
                                 name="membershipDuration"
                                 rules={[{ required: true, message: "Please select an option" }]}
                             >
-                                <Select placeholder="Select period" className="h-10 rounded-xl hover:border-transparent" popupClassName="rounded-xl">
+                                <Select placeholder="Select period" className="h-11 rounded-xl custom-select-height hover:border-zinc-200" popupClassName="rounded-xl overflow-hidden p-1 text-sm">
                                     <Select.Option value="less_than_6m">Less than 6 Months</Select.Option>
                                     <Select.Option value="6m_to_1y">6 Months to 1 Year</Select.Option>
                                     <Select.Option value="1y_to_3y">1 to 3 Years</Select.Option>
@@ -162,7 +163,7 @@ const LeadershipClassPage: FC = () => {
                             name="servingArea"
                             rules={[{ required: true, message: "Please specify your ministry team" }]}
                         >
-                            <Input placeholder="e.g., Usheing, Media, Worship, None yet" className="h-10 rounded-xl border-zinc-200 focus:border-zinc-900 focus:ring-0 hover:border-transparent" />
+                            <Input placeholder="e.g., Ushering, Media, Worship, None yet" className="h-11 rounded-xl border-zinc-200 focus:border-zinc-900 focus:ring-0 text-sm hover:border-zinc-200" />
                         </Form.Item>
 
                         <Form.Item
@@ -173,7 +174,7 @@ const LeadershipClassPage: FC = () => {
                             <TextArea
                                 rows={4}
                                 placeholder="Share your goals and how you look to contribute to church growth..."
-                                className="rounded-xl border-zinc-200 focus:border-zinc-900 focus:ring-0 hover:border-transparent"
+                                className="rounded-xl border-zinc-200 p-3 focus:border-zinc-900 focus:ring-0 text-sm hover:border-zinc-200"
                             />
                         </Form.Item>
 
@@ -187,7 +188,7 @@ const LeadershipClassPage: FC = () => {
                                 style={{
                                     backgroundColor: isHovered ? "#ef4444" : "#18181b",
                                 }}
-                                className="w-full h-12   border-none text-white font-bold rounded-xl tracking-wide uppercase text-xs transition-colors duration-200"
+                                className="w-full h-12 border-none text-white font-bold rounded-xl tracking-wider uppercase text-xs transition-all duration-200 shadow-sm"
                             >
                                 Submit Application
                             </Button>
@@ -196,6 +197,8 @@ const LeadershipClassPage: FC = () => {
                 </div>
 
             </div>
+
+           
         </div>
     );
 };
