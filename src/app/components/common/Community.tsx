@@ -24,12 +24,12 @@ const Community = () => {
             We&apos;re Joyful
           </span>
           <h2 className="text-white font-black text-2xl sm:text-3xl tracking-tight leading-tight uppercase mb-6">
-            Become <br /> A Member
+           <Link href="/contact">Become <br /> A Member</Link> 
           </h2>
           
           <Link href="/signup" className="w-full max-w-[200px]">
             <button className="w-full h-12 bg-white hover:bg-red-600 text-zinc-950 hover:text-white text-xs font-bold tracking-widest uppercase rounded transition-all duration-300 transform group-hover:translate-y-[-2px] shadow-xl">
-              JOIN US
+            <Link href="/contact"> JOIN US</Link>  
             </button>
           </Link>
         </div>
@@ -79,7 +79,7 @@ const Community = () => {
           
           <Link href="/prayer" className="w-full max-w-[200px]">
             <button className="w-full h-12 bg-zinc-900/90 backdrop-blur-sm hover:bg-white text-white hover:text-zinc-950 border border-zinc-800 hover:border-white text-xs font-bold tracking-widest uppercase rounded transition-all duration-300 transform group-hover:translate-y-[-2px] shadow-xl">
-              LET&apos;S PRAY
+             <Link href="/contact"> LET&apos;S PRAY</Link>   
             </button>
           </Link>
         </div>
