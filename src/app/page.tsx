@@ -18,6 +18,7 @@ export default function Home() {
     fetch("/api/youtube")
       .then(res => res.json())
       .then(data => {
+         console.log(data.videos);
         setVideos(data.videos || []);
         setCurrentVideoIndex(0);
       });

@@ -7,6 +7,7 @@ import "slick-carousel/slick/slick-theme.css";
 import Image from "next/image";
 import { FaUserAlt, FaChalkboardTeacher, FaChurch } from "react-icons/fa";
 import { MdCardGiftcard } from "react-icons/md";
+import Link from "next/link";
 
 const FreeStyle = () => {
   const pic1 = "https://res.cloudinary.com/dalylashp/image/upload/v1725101809/pastor_ypsalo.webp";
@@ -87,9 +88,9 @@ const FreeStyle = () => {
 
           <div className="pt-4">
             <button className="group relative px-8 h-14 bg-red-600 hover:bg-red-700 text-white text-sm font-bold tracking-widest rounded-lg transition-all duration-300 shadow-lg shadow-red-900/30 overflow-hidden">
-              <span className="relative z-10 flex items-center gap-2">
+              <Link href="/contact" className="relative z-10 flex items-center gap-2">
                 JOIN US THIS SUNDAY <span className="group-hover:translate-x-1 transition-transform">→</span>
-              </span>
+              </Link>
               <div className="absolute inset-0 bg-gradient-to-r from-red-500 to-red-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
             </button>
           </div>
