@@ -2,8 +2,6 @@
 
 import { Button } from "antd";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
-import Header from "./components/common/Header";
-import Footer from "./components/common/Footer";
 import { useState, useEffect } from "react";
 import Mainpic from "./components/common/Mainslidder";
 import Head from "next/head";

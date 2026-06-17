@@ -19,7 +19,7 @@ export async function GET(req: Request) {
 
   const url =
     `https://www.googleapis.com/youtube/v3/playlistItems` +
-    `?part=snippet&playlistId=${PLAYLIST_ID}&maxResults=6` +
+    `?part=snippet&playlistId=${PLAYLIST_ID}&maxResults=20` +
     `&pageToken=${pageToken}&key=${API_KEY}`;
 
   const res = await fetch(url);
