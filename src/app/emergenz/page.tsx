@@ -11,7 +11,7 @@ interface YouthMediaItem {
 }
 
 const Page: FC = () => {
-  // Ordered gallery stream
+  
   const youthpic: YouthMediaItem[] = [
     { image: "https://res.cloudinary.com/dalylashp/image/upload/v1725101517/choir7_umfdyb.webp", caption: "Sanctuary Choir" },
     { image: "https://res.cloudinary.com/dalylashp/image/upload/v1726579634/word14_apmp4h.jpg", caption: "Youth Gathering" },
@@ -125,7 +125,7 @@ const Page: FC = () => {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-950/20 to-transparent z-10" />
                 <div className="absolute bottom-5 left-5 z-20 space-y-1">
-                  <span className="inline-block text-[9px] font-black bg-red-600 text-white tracking-widest uppercase px-2 py-0.5 rounded">0{i + 1} // SPOTLIGHT</span>
+                  <span className="inline-block text-[9px] font-black bg-red-600 text-white tracking-widest uppercase px-2 py-0.5 rounded">0{i + 1}  SPOTLIGHT</span>
                   <h3 className="text-white font-bold text-base tracking-tight">{item.caption || "Community Life"}</h3>
                 </div>
               </div>
