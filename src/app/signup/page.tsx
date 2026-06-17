@@ -6,8 +6,6 @@ import axios from "axios";
 import toast from "react-hot-toast";
 import { FaEye } from "react-icons/fa";
 import { FaEyeSlash } from "react-icons/fa";
-import Footer from "../components/common/Footer";
-import Header from "../components/common/Header";
 import Image from "next/image";
 import shape from "../img/Shape.png";
 import { GoClock } from "react-icons/go";
@@ -87,9 +85,7 @@ const SignupPage: FC = () => {
 
   return (
     <div className="bg-red-100">
-      <header>
-        <Header />
-      </header>
+     
       <main>
         <section className="md:flex lg:flex xl:flex 2xl:flex pt-[10rem] justify-center min-h-screen gap-5">
           <article
@@ -225,9 +221,7 @@ const SignupPage: FC = () => {
           </article>
         </section>
       </main>
-      <footer>
-        <Footer />
-      </footer>
+      
     </div>
   );
 };

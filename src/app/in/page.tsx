@@ -138,9 +138,7 @@ export default function LoginPage() {
         </div>
        
       </div>
-      <footer className="fixed bottom-0 left-0 right-0 z-10  h-[13.8rem]">
-        <Footer />
-      </footer>
+      
       </Spin>
     </div>
   );

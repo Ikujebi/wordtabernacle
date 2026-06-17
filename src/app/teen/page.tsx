@@ -1,8 +1,6 @@
 "use client";
 import { useState, FC } from "react";
 import Image from "next/image";
-import Header from "../components/common/Header";
-import Footer from "../components/common/Footer";
 import givbg from "../img/giveimg.jpg";
 
 import grid from "../img/grid.svg";
@@ -56,9 +54,7 @@ const Page: FC = () => {
 
   return (
     <div className="butterfly-kids-regular relative">
-      <header>
-        <Header />
-      </header>
+      
       <main className="md:pt-[10rem] lg:pt-[10rem] xl:pt-[10rem] 2xl:pt-[10rem] pt-[6.77rem] font-semibold">
         <div
           className="content h-[6rem] 2xl:h-[8rem] relative flex justify-center items-center"
@@ -171,9 +167,7 @@ const Page: FC = () => {
           </div>
         )}
       </main>
-      <footer className="w-full">
-        <Footer />
-      </footer>
+      
     </div>
   );
 };

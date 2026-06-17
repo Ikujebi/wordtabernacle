@@ -204,10 +204,10 @@ const Header: FC = () => {
 
       {/* High-Fidelity Mobile Sidebar Panel */}
       <div 
-        className={`lg:hidden fixed inset-y-0 right-0 z-40 w-full max-w-sm bg-white shadow-2xl border-l border-zinc-200 flex flex-col transform transition-transform duration-300 ease-in-out ${
-          mobileMenuVisible ? "translate-x-0" : "translate-x-full"
-        }`}
-        style={{ top: "116px" }} // Perfectly sits below ribbon offsets safely
+        className={`lg:hidden fixed right-0 z-40 w-full max-w-sm bg-white shadow-2xl border-l border-zinc-200 flex flex-col transform transition-transform duration-300 ease-in-out ${
+  mobileMenuVisible ? "translate-x-0" : "translate-x-full"
+}`}
+style={{ top: "116px", bottom: 0 }} // Perfectly sits below ribbon offsets safely
       >
         <div className="flex-1 overflow-y-auto px-6 py-8 space-y-6">
           {navItems.map((item, index) => {

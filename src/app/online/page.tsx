@@ -64,7 +64,7 @@ const Page: FC = () => {
       {/* Decorative Background Accent */}
       <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-red-900/10 rounded-full blur-[150px] pointer-events-none" />
       
-      <Header />
+     
       
       {/* Main Container Section */}
       <main className="flex-1 flex flex-col justify-center items-center px-4 sm:px-6 lg:px-8 pt-32 pb-16 relative z-10 w-full max-w-7xl mx-auto">

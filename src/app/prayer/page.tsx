@@ -1,218 +1,271 @@
-"use client"
-import { FC } from 'react'
-import Header from '../components/common/Header'
-import Footer from '../components/common/Footer'
-import Image from 'next/image'
-import givbg from '../img/prayer2.webp'
-import churchlogo from '../img/wordlogo.png'
-import { useState } from 'react'
-import Link from 'next/link'
-import emailjs from "emailjs-com";
-import { Radio } from 'antd'
+"use client";
 
+import { FC, useState, ChangeEvent } from "react";
+import Image from "next/image";
+import Link from "next/link";
+import emailjs from "emailjs-com";
+import { Radio, RadioChangeEvent } from "antd";
+import { HiSparkles, HiPaperAirplane } from "react-icons/hi2";
+import givbg from "../img/prayer2.webp";
+import churchlogo from "../img/wordlogo.png";
+
+interface PrayerFormData {
+  firstName: string;
+  lastName: string;
+  email: string;
+  phone: string;
+  message: string;
+  member: string;
+  contactMethod: string;
+}
 
 const Page: FC = () => {
+  const [formData, setFormData] = useState<PrayerFormData>({
+    firstName: "",
+    lastName: "",
+    email: "",
+    phone: "",
+    message: "",
+    member: "",
+    contactMethod: "",
+  });
 
-    const [formData, setFormData] = useState({
-        firstName: "",
-        lastName: "",
-        email: "",
-        phone: "",
-        message: "",
-        member: "",
-        contactMethod: "",
+  const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
+
+  const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
+  };
+
+  const handleRadioChange = (e: RadioChangeEvent, fieldName: keyof PrayerFormData) => {
+    setFormData((prev) => ({ ...prev, [fieldName]: e.target.value }));
+  };
+
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+    if (!formData.email) {
+      alert("Please provide an email address.");
+      return;
+    }
+
+    setIsSubmitting(true);
+
+    emailjs
+      .send(
+        "your_service_id",
+        "your_template_id",
+        formData as unknown as Record<string, unknown>,
+        "your_user_id"
+      )
+      .then(
+        () => {
+          alert("Your prayer request has been sent successfully!");
+          setFormData({
+            firstName: "",
+            lastName: "",
+            email: "",
+            phone: "",
+            message: "",
+            member: "",
+            contactMethod: "",
+          });
+        },
+        (error) => {
+          alert("Failed to submit prayer request. Please try again.");
+          console.error("EmailJS Error:", error.text);
+        }
+      )
+      .finally(() => {
+        setIsSubmitting(false);
       });
-    
-      const handleChange = (e: any) => {
-        setFormData({ ...formData, [e.target.name]: e.target.value });
-      };
-    
-      const handleSubmit = (e: any) => {
-        e.preventDefault();
-    
-        emailjs
-          .send("your_service_id", "your_template_id", formData, "your_user_id")
-          .then(
-            (result) => {
-              alert("Email sent successfully!");
-              setFormData({
-                firstName: "",
-                lastName: "",
-                email: "",
-                phone: "",
-                message: "",
-                member: "",
-                contactMethod: "",
-              });
-            },
-            (error) => {
-              alert("Failed to send email.");
-              console.error("Error:", error.text);
-            }
-          );
-      };
-    
+  };
 
-    
-    
-    return (
-        <div className='font-satoshi '>
-            <header >
-                <Header />
-            </header>
-            <main className='pt-[8.7rem]'>
-                <div className="content  h-[7rem] relative flex justify-center items-center" style={{ backgroundImage: `url(${givbg.src})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
-                    <h2 className='text-white font-semibold text-[1.9rem] relative inline-block'>
-                    Prayer Requests
-                        <span className='block absolute bottom-1 left-1/2 transform -translate-x-1/2 w-[120%] h-[3px] bg-white'></span>
-                    </h2>
-                </div>
-                <div className='md:max-w-[67%] lg:max-w-[67%] xl:max-w-[67%] 2xl:max-w-[67%] text-red-700 text-[.83rem] xl:text-[.83rem] 2xl:text-[1.1rem] xl:w-[50%] 2xl:w-[40%]  mx-auto'>
-                <section className='mx-auto my-6 '>
-                    <h2 className='text-center font-bold text-[1.5rem]'>NEED PRAYER?</h2>
-                    <p className='text-center'>
-                    We believe that God wants to meet the needs and reveal
-                     His promises to His people. Since prayer is the way we
-                      communicate with Him, we place a priority on it.
-                      Let us pray for you. Submit your prayer request.</p>
-                        
-                         <p className='text-center font-semibold xl:text-[1rem] 2xl:text-[1rem] text-[.97rem] mt-3'>Complete the form below to send in your prayer requests.</p>
-                </section>
-                <section className='mx-auto my-6 mt-6  '>
-                <Link href='#' className="flex justify-center gap-1">
-                                    <Image alt="church logo" width={300} height={100} src={churchlogo.src} className="md:w-[15rem]  lg:w-[15rem] xl:w-[15rem] 2xl:w-[15rem] w-[4rem] md:h-[13rem] lg:h-[13rem] xl:h-[13rem] 2xl:h-[13rem] h-[4rem]" />
-                                    <span className="font-semibold text-red-600 md:mt-[5rem] lg:mt-[5rem] xl:mt-[5rem] 2xl:mt-[5rem] mt-[1.5rem] md:text-[2rem] lg:text-[2rem] xl:text-[2rem] 2xl:text-[2rem]">WORD TABERNACLE</span>
-                                </Link>
-                       
-                </section>
-                <section>
+  return (
+    <div className="w-full bg-zinc-50/60 min-h-screen font-sans antialiased selection:bg-rose-600 selection:text-white">
+      <main className="pt-20 lg:pt-24">
+        <div
+          className="relative h-48 sm:h-56 flex justify-center items-center bg-cover bg-center overflow-hidden"
+          style={{ backgroundImage: `url(${givbg.src})` }}
+        >
+          <div className="absolute inset-0 bg-gradient-to-r from-zinc-950 via-zinc-950/80 to-zinc-950/40 z-10" />
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-20">
+            <div className="max-w-xl space-y-2 text-center sm:text-left">
+              <span className="inline-block text-[10px] font-black tracking-[0.35em] text-rose-400 uppercase">
+                Faith &amp; Community
+              </span>
+              <h1 className="text-white font-black text-4xl tracking-tight uppercase">
+                Prayer Requests
+              </h1>
+              <div className="w-12 h-1 bg-rose-500 rounded-full mt-3 mx-auto sm:mx-0" />
+            </div>
+          </div>
+        </div>
 
-                </section>
+        <section className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-8 text-center space-y-4">
+          <h2 className="text-zinc-900 font-black text-2xl uppercase tracking-tight">
+            Need Prayer?
+          </h2>
+          <p className="text-zinc-600 text-base sm:text-lg font-medium leading-relaxed">
+            We believe that God wants to meet the needs and reveal His promises to His people. Since prayer is the way we communicate with Him, we place a priority on it. Let us pray for you.
+          </p>
+          <p className="text-zinc-900 font-bold text-sm tracking-wide uppercase flex items-center justify-center gap-1.5 pt-2">
+            <HiSparkles className="text-rose-500 text-xs animate-pulse" /> Complete the form below to share your heart.
+          </p>
+        </section>
 
-                <section >
-                    <h2 className='text-[1.7rem] font-semibold md:ml-0 lg:ml-0 xl:ml-0 2xl:ml-0 ml-7'>Prayer Requests</h2>
-                   
+        <section className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 pb-24">
+          <div className="flex justify-center items-center mb-8 bg-white border border-zinc-200 rounded-2xl p-4 shadow-sm max-w-sm mx-auto">
+            <Link href="/" className="flex items-center gap-3 group">
+              <div className="relative w-12 h-12">
+                <Image fill src={churchlogo} alt="WTBC Church Logo" className="object-contain transition-transform group-hover:scale-105" />
+              </div>
+              <div className="flex flex-col">
+                <span className="font-black text-zinc-900 text-sm tracking-widest uppercase">
+                  Word Tabernacle
+                </span>
+                <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-rose-600">
+                  Baptist Church
+                </span>
+              </div>
+            </Link>
+          </div>
 
-
-                </section>
-                <section>
-                <form
-            onSubmit={handleSubmit}
-            className="w-full   shadow-xl pt-[2%] mt-[5%]  2xl:mb-[3%] mb-[1rem] pb-10"
-          >
-            <article>
-              <h2 className="flex justify-center py-[3%]  text-2xl font-semibold">
-               
-              </h2>
-              <article className=" mx-[2rem] justify-center gap-[3%]">
-                <div className=" w-[80%]  mt-2">
-                  <label htmlFor="firstName" className="">
-                    First name
+          <div className="bg-white border border-zinc-200 rounded-3xl p-6 sm:p-10 shadow-sm">
+            <form onSubmit={handleSubmit} className="space-y-6">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div className="flex flex-col space-y-1.5">
+                  <label htmlFor="firstName" className="text-xs font-bold uppercase tracking-wider text-zinc-400">
+                    First Name
                   </label>
                   <input
+                    id="firstName"
                     type="text"
-                    value={formData.firstName}
                     name="firstName"
+                    value={formData.firstName}
                     onChange={handleChange}
-                    placeholder="First name"
-                    className="pl-1 block border-[1px] h-[2.6rem] border-gray-500 outline-none w-[100%]"
+                    placeholder="John"
+                    className="w-full h-12 px-4 border border-zinc-200 rounded-xl bg-zinc-50 text-sm font-medium text-zinc-800 placeholder-zinc-400 focus:bg-white focus:border-rose-500 focus:ring-1 focus:ring-rose-500 outline-none transition-all"
                   />
                 </div>
-                <div className="w-[80%] mt-2">
-                  <label htmlFor="lastName" className=" mt-2 ">
-                    Last name
+
+                <div className="flex flex-col space-y-1.5">
+                  <label htmlFor="lastName" className="text-xs font-bold uppercase tracking-wider text-zinc-400">
+                    Last Name
                   </label>
                   <input
+                    id="lastName"
                     type="text"
                     name="lastName"
                     value={formData.lastName}
                     onChange={handleChange}
-                    placeholder="Last name"
-                    className="pl-1 block border-[1px] h-[2.6rem] border-gray-500 outline-none w-[100%]"
+                    placeholder="Doe"
+                    className="w-full h-12 px-4 border border-zinc-200 rounded-xl bg-zinc-50 text-sm font-medium text-zinc-800 placeholder-zinc-400 focus:bg-white focus:border-rose-500 focus:ring-1 focus:ring-rose-500 outline-none transition-all"
                   />
                 </div>
-              </article>
-              <article className=" mx-[2rem] mt-[5%] justify-center gap-[3%]">
-                <div className="w-[80%] mt-2">
-                  <label htmlFor="email" className="w-[45%]">
-                    Email *
+              </div>
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div className="flex flex-col space-y-1.5">
+                  <label htmlFor="email" className="text-xs font-bold uppercase tracking-wider text-zinc-400">
+                    Email <span className="text-rose-500">*</span>
                   </label>
                   <input
-                    type="text"
-                    placeholder="Email"
+                    id="email"
+                    type="email"
                     name="email"
+                    required
                     value={formData.email}
                     onChange={handleChange}
-                    className="pl-1 block border-[1px] h-[2.6rem] border-gray-500 outline-none w-[100%]"
+                    placeholder="johndoe@example.com"
+                    className="w-full h-12 px-4 border border-zinc-200 rounded-xl bg-zinc-50 text-sm font-medium text-zinc-800 placeholder-zinc-400 focus:bg-white focus:border-rose-500 focus:ring-1 focus:ring-rose-500 outline-none transition-all"
                   />
                 </div>
-                <div className="w-[80%] mt-2">
-                  <label htmlFor="lastName" className="w-[45%] mt-2">
-                    Phone
+
+                <div className="flex flex-col space-y-1.5">
+                  <label htmlFor="phone" className="text-xs font-bold uppercase tracking-wider text-zinc-400">
+                    Phone Number
                   </label>
                   <input
-                    type="text"
-                    placeholder="Phone"
+                    id="phone"
+                    type="tel"
                     name="phone"
                     value={formData.phone}
                     onChange={handleChange}
-                    className="pl-1 block border-[1px] h-[2.6rem] border-gray-500 outline-none w-[100%]"
+                    placeholder="+1 (555) 000-0000"
+                    className="w-full h-12 px-4 border border-zinc-200 rounded-xl bg-zinc-50 text-sm font-medium text-zinc-800 placeholder-zinc-400 focus:bg-white focus:border-rose-500 focus:ring-1 focus:ring-rose-500 outline-none transition-all"
                   />
                 </div>
-              </article>
-              
-              <article className=" mx-[2rem] mt-[5%] flex flex-col ">
-                <h3>Preferred Method of Contact (optional)
-                </h3>
-                <Radio.Group onChange={handleChange} value={formData.contactMethod}>
-        <Radio className='text-[1rem]' value="email">Email</Radio><br />
-        <Radio className='text-[1rem]' value="phone">Phone</Radio>
-        
-      </Radio.Group>
-              </article>
-              <article className=" mx-[2rem] mt-[5%] flex flex-col items-center">
-               <div className="w-[94%]">
-                <label htmlFor="message">Let us know how we can pray for you?</label>
+              </div>
+
+              <div className="flex flex-col space-y-1.5">
+                <label htmlFor="message" className="text-xs font-bold uppercase tracking-wider text-zinc-400">
+                  How can we pray for you?
+                </label>
                 <textarea
+                  id="message"
                   name="message"
-                  placeholder="Message"
+                  rows={4}
                   value={formData.message}
                   onChange={handleChange}
-                  id=""
-                  className="p-2 h-[5rem] md:h-[10rem] lg:h-[10rem] xl:h-[10rem] 2xl:h-[10rem] mt-2 w-full block border-[1px] border-gray-500 outline-none"
-                ></textarea>
+                  placeholder="Share your prayer intentions, thanksgiving praise report, or guidance requests here..."
+                  className="w-full p-4 border border-zinc-200 rounded-xl bg-zinc-50 text-sm font-medium text-zinc-800 placeholder-zinc-400 focus:bg-white focus:border-rose-500 focus:ring-1 focus:ring-rose-500 outline-none transition-all resize-none min-h-[120px]"
+                />
+              </div>
+
+              {/* Ant Design Radio Section layout */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 pt-2">
+                {/* Method of Contact Radio Group */}
+                <div className="p-4 bg-zinc-50 rounded-xl border border-zinc-200/60 flex flex-col space-y-2">
+                  <span className="text-xs font-bold uppercase tracking-wider text-zinc-400">
+                    Preferred Contact Method (Optional)
+                  </span>
+                  <Radio.Group 
+                    onChange={(e) => handleRadioChange(e, "contactMethod")} 
+                    value={formData.contactMethod}
+                    className="flex flex-col space-y-2"
+                  >
+                    <Radio value="email" className="text-sm font-medium text-zinc-700">Email</Radio>
+                    <Radio value="phone" className="text-sm font-medium text-zinc-700">Phone</Radio>
+                  </Radio.Group>
                 </div>
-              </article>
 
-              <article className=" mx-[2rem] mt-[5%] flex flex-col ">
-                <h3>Are you a member of WTBC (optional)
-
-                </h3>
-                <Radio.Group onChange={handleChange} value={formData.member}>
-        <Radio className='text-[1rem]' value="yes">Yes</Radio><br />
-        <Radio className='text-[1rem]' value="no">No</Radio>
-        
-      </Radio.Group>
-              </article>
-              <article className='text-center'>
-              <button
-                type="submit"
-                className="w-[60%] h-[4rem] rounded-3xl  py-2 mt-1 bg-red-700 text-white ml-[10%] mt-[2.5%] "
-              >
-                Submit
-              </button>
-              </article>
-              
-            </article>
-          </form>
-                </section>
+                {/* Membership Status Radio Group */}
+                <div className="p-4 bg-zinc-50 rounded-xl border border-zinc-200/60 flex flex-col space-y-2">
+                  <span className="text-xs font-bold uppercase tracking-wider text-zinc-400">
+                    Are you a member of WTBC? (Optional)
+                  </span>
+                  <Radio.Group 
+                    onChange={(e) => handleRadioChange(e, "member")} 
+                    value={formData.member}
+                    className="flex flex-col space-y-2"
+                  >
+                    <Radio value="yes" className="text-sm font-medium text-zinc-700">Yes, I am a member</Radio>
+                    <Radio value="no" className="text-sm font-medium text-zinc-700">No, I am a visitor</Radio>
+                  </Radio.Group>
                 </div>
-            </main>
-            <footer>
-                <Footer />
-            </footer>
-        </div>
-    )
-}
+              </div>
 
-export default Page
+              <div className="pt-4 flex justify-center">
+                <button
+                  type="submit"
+                  disabled={isSubmitting}
+                  className={`w-full sm:w-2/3 h-14 font-bold text-xs uppercase tracking-widest rounded-xl transition-all duration-300 shadow-md flex items-center justify-center gap-2 outline-none ${
+                    isSubmitting
+                      ? "bg-zinc-300 text-zinc-500 cursor-not-allowed shadow-none"
+                      : "bg-zinc-950 hover:bg-rose-600 text-white shadow-zinc-950/10 active:scale-[0.99]"
+                  }`}
+                >
+                  <HiPaperAirplane className={`text-base ${isSubmitting ? "animate-ping" : ""}`} />
+                  {isSubmitting ? "Submitting Request..." : "Submit Prayer Request"}
+                </button>
+              </div>
+            </form>
+          </div>
+        </section>
+      </main>
+    </div>
+  );
+};
+
+export default Page;

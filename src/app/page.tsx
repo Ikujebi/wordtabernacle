@@ -52,10 +52,7 @@ export default function Home() {
 
       <Toaster position="top-right" />
 
-      {/* Navigation Header */}
-      <header className="w-full sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-zinc-100">
-        <Header />
-      </header>
+     
 
       <main className="w-full flex-grow">
         {/* Hero Slider Section */}
@@ -180,10 +177,7 @@ export default function Home() {
         </section>
       </main>
 
-      {/* Layout Footer */}
-      <footer className="w-full bg-zinc-950 border-t border-zinc-900">
-        <Footer />
-      </footer>
+     
     </div>
   );
 }
