@@ -95,7 +95,7 @@ const LeadershipClassPage: FC = () => {
                             <HiCheckCircle className="text-base" /> Prerequisites
                         </div>
                         <p className="text-zinc-400 text-xs font-medium leading-relaxed">
-                            Applicants must have served as church workers for a minimum of six months and be currently serving or preparing to serve in unit.            </p>
+                            Applicants must have served as church workers for a minimum of six months and be currently serving in unit.            </p>
                     </div>
                 </div>
 
