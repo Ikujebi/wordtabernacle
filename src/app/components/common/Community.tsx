@@ -52,7 +52,7 @@ const Community = () => {
             Join Our <br /> Leadership Class
           </h2>
           
-          <Link href="/signup" className="w-full max-w-[200px]">
+          <Link href="/leadership" className="w-full max-w-[200px]">
             <button className="w-full h-12 bg-red-600 hover:bg-red-700 text-white text-xs font-bold tracking-widest uppercase rounded transition-all duration-300 transform group-hover:translate-y-[-2px] shadow-xl shadow-red-900/20">
               START HERE
             </button>
