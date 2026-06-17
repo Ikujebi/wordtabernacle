@@ -157,7 +157,7 @@ const FreeStyle = () => {
             </Link>
 
             {/* Card item 3 */}
-            <Link href="/giving" className="flex items-center gap-4 cursor-pointer group w-full">
+            <Link href="/workforce" className="flex items-center gap-4 cursor-pointer group w-full">
               <div className="flex shrink-0 w-12 h-12 bg-zinc-800 text-zinc-400 group-hover:bg-red-600 group-hover:text-white rounded-xl justify-center items-center shadow-inner transition-all duration-300 group-hover:scale-105">
                 <MdCardGiftcard className="text-lg" />
               </div>
