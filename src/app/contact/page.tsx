@@ -275,7 +275,9 @@ const Page: FC = () => {
         </section>
 
         {/* High Definition Geospatial Navigation Embed Canvas Frame */}
-        <section className="w-full h-96 sm:h-[28rem] relative border-t border-zinc-200/60 bg-zinc-100">
+        <section 
+         id="map"
+        className="w-full h-96 sm:h-[28rem] relative border-t border-zinc-200/60 bg-zinc-100">
           <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3963.711954552398!2d3.474328075840481!3d6.557999393435149!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x103bf2726b345a27%3A0xeb8c1cd955070248!2sWord%20Tabernacle%20Bible%20Church!5e0!3m2!1sen!2sng!4v1718294118256!5m2!1sen!2sng"
             className="w-full h-full filter grayscale opacity-90 contrast-125 transition-all duration-500 hover:grayscale-0 hover:opacity-100"

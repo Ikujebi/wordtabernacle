@@ -131,20 +131,20 @@ const FreeStyle = () => {
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-4 divide-y-0 divide-x-0 sm:grid-cols-4">
             
             {/* Card item 1 */}
-            <div className="flex items-center gap-4 cursor-pointer group w-full">
+            <Link href="/contact" className="flex items-center gap-4 cursor-pointer group w-full">
               <div className="flex shrink-0 w-12 h-12 bg-zinc-800 text-zinc-400 group-hover:bg-red-600 group-hover:text-white rounded-xl justify-center items-center shadow-inner transition-all duration-300 group-hover:scale-105">
                 <FaUserAlt className="text-base" />
               </div>
               <div className="space-y-0.5">
                 <p className="font-mono text-[0.65rem] text-red-500 tracking-wider font-semibold uppercase">Fellowship</p>
                 <h3 className="font-bold text-sm sm:text-base text-zinc-100 group-hover:text-white transition-colors">
-                  BECOME A MEMBER
+                 BECOME A MEMBER 
                 </h3>
               </div>
-            </div>
+            </Link>
 
             {/* Card item 2 */}
-            <div className="flex items-center gap-4 cursor-pointer group w-full">
+            <Link href="/giving" className="flex items-center gap-4 cursor-pointer group w-full">
               <div className="flex shrink-0 w-12 h-12 bg-zinc-800 text-zinc-400 group-hover:bg-red-600 group-hover:text-white rounded-xl justify-center items-center shadow-inner transition-all duration-300 group-hover:scale-105">
                 <FaChalkboardTeacher className="text-base" />
               </div>
@@ -154,10 +154,10 @@ const FreeStyle = () => {
                   GET INVOLVED
                 </h3>
               </div>
-            </div>
+            </Link>
 
             {/* Card item 3 */}
-            <div className="flex items-center gap-4 cursor-pointer group w-full">
+            <Link href="/giving" className="flex items-center gap-4 cursor-pointer group w-full">
               <div className="flex shrink-0 w-12 h-12 bg-zinc-800 text-zinc-400 group-hover:bg-red-600 group-hover:text-white rounded-xl justify-center items-center shadow-inner transition-all duration-300 group-hover:scale-105">
                 <MdCardGiftcard className="text-lg" />
               </div>
@@ -167,10 +167,10 @@ const FreeStyle = () => {
                   ONLINE GIVING
                 </h3>
               </div>
-            </div>
+            </Link>
 
             {/* Card item 4 */}
-            <div className="flex items-center gap-4 cursor-pointer group w-full">
+            <Link href="/contact#map" className="flex items-center gap-4 cursor-pointer group w-full">
               <div className="flex shrink-0 w-12 h-12 bg-zinc-800 text-zinc-400 group-hover:bg-red-600 group-hover:text-white rounded-xl justify-center items-center shadow-inner transition-all duration-300 group-hover:scale-105">
                 <FaChurch className="text-base" />
               </div>
@@ -180,7 +180,7 @@ const FreeStyle = () => {
                   OUR LOCATION
                 </h3>
               </div>
-            </div>
+            </Link>
 
           </div>
         </div>
