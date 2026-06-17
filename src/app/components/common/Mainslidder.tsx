@@ -54,7 +54,7 @@ const FreeStyle = () => {
   };
 
   return (
-    <div className="w-full bg-zinc-950 relative overflow-hidden flex flex-col items-center justify-center mt-[6.66rem]">
+    <div className="w-full bg-zinc-950 relative overflow-hidden flex flex-col items-center justify-center mt-[7.55rem]">
       {/* Decorative background radial glow */}
       <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-red-900/10 rounded-full blur-[120px] pointer-events-none" />
       
