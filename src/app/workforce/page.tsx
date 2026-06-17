@@ -6,12 +6,29 @@ import { HiUserPlus, HiClock, HiHeart, HiCheckCircle } from "react-icons/hi2";
 
 const { TextArea } = Input;
 
+// Predefined list of ministry departments/units for type-filtering selection
+const MINISTRY_UNITS = [
+    { value: "ushering", label: "Ushering & Protocols" },
+    { value: "prayer", label: "Prayer" },
+    { value: "media_tech", label: "Media & Technical (Sound/Video)" },
+    { value: "worship_choir", label: "Worship Team / Choir" },
+    { value: "hospitality", label: "Hospitality & Greeters" },
+    { value: "children_ministry", label: "Children's Church Teacher/Helper" },
+    { value: "security_traffic", label: "Security & Traffic Control" },
+    { value: "prayer_intercessors", label: "Prayer & Intercessory Unit" },
+    { value: "evangelism_outreach", label: "Evangelism & Community Outreach" },
+    { value: "medical_firstaid", label: "Medical & First Aid Team" },
+    { value: "decor_ambience", label: "Sanctuary Design & Decoration" },
+    { value: "sanctuary", label: "Sanctuary" },
+    { value: "repair", label: "Repair & Maintainance" },
+];
+
 interface WorkforceFormValues {
     fullName: string;
     email: string;
     phone: string;
     membershipDuration: string;
-    servingArea: string;
+    preferredUnits: string[];
     reason: string;
 }
 
@@ -64,7 +81,7 @@ const WorkforceJoinPage: FC = () => {
                             </div>
                             <div>
                                 <h4 className="text-zinc-900 text-xs font-black uppercase tracking-wider">Diverse Departments</h4>
-                                <p className="text-zinc-500 text-xs font-medium">Media, Usheing, Hospitality, Worship &amp; more</p>
+                                <p className="text-zinc-500 text-xs font-medium">Media, Ushering, Hospitality, Worship &amp; more</p>
                             </div>
                         </div>
 
@@ -120,7 +137,7 @@ const WorkforceJoinPage: FC = () => {
                                 name="fullName"
                                 rules={[{ required: true, message: "Please input your full name" }]}
                             >
-                                <Input placeholder="John Doe" className="h-11 rounded-xl border-zinc-200 focus:border-zinc-900 focus:ring-0 text-sm" />
+                                <Input placeholder="John Doe" className="h-11 rounded-xl border-zinc-200 focus:border-zinc-900 focus:ring-0 text-sm hover:border-zinc-200" />
                             </Form.Item>
 
                             <Form.Item
@@ -131,7 +148,7 @@ const WorkforceJoinPage: FC = () => {
                                     { type: "email", message: "Please enter a valid email address" }
                                 ]}
                             >
-                                <Input placeholder="johndoe@example.com" className="h-11 rounded-xl border-zinc-200 focus:border-zinc-900 focus:ring-0 text-sm" />
+                                <Input placeholder="johndoe@example.com" className="h-11 rounded-xl border-zinc-200 focus:border-zinc-900 focus:ring-0 text-sm hover:border-zinc-200" />
                             </Form.Item>
                         </div>
 
@@ -141,7 +158,7 @@ const WorkforceJoinPage: FC = () => {
                                 name="phone"
                                 rules={[{ required: true, message: "Please input your phone number" }]}
                             >
-                                <Input placeholder="+ (234) 000-0000" className="h-11 rounded-xl border-zinc-200 focus:border-zinc-900 focus:ring-0 text-sm" />
+                                <Input placeholder="+ (234) 000-0000" className="h-11 rounded-xl border-zinc-200 focus:border-zinc-900 focus:ring-0 text-sm hover:border-zinc-200" />
                             </Form.Item>
 
                             <Form.Item
@@ -149,7 +166,7 @@ const WorkforceJoinPage: FC = () => {
                                 name="membershipDuration"
                                 rules={[{ required: true, message: "Please select an option" }]}
                             >
-                                <Select placeholder="Select period" className="h-11 rounded-xl custom-select-height" popupClassName="rounded-xl overflow-hidden p-1 text-sm">
+                                <Select placeholder="Select period" className="h-11 rounded-xl custom-select-height hover:border-zinc-200" popupClassName="rounded-xl overflow-hidden p-1 text-sm">
                                     <Select.Option value="less_than_3m">Less than 3 Months</Select.Option>
                                     <Select.Option value="3m_to_6m">3 to 6 Months</Select.Option>
                                     <Select.Option value="6m_to_1y">6 Months to 1 Year</Select.Option>
@@ -158,12 +175,22 @@ const WorkforceJoinPage: FC = () => {
                             </Form.Item>
                         </div>
 
+                        {/* Searchable and Filterable Multi-Select Component */}
                         <Form.Item
-                            label={<span className="text-zinc-700 text-xs font-bold uppercase tracking-wider">Preferred Ministry / Serving Area</span>}
-                            name="servingArea"
-                            rules={[{ required: true, message: "Please specify your ministry team preference" }]}
+                            label={<span className="text-zinc-700 text-xs font-bold uppercase tracking-wider">Preferred Ministry Departments (Select up to 2)</span>}
+                            name="preferredUnits"
+                            rules={[{ required: true, message: "Please choose at least one area you are interested in serving" }]}
                         >
-                            <Input placeholder="e.g., Usheing, Media, Worship, Hospitality, Children Ministry" className="h-11 rounded-xl border-zinc-200 focus:border-zinc-900 focus:ring-0 text-sm" />
+                            <Select
+                                mode="multiple"
+                                showSearch
+                                maxCount={2}
+                                placeholder="Type to filter departments... (e.g. Media, Ushering)"
+                                optionFilterProp="label"
+                                options={MINISTRY_UNITS}
+                                className="min-h-11 rounded-xl custom-select-height hover:border-zinc-200 text-sm hover:border-zinc-200"
+                                popupClassName="rounded-xl overflow-hidden p-1 text-sm"
+                            />
                         </Form.Item>
 
                         <Form.Item
@@ -174,7 +201,7 @@ const WorkforceJoinPage: FC = () => {
                             <TextArea
                                 rows={4}
                                 placeholder="Share your goals and how you look to contribute to church growth..."
-                                className="rounded-xl border-zinc-200 p-3 focus:border-zinc-900 focus:ring-0 text-sm"
+                                className="rounded-xl border-zinc-200 p-3 focus:border-zinc-900 focus:ring-0 text-sm hover:border-zinc-200"
                             />
                         </Form.Item>
 
@@ -197,8 +224,37 @@ const WorkforceJoinPage: FC = () => {
                 </div>
 
             </div>
-
-           
+<style jsx global>{`
+                .custom-select-height .ant-select-selector {
+                    border-radius: 12px !important;
+                    min-height: 44px !important;
+                    padding: 4px 12px !important;
+                    border-color: #e4e4e7 !important;
+                    box-shadow: none !important;
+                    display: flex !important;
+                    align-items: center !important;
+                }
+                .custom-select-height .ant-select-selection-overflow {
+                    display: flex !important;
+                    align-items: center !important;
+                    gap: 4px !important;
+                }
+                .custom-select-height .ant-select-selection-item {
+                    background-color: #f4f4f5 !important;
+                    border: 1px solid #e4e4e7 !important;
+                    border-radius: 6px !important;
+                    margin-inline-end: 0px !important;
+                    font-size: 0.8125rem !important;
+                    color: #18181b !important;
+                }
+                .custom-select-height .ant-select-selection-item-content {
+                    font-weight: 500 !important;
+                }
+                .custom-select-height .ant-select-selection-placeholder {
+                    font-size: 0.875rem !important;
+                }
+            `}</style>
+         
         </div>
     );
 };
