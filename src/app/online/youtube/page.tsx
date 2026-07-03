@@ -48,7 +48,7 @@ const YouTubePage: FC = () => {
   }, []);
 
   return (
-    <main className="min-h-screen bg-zinc-950 text-white flex flex-col items-center justify-center relative overflow-hidden px-4 sm:px-6 lg:px-8">
+    <main className="min-h-screen bg-zinc-950 text-white flex flex-col items-center justify-center relative overflow-hidden px-4 sm:px-6 lg:px-8 pt-16 md:pt-0">
       
       {/* Deep Sanctuary Red Ambient Atmospheric Glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-red-950/15 rounded-full blur-[180px] pointer-events-none" />
@@ -87,7 +87,7 @@ const YouTubePage: FC = () => {
             </div>
 
             {/* Premium Cinematic Video & Live Chat Grid Container */}
-            <div className="grid grid-cols-1 lg:grid-cols-[1fr_380px] xl:grid-cols-[1fr_400px] gap-6 max-w-[1600px] mx-auto w-full items-stretch">
+            <div className="grid grid-cols-1 lg:grid-cols-[1fr_380px] xl:grid-cols-[1fr_400px] gap-6 max-w-[1600px] mx-auto w-full items-stretch ">
               
               {/* 1. ULTRA-RESPONSIVE VIDEO CANVAS FRAME */}
               <div className="relative w-full aspect-video rounded-2xl overflow-hidden border border-white/[0.06] bg-black shadow-[0_25px_50px_-12px_rgba(0,0,0,0.7)] group">
