@@ -2,6 +2,7 @@
 
 import { FC, useEffect, useState } from "react";
 import YouTubePlayer from "../../components/common/YouTubePlayer";
+import YouTubeLiveChat from "../../components/common/YouTubeLiveChat";
 
 type LiveResponse = {
   isLive: boolean;
@@ -48,12 +49,12 @@ const YouTubePage: FC = () => {
 
   return (
     <main className="min-h-screen bg-zinc-950 text-white flex flex-col items-center justify-center relative overflow-hidden px-4 sm:px-6 lg:px-8">
-      
+
       {/* Deep Sanctuary Red Ambient Atmospheric Glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-red-950/15 rounded-full blur-[180px] pointer-events-none" />
 
       <div className="w-full max-w-5xl mx-auto z-10 space-y-6">
-        
+
         {isLoading ? (
           /* Premium Loading Skeleton */
           <div className="w-full aspect-video bg-zinc-900/40 rounded-2xl animate-pulse border border-zinc-900 flex items-center justify-center shadow-2xl">
@@ -67,7 +68,7 @@ const YouTubePage: FC = () => {
         ) : videoId && isLive ? (
           /* ACTIVE LIVE BROADCAST STATE */
           <div className="space-y-4 animate-fade-in">
-            
+
             {/* Stream Header Dashboard Status Ribbon */}
             <div className="flex items-center justify-between px-2">
               <div className="flex items-center gap-3">
@@ -85,15 +86,21 @@ const YouTubePage: FC = () => {
             </div>
 
             {/* Video Player Frame Integration */}
-            <div className="relative shadow-2xl rounded-2xl overflow-hidden border border-zinc-900">
-              <YouTubePlayer videoId={videoId} />
+            <div className="grid lg:grid-cols-[2fr_380px] gap-6">
+              <div className="relative shadow-2xl rounded-2xl overflow-hidden border border-zinc-900">
+                <YouTubePlayer videoId={videoId} />
+              </div>
+
+              <div className="h-[650px] rounded-2xl overflow-hidden border border-zinc-900 bg-zinc-900">
+                <YouTubeLiveChat videoId={videoId} />
+              </div>
             </div>
 
           </div>
         ) : (
           /* HIGH-FIDELITY OFFLINE STATE (RED & WHITE BRANDING) */
           <div className="w-full max-w-3xl mx-auto aspect-video bg-zinc-900/30 backdrop-blur-md border border-zinc-900 rounded-2xl flex flex-col items-center justify-center p-8 text-center shadow-2xl relative overflow-hidden group">
-            
+
             {/* Top Minimalist Red Accent Border */}
             <div className="absolute top-0 inset-x-0 h-[3px] bg-gradient-to-r from-transparent via-red-600 to-transparent" />
 
@@ -118,7 +125,7 @@ const YouTubePage: FC = () => {
               <span className="w-1 h-1 bg-red-600 rounded-full" />
               <span>MEDIA</span>
             </div>
-            
+
           </div>
         )}
       </div>
