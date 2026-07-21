@@ -1,13 +1,13 @@
 "use client";
 
-import { FC, useState, ChangeEvent } from "react";
+import { FC, useState, ChangeEvent, FormEvent } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import emailjs from "emailjs-com";
 import { Radio, RadioChangeEvent } from "antd";
 import { HiSparkles, HiPaperAirplane } from "react-icons/hi2";
 import givbg from "../img/prayer2.webp";
 import churchlogo from "../img/wordlogo.png";
+import { submitPrayerRequest } from "@/lib/api";
 
 interface PrayerFormData {
   firstName: string;
@@ -19,18 +19,20 @@ interface PrayerFormData {
   contactMethod: string;
 }
 
-const Page: FC = () => {
-  const [formData, setFormData] = useState<PrayerFormData>({
-    firstName: "",
-    lastName: "",
-    email: "",
-    phone: "",
-    message: "",
-    member: "",
-    contactMethod: "",
-  });
+const INITIAL_FORM_DATA: PrayerFormData = {
+  firstName: "",
+  lastName: "",
+  email: "",
+  phone: "",
+  message: "",
+  member: "",
+  contactMethod: "",
+};
 
+const Page: FC = () => {
+  const [formData, setFormData] = useState<PrayerFormData>(INITIAL_FORM_DATA);
   const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
+  const [feedback, setFeedback] = useState<{ type: "success" | "error"; text: string } | null>(null);
 
   const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
@@ -41,49 +43,45 @@ const Page: FC = () => {
     setFormData((prev) => ({ ...prev, [fieldName]: e.target.value }));
   };
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-
-    if (!formData.email) {
-      alert("Please provide an email address.");
-      return;
-    }
-
     setIsSubmitting(true);
+    setFeedback(null);
 
-    emailjs
-      .send(
-        "your_service_id",
-        "your_template_id",
-        formData as unknown as Record<string, unknown>,
-        "your_user_id"
-      )
-      .then(
-        () => {
-          alert("Your prayer request has been sent successfully!");
-          setFormData({
-            firstName: "",
-            lastName: "",
-            email: "",
-            phone: "",
-            message: "",
-            member: "",
-            contactMethod: "",
-          });
-        },
-        (error) => {
-          alert("Failed to submit prayer request. Please try again.");
-          console.error("EmailJS Error:", error.text);
-        }
-      )
-      .finally(() => {
-        setIsSubmitting(false);
+    try {
+      await submitPrayerRequest({
+        firstName: formData.firstName,
+        lastName: formData.lastName,
+        email: formData.email,
+        phone: formData.phone,
+        subject: "Website Prayer Request",
+        request: formData.message,
+        category: "GENERAL",
+        isConfidential: true,
+        member: formData.member,
+        contactMethod: formData.contactMethod,
       });
+
+      setFeedback({
+        type: "success",
+        text: "Your prayer request has been received. Our prayer team will pray with you.",
+      });
+      setFormData(INITIAL_FORM_DATA);
+    } catch (error) {
+      console.error("Prayer submission error:", error);
+      setFeedback({
+        type: "error",
+        text: "Unable to submit prayer request. Please try again.",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
     <div className="w-full bg-zinc-50/60 min-h-screen font-sans antialiased selection:bg-rose-600 selection:text-white">
       <main className="pt-20 lg:pt-24">
+        {/* Banner Section */}
         <div
           className="relative h-48 sm:h-56 flex justify-center items-center bg-cover bg-center overflow-hidden"
           style={{ backgroundImage: `url(${givbg.src})` }}
@@ -102,6 +100,7 @@ const Page: FC = () => {
           </div>
         </div>
 
+        {/* Intro Section */}
         <section className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-8 text-center space-y-4">
           <h2 className="text-zinc-900 font-black text-2xl uppercase tracking-tight">
             Need Prayer?
@@ -114,11 +113,17 @@ const Page: FC = () => {
           </p>
         </section>
 
+        {/* Form Container */}
         <section className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 pb-24">
           <div className="flex justify-center items-center mb-8 bg-white border border-zinc-200 rounded-2xl p-4 shadow-sm max-w-sm mx-auto">
             <Link href="/" className="flex items-center gap-3 group">
               <div className="relative w-12 h-12">
-                <Image fill src={churchlogo} alt="WTBC Church Logo" className="object-contain transition-transform group-hover:scale-105" />
+                <Image
+                  fill
+                  src={churchlogo}
+                  alt="WTBC Church Logo"
+                  className="object-contain transition-transform group-hover:scale-105"
+                />
               </div>
               <div className="flex flex-col">
                 <span className="font-black text-zinc-900 text-sm tracking-widest uppercase">
@@ -132,6 +137,18 @@ const Page: FC = () => {
           </div>
 
           <div className="bg-white border border-zinc-200 rounded-3xl p-6 sm:p-10 shadow-sm">
+            {feedback && (
+              <div
+                className={`mb-6 p-4 rounded-xl text-sm font-medium ${
+                  feedback.type === "success"
+                    ? "bg-emerald-50 text-emerald-800 border border-emerald-200"
+                    : "bg-rose-50 text-rose-800 border border-rose-200"
+                }`}
+              >
+                {feedback.text}
+              </div>
+            )}
+
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div className="flex flex-col space-y-1.5">
@@ -200,11 +217,12 @@ const Page: FC = () => {
 
               <div className="flex flex-col space-y-1.5">
                 <label htmlFor="message" className="text-xs font-bold uppercase tracking-wider text-zinc-400">
-                  How can we pray for you?
+                  How can we pray for you? <span className="text-rose-500">*</span>
                 </label>
                 <textarea
                   id="message"
                   name="message"
+                  required
                   rows={4}
                   value={formData.message}
                   onChange={handleChange}
@@ -213,15 +231,13 @@ const Page: FC = () => {
                 />
               </div>
 
-              {/* Ant Design Radio Section layout */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 pt-2">
-                {/* Method of Contact Radio Group */}
                 <div className="p-4 bg-zinc-50 rounded-xl border border-zinc-200/60 flex flex-col space-y-2">
                   <span className="text-xs font-bold uppercase tracking-wider text-zinc-400">
                     Preferred Contact Method (Optional)
                   </span>
-                  <Radio.Group 
-                    onChange={(e) => handleRadioChange(e, "contactMethod")} 
+                  <Radio.Group
+                    onChange={(e) => handleRadioChange(e, "contactMethod")}
                     value={formData.contactMethod}
                     className="flex flex-col space-y-2"
                   >
@@ -230,13 +246,12 @@ const Page: FC = () => {
                   </Radio.Group>
                 </div>
 
-                {/* Membership Status Radio Group */}
                 <div className="p-4 bg-zinc-50 rounded-xl border border-zinc-200/60 flex flex-col space-y-2">
                   <span className="text-xs font-bold uppercase tracking-wider text-zinc-400">
                     Are you a member of WTBC? (Optional)
                   </span>
-                  <Radio.Group 
-                    onChange={(e) => handleRadioChange(e, "member")} 
+                  <Radio.Group
+                    onChange={(e) => handleRadioChange(e, "member")}
                     value={formData.member}
                     className="flex flex-col space-y-2"
                   >
@@ -256,7 +271,7 @@ const Page: FC = () => {
                       : "bg-zinc-950 hover:bg-rose-600 text-white shadow-zinc-950/10 active:scale-[0.99]"
                   }`}
                 >
-                  <HiPaperAirplane className={`text-base ${isSubmitting ? "animate-ping" : ""}`} />
+                  <HiPaperAirplane className={`text-base ${isSubmitting ? "animate-spin" : ""}`} />
                   {isSubmitting ? "Submitting Request..." : "Submit Prayer Request"}
                 </button>
               </div>
