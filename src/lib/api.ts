@@ -3,6 +3,7 @@ export const API_URL =
   "https://api.wordtabernacle.org.ng/api";
 
 
+
 export async function submitPrayerRequest(
   payload: unknown
 ) {
@@ -29,6 +30,45 @@ export async function submitPrayerRequest(
       data.message ||
       "Failed to submit prayer request"
     );
+  }
+
+
+  return data;
+}
+
+
+
+
+
+// CONTACT MESSAGE
+export async function submitContactMessage(
+  payload: unknown
+) {
+
+  const response = await fetch(
+    `${API_URL}/contact`,
+    {
+      method:"POST",
+
+      headers:{
+        "Content-Type":"application/json",
+      },
+
+      body:JSON.stringify(payload),
+    }
+  );
+
+
+  const data = await response.json();
+
+
+  if(!response.ok){
+
+    throw new Error(
+      data.message ||
+      "Failed to submit contact message"
+    );
+
   }
 
 

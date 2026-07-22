@@ -4,8 +4,7 @@ import { FC, useState, ChangeEvent, FormEvent } from "react";
 import { FaMapMarkerAlt, FaPhoneAlt } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 import { useRouter } from "next/navigation";
-import emailjs from "emailjs-com";
-import axios from "axios";
+import { submitContactMessage } from "@/lib/api";
 import { message as antMessage } from "antd";
 import givbg from "../img/giveimg.jpg";
 import styles from "../CustomMessage.module.css";
@@ -34,58 +33,115 @@ const Page: FC = () => {
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
+ const handleSubmit = async (
+  e: FormEvent<HTMLFormElement>
+) => {
 
-    if (!formData.firstName || !formData.lastName || !formData.email || !formData.message) {
-      antMessage.warning("Please fill in all required fields.");
-      return;
-    }
+  e.preventDefault();
 
-    const loadingMessageKey = "contactFormLoading";
-    
-    try {
-      antMessage.loading({ 
-        content: "Submitting your message...", 
-        key: loadingMessageKey, 
-        className: styles.loader 
+
+  if (
+    !formData.firstName ||
+    !formData.lastName ||
+    !formData.email ||
+    !formData.message
+  ) {
+
+    antMessage.warning(
+      "Please fill in all required fields."
+    );
+
+    return;
+  }
+
+
+  const loadingMessageKey =
+    "contactFormLoading";
+
+
+  try {
+
+    antMessage.loading({
+      content:
+        "Submitting your message...",
+      key:
+        loadingMessageKey,
+      className:
+        styles.loader,
+    });
+
+
+    const response =
+      await submitContactMessage({
+        firstName:
+          formData.firstName,
+
+        lastName:
+          formData.lastName,
+
+        email:
+          formData.email,
+
+        phone:
+          formData.phone,
+
+        message:
+          formData.message,
       });
 
-      // Submit data payload directly to internal core router API
-      const response = await axios.post("/api/users/contact", formData);
 
-      if (response.status === 200) {
-        // Initialize parallel validation via EmailJS integration
-        await emailjs.send(
-          "your_service_id",
-          "your_template_id",
-          formData as unknown as Record<string, unknown>,
-          "your_user_id"
-        );
 
-        antMessage.success({ 
-          content: response.data.message || "Message processed successfully!", 
-          key: loadingMessageKey, 
-          duration: 3 
-        });
+    antMessage.success({
 
-        setFormData({
-          firstName: "",
-          lastName: "",
-          email: "",
-          phone: "",
-          message: "",
-        });
-        
-        router.push("/");
-      } else {
-        antMessage.error({ content: "Failed to save contact.", key: loadingMessageKey });
-      }
-    } catch (error) {
-      antMessage.error({ content: "Communication failure. Please try again.", key: loadingMessageKey });
-      console.error("Submission Error:", error);
-    }
-  };
+      content:
+        response.message ||
+        "Message sent successfully!",
+
+      key:
+        loadingMessageKey,
+
+      duration:
+        3,
+    });
+
+
+
+    setFormData({
+
+      firstName:"",
+      lastName:"",
+      email:"",
+      phone:"",
+      message:"",
+    });
+
+
+
+    router.push("/");
+
+
+  } catch(error:any){
+
+
+    console.error(
+      "Contact submission error:",
+      error
+    );
+
+
+    antMessage.error({
+
+      content:
+        error.message ||
+        "Unable to send message. Try again.",
+
+      key:
+        loadingMessageKey,
+    });
+
+  }
+
+};
 
   return (
     <div className="w-full bg-zinc-50 min-h-screen overflow-hidden antialiased font-sans">
