@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
 import { Montserrat } from "@/app/fonts";
 import "./globals.css";
+
 import Header from "./components/common/Header";
 import Footer from "./components/common/Footer";
+import AnalyticsTracker from "./components/analytics/AnalyticsTracker";
 
 export const metadata: Metadata = {
   title: "Word Tabernacle Bible church",
@@ -21,6 +23,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={Montserrat.className}>
+        {/* Website analytics */}
+        <AnalyticsTracker />
+
         <Header />
 
         <main>{children}</main>
