@@ -7,15 +7,17 @@ import { Radio, RadioChangeEvent } from "antd";
 import { HiSparkles, HiPaperAirplane } from "react-icons/hi2";
 import givbg from "../img/prayer2.webp";
 import churchlogo from "../img/wordlogo.png";
-import { submitPrayerRequest } from "@/lib/api";
+import { submitPrayerRequest, PublicPrayerRequestPayload } from "@/lib/api";
+
+type CategoryType = NonNullable<PublicPrayerRequestPayload["category"]>;
 
 interface PrayerFormData {
   firstName: string;
   lastName: string;
   email: string;
   phone: string;
+  category: CategoryType;
   message: string;
-  member: string;
   contactMethod: string;
 }
 
@@ -24,23 +26,37 @@ const INITIAL_FORM_DATA: PrayerFormData = {
   lastName: "",
   email: "",
   phone: "",
+  category: "OTHER",
   message: "",
-  member: "",
   contactMethod: "",
 };
+
+const CATEGORY_OPTIONS: { label: string; value: CategoryType }[] = [
+  { label: "Healing & Health", value: "HEALING" },
+  { label: "Financial Provision", value: "FINANCIAL_PROVISION" },
+  { label: "Family & Marriage", value: "FAMILY_MARRIAGE" },
+  { label: "Salvation", value: "SALVATION" },
+  { label: "Deliverance & Freedom", value: "DELIVERANCE" },
+  { label: "Job & Career", value: "JOB" },
+  { label: "School & Education", value: "SCHOOL" },
+  { label: "Thanksgiving & Praise", value: "THANKSGIVING" },
+  { label: "Other", value: "OTHER" },
+];
 
 const Page: FC = () => {
   const [formData, setFormData] = useState<PrayerFormData>(INITIAL_FORM_DATA);
   const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
   const [feedback, setFeedback] = useState<{ type: "success" | "error"; text: string } | null>(null);
 
-  const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (
+    e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
+  ) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleRadioChange = (e: RadioChangeEvent, fieldName: keyof PrayerFormData) => {
-    setFormData((prev) => ({ ...prev, [fieldName]: e.target.value }));
+  const handleRadioChange = (e: RadioChangeEvent) => {
+    setFormData((prev) => ({ ...prev, contactMethod: e.target.value }));
   };
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
@@ -50,16 +66,16 @@ const Page: FC = () => {
 
     try {
       await submitPrayerRequest({
-        firstName: formData.firstName,
-        lastName: formData.lastName,
+        firstName: formData.firstName || undefined,
+        lastName: formData.lastName || undefined,
         email: formData.email,
-        phone: formData.phone,
-        subject: "Website Prayer Request",
-        request: formData.message,
-        category: "GENERAL",
+        phoneNumber: formData.phone || undefined,
+        subject: formData.message.slice(0, 80) || "Prayer Request from Website",
+        message: formData.message,
+        category: formData.category,
         isConfidential: true,
-        member: formData.member,
-        contactMethod: formData.contactMethod,
+        allowFollowUp: formData.contactMethod !== "",
+        preferredContactMethod: formData.contactMethod || undefined,
       });
 
       setFeedback({
@@ -215,6 +231,27 @@ const Page: FC = () => {
                 </div>
               </div>
 
+              {/* Prayer Category Select */}
+              <div className="flex flex-col space-y-1.5">
+                <label htmlFor="category" className="text-xs font-bold uppercase tracking-wider text-zinc-400">
+                  Category <span className="text-rose-500">*</span>
+                </label>
+                <select
+                  id="category"
+                  name="category"
+                  required
+                  value={formData.category}
+                  onChange={handleChange}
+                  className="w-full h-12 px-4 border border-zinc-200 rounded-xl bg-zinc-50 text-sm font-medium text-zinc-800 focus:bg-white focus:border-rose-500 focus:ring-1 focus:ring-rose-500 outline-none transition-all cursor-pointer"
+                >
+                  {CATEGORY_OPTIONS.map((opt) => (
+                    <option key={opt.value} value={opt.value}>
+                      {opt.label}
+                    </option>
+                  ))}
+                </select>
+              </div>
+
               <div className="flex flex-col space-y-1.5">
                 <label htmlFor="message" className="text-xs font-bold uppercase tracking-wider text-zinc-400">
                   How can we pray for you? <span className="text-rose-500">*</span>
@@ -231,32 +268,19 @@ const Page: FC = () => {
                 />
               </div>
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 pt-2">
-                <div className="p-4 bg-zinc-50 rounded-xl border border-zinc-200/60 flex flex-col space-y-2">
+              {/* Preferred Contact Method */}
+              <div className="pt-2">
+                <div className="p-4 bg-zinc-50 rounded-xl border border-zinc-200/60 flex flex-col space-y-2 max-w-sm">
                   <span className="text-xs font-bold uppercase tracking-wider text-zinc-400">
                     Preferred Contact Method (Optional)
                   </span>
                   <Radio.Group
-                    onChange={(e) => handleRadioChange(e, "contactMethod")}
+                    onChange={handleRadioChange}
                     value={formData.contactMethod}
                     className="flex flex-col space-y-2"
                   >
                     <Radio value="email" className="text-sm font-medium text-zinc-700">Email</Radio>
                     <Radio value="phone" className="text-sm font-medium text-zinc-700">Phone</Radio>
-                  </Radio.Group>
-                </div>
-
-                <div className="p-4 bg-zinc-50 rounded-xl border border-zinc-200/60 flex flex-col space-y-2">
-                  <span className="text-xs font-bold uppercase tracking-wider text-zinc-400">
-                    Are you a member of WTBC? (Optional)
-                  </span>
-                  <Radio.Group
-                    onChange={(e) => handleRadioChange(e, "member")}
-                    value={formData.member}
-                    className="flex flex-col space-y-2"
-                  >
-                    <Radio value="yes" className="text-sm font-medium text-zinc-700">Yes, I am a member</Radio>
-                    <Radio value="no" className="text-sm font-medium text-zinc-700">No, I am a visitor</Radio>
                   </Radio.Group>
                 </div>
               </div>
