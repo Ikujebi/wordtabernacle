@@ -225,7 +225,7 @@ const Page: FC = () => {
                     name="phone"
                     value={formData.phone}
                     onChange={handleChange}
-                    placeholder="+1 (555) 000-0000"
+                    placeholder="+(234) 000 000-0000"
                     className="w-full h-12 px-4 border border-zinc-200 rounded-xl bg-zinc-50 text-sm font-medium text-zinc-800 placeholder-zinc-400 focus:bg-white focus:border-rose-500 focus:ring-1 focus:ring-rose-500 outline-none transition-all"
                   />
                 </div>
