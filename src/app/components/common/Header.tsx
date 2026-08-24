@@ -56,6 +56,7 @@ const Header: FC = () => {
       ],
     },
     { name: "Contact", link: "/contact" },
+    { name: "Blog", link: "/blog" },
     {
       name: "Ministries",
       link: "",
