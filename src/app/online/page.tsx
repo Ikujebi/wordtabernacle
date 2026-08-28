@@ -1,11 +1,10 @@
 "use client";
 
 import { FC, useEffect, useState } from "react";
-import Header from "../components/common/Header";
-import online from "../img/online.webp";
-import useSetField from "../../custom-hooks/useSetField";
 import NextImage from "next/image";
 import Link from "next/link";
+import online from "../img/online.webp";
+import useSetField from "../../custom-hooks/useSetField";
 
 interface PageState {
   programmeId: number;
@@ -15,8 +14,11 @@ interface PageState {
 const Page: FC = () => {
   const [state, setState] = useState<PageState>({ programmeId: 1 });
 
+  // Assets
   const youtubeImage = "https://res.cloudinary.com/dalylashp/image/upload/v1726739640/word_youtube_xqdcku.png";
   const mixlr = "https://res.cloudinary.com/dalylashp/image/upload/v1726743756/wordmix_ssi1z9.webp";
+  // Replace this URL with your preferred Facebook cover/logo image URL
+  const facebookImage = "https://images.unsplash.com/photo-1563986768609-322da13575f3?q=80&w=1000&auto=format&fit=crop"; 
 
   const data = [
     {
@@ -24,6 +26,12 @@ const Page: FC = () => {
       title: "WATCH ON YOUTUBE",
       subtitle: "Live Video Streams & Archive",
       link: "online/youtube",
+    },
+    {
+      img: facebookImage,
+      title: "WATCH ON FACEBOOK",
+      subtitle: "Live Broadcast & Community Chat",
+      link: "online/facebook",
     },
     {
       img: mixlr,
@@ -46,6 +54,8 @@ const Page: FC = () => {
       case 1:
         return "WATCH ON YOUTUBE";
       case 2:
+        return "WATCH ON FACEBOOK";
+      case 3:
         return "LISTEN ON MIXLR";
       default:
         return "LISTEN ON WORDLISTEN";
@@ -63,9 +73,7 @@ const Page: FC = () => {
     <div className="min-h-screen bg-zinc-950 text-white flex flex-col relative overflow-x-hidden">
       {/* Decorative Background Accent */}
       <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-red-900/10 rounded-full blur-[150px] pointer-events-none" />
-      
-     
-      
+
       {/* Main Container Section */}
       <main className="flex-1 flex flex-col justify-center items-center px-4 sm:px-6 lg:px-8 pt-32 pb-16 relative z-10 w-full max-w-7xl mx-auto">
         
@@ -82,8 +90,8 @@ const Page: FC = () => {
           </p>
         </div>
 
-        {/* Streaming Grid Interface Array */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 w-full">
+        {/* Streaming Grid Interface Array - Adjusted to grid-cols-2 lg:grid-cols-4 */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 w-full">
           {data.map((item, index) => {
             const currentId = index + 1;
             const isActive = state.programmeId === currentId;
@@ -93,7 +101,7 @@ const Page: FC = () => {
                 <Link
                   href={item.link}
                   onClick={() => setRequest("programmeId", currentId)}
-                  className={`group block bg-zinc-900/40 backdrop-blur-md border rounded-2xl p-4 transition-all duration-300 relative overflow-hidden ${
+                  className={`group block bg-zinc-900/40 backdrop-blur-md border rounded-2xl p-4 transition-all duration-300 relative overflow-hidden h-full ${
                     isActive 
                       ? "border-red-600 shadow-2xl shadow-red-950/20 bg-zinc-900/80" 
                       : "border-zinc-800/80 hover:border-zinc-700/80 hover:bg-zinc-900/60"
@@ -105,7 +113,7 @@ const Page: FC = () => {
                       src={item.img}
                       alt={item.title}
                       fill
-                      sizes="(max-w-768px) 100vw, 350px"
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 300px"
                       className="object-cover transition-transform duration-500 ease-out group-hover:scale-105 filter brightness-[0.9] contrast-[1.05]"
                     />
                     
@@ -119,7 +127,7 @@ const Page: FC = () => {
 
                   {/* Description Meta Card Frame */}
                   <div className="pt-5 pb-2 text-center space-y-1">
-                    <h2 className="font-extrabold text-base sm:text-lg tracking-tight text-zinc-100 group-hover:text-red-500 transition-colors">
+                    <h2 className="font-extrabold text-base tracking-tight text-zinc-100 group-hover:text-red-500 transition-colors">
                       {item.title}
                     </h2>
                     <p className="text-xs text-zinc-500 font-medium tracking-normal">
