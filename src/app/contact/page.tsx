@@ -219,16 +219,16 @@ const Page: FC = () => {
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               <div className="bg-white p-6 rounded-xl border border-zinc-200/40 shadow-sm space-y-2">
-                <h3 className="font-black text-sm text-red-700 uppercase tracking-wide">GenZ Service</h3>
+                <h3 className="font-black text-sm text-red-700 uppercase tracking-wide">1st Service</h3>
                 <p className="text-xs font-semibold text-zinc-500 font-mono">SUNDAYS</p>
-                <p className="text-sm font-medium text-zinc-700">8:00 AM &amp; 9:30 AM</p>
+                <p className="text-sm font-medium text-zinc-700">8:00 AM - 9:30 AM</p>
                 <span className="inline-block text-[10px] font-bold text-zinc-400 uppercase bg-zinc-50 px-2 py-0.5 rounded border border-zinc-100">Main Auditorium</span>
               </div>
 
               <div className="bg-white p-6 rounded-xl border border-zinc-200/40 shadow-sm space-y-2">
                 <h3 className="font-black text-sm text-red-700 uppercase tracking-wide">Worship Service</h3>
                 <p className="text-xs font-semibold text-zinc-500 font-mono">SUNDAYS</p>
-                <p className="text-sm font-medium text-zinc-700">10:00 AM &amp; 12:00 PM</p>
+                <p className="text-sm font-medium text-zinc-700">10:00 AM - 12:00 PM</p>
                 <span className="inline-block text-[10px] font-bold text-zinc-400 uppercase bg-zinc-50 px-2 py-0.5 rounded border border-zinc-100">Main Auditorium</span>
               </div>
 
