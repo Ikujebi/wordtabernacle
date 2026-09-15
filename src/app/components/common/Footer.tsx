@@ -1,12 +1,43 @@
 "use client";
 
-import { Input, Button } from "antd";
+import { useState } from "react";
+import { Input, Button, message } from "antd";
 import Link from "next/link";
 import { MdEmail as EmailIcon } from "react-icons/md";
-import { FaFacebookF, FaInstagram, FaTwitter, FaYoutube, FaTiktok, FaTelegram } from "react-icons/fa";
+import { 
+  FaFacebookF, 
+  FaInstagram, 
+  FaTwitter, 
+  FaYoutube, 
+  FaTiktok, 
+  FaTelegram 
+} from "react-icons/fa";
 
 const Footer = () => {
+  const [email, setEmail] = useState("");
+  const [loading, setLoading] = useState(false);
+
   const currentYear = new Date().getFullYear();
+
+  const handleSubscribe = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!email || !email.includes("@")) {
+      message.error("Please enter a valid email address.");
+      return;
+    }
+
+    setLoading(true);
+    try {
+      // Add your subscription API logic here
+      // const res = await fetch("/api/subscribe", { method: "POST", body: JSON.stringify({ email }) });
+      message.success("Thank you for subscribing!");
+      setEmail("");
+    } catch {
+      message.error("Something went wrong. Please try again.");
+    } finally {
+      setLoading(false);
+    }
+  };
 
   const socialLinks = [
     { id: 1, href: "https://x.com/wordtabernaclen", icon: FaTwitter },
@@ -24,7 +55,7 @@ const Footer = () => {
         {/* Top/Main Grid Partition */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 pb-16 items-start">
           
-          {/* Brand Identity / Legal Disclaimers */}
+          {/* Brand Identity */}
           <div className="lg:col-span-5 space-y-4">
             <h2 className="text-xl font-black tracking-widest text-transparent bg-clip-text bg-gradient-to-r from-white via-zinc-200 to-zinc-400 uppercase">
               WORD TABERNACLE
@@ -34,7 +65,7 @@ const Footer = () => {
             </p>
           </div>
 
-          {/* Interactive Form System Layout */}
+          {/* Subscription Form */}
           <div className="lg:col-span-7 space-y-4 w-full">
             <span className="text-red-500 font-mono text-xs uppercase tracking-[0.25em] block">
               Stay Connected
@@ -43,20 +74,25 @@ const Footer = () => {
               Subscribe for updates
             </h3>
             
-            <div className="flex flex-col sm:flex-row gap-3 max-w-xl w-full pt-2">
+            <form onSubmit={handleSubscribe} className="flex flex-col sm:flex-row gap-3 max-w-xl w-full pt-2">
               <Input
                 size="large"
+                type="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
                 placeholder="Enter your email address here"
                 className="bg-zinc-900/60 border-zinc-800 text-white placeholder-zinc-500 hover:border-zinc-700 focus:border-red-600 h-12 rounded-lg transition-all"
               />
               <Button 
                 type="primary" 
                 size="large" 
-                className="bg-red-600 hover:bg-red-700 border-none text-xs font-bold tracking-widest text-white h-12 px-8 rounded-lg shadow-lg shadow-red-900/20"
+                htmlType="submit"
+                loading={loading}
+                className="!bg-red-600 hover:!bg-red-700 border-none text-xs font-bold tracking-widest text-white h-12 px-8 rounded-lg shadow-lg shadow-red-900/20 flex-shrink-0"
               >
                 SUBSCRIBE
               </Button>
-            </div>
+            </form>
 
             <p className="text-[11px] font-light text-zinc-500 leading-normal max-w-xl">
               By subscribing to the Word Tabernacle Newsletter, you consent to receive periodic communications and automated update content regarding schedules, ministries, and events.
@@ -65,18 +101,18 @@ const Footer = () => {
 
         </div>
 
-        {/* Separator Accent Divider */}
+        {/* Separator */}
         <div className="w-full h-px bg-zinc-900" />
 
-        {/* Bottom Utility Deck Row Layout */}
+        {/* Bottom Utility Row */}
         <div className="pt-8 flex flex-col md:flex-row items-center justify-between gap-6">
           
-          {/* Copyright Tracker */}
+          {/* Copyright */}
           <div className="text-zinc-500 font-mono text-[11px] tracking-wider text-center md:text-left order-2 md:order-1">
             &copy; {currentYear} WORD TABERNACLE (v1.00). ALL RIGHTS RESERVED.
           </div>
 
-          {/* Luxury-Grade Interactive Social Ribbon */}
+          {/* Social Links */}
           <div className="flex items-center gap-3 order-1 md:order-2">
             {socialLinks.map(({ id, href, icon: Icon }) => (
               <Link 

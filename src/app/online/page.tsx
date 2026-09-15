@@ -5,7 +5,7 @@ import NextImage from "next/image";
 import Link from "next/link";
 import online from "../img/online.webp";
 import useSetField from "../../custom-hooks/useSetField";
-
+import facebookImage from "../../assets/img/f.png"
 interface PageState {
   programmeId: number;
   programme?: string;
@@ -18,7 +18,6 @@ const Page: FC = () => {
   const youtubeImage = "https://res.cloudinary.com/dalylashp/image/upload/v1726739640/word_youtube_xqdcku.png";
   const mixlr = "https://res.cloudinary.com/dalylashp/image/upload/v1726743756/wordmix_ssi1z9.webp";
   // Replace this URL with your preferred Facebook cover/logo image URL
-  const facebookImage = "https://images.unsplash.com/photo-1563986768609-322da13575f3?q=80&w=1000&auto=format&fit=crop"; 
 
   const data = [
     {

@@ -3,7 +3,11 @@ export const API_URL =
   "https://api.wordtabernacle.org.ng/api";
 
 
-
+export interface SubscribeToBlogPayload {
+  email: string;
+  firstName?: string;
+  lastName?: string;
+}
 export interface PublicPrayerRequestPayload {
   firstName?: string;
   lastName?: string;
@@ -35,7 +39,21 @@ export async function submitPrayerRequest(payload: PublicPrayerRequestPayload) {
 }
 
 
+export async function subscribeToBlog(payload: SubscribeToBlogPayload) {
+  const response = await fetch(`${API_URL}/subscribers`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(payload),
+  });
 
+  const data = await response.json();
+
+  if (!response.ok) {
+    throw new Error(data.message || "Failed to subscribe");
+  }
+
+  return data;
+}
 
 
 // CONTACT MESSAGE
