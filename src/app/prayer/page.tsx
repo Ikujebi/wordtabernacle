@@ -7,7 +7,7 @@ import { Radio, RadioChangeEvent } from "antd";
 import { HiSparkles, HiPaperAirplane } from "react-icons/hi2";
 import givbg from "../img/prayer2.webp";
 import churchlogo from "../img/wordlogo.png";
-import { submitPrayerRequest, PublicPrayerRequestPayload } from "@/lib/api";
+import { submitPrayerRequest, type PublicPrayerRequestPayload } from "@/lib/prayer-requests";
 
 type CategoryType = NonNullable<PublicPrayerRequestPayload["category"]>;
 

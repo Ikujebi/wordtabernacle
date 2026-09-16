@@ -1,92 +1,43 @@
 export const API_URL =
-  process.env.NEXT_PUBLIC_API_URL ??
-  "https://api.wordtabernacle.org.ng/api";
+  process.env.NEXT_PUBLIC_API_URL ?? "https://api.wordtabernacle.org.ng/api";
 
-
-export interface SubscribeToBlogPayload {
-  email: string;
-  firstName?: string;
-  lastName?: string;
-}
-export interface PublicPrayerRequestPayload {
-  firstName?: string;
-  lastName?: string;
-  email?: string;
-  phoneNumber?: string;
-  subject: string;
-  message: string;
-  category?: "HEALING" | "FINANCIAL_PROVISION" | "FAMILY_MARRIAGE" | "SALVATION" |
-             "DELIVERANCE" | "JOB" | "SCHOOL" | "THANKSGIVING" | "OTHER";
-  isConfidential?: boolean;
-  allowFollowUp?: boolean;
-  preferredContactMethod?: string;
+export function unwrap<T>(json: any): T {
+  if (json && typeof json === "object" && "success" in json && "data" in json) {
+    return json.data as T;
+  }
+  return json as T;
 }
 
-export async function submitPrayerRequest(payload: PublicPrayerRequestPayload) {
-  const response = await fetch(`${API_URL}/prayer-requests`, {
+export async function apiPost<T>(endpoint: string, payload: unknown): Promise<T> {
+  const response = await fetch(`${API_URL}${endpoint}`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(payload),
   });
 
-  const data = await response.json();
+  const data: unknown = await response.json();
 
   if (!response.ok) {
-    throw new Error(data.message || "Failed to submit prayer request");
+    const message =
+      data && typeof data === "object" && "message" in data
+        ? String((data as { message: unknown }).message)
+        : "Request failed";
+    throw new Error(message);
   }
 
-  return data;
+  return unwrap<T>(data);
 }
 
-
-export async function subscribeToBlog(payload: SubscribeToBlogPayload) {
-  const response = await fetch(`${API_URL}/subscribers`, {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify(payload),
-  });
-
-  const data = await response.json();
-
-  if (!response.ok) {
-    throw new Error(data.message || "Failed to subscribe");
+export async function apiGet<T>(endpoint: string, revalidateSeconds = 60): Promise<T | null> {
+  try {
+    const response = await fetch(`${API_URL}${endpoint}`, {
+      next: { revalidate: revalidateSeconds },
+    });
+    if (!response.ok) return null;
+    const data: unknown = await response.json();
+    return unwrap<T>(data);
+  } catch (error) {
+    console.error(`Failed to fetch ${endpoint}:`, error);
+    return null;
   }
-
-  return data;
-}
-
-
-// CONTACT MESSAGE
-export async function submitContactMessage(
-  payload: unknown
-) {
-
-  const response = await fetch(
-    `${API_URL}/contact`,
-    {
-      method:"POST",
-
-      headers:{
-        "Content-Type":"application/json",
-      },
-
-      body:JSON.stringify(payload),
-    }
-  );
-
-
-  const data = await response.json();
-
-
-  if(!response.ok){
-
-    throw new Error(
-      data.message ||
-      "Failed to submit contact message"
-    );
-
-  }
-
-
-  return data;
 }

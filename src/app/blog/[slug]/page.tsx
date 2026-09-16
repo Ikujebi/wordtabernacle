@@ -36,7 +36,17 @@ async function getPost(slug: string): Promise<BlogPostDetail | null> {
       next: { revalidate: 60 },
     });
     if (!res.ok) return null;
-    return res.json();
+
+    const json = await res.json();
+
+    // Unwrap the global { success, message, data, timestamp } envelope.
+    // findBySlug returns a single object, so there's no pagination layer
+    // here — unlike the list endpoint, only one level deep.
+    const post = json?.data ?? json;
+
+    // Guard against a malformed/empty response still passing truthy and
+    // silently rendering a blank article instead of a proper 404.
+    return post?.id ? post : null;
   } catch (error) {
     console.error("Failed to fetch blog post:", error);
     return null;

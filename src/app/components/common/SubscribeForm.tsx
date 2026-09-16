@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { Mail, CheckCircle2, Loader2, Sparkles } from "lucide-react";
-import { subscribeToBlog } from "@/lib/api";
+import { subscribeToBlog } from "@/lib/subscribers";
 
 export function SubscribeForm() {
   const [email, setEmail] = useState("");

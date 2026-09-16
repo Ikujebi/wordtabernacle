@@ -34,10 +34,17 @@ async function getPosts(): Promise<BlogPostSummary[]> {
     const res = await fetch(`${BASE_ENDPOINT}/blog-posts?isPublished=true&limit=50`, {
       next: { revalidate: 60 },
     });
-    
+
     if (!res.ok) return [];
+
     const json = await res.json();
-    return json.data ?? [];
+
+    // The API double-wraps list responses: a global { success, message, data,
+    // timestamp } envelope around findAll's own { data, meta } pagination
+    // envelope. Unwrap both, and verify we ended up with an array — a bare
+    // ?? [] passes objects straight through and blows up on .slice().
+    const unwrapped = json?.data?.data ?? json?.data ?? json;
+    return Array.isArray(unwrapped) ? unwrapped : [];
   } catch (error) {
     console.error("Failed to fetch blog posts:", error);
     return [];

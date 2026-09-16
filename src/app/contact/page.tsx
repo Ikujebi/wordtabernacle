@@ -4,7 +4,7 @@ import { FC, useState, ChangeEvent, FormEvent } from "react";
 import { FaMapMarkerAlt, FaPhoneAlt } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 import { useRouter } from "next/navigation";
-import { submitContactMessage } from "@/lib/api";
+import { submitContactMessage } from "@/lib/contact";
 import { message as antMessage } from "antd";
 import givbg from "../img/giveimg.jpg";
 import styles from "../CustomMessage.module.css";
@@ -14,6 +14,7 @@ interface FormDataState {
   lastName: string;
   email: string;
   phone: string;
+  subject: string;
   message: string;
 }
 
@@ -23,9 +24,10 @@ const Page: FC = () => {
     lastName: "",
     email: "",
     phone: "",
+    subject: "",
     message: "",
   });
-  
+
   const router = useRouter();
 
   const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -33,120 +35,64 @@ const Page: FC = () => {
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
- const handleSubmit = async (
-  e: FormEvent<HTMLFormElement>
-) => {
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
 
-  e.preventDefault();
+    if (!formData.firstName || !formData.lastName || !formData.email || !formData.subject || !formData.message) {
+      antMessage.warning("Please fill in all required fields.");
+      return;
+    }
 
+    const loadingMessageKey = "contactFormLoading";
 
-  if (
-    !formData.firstName ||
-    !formData.lastName ||
-    !formData.email ||
-    !formData.message
-  ) {
-
-    antMessage.warning(
-      "Please fill in all required fields."
-    );
-
-    return;
-  }
-
-
-  const loadingMessageKey =
-    "contactFormLoading";
-
-
-  try {
-
-    antMessage.loading({
-      content:
-        "Submitting your message...",
-      key:
-        loadingMessageKey,
-      className:
-        styles.loader,
-    });
-
-
-    const response =
-      await submitContactMessage({
-        firstName:
-          formData.firstName,
-
-        lastName:
-          formData.lastName,
-
-        email:
-          formData.email,
-
-        phone:
-          formData.phone,
-
-        message:
-          formData.message,
+    try {
+      antMessage.loading({
+        content: "Submitting your message...",
+        key: loadingMessageKey,
+        className: styles.loader,
       });
 
+      // Backend requires E.164 phone format (+2348012345678, no spaces) and
+      // has no separate first/last name fields — only fullName.
+      const cleanedPhone = formData.phone.replace(/\s+/g, "");
 
+      const response = await submitContactMessage({
+        fullName: `${formData.firstName.trim()} ${formData.lastName.trim()}`.trim(),
+        email: formData.email,
+        phoneNumber: cleanedPhone || undefined,
+        subject: formData.subject,
+        message: formData.message,
+      });
 
-    antMessage.success({
+      antMessage.success({
+        content: response.message || "Message sent successfully!",
+        key: loadingMessageKey,
+        duration: 3,
+      });
 
-      content:
-        response.message ||
-        "Message sent successfully!",
+      setFormData({
+        firstName: "",
+        lastName: "",
+        email: "",
+        phone: "",
+        subject: "",
+        message: "",
+      });
 
-      key:
-        loadingMessageKey,
-
-      duration:
-        3,
-    });
-
-
-
-    setFormData({
-
-      firstName:"",
-      lastName:"",
-      email:"",
-      phone:"",
-      message:"",
-    });
-
-
-
-    router.push("/");
-
-
-  } catch(error:any){
-
-
-    console.error(
-      "Contact submission error:",
-      error
-    );
-
-
-    antMessage.error({
-
-      content:
-        error.message ||
-        "Unable to send message. Try again.",
-
-      key:
-        loadingMessageKey,
-    });
-
-  }
-
-};
+      router.push("/");
+    } catch (error: any) {
+      console.error("Contact submission error:", error);
+      antMessage.error({
+        content: error.message || "Unable to send message. Try again.",
+        key: loadingMessageKey,
+      });
+    }
+  };
 
   return (
     <div className="w-full bg-zinc-50 min-h-screen overflow-hidden antialiased font-sans">
       <main className="pt-20 lg:pt-24">
-        
+
         {/* Editorial Sub-Page Header Hero */}
         <div
           className="relative h-48 sm:h-64 flex justify-center items-center bg-cover bg-center overflow-hidden"
@@ -163,12 +109,10 @@ const Page: FC = () => {
 
         {/* Info Blocks Grid & Service Times Section */}
         <div className="bg-zinc-100/80 pb-16 relative">
-          
-          {/* Asymmetric Overlapping Action Hub Grid */}
+
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative -translate-y-8 z-20">
             <div className="bg-white rounded-2xl border border-zinc-200/50 shadow-xl shadow-zinc-200/40 grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-zinc-100 overflow-hidden">
-              
-              {/* Pillar Block: Voice Call channels */}
+
               <div className="p-6 sm:p-8 flex flex-col items-center text-center space-y-3 group">
                 <div className="w-12 h-12 rounded-xl bg-red-50 flex items-center justify-center text-red-600 transition-colors group-hover:bg-red-600 group-hover:text-white duration-300">
                   <FaPhoneAlt className="text-lg" />
@@ -180,7 +124,6 @@ const Page: FC = () => {
                 </div>
               </div>
 
-              {/* Pillar Block: Physical Location Map Coordinates */}
               <div className="p-6 sm:p-8 flex flex-col items-center text-center space-y-3 group">
                 <div className="w-12 h-12 rounded-xl bg-red-50 flex items-center justify-center text-red-600 transition-colors group-hover:bg-red-600 group-hover:text-white duration-300">
                   <FaMapMarkerAlt className="text-lg" />
@@ -193,7 +136,6 @@ const Page: FC = () => {
                 </div>
               </div>
 
-              {/* Pillar Block: Digital Mailing Coordinates */}
               <div className="p-6 sm:p-8 flex flex-col items-center text-center space-y-3 group">
                 <div className="w-12 h-12 rounded-xl bg-red-50 flex items-center justify-center text-red-600 transition-colors group-hover:bg-red-600 group-hover:text-white duration-300">
                   <MdEmail className="text-xl" />
@@ -209,7 +151,6 @@ const Page: FC = () => {
             </div>
           </div>
 
-          {/* Liturgical Gatherings / Assembly Schedule Grid Layout */}
           <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-8 mt-4">
             <div className="space-y-2">
               <span className="text-[10px] font-black tracking-[0.3em] text-red-600 uppercase">Weekly Assemblies</span>
@@ -253,11 +194,12 @@ const Page: FC = () => {
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 <div className="space-y-1.5">
-                  <label htmlFor="firstName" className="text-xs font-bold uppercase tracking-wider text-zinc-500">First Name</label>
+                  <label htmlFor="firstName" className="text-xs font-bold uppercase tracking-wider text-zinc-500">First Name *</label>
                   <input
                     type="text"
                     id="firstName"
                     name="firstName"
+                    required
                     value={formData.firstName}
                     onChange={handleChange}
                     placeholder="John"
@@ -265,11 +207,12 @@ const Page: FC = () => {
                   />
                 </div>
                 <div className="space-y-1.5">
-                  <label htmlFor="lastName" className="text-xs font-bold uppercase tracking-wider text-zinc-500">Last Name</label>
+                  <label htmlFor="lastName" className="text-xs font-bold uppercase tracking-wider text-zinc-500">Last Name *</label>
                   <input
                     type="text"
                     id="lastName"
                     name="lastName"
+                    required
                     value={formData.lastName}
                     onChange={handleChange}
                     placeholder="Doe"
@@ -285,6 +228,7 @@ const Page: FC = () => {
                     type="email"
                     id="email"
                     name="email"
+                    required
                     value={formData.email}
                     onChange={handleChange}
                     placeholder="john@example.com"
@@ -299,10 +243,26 @@ const Page: FC = () => {
                     name="phone"
                     value={formData.phone}
                     onChange={handleChange}
-                    placeholder="+234 ..."
+                    placeholder="+2348012345678"
                     className="w-full bg-zinc-50/50 border border-zinc-200 rounded-xl px-4 py-3 text-sm text-zinc-800 placeholder-zinc-400 font-medium outline-none transition-all focus:bg-white focus:border-red-600 focus:ring-4 focus:ring-red-600/5"
                   />
                 </div>
+              </div>
+
+              <div className="space-y-1.5">
+                <label htmlFor="subject" className="text-xs font-bold uppercase tracking-wider text-zinc-500">Subject *</label>
+                <input
+                  type="text"
+                  id="subject"
+                  name="subject"
+                  required
+                  minLength={3}
+                  maxLength={150}
+                  value={formData.subject}
+                  onChange={handleChange}
+                  placeholder="What is this regarding?"
+                  className="w-full bg-zinc-50/50 border border-zinc-200 rounded-xl px-4 py-3 text-sm text-zinc-800 placeholder-zinc-400 font-medium outline-none transition-all focus:bg-white focus:border-red-600 focus:ring-4 focus:ring-red-600/5"
+                />
               </div>
 
               <div className="space-y-1.5">
@@ -310,6 +270,9 @@ const Page: FC = () => {
                 <textarea
                   id="message"
                   name="message"
+                  required
+                  minLength={10}
+                  maxLength={2000}
                   value={formData.message}
                   onChange={handleChange}
                   placeholder="Type your message details safely here..."
@@ -330,10 +293,10 @@ const Page: FC = () => {
           </div>
         </section>
 
-        {/* High Definition Geospatial Navigation Embed Canvas Frame */}
-        <section 
-         id="map"
-        className="w-full h-96 sm:h-[28rem] relative border-t border-zinc-200/60 bg-zinc-100">
+        <section
+          id="map"
+          className="w-full h-96 sm:h-[28rem] relative border-t border-zinc-200/60 bg-zinc-100"
+        >
           <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3963.711954552398!2d3.474328075840481!3d6.557999393435149!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x103bf2726b345a27%3A0xeb8c1cd955070248!2sWord%20Tabernacle%20Bible%20Church!5e0!3m2!1sen!2sng!4v1718294118256!5m2!1sen!2sng"
             className="w-full h-full filter grayscale opacity-90 contrast-125 transition-all duration-500 hover:grayscale-0 hover:opacity-100"
