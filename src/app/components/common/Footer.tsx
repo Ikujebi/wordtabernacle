@@ -82,7 +82,7 @@ const Footer = () => {
     onChange={(e) => setEmail(e.target.value)}
     placeholder="Enter your email address here"
     disabled={loading}
-    className="flex-1 h-12 rounded-lg bg-zinc-900/60 border border-zinc-800 px-4 text-sm text-white placeholder:text-zinc-500 outline-none transition-all hover:border-zinc-700 focus:border-red-600 focus:bg-zinc-900/80 disabled:opacity-60"
+    className="flex-1 h-12 rounded-lg bg-zinc-900/60 border border-zinc-800 px-4 text-sm text-zinc-300 placeholder:text-zinc-500 outline-none transition-all hover:border-zinc-700 focus:border-red-600 focus:bg-zinc-900/80 disabled:opacity-60"
   />
   <button
     type="submit"
