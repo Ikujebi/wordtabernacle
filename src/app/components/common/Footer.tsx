@@ -20,8 +20,9 @@ const Footer = () => {
 
   const currentYear = new Date().getFullYear();
 
-  const handleSubscribe = async (e: React.FormEvent) => {
-    e.preventDefault();
+  const handleSubscribe = async () => {
+    console.log("Submit clicked with email:", email);
+
     if (!email || !email.includes("@")) {
       message.error("Please enter a valid email address.");
       return;
@@ -29,13 +30,23 @@ const Footer = () => {
 
     setLoading(true);
     try {
+      console.log("Calling subscribeToBlog API...");
       const res = await subscribeToBlog({ email: email.trim() });
+      console.log("API Success Response:", res);
       message.success(res?.message || "Thank you for subscribing!");
       setEmail("");
     } catch (err) {
+      console.error("API Error:", err);
       message.error(err instanceof Error ? err.message : "Something went wrong. Please try again.");
     } finally {
       setLoading(false);
+    }
+  };
+
+  const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (e.key === "Enter") {
+      e.preventDefault();
+      handleSubscribe();
     }
   };
 
@@ -74,18 +85,19 @@ const Footer = () => {
               Subscribe for updates
             </h3>
             
-            <form onSubmit={handleSubscribe} className="flex flex-col sm:flex-row gap-3 max-w-xl w-full pt-2">
+            <div className="flex flex-col sm:flex-row gap-3 max-w-xl w-full pt-2">
               <input
                 type="email"
-                required
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
+                onKeyDown={handleKeyDown}
                 placeholder="Enter your email address here"
                 disabled={loading}
                 className="flex-1 h-12 rounded-lg bg-zinc-900/60 border border-zinc-800 px-4 text-sm text-zinc-300 placeholder:text-zinc-500 outline-none transition-all hover:border-zinc-700 focus:border-red-600 focus:bg-zinc-900/80 disabled:opacity-60"
               />
               <button
-                type="submit"
+                type="button"
+                onClick={handleSubscribe}
                 disabled={loading}
                 className="inline-flex items-center justify-center gap-2 h-12 px-8 rounded-lg bg-red-600 hover:bg-red-700 text-xs font-bold tracking-widest text-white shadow-lg shadow-red-900/20 transition-all disabled:opacity-60 shrink-0 cursor-pointer"
               >
@@ -98,7 +110,7 @@ const Footer = () => {
                   "SUBSCRIBE"
                 )}
               </button>
-            </form>
+            </div>
 
             <p className="text-[11px] font-light text-zinc-500 leading-normal max-w-xl">
               By subscribing to the Word Tabernacle Newsletter, you consent to receive periodic communications and automated update content regarding schedules, ministries, and events.
