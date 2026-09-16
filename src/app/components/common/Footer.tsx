@@ -75,24 +75,30 @@ const Footer = () => {
             </h3>
             
             <form onSubmit={handleSubscribe} className="flex flex-col sm:flex-row gap-3 max-w-xl w-full pt-2">
-              <Input
-                size="large"
-                type="email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                placeholder="Enter your email address here"
-                className="bg-zinc-900/60 border-zinc-800 text-white placeholder-zinc-500 hover:border-zinc-700 focus:border-red-600 h-12 rounded-lg transition-all"
-              />
-              <Button 
-                type="primary" 
-                size="large" 
-                htmlType="submit"
-                loading={loading}
-                className="!bg-red-600 hover:!bg-red-700 border-none text-xs font-bold tracking-widest text-white h-12 px-8 rounded-lg shadow-lg shadow-red-900/20 flex-shrink-0"
-              >
-                SUBSCRIBE
-              </Button>
-            </form>
+  <input
+    type="email"
+    required
+    value={email}
+    onChange={(e) => setEmail(e.target.value)}
+    placeholder="Enter your email address here"
+    disabled={loading}
+    className="flex-1 h-12 rounded-lg bg-zinc-900/60 border border-zinc-800 px-4 text-sm text-white placeholder:text-zinc-500 outline-none transition-all hover:border-zinc-700 focus:border-red-600 focus:bg-zinc-900/80 disabled:opacity-60"
+  />
+  <button
+    type="submit"
+    disabled={loading}
+    className="inline-flex items-center justify-center gap-2 h-12 px-8 rounded-lg bg-red-600 hover:bg-red-700 text-xs font-bold tracking-widest text-white shadow-lg shadow-red-900/20 transition-all disabled:opacity-60 shrink-0"
+  >
+    {loading ? (
+      <>
+        <span className="h-3.5 w-3.5 animate-spin rounded-full border-2 border-white/40 border-t-white" />
+        SUBSCRIBING...
+      </>
+    ) : (
+      "SUBSCRIBE"
+    )}
+  </button>
+</form>
 
             <p className="text-[11px] font-light text-zinc-500 leading-normal max-w-xl">
               By subscribing to the Word Tabernacle Newsletter, you consent to receive periodic communications and automated update content regarding schedules, ministries, and events.
