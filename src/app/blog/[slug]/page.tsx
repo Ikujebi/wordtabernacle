@@ -3,15 +3,15 @@ import Link from "next/link";
 import Image from "next/image";
 import type { Metadata } from "next";
 import { API_URL } from "@/lib/api";
-import { 
-  ArrowLeft, 
-  Calendar, 
-  User, 
-  Clock, 
-  Share2, 
+import {
+  ArrowLeft,
+  Calendar,
+  User,
+  Clock,
   BookOpen,
-  Sparkles
+  Sparkles,
 } from "lucide-react";
+import ShareActions from "./ShareActions";
 
 interface BlogPostDetail {
   id: string;
@@ -38,14 +38,8 @@ async function getPost(slug: string): Promise<BlogPostDetail | null> {
     if (!res.ok) return null;
 
     const json = await res.json();
-
-    // Unwrap the global { success, message, data, timestamp } envelope.
-    // findBySlug returns a single object, so there's no pagination layer
-    // here — unlike the list endpoint, only one level deep.
     const post = json?.data ?? json;
 
-    // Guard against a malformed/empty response still passing truthy and
-    // silently rendering a blank article instead of a proper 404.
     return post?.id ? post : null;
   } catch (error) {
     console.error("Failed to fetch blog post:", error);
@@ -77,7 +71,9 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     return { title: "Post Not Found | Word Tabernacle Bible Church" };
   }
 
-  const description = post.excerpt || `${post.title} - Articles and reflections from Word Tabernacle Bible Church.`;
+  const description =
+    post.excerpt ||
+    `${post.title} - Articles and reflections from Word Tabernacle Bible Church.`;
 
   return {
     title: `${post.title} | Word Tabernacle Bible Church`,
@@ -107,22 +103,26 @@ export default async function BlogPostPage({ params }: PageProps) {
 
   const readTime = getReadTime(post.content || "");
   const formattedDate = formatDate(post.publishedAt);
+  const isHtmlContent = /<[a-z][\s\S]*>/i.test(post.content || "");
 
   return (
-    <div className="min-h-screen bg-slate-50/40 pt-28 sm:pt-36 pb-24">
-      <article className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+    <div className="min-h-screen bg-slate-50/50 pt-28 sm:pt-36 pb-24 relative overflow-hidden">
+      {/* Soft Ambient Radial Glow */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-5xl h-96 bg-radial from-[#5F021F]/5 via-transparent to-transparent pointer-events-none -z-10" />
+
+      <article className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
         
         {/* Navigation Top Bar */}
         <div className="flex items-center justify-between">
           <Link
             href="/blog"
-            className="inline-flex items-center gap-2 rounded-xl bg-white px-3.5 py-2 text-xs font-bold text-slate-700 border border-slate-200/80 shadow-xs hover:bg-slate-50 hover:text-[#5F021F] transition-all"
+            className="inline-flex items-center gap-2 rounded-xl bg-white px-3.5 py-2 text-xs font-bold text-slate-700 border border-slate-200/80 shadow-xs hover:bg-slate-50 hover:text-[#5F021F] transition-all active:scale-95"
           >
             <ArrowLeft className="h-4 w-4" />
             <span>Back to Articles</span>
           </Link>
 
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#5F021F]/10 text-[#5F021F] text-xs font-bold">
+          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#5F021F]/10 border border-[#5F021F]/15 text-[#5F021F] text-xs font-extrabold">
             <Sparkles className="h-3.5 w-3.5" />
             <span>Reflection</span>
           </div>
@@ -135,9 +135,9 @@ export default async function BlogPostPage({ params }: PageProps) {
           </h1>
 
           {/* Post Metadata Pills */}
-          <div className="flex flex-wrap items-center justify-center sm:justify-start gap-4 text-xs font-semibold text-slate-600 border-y border-slate-200/60 py-4">
-            <div className="flex items-center gap-2">
-              <div className="h-8 w-8 rounded-full bg-[#5F021F]/10 text-[#5F021F] flex items-center justify-center font-bold">
+          <div className="flex flex-wrap items-center justify-center sm:justify-start gap-4 text-xs font-semibold text-slate-600 border-y border-slate-200/80 py-4">
+            <div className="flex items-center gap-2.5">
+              <div className="h-8 w-8 rounded-full bg-[#5F021F]/10 text-[#5F021F] flex items-center justify-center font-bold ring-2 ring-[#5F021F]/10">
                 <User className="h-4 w-4" />
               </div>
               <span className="text-slate-900 font-bold">
@@ -149,7 +149,7 @@ export default async function BlogPostPage({ params }: PageProps) {
               <>
                 <span className="text-slate-300 hidden sm:inline">•</span>
                 <span className="inline-flex items-center gap-1.5 text-slate-500">
-                  <Calendar className="h-3.5 w-3.5 text-slate-400" />
+                  <Calendar className="h-3.5 w-3.5 text-[#5F021F]" />
                   {formattedDate}
                 </span>
               </>
@@ -171,7 +171,7 @@ export default async function BlogPostPage({ params }: PageProps) {
               alt={post.title}
               fill
               priority
-              sizes="(max-width: 1024px) 100vw, 896px"
+              sizes="(max-width: 1024px) 100vw, 768px"
               className="object-cover"
             />
           </div>
@@ -190,21 +190,25 @@ export default async function BlogPostPage({ params }: PageProps) {
 
         {/* Article Body Content */}
         <main className="bg-white rounded-3xl border border-slate-200/80 p-6 sm:p-10 lg:p-12 shadow-xs">
-          <div className="prose prose-slate max-w-none text-slate-800 text-base sm:text-lg leading-relaxed whitespace-pre-wrap font-normal">
-            {post.content}
-          </div>
+          {isHtmlContent ? (
+            <div
+              className="prose prose-slate max-w-none text-slate-800 text-base sm:text-lg leading-relaxed prose-headings:font-bold prose-headings:text-slate-900 prose-[#5F021F] prose-a:text-[#5F021F] prose-a:font-semibold hover:prose-a:underline"
+              dangerouslySetInnerHTML={{ __html: post.content }}
+            />
+          ) : (
+            <div className="prose prose-slate max-w-none text-slate-800 text-base sm:text-lg leading-relaxed whitespace-pre-wrap font-normal">
+              {post.content}
+            </div>
+          )}
         </main>
 
         {/* Article Footer & Return CTA */}
         <footer className="pt-8 border-t border-slate-200/80 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <div className="flex items-center gap-2 text-slate-500 text-xs font-semibold">
-            <Share2 className="h-4 w-4 text-[#5F021F]" />
-            <span>Shared from Word Tabernacle Bible Church</span>
-          </div>
+          <ShareActions title={post.title} />
 
           <Link
             href="/blog"
-            className="inline-flex items-center gap-2 rounded-xl bg-[#5F021F] px-5 py-2.5 text-xs font-bold text-white shadow-xs hover:bg-[#430116] transition-all"
+            className="inline-flex items-center gap-2 rounded-xl bg-[#5F021F] px-5 py-2.5 text-xs font-extrabold text-white shadow-xs hover:bg-[#430116] transition-all active:scale-95"
           >
             <span>Read More Articles</span>
             <ArrowLeft className="h-4 w-4 rotate-180" />
