@@ -107,11 +107,11 @@ export default function Home() {
         </section>
 
         {/* Dynamic Context Modules */}
-        <section className="w-full bg-zinc-50 py-4">
+        <section className="w-full bg-zinc-50 ">
           <Community />
         </section>
 
-        <section className="w-full py-4">
+        <section className="w-full ">
           <BlogMain />
         </section>
 
