@@ -100,14 +100,26 @@ export async function GET() {
     }
 
     const data = await res.json();
+console.log("[youtube/live] Search diagnostics:", {
+  channelId: CHANNEL_ID,
+  totalResults: data?.pageInfo?.totalResults,
+  results: data?.items?.map((item: any) => ({
+    videoId: item.id?.videoId,
+    title: item.snippet?.title,
+    channelTitle: item.snippet?.channelTitle,
+    liveBroadcastContent: item.snippet?.liveBroadcastContent,
+  })),
+});
+  const liveVideo = data?.items?.find(
+  (item: any) =>
+    item.snippet?.liveBroadcastContent === "live"
+);
 
-    const liveVideo = data?.items?.[0];
-
-    const result: LiveResponse = {
-      isLive: Boolean(liveVideo),
-      videoId: liveVideo?.id?.videoId ?? null,
-      title: liveVideo?.snippet?.title ?? null,
-    };
+const result: LiveResponse = {
+  isLive: Boolean(liveVideo),
+  videoId: liveVideo?.id?.videoId ?? null,
+  title: liveVideo?.snippet?.title ?? null,
+};
 
     cachedResult = { data: result, expiry: Date.now() + CACHE_TTL_MS };
 
