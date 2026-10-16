@@ -3,13 +3,10 @@
 import { useState, useEffect, useRef, FC } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
-import { Button } from "antd";
 import { MdClose, MdEmail, MdMenu, MdOndemandVideo, MdKeyboardArrowDown } from "react-icons/md";
 import { FaFacebookF, FaInstagram, FaTwitter, FaYoutube, FaTiktok, FaTelegram } from "react-icons/fa";
 import wordlogo from "../../img/wordlogo.png";
-import {Gyahegi } from "@/app/fonts";
-
+import { Gyahegi } from "@/app/fonts";
 
 interface NavItem {
   name: string;
@@ -19,10 +16,11 @@ interface NavItem {
 }
 
 const Header: FC = () => {
-  const router = useRouter();
   const [mobileMenuVisible, setMobileMenuVisible] = useState(false);
   const [activeSubNav, setActiveSubNav] = useState<string | null>(null);
   const headerRef = useRef<HTMLDivElement>(null);
+
+  const PORTAL_URL = "https://portal.wordtabernacle.org.ng/";
 
   const toggleSubNav = (subNav: string) => {
     setActiveSubNav(prev => (prev === subNav ? null : subNav));
@@ -84,7 +82,7 @@ const Header: FC = () => {
   return (
     <div ref={headerRef} className="w-full fixed top-0 inset-x-0 z-50 transition-all duration-300">
       
-      {/* Top Utility Ribbon (Fixed Black-on-Black Conflict) */}
+      {/* Top Utility Ribbon */}
       <div className="w-full h-9 bg-red-700 flex items-center justify-between px-4 sm:px-6 lg:px-12 border-b border-red-800 shadow-sm">
         <div className="text-[10px] font-bold tracking-wider text-white/90 uppercase hidden sm:block Gyahegi.className">
           Welcome to Word Tabernacle Bible Church !!
@@ -113,7 +111,7 @@ const Header: FC = () => {
         </div>
       </div>
 
-      {/* Main Navigation Bar Deck (High Contrast Light Canvas) */}
+      {/* Main Navigation Bar Deck */}
       <div className="w-full bg-white border-b border-zinc-200 shadow-md">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
           
@@ -152,7 +150,6 @@ const Header: FC = () => {
                         <MdKeyboardArrowDown className={`text-base transition-transform duration-300 ${isOpen ? "rotate-180 text-red-500" : "text-zinc-400"}`} />
                       </button>
                       
-                      {/* Dropdown Box with crisp contrast outlines */}
                       {isOpen && (
                         <div className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-56 bg-white border border-zinc-200 rounded-xl shadow-xl py-2 z-50">
                           <div className="absolute top-0 inset-x-0 h-[2px] bg-red-600 rounded-t-xl" />
@@ -182,13 +179,13 @@ const Header: FC = () => {
               );
             })}
 
-            <Button
-              type="primary"
-              onClick={() => router.push("/in")}
-              className="bg-red-600 hover:bg-red-700 border-none font-bold text-xs tracking-widest h-9 px-6 rounded-lg shadow-md shadow-red-600/10"
+            {/* Replaced Antd Button + router.push("/in") with external portal anchor */}
+            <Link
+              href={PORTAL_URL}
+              className="inline-flex items-center justify-center bg-red-600 hover:bg-red-700 text-white font-bold text-xs tracking-widest h-9 px-6 rounded-lg shadow-md shadow-red-600/10 transition-colors"
             >
               LOGIN
-            </Button>
+            </Link>
           </nav>
 
           {/* Mobile Hamburger Trigger */}
@@ -203,12 +200,12 @@ const Header: FC = () => {
         </div>
       </div>
 
-      {/* High-Fidelity Mobile Sidebar Panel */}
+      {/* Mobile Sidebar Panel */}
       <div 
         className={`lg:hidden fixed right-0 z-40 w-full max-w-sm bg-white shadow-2xl border-l border-zinc-200 flex flex-col transform transition-transform duration-300 ease-in-out ${
-  mobileMenuVisible ? "translate-x-0" : "translate-x-full"
-}`}
-style={{ top: "116px", bottom: 0 }} // Perfectly sits below ribbon offsets safely
+          mobileMenuVisible ? "translate-x-0" : "translate-x-full"
+        }`}
+        style={{ top: "116px", bottom: 0 }}
       >
         <div className="flex-1 overflow-y-auto px-6 py-8 space-y-6">
           {navItems.map((item, index) => {
@@ -256,8 +253,9 @@ style={{ top: "116px", bottom: 0 }} // Perfectly sits below ribbon offsets safel
           })}
           
           <div className="pt-4">
+            {/* Replaced Link href="/in" with external portal anchor */}
             <Link
-              href="/in"
+              href={PORTAL_URL}
               onClick={toggleMobileMenu}
               className="flex items-center justify-center w-full bg-zinc-900 text-white font-mono text-xs uppercase font-bold tracking-widest py-3.5 rounded-xl border border-zinc-800 shadow-md transition-colors hover:bg-red-600 hover:border-red-600"
             >
