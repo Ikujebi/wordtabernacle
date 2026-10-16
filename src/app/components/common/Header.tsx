@@ -253,7 +253,6 @@ const Header: FC = () => {
           })}
           
           <div className="pt-4">
-            {/* Replaced Link href="/in" with external portal anchor */}
             <Link
               href={PORTAL_URL}
               onClick={toggleMobileMenu}
