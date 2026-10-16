@@ -179,10 +179,10 @@ const Header: FC = () => {
               );
             })}
 
-            {/* Replaced Antd Button + router.push("/in") with external portal anchor */}
+            {/* Login button with lighter red hover state */}
             <Link
               href={PORTAL_URL}
-              className="inline-flex items-center justify-center bg-red-600 hover:bg-red-700 text-white font-bold text-xs tracking-widest h-9 px-6 rounded-lg shadow-md shadow-red-600/10 transition-colors"
+              className="inline-flex items-center justify-center bg-red-600 hover:bg-red-500 text-white hover:text-white font-bold text-xs tracking-widest h-9 px-6 rounded-lg shadow-md shadow-red-600/10 transition-colors duration-200"
             >
               LOGIN
             </Link>
@@ -256,7 +256,7 @@ const Header: FC = () => {
             <Link
               href={PORTAL_URL}
               onClick={toggleMobileMenu}
-              className="flex items-center justify-center w-full bg-zinc-900 text-white font-mono text-xs uppercase font-bold tracking-widest py-3.5 rounded-xl border border-zinc-800 shadow-md transition-colors hover:bg-red-600 hover:border-red-600"
+              className="flex items-center justify-center w-full bg-red-600 hover:bg-red-500 text-white hover:text-white font-mono text-xs uppercase font-bold tracking-widest py-3.5 rounded-xl border border-red-600 shadow-md transition-colors duration-200"
             >
               Portal Login
             </Link>
